@@ -4,18 +4,18 @@
 
 
 
-# TP2 Algoritmos 3: {Kahoot}
+# TP2 Algoritmos 3: Kahoot
 
 Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUBA
 
-## Grupo {03}
+## Grupo 03
 
-* **Nicolas Menese** - [Nicolas Menese](https://github.com/nicolasmns)
-* **Enrique Alvaro** - [Enrique Alvaro](https://github.com/Alvaro0626)
-* **Armando Civini** - [Armando Civini](https://github.com/ArmandoCivini)
-* **Bruno Morseletto** - [Bruno Morseletto](https://github.com/Bmorseletto)
+* **Integrante 1** - [Nicolas Menese](https://github.com/nicolasmns)
+* **Integrante 2** - [Enrique Alvaro](https://github.com/Alvaro0626)
+* **Integrante 3** - [Armando Civini](https://github.com/ArmandoCivini)
+* **Integrante 4** - [Bruno Morseletto](https://github.com/Bmorseletto)
 
-Corrector: **{Martín Picco}**
+Corrector: **Martín Picco**
 
 ### Pre-requisitos
 
