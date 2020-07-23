@@ -1,6 +1,6 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
-import java.lang.String;
+
 public abstract class Pregunta {
     public void Responderpregunta(ArrayList<Respuesta> respuestas) {
         for (Respuesta i : respuestas)

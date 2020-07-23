@@ -1,4 +1,4 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.modelo;
 
 import java.util.ArrayList;
 
@@ -10,6 +10,9 @@ public class VerdaderoFalso extends Pregunta {
         this.respuestasCorrectas = correcta;
         this.pregunta = pregun;
         this.penalidad = pena;
+    }
+    public ArrayList<Integer> verRespuestaCorrecta(){
+        return respuestasCorrectas;
     }
     @Override
     public void comprobarrespuesta(Respuesta respuesta){
