@@ -2,6 +2,8 @@ package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.*;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
+
 import java.util.ArrayList;
 public class MessageTest {
     @Test
@@ -10,13 +12,13 @@ public class MessageTest {
 
         assertEquals("Hello world!", message.greet());
     }
-    //@Test
-    //public void test01CrearPregunta() {
-    //    ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-     //   respuestaCorrecta.add(1);
-     //   VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new NoPenalidad());
-      //  assertEquals(preguntaTest.comprobarRespuesta(respuestaCorrecta), true);
-    //}
+    @Test
+    public void test01CrearPregunta() {
+        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
+        respuestaCorrecta.add(1);
+        VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new NoPenalidad());
+        assertTrue(preguntaTest instanceof VerdaderoFalso);;
+    }
 
     @Test
     public void test02ResponderVerdaderoYFlasoCorrectamenteV1(){
