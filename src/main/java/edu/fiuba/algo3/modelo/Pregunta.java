@@ -1,6 +1,8 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.modelo;
 
-interface Pregunta {
-    public void pasarListaRespuestas();
-    public void verPreguntayBotones();
+import java.util.ArrayList;
+
+public abstract class Pregunta {
+    public abstract void recibirRespuestas(ArrayList<Respuesta> respuestas);
+    public abstract void evaluarRespuesta(Respuesta respuesta);
 }
