@@ -7,7 +7,7 @@ package edu.fiuba.algo3.modelo;
         import java.util.ArrayList;
 public class VyFPenalidadTest {
     @Test
-    public void test02_1CrearPregunta() {
+    public void test02_1CrearVyFConPenalidad() {
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
         respuestaCorrecta.add(1);
         VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new Penalidad());

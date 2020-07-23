@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.util.ArrayList;
 public class VyFSinPenalidadTest {
     @Test
-    public void test01CrearPregunta() {
+    public void test01_1CrearVyFSinPenalidad() {
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
         respuestaCorrecta.add(1);
         VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new NoPenalidad());
@@ -14,7 +14,7 @@ public class VyFSinPenalidadTest {
     }
 
     @Test
-    public void test02ResponderVerdaderoYFlasoCorrectamenteV1(){
+    public void test01_2ResponderVerdaderoYFlasoyAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador();
 
         Jugador jugador2 = new Jugador();
