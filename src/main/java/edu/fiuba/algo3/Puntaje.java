@@ -5,4 +5,8 @@ public class Puntaje {
     public void calcularpuntaje(int puntos){
         puntaje += puntos;
     }
+
+    public int getPuntaje() {
+        return puntaje;
+    }
 }

@@ -7,9 +7,9 @@ public class VerdaderoFalso extends Pregunta {
     ArrayList<Integer> respuestasCorrectas;
     TipoPenalidad penalidad;
     public VerdaderoFalso(String pregun, ArrayList<Integer> correcta, TipoPenalidad pena) {
-        respuestasCorrectas = correcta;
-        pregunta = pregun;
-
+        this.respuestasCorrectas = correcta;
+        this.pregunta = pregun;
+        this.penalidad = pena;
     }
     @Override
     public void comprobarrespuesta(Respuesta respuesta){

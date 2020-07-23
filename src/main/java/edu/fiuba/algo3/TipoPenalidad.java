@@ -2,7 +2,7 @@ package edu.fiuba.algo3;
 
 import java.util.ArrayList;
 
-class TipoPenalidad {
+public class TipoPenalidad {
     int modificadorcorrecto;
     int modificadorincorrecto;
     public void calcularpuntaje(Respuesta respuesta, ArrayList<Integer> correctas){
