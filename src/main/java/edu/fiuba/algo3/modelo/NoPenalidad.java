@@ -1,8 +1,16 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class NoPenalidad extends TipoPenalidad {
-    public NoPenalidad(){
-        modificadorcorrecto = 1;
-        modificadorincorrecto = 0;
+    @Override
+    public void calcularpuntaje(Respuesta respuesta, ArrayList<Integer> correctas){
+        int puntos = 1;
+        for (int i : respuesta.verRespuestaJugador()) {
+            if (!correctas.contains(i)) {
+                return;
+            }
+        }
+        respuesta.modificarpuntaje(puntos);
     }
 }
