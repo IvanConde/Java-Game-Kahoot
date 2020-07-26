@@ -14,6 +14,7 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 * **Integrante 2** - [Enrique Alvaro](https://github.com/Alvaro0626)
 * **Integrante 3** - [Armando Civini](https://github.com/ArmandoCivini)
 * **Integrante 4** - [Bruno Morseletto](https://github.com/Bmorseletto)
+* **Integrante 5** - [Iván Conde](https://github.com/SilverWerewolf)
 
 Corrector: **Martín Picco**
 
