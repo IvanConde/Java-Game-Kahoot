@@ -1,20 +1,21 @@
+
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 import java.util.ArrayList;
 public class MultipleChoiceParcialTest {
     @Test
-    public void test02_1CrearVyFConPenalidad() {
+    public void test04_1CrearMultipleChoiceParcial() {
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
         respuestaCorrecta.add(1);
         respuestaCorrecta.add(2);
-        VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new PuntajeParcial());
+        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, new Parcial());
         assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
     }
     @Test
-    public void test04_2ResponderVerdaderoYFlasoConPenalidadCorrectamenteV1(){
+    public void test04_2ResponderMultipleChoiceConParcialCorrectamente(){
         Jugador jugador1 = new Jugador();
 
         Jugador jugador2 = new Jugador();
@@ -32,8 +33,8 @@ public class MultipleChoiceParcialTest {
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestacorrecta);
         respuestas.add(respuestaincorrecta);
-        PuntajeParcial conPenalidad = new PuntajeParcial();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        Parcial conPenalidadParcial = new Parcial();
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidadParcial);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());

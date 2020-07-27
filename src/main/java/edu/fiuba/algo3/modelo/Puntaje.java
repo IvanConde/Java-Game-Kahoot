@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
 
 public class Puntaje {
-    int puntaje = 0;
-    public void calcularpuntaje(int puntos){
+    private int puntaje = 0;
+    public void calcularPuntaje(int puntos){
         puntaje += puntos;
     }
 

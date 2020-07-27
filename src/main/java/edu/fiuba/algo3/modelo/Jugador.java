@@ -1,10 +1,13 @@
 package edu.fiuba.algo3.modelo;
 
 public class Jugador {
-    Puntaje puntaje;
+    private Puntaje puntaje;
+    private String nombre;
+
     public Jugador(){
         puntaje = new Puntaje();
     }
+
     public Puntaje puntaje(){
         return puntaje;
     }

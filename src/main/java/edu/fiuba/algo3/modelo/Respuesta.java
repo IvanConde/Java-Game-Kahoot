@@ -3,16 +3,19 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 
 public class Respuesta {
-    ArrayList<Integer> respuestajugador;
-    Puntaje puntajejugador;
+    private ArrayList<Integer> respuesta;
+    private Puntaje puntaje;
+
     public Respuesta(ArrayList<Integer> respuesta, Puntaje puntaje){
-        respuestajugador = respuesta;
-        puntajejugador = puntaje;
+        this.respuesta = respuesta;
+        this.puntaje = puntaje;
     }
-    public void modificarpuntaje(int puntos){
-        puntajejugador.calcularpuntaje(puntos);
+
+    public void modificarPuntaje(int puntos){
+        puntaje.calcularPuntaje(puntos);
     }
+
     public ArrayList<Integer> verRespuestaJugador(){
-        return respuestajugador;
+        return respuesta;
     }
 }

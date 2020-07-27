@@ -2,20 +2,20 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+
 
 import java.util.ArrayList;
 public class MultipleChoicePenalidadTest {
     @Test
-    public void test02_1CrearVyFConPenalidad() {
+    public void test05_1CrearMultipleChoiceConPenalidad() {
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
         respuestaCorrecta.add(1);
         respuestaCorrecta.add(2);
-        VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new Penalidad());
+        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, new Penalidad());
         assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
     }
     @Test
-    public void test02_2ResponderVerdaderoYFlasoConPenalidadCorrectamenteV1(){
+    public void test02_2ResponderMultipleChoiceConPenalidadCorrectamente(){
         Jugador jugador1 = new Jugador();
 
         Jugador jugador2 = new Jugador();
@@ -32,7 +32,7 @@ public class MultipleChoicePenalidadTest {
         respuestas.add(respuestacorrecta);
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
