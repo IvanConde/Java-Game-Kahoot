@@ -10,7 +10,6 @@ public class Respuesta {
         this.respuesta = respuesta;
         this.puntaje = puntaje;
     }
-
     public void modificarPuntaje(int puntos){
         puntaje.calcularPuntaje(puntos);
     }

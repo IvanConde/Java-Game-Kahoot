@@ -8,7 +8,6 @@ public class Clasico extends Modalidad {
     public Clasico(){
         modificadorCorrecto = 1;
     }
-
     @Override
     public void calcularPuntaje(Respuesta respuesta, ArrayList<Integer> correctas){
         for (int i : respuesta.verRespuestaJugador()) {

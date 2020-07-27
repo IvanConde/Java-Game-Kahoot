@@ -12,7 +12,6 @@ public abstract class Pregunta {
     }
 
     protected abstract void comprobarRespuesta(Respuesta respuesta);
-
     //public abstract void verPreguntayBotones();
 }
 

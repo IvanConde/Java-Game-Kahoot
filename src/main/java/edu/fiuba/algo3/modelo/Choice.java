@@ -22,7 +22,6 @@ public abstract class Choice extends Pregunta {
     /*
     @Override
     public void verPreguntayBotones() {
-
     }
 
      */

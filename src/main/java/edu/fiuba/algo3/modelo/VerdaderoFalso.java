@@ -25,7 +25,6 @@ public class VerdaderoFalso extends Choice {
 
     @Override
     public void verPreguntayBotones() {
-
     }
 
  */

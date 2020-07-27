@@ -7,7 +7,6 @@ public class Jugador {
     public Jugador(){
         puntaje = new Puntaje();
     }
-
     public Puntaje puntaje(){
         return puntaje;
     }

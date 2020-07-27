@@ -22,6 +22,5 @@ public class Parcial extends Modalidad {
             puntos += modificadorCorrecto;
         }
         respuesta.modificarPuntaje(puntos);
-
     }
 }
