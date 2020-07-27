@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 
 import java.util.ArrayList;
@@ -68,5 +69,14 @@ public class VyFSinPenalidadTest {
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
+    }
+    @Test
+    public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
+        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
+        respuestaCorrecta.add(1);
+        respuestaCorrecta.add(2);
+        assertThrows(VyFMasDeDosOpcionesException.class, () ->
+            {new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new Clasico());
+        });
     }
 }
