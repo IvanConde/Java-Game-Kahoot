@@ -4,7 +4,8 @@ public class Jugador {
     private Puntaje puntaje;
     private String nombre;
 
-    public Jugador(){
+    public Jugador(String nombrejugador){
+        nombre = nombrejugador;
         puntaje = new Puntaje();
     }
     public Puntaje puntaje(){

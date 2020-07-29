@@ -16,9 +16,9 @@ public class MultipleChoiceClasicoTest {
 
     @Test
     public void test03_2ResponderMultipleChoiceyAsignarPuntajesCorrectamente(){
-        Jugador jugador1 = new Jugador();
+        Jugador jugador1 = new Jugador("");
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -40,7 +40,7 @@ public class MultipleChoiceClasicoTest {
     @Test
     public void test03_3ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaDeDosBien(){
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -59,7 +59,7 @@ public class MultipleChoiceClasicoTest {
     @Test
     public void test03_4ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaTodasBienYUnaMal(){
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 

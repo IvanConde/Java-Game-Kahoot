@@ -16,9 +16,9 @@ public class MultipleChoicePenalidadTest {
     }
     @Test
     public void test05_2ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
-        Jugador jugador1 = new Jugador();
+        Jugador jugador1 = new Jugador("");
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -39,7 +39,7 @@ public class MultipleChoicePenalidadTest {
     @Test
     public void test05_3ResponderMultipleChoiceConPenalidadUnaRespuestaCorrectaDeDos(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -57,7 +57,7 @@ public class MultipleChoicePenalidadTest {
     @Test
     public void test05_4ResponderMultipleChoiceConPenalidadUnaCorrectaYUnaErroneaDeDos(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -76,7 +76,7 @@ public class MultipleChoicePenalidadTest {
     @Test
     public void test05_5ResponderMultipleChoiceConPenalidadDosCorrectasYUnaErroneaDeTres(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -97,7 +97,7 @@ public class MultipleChoicePenalidadTest {
     @Test
     public void test05_6ResponderMultipleChoiceConPenalidadUnaCorrectaYDosErroneasDeTres(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();

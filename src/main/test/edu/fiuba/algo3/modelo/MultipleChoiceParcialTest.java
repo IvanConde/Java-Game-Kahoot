@@ -16,9 +16,9 @@ public class MultipleChoiceParcialTest {
     }
     @Test
     public void test04_2ResponderMultipleChoiceConParcialUnJugadorTodoCorrectoYOtroTodoIncorrecto(){
-        Jugador jugador1 = new Jugador();
+        Jugador jugador1 = new Jugador("");
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -40,7 +40,7 @@ public class MultipleChoiceParcialTest {
     @Test
     public void test04_3ResponderMultipleChoiceConParcialUnJugadorParcialmenteCorrecto(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
@@ -59,7 +59,7 @@ public class MultipleChoiceParcialTest {
     @Test
     public void test04_4ResponderMultipleChoiceConParcialUnJugadorParcialmenteInorrecto(){
 
-        Jugador jugadorParcial = new Jugador();
+        Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();

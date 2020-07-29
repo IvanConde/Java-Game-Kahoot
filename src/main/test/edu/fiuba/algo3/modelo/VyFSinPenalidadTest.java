@@ -16,7 +16,7 @@ public class VyFSinPenalidadTest {
 
     @Test
     public void test01_2ResponderVerdaderoYFlasoyAsignarPuntajesCorrectamente(){
-        Jugador jugador1 = new Jugador();
+        Jugador jugador1 = new Jugador("");
 
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -33,7 +33,7 @@ public class VyFSinPenalidadTest {
     @Test
     public void test01_3ResponderVerdaderoYFlasoyAsignarPuntajesIncorrectamente(){
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -50,9 +50,9 @@ public class VyFSinPenalidadTest {
     }
     @Test
     public void test01_4ResponderVerdaderoYFlasoyAsignarPuntajesDosJugadoresCorrectamenteEIncorrectamente(){
-        Jugador jugador1 = new Jugador();
+        Jugador jugador1 = new Jugador("");
 
-        Jugador jugador2 = new Jugador();
+        Jugador jugador2 = new Jugador("");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
