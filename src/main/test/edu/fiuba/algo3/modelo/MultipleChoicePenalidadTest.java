@@ -15,7 +15,7 @@ public class MultipleChoicePenalidadTest {
         assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
     }
     @Test
-    public void test04_2ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
+    public void test05_2ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
         Jugador jugador1 = new Jugador();
 
         Jugador jugador2 = new Jugador();
@@ -37,7 +37,7 @@ public class MultipleChoicePenalidadTest {
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
     @Test
-    public void test04_3ResponderMultipleChoiceConPenalidadUnaRespuestaCorrectaDeDos(){
+    public void test05_3ResponderMultipleChoiceConPenalidadUnaRespuestaCorrectaDeDos(){
 
         Jugador jugadorParcial = new Jugador();
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -55,7 +55,7 @@ public class MultipleChoicePenalidadTest {
         assertEquals(1, jugadorParcial.puntaje().getPuntaje());
     }
     @Test
-    public void test04_4ResponderMultipleChoiceConPenalidadUnaCorrectaYUnaErroneaDeDos(){
+    public void test05_4ResponderMultipleChoiceConPenalidadUnaCorrectaYUnaErroneaDeDos(){
 
         Jugador jugadorParcial = new Jugador();
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -74,7 +74,7 @@ public class MultipleChoicePenalidadTest {
         assertEquals(0, jugadorParcial.puntaje().getPuntaje());
     }
     @Test
-    public void test04_4ResponderMultipleChoiceConPenalidadDosCorrectasYUnaErroneaDeTres(){
+    public void test05_5ResponderMultipleChoiceConPenalidadDosCorrectasYUnaErroneaDeTres(){
 
         Jugador jugadorParcial = new Jugador();
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -95,7 +95,7 @@ public class MultipleChoicePenalidadTest {
         assertEquals(1, jugadorParcial.puntaje().getPuntaje());
     }
     @Test
-    public void test04_5ResponderMultipleChoiceConPenalidadUnaCorrectaYDosErroneasDeTres(){
+    public void test05_6ResponderMultipleChoiceConPenalidadUnaCorrectaYDosErroneasDeTres(){
 
         Jugador jugadorParcial = new Jugador();
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
