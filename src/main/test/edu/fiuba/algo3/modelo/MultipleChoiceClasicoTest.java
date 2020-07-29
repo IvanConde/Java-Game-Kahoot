@@ -56,4 +56,25 @@ public class MultipleChoiceClasicoTest {
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
+    @Test
+    public void test03_4ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaTodasBienYUnaMal(){
+
+        Jugador jugador2 = new Jugador();
+
+        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+
+        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
+        respuestaCorrecta.add(1);
+        respuestaCorrecta.add(2);
+        ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
+        respuestaIncorrecta.add(1);
+        respuestaIncorrecta.add(2);
+        respuestaIncorrecta.add(3);
+        Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
+        respuestas.add(respuestaincorrecta);
+        Clasico sinPenalidad = new Clasico();
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        preguntaTest.Responderpregunta(respuestas);
+        assertEquals(0, jugador2.puntaje().getPuntaje());
+    }
 }
