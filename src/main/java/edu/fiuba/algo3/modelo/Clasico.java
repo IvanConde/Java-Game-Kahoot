@@ -10,6 +10,7 @@ public class Clasico extends Modalidad {
     }
     @Override
     public void calcularPuntaje(Respuesta respuesta, ArrayList<Integer> correctas){
+        if(respuesta.verRespuestaJugador().size() != correctas.size()){ return;}
         for (int i : respuesta.verRespuestaJugador()) {
             if (!(correctas.contains(i))) {
                 return; //si hay una respuesta incorrecta no se asignan puntos.
