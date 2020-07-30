@@ -24,7 +24,7 @@ public class App extends Application {
     public void start(Stage stage) {
         window = stage;
         stage.setTitle("Kahoot2.0");
-        Label textoInfo = new Label("Inserte nombre del primer jugador");
+        Label textoInfo = new Label("Inserte nombre del primer jugador y presione ENTER");
         TextField textField = new TextField();
         EventHandler<KeyEvent> enterentexto = new EventHandler<KeyEvent>()
         {
@@ -33,11 +33,12 @@ public class App extends Application {
             {
                 if (ke.getCode().equals(KeyCode.ENTER)) {
                     if(jugador1 == null) {
-                        textoInfo.setText("Inserte nombre del segundo jugador");
+                        textoInfo.setText("Inserte nombre del segundo jugador y presione ENTER");
                         jugador1 = new Jugador(textField.getText());
+                        textField.clear();
                     }else{
                         jugador2 = new Jugador(textField.getText());
-                        window.setScene(sceneJuego);
+                        juego();
                     }
                 }
             }
@@ -49,6 +50,10 @@ public class App extends Application {
         sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
 
 
+        stage.setScene(sceneIngresoNombres);
+        stage.show();
+    }
+    private void juego(){
         Label pregunta = new Label("El mate es rico?");
         Button verdadero = new Button("Verdadero");
         Button falso = new Button("Falso");
@@ -57,10 +62,7 @@ public class App extends Application {
         layoutJuego.getChildren().add(verdadero);
         layoutJuego.getChildren().add(falso);
         sceneJuego = new Scene(layoutJuego, 640, 480);
-
-
-        stage.setScene(sceneIngresoNombres);
-        stage.show();
+        window.setScene(sceneJuego);
     }
 
     public static void main(String[] args) {
