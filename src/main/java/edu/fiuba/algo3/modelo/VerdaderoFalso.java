@@ -9,4 +9,11 @@ public class VerdaderoFalso extends Choice {
             throw new VyFMasDeDosOpcionesException("no es posible más de una opcion correcta en VerdaderoYFalso");
         }
     }
+    @Override
+    public ArrayList<String> verPreguntayBotones(){
+        ArrayList<String> opciones = new ArrayList<String>();
+        opciones.add("verdadero");
+        opciones.add("falso");
+        return opciones;
+    }
 }

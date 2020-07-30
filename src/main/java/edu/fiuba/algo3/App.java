@@ -12,6 +12,8 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
+import java.util.ArrayList;
+
 /**
  * JavaFX App
  */
@@ -54,17 +56,24 @@ public class App extends Application {
         stage.show();
     }
     private void juego(){
-        Label pregunta = new Label("El mate es rico?");
-        Button verdadero = new Button("Verdadero");
-        Button falso = new Button("Falso");
+        Pregunta pregunta = generarpregunta();
+        Label preguntaUsuario = new Label(pregunta.verPregunta());
+        ArrayList<String> opciones = pregunta.verPreguntayBotones();
         VBox layoutJuego = new VBox();
-        layoutJuego.getChildren().add(pregunta);
-        layoutJuego.getChildren().add(verdadero);
-        layoutJuego.getChildren().add(falso);
+        layoutJuego.getChildren().add(preguntaUsuario);
+        for(String i : opciones){
+            Button botonOpcion = new Button(i);
+            layoutJuego.getChildren().add(botonOpcion);
+        }
         sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
     }
-
+    private Pregunta generarpregunta(){
+        ArrayList<Integer> correct = new ArrayList<Integer>();
+        correct.add(1);
+        Pregunta vyf = new VerdaderoFalso("El mate es rico?", correct, new Clasico());
+        return vyf;
+    }
     public static void main(String[] args) {
         launch();
     }

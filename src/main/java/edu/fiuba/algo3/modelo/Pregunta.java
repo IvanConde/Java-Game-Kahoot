@@ -11,6 +11,10 @@ public abstract class Pregunta {
     }
 
     protected abstract void comprobarRespuesta(Respuesta respuesta);
-    //public abstract void verPreguntayBotones();
+    public String verPregunta(){ return pregunta;}
+    public ArrayList<String> verPreguntayBotones(){
+        ArrayList<String> strings = new ArrayList<String>();
+        return strings;
+    }
 }
 
