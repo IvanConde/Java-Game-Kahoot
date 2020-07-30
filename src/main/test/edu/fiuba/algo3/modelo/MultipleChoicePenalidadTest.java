@@ -8,11 +8,11 @@ import java.util.ArrayList;
 public class MultipleChoicePenalidadTest {
     @Test
     public void test05_1CrearMultipleChoiceConPenalidad() {
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
-        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, new Penalidad());
-        assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
+        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, new Penalidad());
+        assertEquals(opcionesCorrectas, preguntaTest.verRespuestaCorrecta());
     }
     @Test
     public void test05_2ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
@@ -21,17 +21,17 @@ public class MultipleChoicePenalidadTest {
         Jugador jugador2 = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(0);
-        Respuesta respuestacorrecta = new Respuesta(respuestaCorrecta, jugador1.puntaje());
+        Respuesta respuestacorrecta = new Respuesta(opcionesCorrectas, jugador1.puntaje());
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestacorrecta);
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(-1, jugador2.puntaje().getPuntaje());
@@ -42,15 +42,15 @@ public class MultipleChoicePenalidadTest {
         Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaParcial = new ArrayList<Integer>();
         respuestaParcial.add(1);
         Respuesta respuestaincorrecta = new Respuesta(respuestaParcial, jugadorParcial.puntaje());
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugadorParcial.puntaje().getPuntaje());
     }
@@ -60,16 +60,16 @@ public class MultipleChoicePenalidadTest {
         Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaParcial = new ArrayList<Integer>();
         respuestaParcial.add(1);
         respuestaParcial.add(0);
         Respuesta respuestaincorrecta = new Respuesta(respuestaParcial, jugadorParcial.puntaje());
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(0, jugadorParcial.puntaje().getPuntaje());
     }
@@ -79,10 +79,10 @@ public class MultipleChoicePenalidadTest {
         Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
-        respuestaCorrecta.add(3);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
+        opcionesCorrectas.add(3);
         ArrayList<Integer> respuestaParcial = new ArrayList<Integer>();
         respuestaParcial.add(1);
         respuestaParcial.add(2);
@@ -90,7 +90,7 @@ public class MultipleChoicePenalidadTest {
         Respuesta respuestaincorrecta = new Respuesta(respuestaParcial, jugadorParcial.puntaje());
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugadorParcial.puntaje().getPuntaje());
     }
@@ -100,10 +100,10 @@ public class MultipleChoicePenalidadTest {
         Jugador jugadorParcial = new Jugador("");
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
-        respuestaCorrecta.add(3);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
+        opcionesCorrectas.add(3);
         ArrayList<Integer> respuestaParcial = new ArrayList<Integer>();
         respuestaParcial.add(1);
         respuestaParcial.add(4);
@@ -111,7 +111,7 @@ public class MultipleChoicePenalidadTest {
         Respuesta respuestaincorrecta = new Respuesta(respuestaParcial, jugadorParcial.puntaje());
         respuestas.add(respuestaincorrecta);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, conPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(-1, jugadorParcial.puntaje().getPuntaje());
     }

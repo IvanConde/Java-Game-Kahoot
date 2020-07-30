@@ -8,10 +8,10 @@ import java.util.ArrayList;
 public class VyFSinPenalidadTest {
     @Test
     public void test01_1CrearVyFSinPenalidad() {
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new Clasico());
-        assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
+        ArrayList<Integer> opcionCorrecta = new ArrayList<Integer>();
+        opcionCorrecta.add(1);
+        VerdaderoFalso preguntaTest =new VerdaderoFalso("Es Tomas su primer nombre?", opcionCorrecta, new Clasico());
+        assertEquals(opcionCorrecta, preguntaTest.verRespuestaCorrecta());
     }
 
     @Test
@@ -21,12 +21,12 @@ public class VyFSinPenalidadTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        Respuesta respuestacorrecta = new Respuesta(respuestaCorrecta, jugador1.puntaje());
+        ArrayList<Integer> opcionCorrecta = new ArrayList<Integer>();
+        opcionCorrecta.add(1);
+        Respuesta respuestacorrecta = new Respuesta(opcionCorrecta, jugador1.puntaje());
         respuestas.add(respuestacorrecta);
         Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", opcionCorrecta, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
     }
@@ -37,14 +37,14 @@ public class VyFSinPenalidadTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
+        ArrayList<Integer> opcionCorrecta = new ArrayList<Integer>();
+        opcionCorrecta.add(1);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(0);
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestaincorrecta);
         Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", opcionCorrecta, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
@@ -56,27 +56,27 @@ public class VyFSinPenalidadTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
+        ArrayList<Integer> opcionCorrecta = new ArrayList<Integer>();
+        opcionCorrecta.add(1);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(0);
-        Respuesta respuestacorrecta = new Respuesta(respuestaCorrecta, jugador1.puntaje());
+        Respuesta respuestacorrecta = new Respuesta(opcionCorrecta, jugador1.puntaje());
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestacorrecta);
         respuestas.add(respuestaincorrecta);
         Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", opcionCorrecta, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
     @Test
     public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionCorrecta = new ArrayList<Integer>();
+        opcionCorrecta.add(1);
+        opcionCorrecta.add(2);
         assertThrows(VyFMasDeDosOpcionesException.class, () ->
-            {new VerdaderoFalso("Es Tomas su primer nombre?", respuestaCorrecta, new Clasico());
+            {new VerdaderoFalso("Es Tomas su primer nombre?", opcionCorrecta, new Clasico());
         });
     }
 }

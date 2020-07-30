@@ -7,11 +7,11 @@ import java.util.ArrayList;
 public class MultipleChoiceClasicoTest {
     @Test
     public void test03_1CrearMultipleChoiceClasico() {
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
-        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, new Clasico());
-        assertEquals(respuestaCorrecta, preguntaTest.verRespuestaCorrecta());
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
+        MultipleChoice preguntaTest =new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, new Clasico());
+        assertEquals(opcionesCorrectas, preguntaTest.verRespuestaCorrecta());
     }
 
     @Test
@@ -22,17 +22,17 @@ public class MultipleChoiceClasicoTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(0);
-        Respuesta respuestacorrecta = new Respuesta(respuestaCorrecta, jugador1.puntaje());
+        Respuesta respuestacorrecta = new Respuesta(opcionesCorrectas, jugador1.puntaje());
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestacorrecta);
         respuestas.add(respuestaincorrecta);
         Clasico sinPenalidad = new Clasico();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
@@ -44,15 +44,15 @@ public class MultipleChoiceClasicoTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(1);
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestaincorrecta);
         Clasico sinPenalidad = new Clasico();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
@@ -63,9 +63,9 @@ public class MultipleChoiceClasicoTest {
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<Integer> respuestaCorrecta = new ArrayList<Integer>();
-        respuestaCorrecta.add(1);
-        respuestaCorrecta.add(2);
+        ArrayList<Integer> opcionesCorrectas = new ArrayList<Integer>();
+        opcionesCorrectas.add(1);
+        opcionesCorrectas.add(2);
         ArrayList<Integer> respuestaIncorrecta = new ArrayList<Integer>();
         respuestaIncorrecta.add(1);
         respuestaIncorrecta.add(2);
@@ -73,7 +73,7 @@ public class MultipleChoiceClasicoTest {
         Respuesta respuestaincorrecta = new Respuesta(respuestaIncorrecta, jugador2.puntaje());
         respuestas.add(respuestaincorrecta);
         Clasico sinPenalidad = new Clasico();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", respuestaCorrecta, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", opcionesCorrectas, sinPenalidad);
         preguntaTest.Responderpregunta(respuestas);
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
