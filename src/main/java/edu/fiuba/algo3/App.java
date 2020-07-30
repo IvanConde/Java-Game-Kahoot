@@ -1,6 +1,7 @@
 package edu.fiuba.algo3;
 import edu.fiuba.algo3.modelo.*;
 import javafx.application.Application;
+import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -58,20 +59,28 @@ public class App extends Application {
     private void juego(){
         Pregunta pregunta = generarpregunta();
         Label preguntaUsuario = new Label(pregunta.verPregunta());
-        ArrayList<String> opciones = pregunta.verPreguntayBotones();
+        ArrayList<String> opciones = pregunta.verBotones();
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(preguntaUsuario);
         for(String i : opciones){
             Button botonOpcion = new Button(i);
+            botonOpcion.setOnAction(new EventHandler<ActionEvent>() {
+                @Override public void handle(ActionEvent e) {
+                    System.out.println(botonOpcion.getText());
+                }
+            });
             layoutJuego.getChildren().add(botonOpcion);
         }
         sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
     }
     private Pregunta generarpregunta(){
-        ArrayList<Integer> correct = new ArrayList<Integer>();
-        correct.add(1);
-        Pregunta vyf = new VerdaderoFalso("El mate es rico?", correct, new Clasico());
+        ArrayList<String> todas = new ArrayList<String>();
+        todas.add("verdadero");
+        todas.add("falso");
+        ArrayList<String> correct = new ArrayList<String>();
+        correct.add("verdadero");
+        Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, correct, new Clasico());
         return vyf;
     }
     public static void main(String[] args) {

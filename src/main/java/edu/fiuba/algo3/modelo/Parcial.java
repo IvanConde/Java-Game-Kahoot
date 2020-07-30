@@ -7,15 +7,15 @@ import java.util.ArrayList;
 //cuando no haya seleccionado ninguna de las opciones
 //incorrectas.
 public class Parcial extends Modalidad {
-
+    private int modificadorCorrecto;
     public Parcial() {
         modificadorCorrecto = 1;
     }
 
     @Override
-    public void calcularPuntaje(Respuesta respuesta, ArrayList<Integer> correctas) {
+    public void calcularPuntaje(Respuesta respuesta, ArrayList<String> correctas) {
         int puntos = 0;
-        for (int i : respuesta.verRespuestaJugador()) {
+        for (String i : respuesta.verRespuestaJugador()) {
             if (!(correctas.contains(i))) {
                 return; //cuando se encuentra una respuesta incorrecta no se agregan puntos.
             }

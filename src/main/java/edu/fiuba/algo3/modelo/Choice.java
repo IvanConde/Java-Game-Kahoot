@@ -4,12 +4,11 @@ import java.util.ArrayList;
 
 public abstract class Choice extends Pregunta {
     Modalidad penalidad;
-    public Choice(String pregunta, ArrayList<Integer> correcta, Modalidad penalidad) {
-        this.opcionesCorrectas = correcta;
-        this.pregunta = pregunta;
+    public Choice(String pregunta,  ArrayList<String> todas, ArrayList<String> correcta, Modalidad penalidad) {
+        super(pregunta, todas, correcta);
         this.penalidad = penalidad;
     }
-    public ArrayList<Integer> verRespuestaCorrecta(){
+    public ArrayList<String> verRespuestaCorrecta(){
         return opcionesCorrectas;
     }
     @Override
