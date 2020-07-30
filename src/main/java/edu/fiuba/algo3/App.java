@@ -3,6 +3,7 @@ import edu.fiuba.algo3.modelo.*;
 import javafx.application.Application;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.input.KeyCode;
@@ -17,8 +18,11 @@ import javafx.stage.Stage;
 public class App extends Application {
     Jugador jugador1;
     Jugador jugador2;
+    Scene sceneIngresoNombres, sceneJuego;
+    Stage window;
     @Override
     public void start(Stage stage) {
+        window = stage;
         stage.setTitle("Kahoot2.0");
         Label textoInfo = new Label("Inserte nombre del primer jugador");
         TextField textField = new TextField();
@@ -33,16 +37,29 @@ public class App extends Application {
                         jugador1 = new Jugador(textField.getText());
                     }else{
                         jugador2 = new Jugador(textField.getText());
+                        window.setScene(sceneJuego);
                     }
                 }
             }
         };
         textField.setOnKeyPressed(enterentexto);
-        VBox layout = new VBox();
-        layout.getChildren().add(textoInfo);
-        layout.getChildren().add(textField);
-        var scene = new Scene(layout, 640, 480);
-        stage.setScene(scene);
+        VBox layoutInicial = new VBox();
+        layoutInicial.getChildren().add(textoInfo);
+        layoutInicial.getChildren().add(textField);
+        sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
+
+
+        Label pregunta = new Label("El mate es rico?");
+        Button verdadero = new Button("Verdadero");
+        Button falso = new Button("Falso");
+        VBox layoutJuego = new VBox();
+        layoutJuego.getChildren().add(pregunta);
+        layoutJuego.getChildren().add(verdadero);
+        layoutJuego.getChildren().add(falso);
+        sceneJuego = new Scene(layoutJuego, 640, 480);
+
+
+        stage.setScene(sceneIngresoNombres);
         stage.show();
     }
 

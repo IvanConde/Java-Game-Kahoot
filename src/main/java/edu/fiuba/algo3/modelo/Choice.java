@@ -3,7 +3,6 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 
 public abstract class Choice extends Pregunta {
-    protected String pregunta;
     Modalidad penalidad;
     public Choice(String pregun, ArrayList<Integer> correcta, Modalidad penalidad) {
         this.opcionesCorrectas = correcta;
