@@ -1,19 +1,11 @@
 package edu.fiuba.algo3.modelo;
 
 public class Puntaje {
-
-    private int valor;
-
-    public Puntaje() {
-        this.valor = 0;
+    private int puntaje = 0;
+    public void calcularPuntaje(int puntos){
+        puntaje += puntos;
     }
-
-    public int getValor() {
-        return this.valor;
+    public int getPuntaje() {
+        return puntaje;
     }
-
-    public void modificar(int modificador) {
-        this.valor += modificador;
-    }
-
 }

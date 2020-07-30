@@ -1,26 +1,14 @@
 package edu.fiuba.algo3.modelo;
 
 public class Jugador {
-
-    private String nombre;
     private Puntaje puntaje;
+    private String nombre;
 
-    public Jugador(String nombre) {
-        this.nombre = nombre;
-        Puntaje puntaje= new Puntaje();
-        this.puntaje = puntaje;
+    public Jugador(String nombrejugador){
+        nombre = nombrejugador;
+        puntaje = new Puntaje();
     }
-
-    public int getPuntaje() {
-        return puntaje.getValor();
+    public Puntaje puntaje(){
+        return puntaje;
     }
-
-    public void elegirRespuesta(Respuesta respuesta) {
-        respuesta.elegidapor(this);
-    }
-
-    public void recibirPuntaje(int modificador) {
-        this.puntaje.modificar(modificador);
-    }
-
 }

@@ -1,8 +1,16 @@
 package edu.fiuba.algo3.modelo;
-
 import java.util.ArrayList;
 
 public abstract class Pregunta {
-    public abstract void recibirRespuestas(ArrayList<Respuesta> respuestas);
-    public abstract void evaluarRespuesta(Respuesta respuesta);
+    protected String pregunta;
+    protected ArrayList<Integer> opcionesCorrectas;
+
+    public void responderPregunta(ArrayList<Respuesta> respuestas) {
+        for (Respuesta i : respuestas)
+            comprobarRespuesta(i);
+    }
+
+    protected abstract void comprobarRespuesta(Respuesta respuesta);
+    //public abstract void verPreguntayBotones();
 }
+
