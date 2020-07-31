@@ -19,70 +19,13 @@ import java.util.ArrayList;
  * JavaFX App
  */
 public class App extends Application {
-    Jugador jugador1;
-    Jugador jugador2;
-    Scene sceneIngresoNombres, sceneJuego;
-    Stage window;
+    Controlador control;
     @Override
     public void start(Stage stage) {
-        window = stage;
-        stage.setTitle("Kahoot2.0");
-        Label textoInfo = new Label("Inserte nombre del primer jugador y presione ENTER");
-        TextField textField = new TextField();
-        EventHandler<KeyEvent> enterentexto = new EventHandler<KeyEvent>()
-        {
-            @Override
-            public void handle(KeyEvent ke)
-            {
-                if (ke.getCode().equals(KeyCode.ENTER)) {
-                    if(jugador1 == null) {
-                        textoInfo.setText("Inserte nombre del segundo jugador y presione ENTER");
-                        jugador1 = new Jugador(textField.getText());
-                        textField.clear();
-                    }else{
-                        jugador2 = new Jugador(textField.getText());
-                        juego();
-                    }
-                }
-            }
-        };
-        textField.setOnKeyPressed(enterentexto);
-        VBox layoutInicial = new VBox();
-        layoutInicial.getChildren().add(textoInfo);
-        layoutInicial.getChildren().add(textField);
-        sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
+        this.control = new Controlador();
+        this.control.comienzo(stage);
+    }
 
-
-        stage.setScene(sceneIngresoNombres);
-        stage.show();
-    }
-    private void juego(){
-        Pregunta pregunta = generarpregunta();
-        Label preguntaUsuario = new Label(pregunta.verPregunta());
-        ArrayList<String> opciones = pregunta.verBotones();
-        VBox layoutJuego = new VBox();
-        layoutJuego.getChildren().add(preguntaUsuario);
-        for(String i : opciones){
-            Button botonOpcion = new Button(i);
-            botonOpcion.setOnAction(new EventHandler<ActionEvent>() {
-                @Override public void handle(ActionEvent e) {
-                    System.out.println(botonOpcion.getText());
-                }
-            });
-            layoutJuego.getChildren().add(botonOpcion);
-        }
-        sceneJuego = new Scene(layoutJuego, 640, 480);
-        window.setScene(sceneJuego);
-    }
-    private Pregunta generarpregunta(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("verdadero");
-        todas.add("falso");
-        ArrayList<String> correct = new ArrayList<String>();
-        correct.add("verdadero");
-        Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, correct, new Clasico());
-        return vyf;
-    }
     public static void main(String[] args) {
         launch();
     }
