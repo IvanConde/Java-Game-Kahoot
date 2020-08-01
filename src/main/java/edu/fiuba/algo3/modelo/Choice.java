@@ -3,17 +3,18 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 
 public abstract class Choice extends Pregunta {
-    Modalidad penalidad;
-    public Choice(String pregunta,  ArrayList<String> todas, ArrayList<String> correcta, Modalidad penalidad) {
-        super(pregunta, todas, correcta);
+    protected Modalidad penalidad;
+    protected Choice(String pregunta,  ArrayList<Opcion> todas, Modalidad penalidad) {
+        super(pregunta, todas);
         this.penalidad = penalidad;
     }
-    public ArrayList<String> verRespuestaCorrecta(){
-        return opcionesCorrectas;
-    }
+    //public ArrayList<String> verRespuestaCorrecta(){
+    //    return opcionesCorrectas;
+    //}
+
     @Override
     public void comprobarRespuesta(Respuesta respuesta){
-        penalidad.calcularPuntaje(respuesta, opcionesCorrectas);
+        penalidad.calcularPuntaje(respuesta);
     }
 
     /*

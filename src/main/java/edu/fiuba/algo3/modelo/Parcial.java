@@ -13,10 +13,10 @@ public class Parcial extends Modalidad {
     }
 
     @Override
-    public void calcularPuntaje(Respuesta respuesta, ArrayList<String> correctas) {
+    public void calcularPuntaje(Respuesta respuesta) {
         int puntos = 0;
-        for (String i : respuesta.verRespuestaJugador()) {
-            if (!(correctas.contains(i))) {
+        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
+            if (!(opcionElegida.getEsCorrecto())) {
                 return; //cuando se encuentra una respuesta incorrecta no se agregan puntos.
             }
             puntos += modificadorCorrecto;

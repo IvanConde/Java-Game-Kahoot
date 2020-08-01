@@ -10,10 +10,10 @@ public class Penalidad extends Modalidad {
         modificadorIncorrecto = -1;
     }
     @Override
-    public void calcularPuntaje(Respuesta respuesta, ArrayList<String> correctas){
+    public void calcularPuntaje(Respuesta respuesta){
         int puntos = 0;
-        for (String i : respuesta.verRespuestaJugador()) {
-            if (correctas.contains(i)) {
+        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
+            if (opcionElegida.getEsCorrecto()) {
                 puntos += modificadorCorrecto;
             } else {
                 puntos += modificadorIncorrecto;

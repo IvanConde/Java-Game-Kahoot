@@ -10,10 +10,9 @@ public class Clasico extends Modalidad {
         modificadorCorrecto = 1;
     }
     @Override
-    public void calcularPuntaje(Respuesta respuesta, ArrayList<String> correctas){
-        if(respuesta.verRespuestaJugador().size() != correctas.size()){ return;}
-        for (String i : respuesta.verRespuestaJugador()) {
-            if (!(correctas.contains(i))) {
+    public void calcularPuntaje(Respuesta respuesta){
+        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
+            if (!(opcionElegida.getEsCorrecto())) {
                 return; //si hay una respuesta incorrecta no se asignan puntos.
             }
         }

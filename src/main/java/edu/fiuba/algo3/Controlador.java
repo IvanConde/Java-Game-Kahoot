@@ -21,6 +21,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Controlador {
+    /*
     Vista ventana;
     Panel panel;
     public void comienzo(Stage stage){
@@ -73,4 +74,6 @@ public class Controlador {
     public Pregunta generarpregunta(){
         return this.panel.crearPregunta();
     }
+
+     */
 }

@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.*;
 import java.util.ArrayList;
 
 public class Panel { // Panel es el modelo de un MVC
+    /*
     Jugador jugador1;
     Jugador jugador2;
     Pregunta preguntaActual;
@@ -29,4 +30,6 @@ public class Panel { // Panel es el modelo de un MVC
         this.preguntaActual = vyf;
         return vyf;
     }
+
+     */
 }

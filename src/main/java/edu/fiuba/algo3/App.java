@@ -22,8 +22,10 @@ public class App extends Application {
     Controlador control;
     @Override
     public void start(Stage stage) {
+    /*
         this.control = new Controlador();
         this.control.comienzo(stage);
+*/
     }
 
     public static void main(String[] args) {

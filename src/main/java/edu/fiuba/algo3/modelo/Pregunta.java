@@ -3,11 +3,9 @@ import java.util.ArrayList;
 
 public abstract class Pregunta {
     protected String pregunta;
-    protected ArrayList<String> opcionesCorrectas;
-    protected ArrayList<String> opcionesTodas;
-    public Pregunta(String pregunta, ArrayList<String> todas, ArrayList<String> correcta){
+    protected ArrayList<Opcion> opcionesTodas;
+    public Pregunta(String pregunta, ArrayList<Opcion> todas){
         this.opcionesTodas = todas;
-        this.opcionesCorrectas = correcta;
         this.pregunta = pregunta;
     }
     public void responderPregunta(ArrayList<Respuesta> respuestas) {
@@ -17,8 +15,11 @@ public abstract class Pregunta {
 
     protected abstract void comprobarRespuesta(Respuesta respuesta);
     public String verPregunta(){ return pregunta;}
-    public ArrayList<String> verBotones(){
+
+    public ArrayList<Opcion> verBotones(){
         return opcionesTodas;
     }
+
+
 }
 

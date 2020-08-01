@@ -23,7 +23,6 @@ public class MultipleChoiceClasicoTest {
 
         assertEquals(opcionesCorrectas, preguntaTest.verRespuestaCorrecta());
     }
-
     @Test
     public void test03_2ResponderMultipleChoiceyAsignarPuntajesCorrectamente(){
         ArrayList<String> todas = new ArrayList<String>();
@@ -53,11 +52,11 @@ public class MultipleChoiceClasicoTest {
         opcionesJugador2.add("para nada");
 
         //Se instancian las respuestas con la lista de opciones elegidas y el puntaje del jugador.
-        Respuesta respuestaCorrecta = new Respuesta(opcionesJugador1, jugador1.puntaje());
-        Respuesta respuestaIncorrecta = new Respuesta(opcionesJugador2, jugador2.puntaje());
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
 
-        respuestas.add(respuestaCorrecta);
-        respuestas.add(respuestaIncorrecta);
+        respuestas.add(respuestaJugador1);
+        respuestas.add(respuestaJugador2);
         Clasico sinPenalidad = new Clasico(); //Modalidad de la pregunta
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.

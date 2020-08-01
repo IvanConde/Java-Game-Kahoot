@@ -16,6 +16,7 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class Vista {
+    /*
     Stage window;
     Controlador control;
     Scene sceneIngresoNombres, sceneJuego;
@@ -40,10 +41,10 @@ public class Vista {
     }
     public void mostrarPregunta(Pregunta pregunta){
         Label preguntaUsuario = new Label(pregunta.verPregunta());
-        ArrayList<String> opciones = pregunta.verBotones();
+        ArrayList<Opcion> opciones = pregunta.verBotones();
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(preguntaUsuario);
-        for(String i : opciones){
+        for(Opcion i : opciones){
             Button botonOpcion = new Button(i);
             control.agregarAccionBotonOpcion(botonOpcion, i);
             layoutJuego.getChildren().add(botonOpcion);
@@ -51,4 +52,6 @@ public class Vista {
         sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
     }
+
+     */
 }
