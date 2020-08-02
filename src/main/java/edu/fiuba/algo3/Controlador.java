@@ -1,9 +1,6 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modelo.Clasico;
-import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.Pregunta;
-import edu.fiuba.algo3.modelo.VerdaderoFalso;
+import edu.fiuba.algo3.modelo.*;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -21,7 +18,6 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 public class Controlador {
-    /*
     Vista ventana;
     Panel panel;
     public void comienzo(Stage stage){
@@ -58,7 +54,7 @@ public class Controlador {
     public void controlarPreguntas(){
         Pregunta pregunta = this.generarpregunta();
         ventana.mostrarPregunta(pregunta);
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), new EventHandler<ActionEvent>() {
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
 
             private int i = 1;
 
@@ -74,6 +70,4 @@ public class Controlador {
     public Pregunta generarpregunta(){
         return this.panel.crearPregunta();
     }
-
-     */
 }

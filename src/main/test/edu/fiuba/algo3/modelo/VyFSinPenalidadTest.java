@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 public class VyFSinPenalidadTest {
+    /*
     @Test
     public void test01_1CrearVyFSinPenalidad() {
         ArrayList<String> todas = new ArrayList<String>();
@@ -102,4 +103,6 @@ public class VyFSinPenalidadTest {
             {new VerdaderoFalso("Es Tomas su primer nombre?", todas, opcionCorrecta, new Clasico());
         });
     }
+
+     */
 }

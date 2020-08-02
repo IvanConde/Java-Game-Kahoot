@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class VyFPenalidadTest {
+    /*
     @Test
     public void test02_1CrearVyFConPenalidad() {
         ArrayList<String> todas = new ArrayList<String>();
@@ -90,4 +91,6 @@ public class VyFPenalidadTest {
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
 
+
+     */
 }

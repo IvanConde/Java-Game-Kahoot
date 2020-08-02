@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class MultipleChoiceClasicoTest {
+    /*
     @Test
     public void test03_1CrearMultipleChoiceClasico() {
         ArrayList<String> todas = new ArrayList<String>();
@@ -120,4 +121,5 @@ public class MultipleChoiceClasicoTest {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
+    */
 }
