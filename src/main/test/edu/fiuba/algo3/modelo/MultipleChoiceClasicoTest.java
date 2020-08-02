@@ -3,54 +3,67 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class MultipleChoiceClasicoTest {
-    /*
     @Test
     public void test03_1CrearMultipleChoiceClasico() {
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        todas.add("nunca");
-        //Lista de las opciones correctas
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
 
+
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("no",false);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
+        Jugador jugador = new Jugador("Nicolas");
+        ArrayList<Opcion> opcionesJugador = new ArrayList<Opcion>();
+        opcionesJugador.add(opcion1);
+        opcionesJugador.add(opcion2);
+
+        Respuesta respuesta = new Respuesta(opcionesJugador,jugador.puntaje());
+        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        respuestas.add(respuesta);
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, new Clasico());
-
-        assertEquals(opcionesCorrectas, preguntaTest.verRespuestaCorrecta());
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, new Clasico());
+        preguntaTest.responderPregunta(respuestas);
+        assertEquals(1,jugador.puntaje().getPuntaje());
     }
+
     @Test
     public void test03_2ResponderMultipleChoiceyAsignarPuntajesCorrectamente(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        todas.add("nunca");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("no",false);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Sofia");
 
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion2);
+
+        ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+        opcionesJugador2.add(opcion3);
+        opcionesJugador2.add(opcion4);
+
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
-
-        //Lista de las opciones correctas.
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-
-        //Opciones elegidas por el Jugador 1.
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("si");
-        opcionesJugador1.add("totalmente");
-
-        //Opciones elegidas por el Jugador 2.
-        ArrayList<String> opcionesJugador2 = new ArrayList<String>();
-        opcionesJugador2.add("no");
-        opcionesJugador2.add("para nada");
 
         //Se instancian las respuestas con la lista de opciones elegidas y el puntaje del jugador.
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
@@ -61,7 +74,7 @@ public class MultipleChoiceClasicoTest {
         Clasico sinPenalidad = new Clasico(); //Modalidad de la pregunta
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, sinPenalidad);
 
         //Se pasan las respuestas de los jugadores a la pregunta.
         preguntaTest.responderPregunta(respuestas);
@@ -69,57 +82,70 @@ public class MultipleChoiceClasicoTest {
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
     }
+
     @Test
     public void test03_3ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaDeDosBien(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        todas.add("nunca");
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("no",false);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
 
         Jugador jugador1 = new Jugador("Federico");
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("si");
 
-        Respuesta respuestaIncorrecta = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion2);
+        opcionesJugador1.add(opcion3);
+
+        //Se instancian las respuestas con la lista de opciones elegidas y el puntaje del jugador.
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
-        respuestas.add(respuestaIncorrecta);
+        respuestas.add(respuestaJugador1);
+
         Clasico sinPenalidad = new Clasico();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0, jugador1.puntaje().getPuntaje());
     }
     @Test
     public void test03_4ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaTodasBienYUnaMal(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        todas.add("nunca");
-        Jugador jugador2 = new Jugador("Sofia");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("no",false);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
 
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Federico");
+
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion4);
+        opcionesJugador1.add(opcion3);
+
+        //Se instancian las respuestas con la lista de opciones elegidas y el puntaje del jugador.
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        respuestas.add(respuestaJugador1);
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        ArrayList<String> opcionesJugador2 = new ArrayList<String>();
-        opcionesJugador2.add("si");
-        opcionesJugador2.add("totalmente");
-        opcionesJugador2.add("no");
-        Respuesta respuestaIncorrecta = new Respuesta(opcionesJugador2, jugador2.puntaje());
-        respuestas.add(respuestaIncorrecta);
         Clasico sinPenalidad = new Clasico();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, sinPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(0, jugador2.puntaje().getPuntaje());
+        assertEquals(0, jugador1.puntaje().getPuntaje());
     }
-    */
+
 }
