@@ -18,6 +18,18 @@ public class Panel { // Panel es el modelo de un MVC
         }
         this.jugador2 = new Jugador(nombre);
     }
+
+    public void tienePenalidad(){
+        //si tiene penalidad
+        if(jugador.getTieneMultiplicadorx2){
+            //mostrarBoton
+        }
+        //si tiene mostrar MultiplicadorX3
+
+
+
+    }
+
     public Pregunta crearPregunta(){
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion verdadero = new Opcion("verdadero", true);

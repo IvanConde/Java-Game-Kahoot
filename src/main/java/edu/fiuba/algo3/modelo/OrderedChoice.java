@@ -11,8 +11,8 @@ public class OrderedChoice extends Pregunta{
     @Override
     protected void comprobarRespuesta(Respuesta respuesta) {
         ArrayList<Opcion> respuestasJugador = respuesta.verRespuestaJugador();
-        for (int i = 0; i <respuestasJugador.size(); i++){
-            if(i != respuestasJugador.getPerteneceA()){
+        for (int orden = 0; orden <respuestasJugador.size(); orden++){
+            if(orden != respuestasJugador.getPerteneceA()){
                 return;
             }
         }

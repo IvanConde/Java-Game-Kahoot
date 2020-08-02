@@ -5,6 +5,7 @@ import java.util.ArrayList;
 public class Respuesta {
     private ArrayList<Opcion> respuesta;
     private Puntaje puntaje;
+    private int multiplicador;
 
     public Respuesta(ArrayList<Opcion> respuesta, Puntaje puntaje){
         this.respuesta = respuesta;
