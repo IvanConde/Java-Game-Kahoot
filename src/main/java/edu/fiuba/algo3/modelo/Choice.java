@@ -8,9 +8,6 @@ public abstract class Choice extends Pregunta {
         super(pregunta, todas);
         this.penalidad = penalidad;
     }
-    //public ArrayList<String> verRespuestaCorrecta(){
-    //    return opcionesCorrectas;
-    //}
 
     @Override
     public void comprobarRespuesta(Respuesta respuesta){
