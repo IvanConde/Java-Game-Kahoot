@@ -21,14 +21,14 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void tienePenalidad(){
         //si tiene penalidad
-        if(jugador.getTieneMultiplicadorx2){
+       // if(jugador.getTieneMultiplicadorx2){
             //mostrarBoton
         }
         //si tiene mostrar MultiplicadorX3
 
 
 
-    }
+
 
     public Pregunta crearPregunta(){
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
