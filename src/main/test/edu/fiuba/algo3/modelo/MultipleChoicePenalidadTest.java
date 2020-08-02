@@ -6,162 +6,181 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class MultipleChoicePenalidadTest {
-    /*
+
     @Test
-    public void test05_1CrearMultipleChoiceConPenalidad() {
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, new Penalidad());
-        assertEquals(opcionesCorrectas, preguntaTest.verRespuestaCorrecta());
-    }
-    @Test
-    public void test05_2ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        Jugador jugador1 = new Jugador("");
-        Jugador jugador2 = new Jugador("");
+    public void test05_1ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("quizas",true);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Federico");
+        Jugador jugador2 = new Jugador("Sofia");
+
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion2);
 
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("totalmente");
-        opcionesJugador1.add("si");
-
-        ArrayList<String> opcionesJugador2 = new ArrayList<String>();
-        opcionesJugador2.add("no");
+        //Opciones elegidas por el Jugador 2.
+        ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+        opcionesJugador2.add(opcion5);
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
+
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
     @Test
     public void test05_3ResponderMultipleChoiceConPenalidadUnaRespuestaCorrectaDeDos(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        Jugador jugador1 = new Jugador("");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("quizas",true);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Federico");
+
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("si");
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
     }
     @Test
     public void test05_4ResponderMultipleChoiceConPenalidadUnaCorrectaYUnaErroneaDeDos(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("no");
-        todas.add("para nada");
-        Jugador jugador2 = new Jugador("Sofia");
+         Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("quizas",true);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Federico");
+
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        ArrayList<String> opcionesJugador2 = new ArrayList<String>();
-        opcionesJugador2.add("si");
-        opcionesJugador2.add("no");
-        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
-        respuestas.add(respuestaJugador2);
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion4);
+
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(0, jugador2.puntaje().getPuntaje());
+        assertEquals(0, jugador1.puntaje().getPuntaje());
     }
     @Test
     public void test05_5ResponderMultipleChoiceConPenalidadConDosJugadores(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("obvio");
-        todas.add("para nada");
-        todas.add("no");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("quizas",true);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Sofia");
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        opcionesCorrectas.add("obvio");
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion2);
+        opcionesJugador1.add(opcion4);
 
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("si");
-        opcionesJugador1.add("totalmente");
-        opcionesJugador1.add("para nada");
-
-        ArrayList<String> opcionesJugador2 = new ArrayList<String>();
-        opcionesJugador2.add("si");
-        opcionesJugador2.add("no");
-        opcionesJugador2.add("para nada");
+        //Opciones elegidas por el Jugador 2.
+        ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+        opcionesJugador2.add(opcion1);
+        opcionesJugador2.add(opcion4);
+        opcionesJugador2.add(opcion5);
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
+
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
     @Test
     public void test05_6ResponderMultipleChoiceConPenalidadUnaCorrectaYDosErroneasDeTres(){
-        ArrayList<String> todas = new ArrayList<String>();
-        todas.add("si");
-        todas.add("totalmente");
-        todas.add("obvio");
-        todas.add("para nada");
-        todas.add("no");
+        Opcion opcion1 = new Opcion("Si",true);
+        Opcion opcion2 = new Opcion("Totalmente",true);
+        Opcion opcion3 = new Opcion("quizas",true);
+        Opcion opcion4 = new Opcion("para nada",false);
+        Opcion opcion5 = new Opcion("nunca",false);
+
+        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        todas.add(opcion1);
+        todas.add(opcion2);
+        todas.add(opcion3);
+        todas.add(opcion4);
+        todas.add(opcion5);
+
         Jugador jugador1 = new Jugador("Federico");
+
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
-        ArrayList<String> opcionesCorrectas = new ArrayList<String>();
-        opcionesCorrectas.add("si");
-        opcionesCorrectas.add("totalmente");
-        opcionesCorrectas.add("obvio");
-        ArrayList<String> opcionesJugador1 = new ArrayList<String>();
-        opcionesJugador1.add("si");
-        opcionesJugador1.add("para nada");
-        opcionesJugador1.add("no");
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion4);
+        opcionesJugador1.add(opcion5);
+
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, opcionesCorrectas, conPenalidad);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-1, jugador1.puntaje().getPuntaje());
     }
-
-
-     */
 }
