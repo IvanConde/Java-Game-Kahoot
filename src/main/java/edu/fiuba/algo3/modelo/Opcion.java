@@ -8,6 +8,11 @@ public class Opcion {
 
     public Opcion(String stringOpcion, boolean esCorrecto){
         this.stringOpcion = stringOpcion;
+        this.esCorrecto = esCorrecto;
+    }
+
+    public Opcion(String stringOpcion){
+        this.stringOpcion = stringOpcion;
     }
 
     public boolean getEsCorrecto() {
