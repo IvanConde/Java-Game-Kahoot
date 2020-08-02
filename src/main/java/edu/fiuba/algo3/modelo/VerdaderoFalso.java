@@ -8,7 +8,7 @@ public class VerdaderoFalso extends Choice {
         int contadorCorrectas = 0;
         for(Opcion i : todas){
             if(i.getEsCorrecto()){
-                contadorCorrectas++;
+                contadorCorrectas += 1;
             }
         }
         if (contadorCorrectas > 1) {
