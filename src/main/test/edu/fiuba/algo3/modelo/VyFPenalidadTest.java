@@ -6,19 +6,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class VyFPenalidadTest {
-
     @Test
-    public void test02_1CrearVyFConPenalidad() {
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, new Penalidad());
-        assertEquals(todas, preguntaTest.verBotones());
-    }
-    @Test
-    public void test02_2ResponderVerdaderoYFlasoConPenalidadyAsignarPuntajesCorrectamente(){
+    public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX3yAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion opcionVerdadero = new Opcion("verdadero", true);
@@ -86,3 +75,4 @@ public class VyFPenalidadTest {
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
 }
+

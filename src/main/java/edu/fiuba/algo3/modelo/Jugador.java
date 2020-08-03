@@ -40,7 +40,7 @@ public class Jugador {
     }
 
     public void usarMultiplicadorX3(){
-        if(this.tieneMultiplicadorX2()){
+        if(this.tieneMultiplicadorX3()){
             puntaje.setMultiplicador(MULTIPLICADORX3);
         }
     }
