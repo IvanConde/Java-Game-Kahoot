@@ -32,8 +32,8 @@ public class Panel { // Panel es el modelo de un MVC
 
     public Pregunta crearPregunta(){
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion verdadero = new Opcion("verdadero", true);
-        Opcion falso = new Opcion("falso", false);
+        Opcion verdadero = new OpcionChoice("verdadero", true);
+        Opcion falso = new OpcionChoice("falso", false);
         todas.add(verdadero);
         todas.add(falso);
         Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Clasico());

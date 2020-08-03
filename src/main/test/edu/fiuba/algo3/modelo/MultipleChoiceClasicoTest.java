@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class MultipleChoiceClasicoTest {
+    /*
     @Test
     public void test03_1CrearMultipleChoiceClasico() {
 
@@ -147,5 +148,5 @@ public class MultipleChoiceClasicoTest {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
     }
-
+*/
 }

@@ -8,13 +8,13 @@ public class Jugador {
     private int multiplicadoresX2;
     private int multiplicadoresX3;
 
-
     public Jugador(String nombre){
         this.nombre = nombre;
         this.puntaje = new Puntaje();
         this.multiplicadoresX2 = 1;
         this.multiplicadoresX3 = 1;
     }
+
     public Puntaje puntaje(){
         return puntaje;
     }

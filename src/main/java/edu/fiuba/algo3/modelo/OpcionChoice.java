@@ -8,7 +8,22 @@ public class OpcionChoice extends Opcion{
         this.esCorrecto = esCorrecto;
     }
 
+/*
     public boolean chequearOpcion(){
         return esCorrecto;
     };
+*/
+    public boolean esCorrecto(){
+        return esCorrecto;
+    }
+
+    public void chequear(){
+        this.getLugar();
+    }
+
+    public int getLugar(){
+        return -1;
+    }
+
 }
+

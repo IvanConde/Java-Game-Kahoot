@@ -13,7 +13,7 @@ public class Penalidad extends Modalidad {
     public void calcularPuntaje(Respuesta respuesta){
         int puntos = 0;
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (opcionElegida.getEsCorrecto()) {
+            if (opcionElegida.esCorrecto()) {
                 puntos += modificadorCorrecto;
             } else {
                 puntos += modificadorIncorrecto;

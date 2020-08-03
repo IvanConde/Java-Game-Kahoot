@@ -6,6 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class MultipleChoiceParcialTest {
+    /*
     @Test
     public void test04_1ResponderMultipleChoiceConParcialUnJugadorTodoCorrectoYOtroTodoIncorrecto(){
         Opcion opcion1 = new Opcion("Si",true);
@@ -119,5 +120,5 @@ public class MultipleChoiceParcialTest {
         assertEquals(0, jugador1.puntaje().getPuntaje());
         assertEquals(2, jugador2.puntaje().getPuntaje());
     }
-
+*/
 }

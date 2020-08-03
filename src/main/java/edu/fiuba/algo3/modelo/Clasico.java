@@ -12,7 +12,7 @@ public class Clasico extends Modalidad {
     @Override
     public void calcularPuntaje(Respuesta respuesta){
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (!(opcionElegida.getEsCorrecto())) {
+            if (!(opcionElegida.esCorrecto())) {
                 return; //si hay una respuesta incorrecta no se asignan puntos.
             }
         }

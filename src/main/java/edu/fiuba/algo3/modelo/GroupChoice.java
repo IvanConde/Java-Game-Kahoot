@@ -13,7 +13,7 @@ public class GroupChoice extends Pregunta{
     protected void comprobarRespuesta(Respuesta respuesta) {
         ArrayList<Opcion> respuestasJugador = respuesta.verRespuestaJugador();
         for (Opcion opcion : respuestasJugador){
-            if(!opcion.estaOrdenado()){
+            if(!opcion.esCorrecto()){
                 respuesta.modificarPuntaje(modificadorPuntajeFracaso);
                 return;
             }

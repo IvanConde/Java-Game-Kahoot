@@ -10,15 +10,11 @@ public class OpcionGroup extends Opcion {
     }
 
     @Override
-    public boolean chequearOpcion(){
-        return (grupoOriginal == grupoJugador);
+    public boolean esCorrecto(){
+        return (grupoJugador == grupoOriginal);
     }
 
     public void setPosicionJugador(int grupoJugador) {
         this.grupoJugador = grupoJugador;
-    }
-
-    public int getposicionOriginal(){
-        return grupoOriginal;
     }
 }

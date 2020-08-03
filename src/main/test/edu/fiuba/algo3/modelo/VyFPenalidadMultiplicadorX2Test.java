@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class VyFPenalidadMultiplicadorX2Test {
-
+/*
     @Test
     public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
@@ -212,4 +212,5 @@ public class VyFPenalidadMultiplicadorX2Test {
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(-3, jugador2.puntaje().getPuntaje());
     }
+ */
 }

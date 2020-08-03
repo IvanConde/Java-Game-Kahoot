@@ -7,6 +7,5 @@ public abstract class Opcion {
         return stringOpcion;
     }
 
-    public abstract boolean chequearOpcion();
-
+    public abstract boolean esCorrecto();
 }
