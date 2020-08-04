@@ -6,13 +6,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class VyFPenalidadTest {
-    /*
     @Test
     public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX3yAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -31,8 +30,8 @@ public class VyFPenalidadTest {
     public void test02_3ResponderVerdaderoYFlasoConPenalidadyAsignarPuntajesIncorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -48,12 +47,12 @@ public class VyFPenalidadTest {
         assertEquals(-1, jugador1.puntaje().getPuntaje());
     }
     @Test
-    public void test02_4ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamente(){
+    public void test02_4ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamente() {
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -75,6 +74,5 @@ public class VyFPenalidadTest {
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(-1, jugador2.puntaje().getPuntaje());
     }
-     */
 }
 

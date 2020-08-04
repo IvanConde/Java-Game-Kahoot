@@ -6,12 +6,11 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 public class VyFSinPenalidadTest {
-    /*
     @Test
     public void test01_1CrearVyFSinPenalidad() {
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, new Clasico());
@@ -22,8 +21,8 @@ public class VyFSinPenalidadTest {
     public void test01_2ResponderVerdaderoYFlasoyAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -42,8 +41,8 @@ public class VyFSinPenalidadTest {
     public void test01_3ResponderVerdaderoYFlasoyAsignarPuntajesIncorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -63,8 +62,8 @@ public class VyFSinPenalidadTest {
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -90,8 +89,8 @@ public class VyFSinPenalidadTest {
     public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", true);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", true);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         assertThrows(VyFMasDeDosOpcionesException.class, () ->
@@ -99,6 +98,4 @@ public class VyFSinPenalidadTest {
         });
 
     }
-
-     */
 }

@@ -4,6 +4,7 @@ import java.util.ArrayList;
 public abstract class Pregunta {
     protected String pregunta;
     protected ArrayList<Opcion> todasLasOpciones;
+
     public Pregunta(String pregunta, ArrayList<Opcion> todasLasOpciones){
         this.todasLasOpciones = todasLasOpciones;
         this.pregunta = pregunta;

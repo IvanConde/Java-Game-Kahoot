@@ -6,8 +6,8 @@ public class VerdaderoFalso extends Choice {
     public VerdaderoFalso(String pregunta, ArrayList<Opcion> todasLasRespuestas, Modalidad penalidad) throws VyFMasDeDosOpcionesException {
         super(pregunta, todasLasRespuestas, penalidad);
         int contadorCorrectas = 0;
-        for(Opcion i : todasLasRespuestas){
-            if(i.esCorrecto()){
+        for(Opcion opcion : todasLasRespuestas){
+            if(opcion.esCorrecto()){
                 contadorCorrectas += 1;
             }
         }

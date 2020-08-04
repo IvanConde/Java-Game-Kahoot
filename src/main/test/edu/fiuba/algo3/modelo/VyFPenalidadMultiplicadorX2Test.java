@@ -6,14 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class VyFPenalidadMultiplicadorX2Test {
-/*
     @Test
     public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -33,8 +32,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -55,8 +54,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         jugador1.usarMultiplicadorX2();
         Jugador jugador2 = new Jugador("Jose");
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -84,8 +83,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         Jugador jugador2 = new Jugador("Jose");
         jugador2.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -114,8 +113,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         jugador1.usarMultiplicadorX2();
         jugador2.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -142,8 +141,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -164,8 +163,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -188,8 +187,8 @@ public class VyFPenalidadMultiplicadorX2Test {
         jugador1.usarMultiplicadorX2();
         jugador2.usarMultiplicadorX2();
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion opcionVerdadero = new Opcion("verdadero", true);
-        Opcion opcionFalso = new Opcion("falso", false);
+        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
+        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
         todas.add(opcionVerdadero);
         todas.add(opcionFalso);
 
@@ -212,5 +211,4 @@ public class VyFPenalidadMultiplicadorX2Test {
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(-3, jugador2.puntaje().getPuntaje());
     }
- */
 }

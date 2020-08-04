@@ -11,9 +11,8 @@ public class OrderedChoice extends Pregunta{
 
     @Override
     protected void comprobarRespuesta(Respuesta respuesta) {
-        ArrayList<Opcion> opcionesJugador = respuesta.verRespuestaJugador();
-        for (Opcion opcion : opcionesJugador) {
-            if (opcion.esCorrecto()) {
+        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
+            if (!opcionElegida.esCorrecto()) {
                 respuesta.modificarPuntaje(modificadorPuntajeFracaso);
                 return;
             }

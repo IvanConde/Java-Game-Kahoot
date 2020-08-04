@@ -14,7 +14,12 @@ public class OpcionGroup extends Opcion {
         return (grupoJugador == grupoOriginal);
     }
 
-    public void setPosicionJugador(int grupoJugador) {
+    public int getGrupoOriginal() {
+        return grupoOriginal;
+    }
+
+    public void elegirGrupo(int grupoJugador){
         this.grupoJugador = grupoJugador;
     }
+
 }

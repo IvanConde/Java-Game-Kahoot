@@ -6,16 +6,14 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 public class MultipleChoiceClasicoTest {
-    /*
     @Test
     public void test03_1CrearMultipleChoiceClasico() {
 
-
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("no",false);
-        Opcion opcion4 = new Opcion("para nada",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("no",false);
+        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -40,11 +38,11 @@ public class MultipleChoiceClasicoTest {
 
     @Test
     public void test03_2ResponderMultipleChoiceyAsignarPuntajesCorrectamente(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("no",false);
-        Opcion opcion4 = new Opcion("para nada",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("no",false);
+        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -86,11 +84,11 @@ public class MultipleChoiceClasicoTest {
 
     @Test
     public void test03_3ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaDeDosBien(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("no",false);
-        Opcion opcion4 = new Opcion("para nada",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("no",false);
+        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -119,11 +117,11 @@ public class MultipleChoiceClasicoTest {
     }
     @Test
     public void test03_4ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConUnaTodasBienYUnaMal(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("no",false);
-        Opcion opcion4 = new Opcion("para nada",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("no",false);
+        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -148,5 +146,4 @@ public class MultipleChoiceClasicoTest {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
     }
-*/
 }

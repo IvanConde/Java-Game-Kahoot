@@ -6,14 +6,13 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.ArrayList;
 public class MultipleChoiceParcialTest {
-    /*
     @Test
     public void test04_1ResponderMultipleChoiceConParcialUnJugadorTodoCorrectoYOtroTodoIncorrecto(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("quizas",true);
-        Opcion opcion4 = new Opcion("para nada",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
+        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -51,11 +50,11 @@ public class MultipleChoiceParcialTest {
     }
     @Test
     public void test04_2ResponderMultipleChoiceConParcialUnJugadorParcialmenteCorrecto(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("quizas",false);
-        Opcion opcion4 = new Opcion("no",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("quizas",false);
+        OpcionChoice opcion4 = new OpcionChoice("no",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -82,11 +81,11 @@ public class MultipleChoiceParcialTest {
     }
     @Test
     public void test04_3ResponderMultipleChoiceConParcialConDosJugadores(){
-        Opcion opcion1 = new Opcion("Si",true);
-        Opcion opcion2 = new Opcion("Totalmente",true);
-        Opcion opcion3 = new Opcion("quizas",false);
-        Opcion opcion4 = new Opcion("no",false);
-        Opcion opcion5 = new Opcion("nunca",false);
+        OpcionChoice opcion1 = new OpcionChoice("Si",true);
+        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
+        OpcionChoice opcion3 = new OpcionChoice("quizas",false);
+        OpcionChoice opcion4 = new OpcionChoice("no",false);
+        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         todas.add(opcion1);
@@ -120,5 +119,4 @@ public class MultipleChoiceParcialTest {
         assertEquals(0, jugador1.puntaje().getPuntaje());
         assertEquals(2, jugador2.puntaje().getPuntaje());
     }
-*/
 }

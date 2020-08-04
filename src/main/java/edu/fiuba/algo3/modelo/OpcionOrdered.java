@@ -19,10 +19,6 @@ public class OpcionOrdered extends Opcion {
         return (posicionOriginal == posicionJugador);
     }
 
-    public void setPosicionJugador(int posicionJugador) {
-        this.posicionJugador = posicionJugador;
-    }
-
     public int getPosicionOriginal(){
         return posicionOriginal;
     }
