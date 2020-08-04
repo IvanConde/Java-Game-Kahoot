@@ -1,25 +1,25 @@
-
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 import java.util.ArrayList;
+
 public class MultipleChoiceParcialTest {
+
     @Test
     public void test04_1ResponderMultipleChoiceConParcialUnJugadorTodoCorrectoYOtroTodoIncorrecto(){
+
         OpcionChoice opcion1 = new OpcionChoice("Si",true);
         OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
         OpcionChoice opcion3 = new OpcionChoice("quizas",true);
         OpcionChoice opcion4 = new OpcionChoice("para nada",false);
         OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        todas.add(opcion1);
-        todas.add(opcion2);
-        todas.add(opcion3);
-        todas.add(opcion4);
-        todas.add(opcion5);
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
 
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Sofia");
@@ -43,25 +43,28 @@ public class MultipleChoiceParcialTest {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         Parcial conPenalidadParcial = new Parcial();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidadParcial);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(0, jugador2.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test04_2ResponderMultipleChoiceConParcialUnJugadorParcialmenteCorrecto(){
+
         OpcionChoice opcion1 = new OpcionChoice("Si",true);
         OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
         OpcionChoice opcion3 = new OpcionChoice("quizas",false);
         OpcionChoice opcion4 = new OpcionChoice("no",false);
         OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        todas.add(opcion1);
-        todas.add(opcion2);
-        todas.add(opcion3);
-        todas.add(opcion4);
-        todas.add(opcion5);
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
 
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Sofia");
@@ -75,24 +78,27 @@ public class MultipleChoiceParcialTest {
         respuestas.add(respuestaJugador1);
 
         Parcial conPenalidadParcial = new Parcial();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidadParcial);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test04_3ResponderMultipleChoiceConParcialConDosJugadores(){
+
         OpcionChoice opcion1 = new OpcionChoice("Si",true);
         OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
         OpcionChoice opcion3 = new OpcionChoice("quizas",false);
         OpcionChoice opcion4 = new OpcionChoice("no",false);
         OpcionChoice opcion5 = new OpcionChoice("nunca",false);
 
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        todas.add(opcion1);
-        todas.add(opcion2);
-        todas.add(opcion3);
-        todas.add(opcion4);
-        todas.add(opcion5);
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
 
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Sofia");
@@ -105,7 +111,6 @@ public class MultipleChoiceParcialTest {
         opcionesJugador2.add(opcion1);
         opcionesJugador2.add(opcion2);
 
-
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
 
@@ -114,9 +119,10 @@ public class MultipleChoiceParcialTest {
         respuestas.add(respuestaJugador2);
 
         Parcial conPenalidadParcial = new Parcial();
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todas, conPenalidadParcial);
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
         assertEquals(2, jugador2.puntaje().getPuntaje());
     }
+
 }

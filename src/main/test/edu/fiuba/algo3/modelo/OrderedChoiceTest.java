@@ -1,14 +1,13 @@
 package edu.fiuba.algo3.modelo;
-
 import org.junit.jupiter.api.Test;
-
 import java.util.ArrayList;
-
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class OrderedChoiceTest {
+
     @Test
     public void test06_1SeCreaOrderedChoiceConOpcionesOrdenadasCorrectamente(){
+
         //Ordenar de mayor a menor
         OpcionOrdered opcion1 = new OpcionOrdered("4",0);
         OpcionOrdered opcion2 = new OpcionOrdered("7",1);
@@ -45,9 +44,12 @@ public class OrderedChoiceTest {
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(1,jugador.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test06_2OrderedChoiceConAlgunasOrdenadasCorrectamente(){
+
         //Ordenar de mayor a menor
         OpcionOrdered opcion1 = new OpcionOrdered("4",0);
         OpcionOrdered opcion2 = new OpcionOrdered("7",1);
@@ -84,9 +86,12 @@ public class OrderedChoiceTest {
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0,jugador.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test06_3OrderedChoiceConDosJugadoresConUnoTodasCorrectasYOtrasTodasIncorrectas(){
+
         //Ordenar de mayor a menor
         OpcionOrdered opcion1 = new OpcionOrdered("4",0);
         OpcionOrdered opcion2 = new OpcionOrdered("7",1);
@@ -141,6 +146,7 @@ public class OrderedChoiceTest {
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0,jugador1.puntaje().getPuntaje());
+
     }
 
 }
