@@ -1,13 +1,15 @@
 package edu.fiuba.algo3.modelo;
-
 import java.util.ArrayList;
 
 //Asigna un punto a cada jugador por cada opción correcta que
 //seleccione (aunque no seleccione todas las correctas), siempre y
 //cuando no haya seleccionado ninguna de las opciones
 //incorrectas.
+
 public class Parcial extends Modalidad {
+
     private int modificadorCorrecto;
+
     public Parcial() {
         modificadorCorrecto = 1;
     }
@@ -23,4 +25,5 @@ public class Parcial extends Modalidad {
         }
         respuesta.modificarPuntaje(puntos);
     }
+
 }

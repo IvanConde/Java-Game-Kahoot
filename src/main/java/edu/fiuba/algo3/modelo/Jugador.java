@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 public class Jugador {
+
     static final int MULTIPLICADORX2 = 2;
     static final int MULTIPLICADORX3 = 3;
     private Puntaje puntaje;
@@ -44,4 +45,5 @@ public class Jugador {
             puntaje.setMultiplicador(MULTIPLICADORX3);
         }
     }
+
 }

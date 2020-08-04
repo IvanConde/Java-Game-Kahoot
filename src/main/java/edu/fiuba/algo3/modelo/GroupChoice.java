@@ -1,12 +1,13 @@
 package edu.fiuba.algo3.modelo;
-
 import java.util.ArrayList;
 
 public class GroupChoice extends Pregunta{
+
     private int modificadorPuntajeExito = 1;
     private int modificadorPuntajeFracaso = 0;
-    public GroupChoice(String pregunta, ArrayList<Opcion> todas) {
-        super(pregunta, todas);
+
+    public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
+        super(pregunta, todasLasOpciones);
     }
 
     @Override
@@ -20,4 +21,5 @@ public class GroupChoice extends Pregunta{
         }
         respuesta.modificarPuntaje(modificadorPuntajeExito);
     }
+
 }

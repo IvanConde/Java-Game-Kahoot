@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 public class OpcionChoice extends Opcion{
+
     private boolean esCorrecto;
 
     public OpcionChoice(String stringOpcion, boolean esCorrecto){
@@ -12,13 +13,4 @@ public class OpcionChoice extends Opcion{
         return esCorrecto;
     }
 
-    public void chequear(){
-        this.getLugar();
-    }
-
-    public int getLugar(){
-        return -1;
-    }
-
 }
-

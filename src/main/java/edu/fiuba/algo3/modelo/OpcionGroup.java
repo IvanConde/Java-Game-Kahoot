@@ -1,12 +1,18 @@
 package edu.fiuba.algo3.modelo;
 
 public class OpcionGroup extends Opcion {
+
     private int grupoOriginal;
     private int grupoJugador;
 
     public OpcionGroup(String stringOpcion, int grupoOriginal){
         this.stringOpcion = stringOpcion;
         this.grupoOriginal = grupoOriginal;
+    }
+
+    public OpcionGroup(String stringOpcion, int grupoOriginal, int grupoJugador){
+        this(stringOpcion, grupoOriginal);
+        this.grupoJugador = grupoJugador;
     }
 
     @Override
@@ -16,10 +22,6 @@ public class OpcionGroup extends Opcion {
 
     public int getGrupoOriginal() {
         return grupoOriginal;
-    }
-
-    public void elegirGrupo(int grupoJugador){
-        this.grupoJugador = grupoJugador;
     }
 
 }

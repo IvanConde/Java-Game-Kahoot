@@ -27,11 +27,11 @@ public class GroupChoiceTest {
         opciones.add(opcion5);
 
         ArrayList<Opcion> opcionesJugador = new ArrayList<Opcion>();
-        OpcionOrdered opcion1Jugador = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 0);
-        OpcionOrdered opcion2Jugador = new OpcionOrdered(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 1);
-        OpcionOrdered opcion3Jugador = new OpcionOrdered(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 0);
-        OpcionOrdered opcion4Jugador = new OpcionOrdered(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 1);
-        OpcionOrdered opcion5Jugador = new OpcionOrdered(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
+        OpcionGroup opcion1Jugador = new OpcionGroup(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 0);
+        OpcionGroup opcion2Jugador = new OpcionGroup(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 1);
+        OpcionGroup opcion3Jugador = new OpcionGroup(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 0);
+        OpcionGroup opcion4Jugador = new OpcionGroup(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 1);
+        OpcionGroup opcion5Jugador = new OpcionGroup(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
 
         opcionesJugador.add(opcion1Jugador);
         opcionesJugador.add(opcion2Jugador);
@@ -69,11 +69,11 @@ public class GroupChoiceTest {
         opciones.add(opcion5);
 
         ArrayList<Opcion> opcionesJugador = new ArrayList<Opcion>();
-        OpcionOrdered opcion1Jugador = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 0);
-        OpcionOrdered opcion2Jugador = new OpcionOrdered(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 1);
-        OpcionOrdered opcion3Jugador = new OpcionOrdered(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 1);
-        OpcionOrdered opcion4Jugador = new OpcionOrdered(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 0);
-        OpcionOrdered opcion5Jugador = new OpcionOrdered(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
+        OpcionGroup opcion1Jugador = new OpcionGroup(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 1);
+        OpcionGroup opcion2Jugador = new OpcionGroup(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 0);
+        OpcionGroup opcion3Jugador = new OpcionGroup(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 0);
+        OpcionGroup opcion4Jugador = new OpcionGroup(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 1);
+        OpcionGroup opcion5Jugador = new OpcionGroup(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
 
         opcionesJugador.add(opcion1Jugador);
         opcionesJugador.add(opcion2Jugador);
@@ -113,11 +113,11 @@ public class GroupChoiceTest {
         opciones.add(opcion5);
 
         ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
-        OpcionOrdered opcion1Jugador1 = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 1);
-        OpcionOrdered opcion2Jugador1 = new OpcionOrdered(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 0);
-        OpcionOrdered opcion3Jugador1 = new OpcionOrdered(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 1);
-        OpcionOrdered opcion4Jugador1 = new OpcionOrdered(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 0);
-        OpcionOrdered opcion5Jugador1 = new OpcionOrdered(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 1);
+        OpcionGroup opcion1Jugador1 = new OpcionGroup(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 0);
+        OpcionGroup opcion2Jugador1 = new OpcionGroup(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 1);
+        OpcionGroup opcion3Jugador1 = new OpcionGroup(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 0);
+        OpcionGroup opcion4Jugador1 = new OpcionGroup(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 1);
+        OpcionGroup opcion5Jugador1 = new OpcionGroup(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
 
         opcionesJugador1.add(opcion1Jugador1);
         opcionesJugador1.add(opcion2Jugador1);
@@ -127,11 +127,11 @@ public class GroupChoiceTest {
 
 
         ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
-        OpcionOrdered opcion1Jugador2 = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 0);
-        OpcionOrdered opcion2Jugador2 = new OpcionOrdered(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 1);
-        OpcionOrdered opcion3Jugador2 = new OpcionOrdered(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 0);
-        OpcionOrdered opcion4Jugador2 = new OpcionOrdered(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 1);
-        OpcionOrdered opcion5Jugador2 = new OpcionOrdered(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 0);
+        OpcionGroup opcion1Jugador2 = new OpcionGroup(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 1);
+        OpcionGroup opcion2Jugador2 = new OpcionGroup(opcion2.getStringOpcion(), opcion2.getGrupoOriginal(), 0);
+        OpcionGroup opcion3Jugador2 = new OpcionGroup(opcion3.getStringOpcion(), opcion3.getGrupoOriginal(), 1);
+        OpcionGroup opcion4Jugador2 = new OpcionGroup(opcion4.getStringOpcion(), opcion4.getGrupoOriginal(), 0);
+        OpcionGroup opcion5Jugador2 = new OpcionGroup(opcion5.getStringOpcion(), opcion5.getGrupoOriginal(), 1);
 
         opcionesJugador1.add(opcion1Jugador2);
         opcionesJugador1.add(opcion2Jugador2);
@@ -152,4 +152,5 @@ public class GroupChoiceTest {
         assertEquals(0,jugador1.puntaje().getPuntaje());
         assertEquals(1,jugador2.puntaje().getPuntaje());
     }
+
 }

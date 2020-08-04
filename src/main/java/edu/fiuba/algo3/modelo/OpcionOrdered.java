@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
 public class OpcionOrdered extends Opcion {
+
     private int posicionOriginal;
     private int posicionJugador;
 
@@ -21,10 +22,6 @@ public class OpcionOrdered extends Opcion {
 
     public int getPosicionOriginal(){
         return posicionOriginal;
-    }
-
-    public void elegirPosicion(int posicionJugador){
-        this.posicionJugador = posicionJugador;
     }
 
 }

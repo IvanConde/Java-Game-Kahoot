@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 import java.util.ArrayList;
 
 public abstract class Pregunta {
+
     protected String pregunta;
     protected ArrayList<Opcion> todasLasOpciones;
 
@@ -15,12 +16,13 @@ public abstract class Pregunta {
     }
 
     protected abstract void comprobarRespuesta(Respuesta respuesta);
-    public String verPregunta(){ return pregunta;}
+
+    public String verPregunta(){
+        return pregunta;
+    }
 
     public ArrayList<Opcion> verBotones(){
         return todasLasOpciones;
     }
 
-
 }
-

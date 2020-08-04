@@ -1,10 +1,11 @@
 package edu.fiuba.algo3.modelo;
-
 import java.util.ArrayList;
 
 public class OrderedChoice extends Pregunta{
+
     private int modificadorPuntajeExito = 1;
     private int modificadorPuntajeFracaso = 0;
+
     public OrderedChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
         super(pregunta, todasLasOpciones);
     }
@@ -19,4 +20,5 @@ public class OrderedChoice extends Pregunta{
         }
         respuesta.modificarPuntaje(modificadorPuntajeExito);
     }
+
 }
