@@ -20,6 +20,7 @@ import java.util.TimerTask;
 public class Controlador {
     Vista ventana;
     Panel panel;
+    Timeline contadorPantallaActual;
     public void comienzo(Stage stage){
         this.ventana = new Vista(stage, this);
         this.panel = new Panel();
@@ -53,21 +54,33 @@ public class Controlador {
     }
     public void controlarPreguntas(){
         Pregunta pregunta = this.generarpregunta();
-        ventana.mostrarPregunta(pregunta);
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new EventHandler<ActionEvent>() {
+        ventana.mostrarPregunta(pregunta, panel.nombreJugador(1));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() {
 
             private int i = 1;
 
             @Override
             public void handle(ActionEvent event) {
-                ventana.mostrarPregunta(pregunta);
+                System.out.println(contadorPantallaActual.getCycleCount());
+                ventana.mostrarPregunta(pregunta, panel.nombreJugador(2));
                 i++;
             }
         }));
+        contadorPantallaActual = timeline;
         timeline.setCycleCount(1);
         timeline.play();
     }
     public Pregunta generarpregunta(){
         return this.panel.crearPregunta();
+    }
+    public void argregarABotonDetenerTimer(Button boton){
+        boton.setOnAction(new EventHandler<ActionEvent>() {
+            @Override public void handle(ActionEvent e) {
+                if(contadorPantallaActual.getCycleCount() == 1) {
+                    contadorPantallaActual.jumpTo(Duration.millis(30001));
+                }
+                ventana.pantallaFinal();
+            }
+        });
     }
 }

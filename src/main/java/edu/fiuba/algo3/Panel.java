@@ -33,11 +33,21 @@ public class Panel { // Panel es el modelo de un MVC
     public Pregunta crearPregunta(){
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion verdadero = new OpcionChoice("verdadero", true);
+        Opcion verdader = new OpcionChoice("ya te dije verdadero flaco", true);
         Opcion falso = new OpcionChoice("falso", false);
+        Opcion fals = new OpcionChoice("cuantas veces te tengo que decir que no te voy a ********", false);
         todas.add(verdadero);
+        todas.add(verdader);
         todas.add(falso);
-        Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Clasico());
+        todas.add(fals);
+        Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Clasico());
         this.preguntaActual = vyf;
         return vyf;
+    }
+    public String nombreJugador(int cualJugador){
+        if(cualJugador == 1){
+            return jugador1.verNombre();
+        }
+        return jugador2.verNombre();
     }
 }

@@ -1,5 +1,6 @@
 package edu.fiuba.algo3;
 
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
@@ -33,16 +34,29 @@ public class Vista {
     public void juego(){
             control.controlarPreguntas();
     }
-    public void mostrarPregunta(Pregunta pregunta){
+    public void mostrarPregunta(Pregunta pregunta, String nombreJugador){
+        Label nombreJugadorLabel = new Label("Responde " + nombreJugador);
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         ArrayList<Opcion> opciones = pregunta.verBotones();
         VBox layoutJuego = new VBox();
+        layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
         for(Opcion i : opciones){
             Button botonOpcion = new Button(i.getStringOpcion());
             control.agregarAccionBotonOpcion(botonOpcion, i.getStringOpcion());
             layoutJuego.getChildren().add(botonOpcion);
         }
+        Button botonContestar = new Button("contestar");
+        control.argregarABotonDetenerTimer(botonContestar);
+        layoutJuego.getChildren().add(botonContestar);
+        sceneJuego = new Scene(layoutJuego, 640, 480);
+        window.setScene(sceneJuego);
+    }
+
+    public void pantallaFinal(){
+        Label gracias = new Label("gracias");
+        VBox layoutJuego = new VBox();
+        layoutJuego.getChildren().add(gracias);
         sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
     }

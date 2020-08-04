@@ -26,4 +26,8 @@ public class Jugador {
         puntaje.setMultiplicador(multiplicadorX3);
     }
 
+    public String verNombre(){
+        return this.nombre;
+    }
+
 }
