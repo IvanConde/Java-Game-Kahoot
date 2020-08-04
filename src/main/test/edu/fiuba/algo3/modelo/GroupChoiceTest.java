@@ -3,11 +3,11 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-
-
 public class GroupChoiceTest {
+
     @Test
     public void test06_1SeCreaGroupChoiceConOpcionesEnGruposCorrectos(){
+
         //Ordenar en los grupos:
         //Grupo 0 = numeros primos
         //Grupo 1 = numeros no primos
@@ -16,7 +16,6 @@ public class GroupChoiceTest {
         OpcionGroup opcion3 = new OpcionGroup("13",0);
         OpcionGroup opcion4 = new OpcionGroup("12",1);
         OpcionGroup opcion5 = new OpcionGroup("17",0);
-
 
         Jugador jugador = new Jugador("Ivan");
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
@@ -47,9 +46,12 @@ public class GroupChoiceTest {
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(1,jugador.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test06_2GroupChoiceConAlgunasOrdenadasCorrectamente() {
+
         //Ordenar en los grupos:
         //Grupo 0 = numeros primos
         //Grupo 1 = numeros no primos
@@ -58,7 +60,6 @@ public class GroupChoiceTest {
         OpcionGroup opcion3 = new OpcionGroup("13", 0);
         OpcionGroup opcion4 = new OpcionGroup("12", 1);
         OpcionGroup opcion5 = new OpcionGroup("17", 0);
-
 
         Jugador jugador = new Jugador("Ivan");
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
@@ -90,8 +91,10 @@ public class GroupChoiceTest {
 
         assertEquals(0, jugador.puntaje().getPuntaje());
     }
+
     @Test
     public void test06_3OrderedChoiceConDosJugadoresConUnoTodasCorrectasYOtrasTodasIncorrectas(){
+
         //Ordenar en los grupos:
         //Grupo 0 = numeros primos
         //Grupo 1 = numeros no primos
@@ -100,7 +103,6 @@ public class GroupChoiceTest {
         OpcionGroup opcion3 = new OpcionGroup("13",0);
         OpcionGroup opcion4 = new OpcionGroup("12",1);
         OpcionGroup opcion5 = new OpcionGroup("17",0);
-
 
         Jugador jugador1 = new Jugador("Ivan");
         Jugador jugador2 = new Jugador("Enrique");
@@ -124,7 +126,6 @@ public class GroupChoiceTest {
         opcionesJugador1.add(opcion3Jugador1);
         opcionesJugador1.add(opcion4Jugador1);
         opcionesJugador1.add(opcion5Jugador1);
-
 
         ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
         OpcionGroup opcion1Jugador2 = new OpcionGroup(opcion1.getStringOpcion(), opcion1.getGrupoOriginal(), 1);
@@ -151,6 +152,7 @@ public class GroupChoiceTest {
 
         assertEquals(0,jugador1.puntaje().getPuntaje());
         assertEquals(1,jugador2.puntaje().getPuntaje());
+
     }
 
 }

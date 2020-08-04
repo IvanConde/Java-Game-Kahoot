@@ -1,20 +1,20 @@
-
 package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
-
 import java.util.ArrayList;
+
 public class VyFPenalidadMultiplicadorX2Test {
+
     @Test
-    public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
+    public void test06_1ResponderVerdaderoYFalsoConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
+
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Opcion> opcionJugador1 = new ArrayList<Opcion>();
@@ -23,19 +23,22 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_2ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2yAsignarPuntajesIncorrectamente(){
+    public void test06_2ResponderVerdaderoYFalsoConPenalidadyMultiplicadorX2yAsignarPuntajesIncorrectamente(){
+
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Opcion> opcionJugador1 = new ArrayList<Opcion>();
@@ -44,20 +47,23 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-2, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_3ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2SoloCorrecto(){
+    public void test06_3ResponderVerdaderoYFalsoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2SoloCorrecto(){
+
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
         Jugador jugador2 = new Jugador("Jose");
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -72,21 +78,24 @@ public class VyFPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(-1, jugador2.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_4ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2SoloIncorrecto(){
+    public void test06_4ResponderVerdaderoYFalsoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2SoloIncorrecto(){
+
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         jugador2.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -101,22 +110,25 @@ public class VyFPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
         assertEquals(-2, jugador2.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_5ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2Ambos(){
+    public void test06_5ResponderVerdaderoYFalsoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2Ambos(){
+
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         jugador1.usarMultiplicadorX2();
         jugador2.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -131,20 +143,23 @@ public class VyFPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(-2, jugador2.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_6ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2RespondeDosVecesYSoloSeMultiplicaPuntajeDeLaPrimerRespuesta(){
+    public void test06_6ResponderVerdaderoYFalsoConPenalidadyMultiplicadorX2RespondeDosVecesYSoloSeMultiplicaPuntajeDeLaPrimerRespuesta(){
+
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Opcion> opcionJugador1 = new ArrayList<Opcion>();
@@ -153,20 +168,23 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_7ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX2yAsignarPuntajesIncorrectamenteDosVecesSoloMultiplicaElPrimero(){
+    public void test06_7ResponderVerdaderoYFalsoConPenalidadyMultiplicadorX2yAsignarPuntajesIncorrectamenteDosVecesSoloMultiplicaElPrimero(){
+
         Jugador jugador1 = new Jugador("Federico");
         jugador1.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
         ArrayList<Opcion> opcionJugador1 = new ArrayList<Opcion>();
@@ -175,22 +193,25 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
-    public void test06_8ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2AmbosRespondenDosVecesSoloMultiplicaElPrimero(){
+    public void test06_8ResponderVerdaderoYFalsoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX2AmbosRespondenDosVecesSoloMultiplicaElPrimero(){
+
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         jugador1.usarMultiplicadorX2();
         jugador2.usarMultiplicadorX2();
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
         OpcionChoice opcionFalso = new OpcionChoice("falso", false);
-        todas.add(opcionVerdadero);
-        todas.add(opcionFalso);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
 
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
 
@@ -205,10 +226,12 @@ public class VyFPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         Penalidad conPenalidad = new Penalidad();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todas, conPenalidad);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(-3, jugador2.puntaje().getPuntaje());
+
     }
+
 }
