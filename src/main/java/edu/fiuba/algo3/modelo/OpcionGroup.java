@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class OpcionGroup extends Opcion {
 
     private int grupoOriginal;
@@ -13,6 +15,10 @@ public class OpcionGroup extends Opcion {
     public OpcionGroup(String stringOpcion, int grupoOriginal, int grupoJugador){
         this(stringOpcion, grupoOriginal);
         this.grupoJugador = grupoJugador;
+    }
+
+    public void elegirGrupo(int grupoJugador, ArrayList<Opcion> opcionesJugador) {
+        opcionesJugador.add(new OpcionGroup(this.stringOpcion, this.grupoOriginal, grupoJugador));
     }
 
     @Override

@@ -1,5 +1,7 @@
 package edu.fiuba.algo3.modelo;
 
+import java.util.ArrayList;
+
 public class OpcionOrdered extends Opcion {
 
     private int posicionOriginal;
@@ -13,6 +15,10 @@ public class OpcionOrdered extends Opcion {
     public OpcionOrdered(String stringOpcion, int posicionOriginal, int posicionJugador){
         this(stringOpcion, posicionOriginal);
         this.posicionJugador = posicionJugador;
+    }
+
+    public void elegirPosicion(int posicionJugador, ArrayList<Opcion> opcionesJugador) {
+        opcionesJugador.add(new OpcionGroup(this.stringOpcion, this.posicionOriginal, posicionJugador));
     }
 
     @Override
