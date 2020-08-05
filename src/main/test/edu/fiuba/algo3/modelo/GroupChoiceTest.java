@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GroupChoiceTest {
 
@@ -47,7 +48,7 @@ public class GroupChoiceTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
 
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(1,jugador.puntaje().getPuntaje());
@@ -96,14 +97,14 @@ public class GroupChoiceTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
 
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0, jugador.puntaje().getPuntaje());
     }
 
     @Test
-    public void test06_3OrderedChoiceConDosJugadoresConUnoTodasCorrectasYOtrasTodasIncorrectas(){
+    public void test06_3GroupChoiceConDosJugadoresConUnoTodasCorrectasYOtrasTodasIncorrectas(){
 
         //Ordenar en los grupos:
         //Grupo 0 = numeros primos
@@ -168,12 +169,31 @@ public class GroupChoiceTest {
         respuestas.add(respuesta1);
         respuestas.add(respuesta2);
 
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0,jugador1.puntaje().getPuntaje());
         assertEquals(1,jugador2.puntaje().getPuntaje());
 
+    }
+
+    @Test
+    public void test06_4GroupChoiceConPenalidadLanzaExcepcion(){
+        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
+
+        assertThrows(GroupChoiceModalidadInvalidaException.class,() -> {
+            GroupChoice preguntaTest = new GroupChoice("Ordenar de menor a mayor", opciones, new Penalidad());
+        });
+    }
+
+
+    @Test
+    public void test06_5GroupChoiceConModalidadpParcialLanzaExcepcion(){
+        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
+
+        assertThrows(GroupChoiceModalidadInvalidaException.class,() -> {
+            GroupChoice preguntaTest = new GroupChoice("Ordenar de menor a mayor", opciones, new Parcial());
+        });
     }
 
 }

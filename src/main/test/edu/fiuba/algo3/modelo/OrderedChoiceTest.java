@@ -2,6 +2,7 @@ package edu.fiuba.algo3.modelo;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class OrderedChoiceTest {
 
@@ -29,7 +30,8 @@ public class OrderedChoiceTest {
         opcion3.elegirPosicion(2, opcionesJugador);
         opcion4.elegirPosicion(3, opcionesJugador);
         opcion5.elegirPosicion(4, opcionesJugador);
-        /*OpcionOrdered opcion1Jugador = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getPosicionOriginal(), 0);
+        /*
+        OpcionOrdered opcion1Jugador = new OpcionOrdered(opcion1.getStringOpcion(), opcion1.getPosicionOriginal(), 0);
         OpcionOrdered opcion2Jugador = new OpcionOrdered(opcion2.getStringOpcion(), opcion2.getPosicionOriginal(), 1);
         OpcionOrdered opcion3Jugador = new OpcionOrdered(opcion3.getStringOpcion(), opcion3.getPosicionOriginal(), 2);
         OpcionOrdered opcion4Jugador = new OpcionOrdered(opcion4.getStringOpcion(), opcion4.getPosicionOriginal(), 3);
@@ -39,13 +41,14 @@ public class OrderedChoiceTest {
         opcionesJugador.add(opcion2Jugador);
         opcionesJugador.add(opcion3Jugador);
         opcionesJugador.add(opcion4Jugador);
-        opcionesJugador.add(opcion5Jugador);*/
+        opcionesJugador.add(opcion5Jugador);
+        */
 
         Respuesta respuesta = new Respuesta(opcionesJugador,jugador.puntaje());
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
 
-        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones);
+        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(1,jugador.puntaje().getPuntaje());
@@ -92,7 +95,7 @@ public class OrderedChoiceTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
 
-        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones);
+        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0,jugador.puntaje().getPuntaje());
@@ -162,12 +165,32 @@ public class OrderedChoiceTest {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones);
+        OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones,new Clasico());
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0,jugador1.puntaje().getPuntaje());
         assertEquals(1, jugador2.puntaje().getPuntaje());
 
     }
+
+    @Test
+    public void test06_4OrderedChoiceConPenalidadLanzaExcepcion(){
+        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
+
+        assertThrows(OrderedChoiceModalidadInvalidaException.class,() -> {
+            OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Penalidad());
+        });
+    }
+
+
+    @Test
+    public void test06_5OrderedChoiceConModalidadpParcialLanzaExcepcion(){
+        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
+
+        assertThrows(OrderedChoiceModalidadInvalidaException.class,() -> {
+            OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Parcial());
+        });
+    }
+
 
 }

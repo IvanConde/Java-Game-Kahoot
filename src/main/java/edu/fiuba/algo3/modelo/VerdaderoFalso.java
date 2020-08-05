@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class VerdaderoFalso extends Choice {
 
-    public VerdaderoFalso(String pregunta, ArrayList<Opcion> todasLasRespuestas, Modalidad penalidad) throws VyFMasDeDosOpcionesException {
-        super(pregunta, todasLasRespuestas, penalidad);
+    public VerdaderoFalso(String pregunta, ArrayList<Opcion> todasLasRespuestas, Modalidad modalidad) throws VyFMasDeDosOpcionesException {
+        super(pregunta, todasLasRespuestas, modalidad);
         int contadorCorrectas = 0;
         for(Opcion opcion : todasLasRespuestas){
             if(opcion.esCorrecto()){

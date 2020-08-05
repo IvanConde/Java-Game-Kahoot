@@ -3,8 +3,8 @@ import java.util.ArrayList;
 
 public class MultipleChoice extends Choice {
 
-    public MultipleChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad penalidad) {
-        super(pregunta, todasLasOpciones, penalidad);
+    public MultipleChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
+        super(pregunta, todasLasOpciones, modalidad);
     }
 
 }

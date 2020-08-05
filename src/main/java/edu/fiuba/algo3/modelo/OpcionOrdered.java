@@ -18,7 +18,7 @@ public class OpcionOrdered extends Opcion {
     }
 
     public void elegirPosicion(int posicionJugador, ArrayList<Opcion> opcionesJugador) {
-        opcionesJugador.add(new OpcionGroup(this.stringOpcion, this.posicionOriginal, posicionJugador));
+        opcionesJugador.add(new OpcionOrdered(this.stringOpcion, this.posicionOriginal, posicionJugador));
     }
 
     @Override

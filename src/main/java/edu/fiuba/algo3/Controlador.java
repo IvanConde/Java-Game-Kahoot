@@ -38,9 +38,9 @@ public class Controlador {
         EventHandler<KeyEvent> enterentexto = new EventHandler<KeyEvent>()
         {
             @Override
-            public void handle(KeyEvent ke)
+            public void handle(KeyEvent key)
             {
-                if (ke.getCode().equals(KeyCode.ENTER)) {
+                if (key.getCode().equals(KeyCode.ENTER)) {
                     textoInfo.setText("Inserte nombre del segundo jugador y presione ENTER");
                     panel.agregarJugador(barraTexto.getText());
                     barraTexto.clear();

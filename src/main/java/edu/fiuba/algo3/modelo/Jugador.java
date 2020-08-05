@@ -18,12 +18,16 @@ public class Jugador {
         return puntaje;
     }
 
-    public void usarMultiplicadorX2(){
-        puntaje.setMultiplicador(multiplicadorX2);
+    public void usarMultiplicadorX2(Pregunta pregunta) {
+        if (pregunta.sePuedeUsarMultiplicador()) {
+            puntaje.setMultiplicador(multiplicadorX2);
+        }
     }
 
-    public void usarMultiplicadorX3(){
-        puntaje.setMultiplicador(multiplicadorX3);
+    public void usarMultiplicadorX3(Pregunta pregunta){
+        if (pregunta.sePuedeUsarMultiplicador()) {
+            puntaje.setMultiplicador(multiplicadorX3);
+        }
     }
 
     public String verNombre(){

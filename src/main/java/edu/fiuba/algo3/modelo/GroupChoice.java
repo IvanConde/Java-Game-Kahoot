@@ -6,11 +6,16 @@ public class GroupChoice extends Pregunta{
     private int modificadorPuntajeExito = 1;
     private int modificadorPuntajeFracaso = 0;
 
-    public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
-        super(pregunta, todasLasOpciones);
+    public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
+        super(pregunta, todasLasOpciones, modalidad);
+        if(!(modalidad instanceof Clasico)){
+            throw new GroupChoiceModalidadInvalidaException("[Error]: la pregunta 'OrderedChoice' solo se puede crear con modalidad clasica");
+        }
     }
-
+}
+/*
     @Override
+
     protected void comprobarRespuesta(Respuesta respuesta) {
         ArrayList<Opcion> respuestasJugador = respuesta.verRespuestaJugador();
         for (Opcion opcion : respuestasJugador){
@@ -22,4 +27,4 @@ public class GroupChoice extends Pregunta{
         respuesta.modificarPuntaje(modificadorPuntajeExito);
     }
 
-}
+ */

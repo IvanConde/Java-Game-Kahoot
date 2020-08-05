@@ -3,16 +3,14 @@ import java.util.ArrayList;
 
 public abstract class Choice extends Pregunta {
 
-    protected Modalidad penalidad;
 
-    protected Choice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad penalidad) {
-        super(pregunta, todasLasOpciones);
-        this.penalidad = penalidad;
+    protected Choice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
+        super(pregunta, todasLasOpciones, modalidad);
     }
 
     @Override
     public void comprobarRespuesta(Respuesta respuesta){
-        penalidad.calcularPuntaje(respuesta);
+        modalidad.calcularPuntaje(respuesta);
     }
 
     /*
