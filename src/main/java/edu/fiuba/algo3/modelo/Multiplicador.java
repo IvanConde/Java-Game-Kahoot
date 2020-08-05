@@ -9,7 +9,7 @@ public class Multiplicador {
         this.magnitud = magnitud;
     }
 
-    public Boolean getSeUtilizo() {
+    public Boolean seUtilizo() {
         return seUtilizo;
     }
 

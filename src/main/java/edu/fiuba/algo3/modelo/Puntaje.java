@@ -10,7 +10,7 @@ public class Puntaje {
     }
 
     public void calcularPuntaje(int puntos){
-        if(this.multiplicador != null && !(this.multiplicador.getSeUtilizo())) {
+        if(this.multiplicador != null && !(this.multiplicador.seUtilizo())) {
             puntaje += this.multiplicador.multiplicarPuntos(puntos);
         }
         else{
