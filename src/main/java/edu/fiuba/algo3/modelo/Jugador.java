@@ -1,14 +1,37 @@
 package edu.fiuba.algo3.modelo;
 
 public class Jugador {
+
     private Puntaje puntaje;
     private String nombre;
+    private Multiplicador multiplicadorX2;
+    private Multiplicador multiplicadorX3;
 
-    public Jugador(String nombrejugador){
-        nombre = nombrejugador;
-        puntaje = new Puntaje();
+    public Jugador(String nombre){
+        this.nombre = nombre;
+        this.puntaje = new Puntaje();
+        this.multiplicadorX2 = new Multiplicador(2);
+        this.multiplicadorX3 = new Multiplicador(3);
     }
+
     public Puntaje puntaje(){
         return puntaje;
     }
+
+    public void usarMultiplicadorX2(Pregunta pregunta) {
+        if (pregunta.sePuedeUsarMultiplicador()) {
+            puntaje.setMultiplicador(multiplicadorX2);
+        }
+    }
+
+    public void usarMultiplicadorX3(Pregunta pregunta){
+        if (pregunta.sePuedeUsarMultiplicador()) {
+            puntaje.setMultiplicador(multiplicadorX3);
+        }
+    }
+
+    public String verNombre(){
+        return this.nombre;
+    }
+
 }
