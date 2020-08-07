@@ -1,9 +1,13 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.modalidades;
 
 //Asigna un punto a cada jugador que acierte TODAS las opciones
 //correctas.
 
+import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+
 public class Clasico extends Modalidad {
+
     private int modificadorCorrecto;
 
     public Clasico(){

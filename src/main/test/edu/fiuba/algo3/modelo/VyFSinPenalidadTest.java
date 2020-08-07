@@ -1,4 +1,9 @@
 package edu.fiuba.algo3.modelo;
+import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
+import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
+import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -10,8 +15,8 @@ public class VyFSinPenalidadTest {
     public void test01_1CrearVyFSinPenalidad() {
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
-        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
@@ -24,8 +29,8 @@ public class VyFSinPenalidadTest {
 
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
-        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -47,8 +52,8 @@ public class VyFSinPenalidadTest {
 
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
-        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
@@ -71,8 +76,8 @@ public class VyFSinPenalidadTest {
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
-        OpcionChoice opcionFalso = new OpcionChoice("falso", false);
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
 
@@ -100,8 +105,8 @@ public class VyFSinPenalidadTest {
     public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionChoice opcionVerdadero = new OpcionChoice("verdadero", true);
-        OpcionChoice opcionFalso = new OpcionChoice("falso", true);
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", true);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
         assertThrows(VyFMasDeDosOpcionesException.class, () ->

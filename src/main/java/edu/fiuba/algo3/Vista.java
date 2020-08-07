@@ -1,13 +1,13 @@
 package edu.fiuba.algo3;
 
-import javafx.animation.Timeline;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import edu.fiuba.algo3.modelo.*;
 
 import java.util.ArrayList;
 
@@ -46,7 +46,7 @@ public class Vista {
             control.agregarAccionBotonOpcion(botonOpcion, i.getStringOpcion());
             layoutJuego.getChildren().add(botonOpcion);
         }
-        Button botonContestar = new Button("contestar");
+        Button botonContestar = new Button("[Enviar respuesta]");
         control.argregarABotonDetenerTimer(botonContestar);
         layoutJuego.getChildren().add(botonContestar);
         sceneJuego = new Scene(layoutJuego, 640, 480);
@@ -61,3 +61,4 @@ public class Vista {
         window.setScene(sceneJuego);
     }
 }
+

@@ -1,6 +1,6 @@
 package edu.fiuba.algo3;
 
-import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
@@ -12,10 +12,6 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
-import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 public class Controlador {
     Vista ventana;
@@ -35,7 +31,7 @@ public class Controlador {
         });
     }
     public void agregarAccionEnter(TextField barraTexto, Label textoInfo){
-        EventHandler<KeyEvent> enterentexto = new EventHandler<KeyEvent>()
+        EventHandler<KeyEvent> input = new EventHandler<KeyEvent>()
         {
             @Override
             public void handle(KeyEvent key)
@@ -50,10 +46,10 @@ public class Controlador {
                 }
             }
         };
-        barraTexto.setOnKeyPressed(enterentexto);
+        barraTexto.setOnKeyPressed(input);
     }
     public void controlarPreguntas(){
-        Pregunta pregunta = this.generarpregunta();
+        Pregunta pregunta = this.generarPregunta();
         ventana.mostrarPregunta(pregunta, panel.nombreJugador(1));
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() {
 
@@ -70,7 +66,7 @@ public class Controlador {
         timeline.setCycleCount(1);
         timeline.play();
     }
-    public Pregunta generarpregunta(){
+    public Pregunta generarPregunta(){
         return this.panel.crearPregunta();
     }
     public void argregarABotonDetenerTimer(Button boton){

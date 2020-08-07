@@ -1,4 +1,8 @@
 package edu.fiuba.algo3.modelo;
+import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
+import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -8,11 +12,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_1ResponderMultipleChoiceConPenalidadyMultiplicadorX3yAsignarPuntajesCorrectamente(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -53,11 +57,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_2ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaRespuestaCorrectaDeDos(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -87,11 +91,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_3ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaCorrectaYUnaErroneaDeDos(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -122,11 +126,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_4ResponderMultipleChoiceConPenalidadyMultiplicadorX3ConDosJugadores(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -170,11 +174,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_5ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaCorrectaYDosErroneasDeTres(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -206,11 +210,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_6ResponderMultipleChoiceConPenalidadJugadorUsaElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);
@@ -244,11 +248,11 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
     @Test
     public void test09_7ResponderMultipleChoiceConPenalidadJugadoresUsanElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
 
-        OpcionChoice opcion1 = new OpcionChoice("Si",true);
-        OpcionChoice opcion2 = new OpcionChoice("Totalmente",true);
-        OpcionChoice opcion3 = new OpcionChoice("quizas",true);
-        OpcionChoice opcion4 = new OpcionChoice("para nada",false);
-        OpcionChoice opcion5 = new OpcionChoice("nunca",false);
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         todasLasOpciones.add(opcion1);

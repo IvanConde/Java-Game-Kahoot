@@ -1,6 +1,12 @@
 package edu.fiuba.algo3;
 
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
+import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
+import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+
 import java.util.ArrayList;
 
 public class Panel { // Panel es el modelo de un MVC
@@ -19,27 +25,24 @@ public class Panel { // Panel es el modelo de un MVC
         this.jugador2 = new Jugador(nombre);
     }
 
-    public void tienePenalidad(){
+    //public void tienePenalidad(){
         //si tiene penalidad
        // if(jugador.getTieneMultiplicadorx2){
             //mostrarBoton
-        }
+        //}
         //si tiene mostrar MultiplicadorX3
-
-
-
 
 
     public Pregunta crearPregunta(){
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion verdadero = new OpcionChoice("verdadero", true);
-        Opcion verdader = new OpcionChoice("ya te dije verdadero flaco", true);
-        Opcion falso = new OpcionChoice("falso", false);
-        Opcion fals = new OpcionChoice("cuantas veces te tengo que decir que no te voy a ********", false);
-        todas.add(verdadero);
-        todas.add(verdader);
-        todas.add(falso);
-        todas.add(fals);
+        Opcion verdadero1 = new OpcionBooleana("verdadero", true);
+        Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
+        Opcion falso1 = new OpcionBooleana("falso", false);
+        Opcion falso2 = new OpcionBooleana("A veces", false);
+        todas.add(verdadero1);
+        todas.add(verdadero2);
+        todas.add(falso1);
+        todas.add(falso2);
         Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Clasico());
         this.preguntaActual = vyf;
         return vyf;
