@@ -22,6 +22,7 @@ public class Controlador {
         this.panel = new Panel();
         this.ventana.inicialJuego();
     }
+
     public void agregarAccionBotonOpcion(Button boton, String opcion){
         boton.setOnAction(new EventHandler<ActionEvent>() {
             @Override public void handle(ActionEvent e) {

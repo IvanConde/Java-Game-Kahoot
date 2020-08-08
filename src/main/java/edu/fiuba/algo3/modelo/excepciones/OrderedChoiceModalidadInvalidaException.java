@@ -5,3 +5,4 @@ public class OrderedChoiceModalidadInvalidaException extends RuntimeException{
         super(mensaje);
     }
 }
+

@@ -9,5 +9,4 @@ public abstract class Opcion {
     }
 
     public abstract boolean esCorrecto();
-
 }

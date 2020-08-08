@@ -12,5 +12,4 @@ public class OpcionBooleana extends Opcion{
     public boolean esCorrecto(){
         return esCorrecto;
     }
-
 }

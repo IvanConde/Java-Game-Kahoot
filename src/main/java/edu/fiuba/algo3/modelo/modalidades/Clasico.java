@@ -7,7 +7,6 @@ import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 public class Clasico extends Modalidad {
-
     private int modificadorCorrecto;
 
     public Clasico(){

@@ -25,6 +25,7 @@ public class Panel { // Panel es el modelo de un MVC
         this.jugador2 = new Jugador(nombre);
     }
 
+
     //public void tienePenalidad(){
         //si tiene penalidad
        // if(jugador.getTieneMultiplicadorx2){

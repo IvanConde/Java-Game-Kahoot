@@ -31,6 +31,7 @@ public class Vista {
         this.window.setScene(sceneIngresoNombres);
         this.window.show();
     }
+
     public void juego(){
             control.controlarPreguntas();
     }
@@ -49,7 +50,7 @@ public class Vista {
         Button botonContestar = new Button("[Enviar respuesta]");
         control.argregarABotonDetenerTimer(botonContestar);
         layoutJuego.getChildren().add(botonContestar);
-        sceneJuego = new Scene(layoutJuego, 640, 480);
+        sceneJuego = new Scene(layoutJuego, 1280, 720); //640x480
         window.setScene(sceneJuego);
     }
 
@@ -57,7 +58,7 @@ public class Vista {
         Label gracias = new Label("gracias");
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(gracias);
-        sceneJuego = new Scene(layoutJuego, 640, 480);
+        sceneJuego = new Scene(layoutJuego, 1280, 720);
         window.setScene(sceneJuego);
     }
 }
