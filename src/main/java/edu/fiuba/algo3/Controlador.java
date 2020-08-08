@@ -17,6 +17,7 @@ public class Controlador {
     Vista ventana;
     Panel panel;
     Timeline contadorPantallaActual;
+
     public void comienzo(Stage stage){
         this.ventana = new Vista(stage, this);
         this.panel = new Panel();

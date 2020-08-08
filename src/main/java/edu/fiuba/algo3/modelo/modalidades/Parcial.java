@@ -17,7 +17,7 @@ public class Parcial extends Modalidad {
     }
 
     @Override
-    public void calcularPuntaje(Respuesta respuesta){
+    public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
         int puntos = 0;
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
             if (!opcionElegida.esCorrecto()){
@@ -25,7 +25,11 @@ public class Parcial extends Modalidad {
             }
             puntos += modificadorCorrecto;
         }
-        respuesta.modificarPuntaje(puntos);
+        if(tieneExclusividad){
+            respuesta.agregarPuntajeTemporal(puntos);
+        }else{
+            respuesta.modificarPuntaje(puntos);
+        }
     }
 
 }

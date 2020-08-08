@@ -27,7 +27,7 @@ public class Vista {
         VBox layoutInicial = new VBox();
         layoutInicial.getChildren().add(textoInfo);
         layoutInicial.getChildren().add(textField);
-        sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
+        sceneIngresoNombres = new Scene(layoutInicial, 1280, 720); //640x480
         this.window.setScene(sceneIngresoNombres);
         this.window.show();
     }
