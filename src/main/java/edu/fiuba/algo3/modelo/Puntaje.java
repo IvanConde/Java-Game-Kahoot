@@ -5,14 +5,15 @@ public class Puntaje {
     private int puntaje;
     private Multiplicador multiplicador;
 
-    public Puntaje() {
+    public Puntaje(){
         this.puntaje = 0;
     }
 
-    public void calcularPuntaje(int puntos) {
-        if ((this.multiplicador != null) && !(this.multiplicador.seUtilizo())) {
+    public void calcularPuntaje(int puntos){
+        if(this.multiplicador != null && !(this.multiplicador.seUtilizo())) {
             puntaje += this.multiplicador.multiplicarPuntos(puntos);
-        } else {
+        }
+        else{
             puntaje += puntos;
         }
     }
@@ -21,16 +22,8 @@ public class Puntaje {
         return puntaje;
     }
 
-    public void setMultiplicador(Multiplicador multiplicador) {
+    public void setMultiplicador(Multiplicador multiplicador){
         this.multiplicador = multiplicador;
     }
-}
-/*
-    public void setExclusividad(ExclusividadDePuntaje exclusividad) {
-        this.exclusividad = exclusividad;
-}
 
 }
-        else if((this.exclusividad != null) && (this.exclusividad.sePuedeUsar())){
-        puntaje += this.exclusividad.
- */

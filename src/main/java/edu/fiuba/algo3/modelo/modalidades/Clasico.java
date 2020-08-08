@@ -15,17 +15,13 @@ public class Clasico extends Modalidad {
     }
 
     @Override
-    public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
+    public void calcularPuntaje(Respuesta respuesta){
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
             if (!(opcionElegida.esCorrecto())) {
                 return; //si hay una respuesta incorrecta no se asignan puntos.
             }
         }
-        if(tieneExclusividad){
-            respuesta.agregarPuntajeTemporal(modificadorCorrecto);
-        }else{
-            respuesta.modificarPuntaje(modificadorCorrecto); //se asigna 1 punto en el modo clasico cuando todas las respuestas son correctas.
-        }
+        respuesta.modificarPuntaje(modificadorCorrecto); //se asigna 1 punto en el modo clasico cuando todas las respuestas son correctas.
     }
 
 }

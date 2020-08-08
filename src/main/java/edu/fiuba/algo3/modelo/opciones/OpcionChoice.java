@@ -1,6 +1,6 @@
-package edu.fiuba.algo3.modelo.opciones;
+package edu.fiuba.algo3.modelo;
 
-public class OpcionChoice extends Opcion {
+public class OpcionChoice extends Opcion{
 
     private boolean esCorrecto;
 

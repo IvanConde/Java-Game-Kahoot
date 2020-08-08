@@ -8,14 +8,12 @@ public class Jugador {
     private String nombre;
     private Multiplicador multiplicadorX2;
     private Multiplicador multiplicadorX3;
-    private int cantExclusividad;
 
     public Jugador(String nombre){
         this.nombre = nombre;
         this.puntaje = new Puntaje();
         this.multiplicadorX2 = new Multiplicador(2);
         this.multiplicadorX3 = new Multiplicador(3);
-        this.cantExclusividad = 2;
     }
 
     public Puntaje puntaje(){
@@ -23,34 +21,19 @@ public class Jugador {
     }
 
     public void usarMultiplicadorX2(Pregunta pregunta) {
-        if (pregunta.tienePenalidad()) {
+        if (pregunta.sePuedeUsarMultiplicador()) {
             puntaje.setMultiplicador(multiplicadorX2);
         }
     }
 
     public void usarMultiplicadorX3(Pregunta pregunta){
-        if (pregunta.tienePenalidad()) {
+        if (pregunta.sePuedeUsarMultiplicador()) {
             puntaje.setMultiplicador(multiplicadorX3);
         }
     }
 
-/*
-    public void usarExclusividadPuntaje(Pregunta pregunta){
-        if(!(pregunta.tienePenalidad())){
-            puntaje.setExclusividad(exclusividad);
-        }
-    }
-*/
     public String verNombre(){
         return this.nombre;
-    }
-
-    public boolean activarExclusividad(){
-        if(cantExclusividad > 0){
-            cantExclusividad -= 1;
-            return true;
-        }
-        return false;
     }
 
 }

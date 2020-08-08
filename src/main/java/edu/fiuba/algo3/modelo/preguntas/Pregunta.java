@@ -1,6 +1,4 @@
 package edu.fiuba.algo3.modelo.preguntas;
-import edu.fiuba.algo3.modelo.ExclusividadDePuntaje;
-import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.modalidades.Penalidad;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
@@ -14,9 +12,6 @@ public abstract class Pregunta {
     protected ArrayList<Opcion> todasLasOpciones;
     protected Modalidad modalidad;
 
-    protected ExclusividadDePuntaje exclusividad;
-    protected int exclusividadesActivadas;
-
     /*
     public Pregunta(String pregunta, ArrayList<Opcion> todasLasOpciones){
         this.todasLasOpciones = todasLasOpciones;
@@ -28,18 +23,14 @@ public abstract class Pregunta {
         this.todasLasOpciones = todasLasOpciones;
         this.pregunta = pregunta;
         this.modalidad = modalidad;
-        this.exclusividadesActivadas = 0;
-        this.exclusividad = new ExclusividadDePuntaje();
     }
 
     public void responderPregunta(ArrayList<Respuesta> respuestas) {
         for (Respuesta respuesta : respuestas)
             comprobarRespuesta(respuesta);
-        exclusividad.aplicarExclusividad(respuestas, exclusividadesActivadas);
-
     }
 
-    public boolean tienePenalidad(){
+    public boolean sePuedeUsarMultiplicador(){
         if(modalidad instanceof Penalidad){
             return true;
         }
@@ -47,12 +38,7 @@ public abstract class Pregunta {
     }
 
     public void comprobarRespuesta(Respuesta respuesta){
-        if((!tienePenalidad()) && (exclusividadesActivadas > 0)){
-            modalidad.calcularPuntaje(respuesta,true);
-        }
-        else{
-            modalidad.calcularPuntaje(respuesta,false);
-        }
+        modalidad.calcularPuntaje(respuesta);
     }
 
     public String verPregunta(){
@@ -63,12 +49,4 @@ public abstract class Pregunta {
         return todasLasOpciones;
     }
 
-    public void usarExclusividad(Jugador jugador){
-        if(jugador.activarExclusividad()){
-            exclusividadesActivadas += 1;
-            if(exclusividadesActivadas == 2){
-                exclusividad.amplificar();
-            }
-        }
-    }
 }
