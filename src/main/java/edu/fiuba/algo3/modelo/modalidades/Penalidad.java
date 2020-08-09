@@ -13,8 +13,9 @@ public class Penalidad extends Modalidad {
         modificadorCorrecto = 1;
         modificadorIncorrecto = -1;
     }
+
     @Override
-    public void calcularPuntaje(Respuesta respuesta){
+    public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
         int puntos = 0;
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
             if (opcionElegida.esCorrecto()) {

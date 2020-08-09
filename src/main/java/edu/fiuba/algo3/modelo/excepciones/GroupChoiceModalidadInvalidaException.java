@@ -5,4 +5,3 @@ public class GroupChoiceModalidadInvalidaException extends RuntimeException{
             super(mensaje);
         }
 }
-

@@ -17,5 +17,4 @@ public class Multiplicador {
         this.seUtilizo = true;
         return puntos * this.magnitud;
     }
-
 }

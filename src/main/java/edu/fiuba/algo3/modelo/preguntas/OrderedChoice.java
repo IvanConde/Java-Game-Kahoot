@@ -17,7 +17,6 @@ public class OrderedChoice extends Pregunta {
         //}
     }
 /*
-
     @Override
     protected void comprobarRespuesta(Respuesta respuesta) {
         for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
