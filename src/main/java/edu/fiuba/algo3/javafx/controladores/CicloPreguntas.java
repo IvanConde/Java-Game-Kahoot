@@ -17,20 +17,10 @@ public class CicloPreguntas {
         this.panel = panel;
         this.ventana = ventana;
         Pregunta pregunta = this.generarPregunta();
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new EventHandler<ActionEvent>() {
-
-            private int i = 1;
-
-            @Override
-            public void handle(ActionEvent event) {
-                System.out.println(contadorPantallaActual.getCycleCount());
-                ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), contadorPantallaActual);
-                i++;
-            }
-        }));
-
+        Timeline timeline = new Timeline();
+        KeyFrame accionFinTimer = new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(timeline, ventana, pregunta, panel));
+        timeline.getKeyFrames().add(accionFinTimer);
         ventana.mostrarPregunta(pregunta, panel.nombreJugador(1), timeline);
-        contadorPantallaActual = timeline;
         timeline.setCycleCount(1);
         timeline.play();
 

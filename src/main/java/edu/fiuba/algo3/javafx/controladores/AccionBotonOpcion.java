@@ -19,7 +19,7 @@ public class AccionBotonOpcion implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent e) {
-        System.out.println(opcion);
+        System.out.println(opcion.getStringOpcion());
         boton.setDisable(true);
     }
 }
