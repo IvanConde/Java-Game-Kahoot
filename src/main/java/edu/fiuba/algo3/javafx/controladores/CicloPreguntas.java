@@ -18,10 +18,10 @@ public class CicloPreguntas {
         this.ventana = ventana;
         Pregunta pregunta = this.generarPregunta();
         Timeline timeline = new Timeline();
-        KeyFrame accionFinTimer = new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(timeline, ventana, pregunta, panel));
+        KeyFrame accionFinTimer = new KeyFrame(Duration.seconds(5), new AccionBotonTerminarTurno(timeline, ventana, pregunta, panel));
         timeline.getKeyFrames().add(accionFinTimer);
-        ventana.mostrarPregunta(pregunta, panel.nombreJugador(1), timeline);
-        timeline.setCycleCount(1);
+        ventana.mostrarPregunta(pregunta, panel.nombreJugador(1), 1, timeline);
+        timeline.setCycleCount(2);
         timeline.play();
 
     }

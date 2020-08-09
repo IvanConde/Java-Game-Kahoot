@@ -15,7 +15,7 @@ public class Contestar implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent e) {
-        if(contadorPantallaActual.getCycleCount() == 1) {
+        if(contadorPantallaActual.getCycleCount() == 2) {
             contadorPantallaActual.jumpTo(Duration.millis(30001));
         }
         ventana.pantallaFinal();

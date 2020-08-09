@@ -8,6 +8,7 @@ import javafx.animation.Timeline;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.event.EventHandler;
+import javafx.util.Duration;
 
 public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
     private int i = 1;
@@ -24,7 +25,11 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         System.out.println(contadorPantallaActual.getCycleCount());
-        ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), contadorPantallaActual);
+        if(ventana.getContestateActual() == 2) {
+            ventana.pantallaFinal();
+            return;
+        }
+        ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), 2, contadorPantallaActual);
         i++;
     }
 }

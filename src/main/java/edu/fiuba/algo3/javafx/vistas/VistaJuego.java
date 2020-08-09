@@ -19,15 +19,20 @@ public class VistaJuego {
     Stage window;
     Scene sceneJuego;
     Panel panel;
+    int contestateActual;
     public VistaJuego(Stage stage, Panel panel){
         this.window = stage;
         this.panel = panel;
         this.juego();
     }
+    public int getContestateActual(){
+        return contestateActual;
+    }
     public void juego(){
         CicloPreguntas preguntas = new CicloPreguntas(panel, this);
     }
-    public void mostrarPregunta(Pregunta pregunta, String nombreJugador, Timeline timer){
+    public void mostrarPregunta(Pregunta pregunta, String nombreJugador, int cualJugador, Timeline timer){
+        contestateActual = cualJugador;
         Label nombreJugadorLabel = new Label("Responde " + nombreJugador);
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         ArrayList<Opcion> opciones = pregunta.verBotones();
