@@ -1,41 +1,33 @@
-package edu.fiuba.algo3;
+package edu.fiuba.algo3.javafx.vistas;
 
+import edu.fiuba.algo3.javafx.Panel;
+import edu.fiuba.algo3.javafx.controladores.AccionBotonOpcion;
+import edu.fiuba.algo3.javafx.controladores.CicloPreguntas;
+import edu.fiuba.algo3.javafx.controladores.Contestar;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import javafx.animation.Timeline;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class Vista {
+public class VistaJuego {
     Stage window;
-    Controlador control;
-    Scene sceneIngresoNombres, sceneJuego;
-    public Vista(Stage stage, Controlador controlador){
+    Scene sceneJuego;
+    Panel panel;
+    public VistaJuego(Stage stage, Panel panel){
         this.window = stage;
-        this.control = controlador;
-        stage.setTitle("Kahoot2.0");
+        this.panel = panel;
+        this.juego();
     }
-    public void inicialJuego(){
-        Label textoInfo = new Label("Inserte nombre del primer jugador y presione ENTER");
-        TextField textField = new TextField();
-        control.agregarAccionEnter(textField, textoInfo);
-        VBox layoutInicial = new VBox();
-        layoutInicial.getChildren().add(textoInfo);
-        layoutInicial.getChildren().add(textField);
-        sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
-        this.window.setScene(sceneIngresoNombres);
-        this.window.show();
-    }
-
     public void juego(){
-            control.controlarPreguntas();
+        CicloPreguntas preguntas = new CicloPreguntas(panel, this);
     }
-    public void mostrarPregunta(Pregunta pregunta, String nombreJugador){
+    public void mostrarPregunta(Pregunta pregunta, String nombreJugador, Timeline timer){
         Label nombreJugadorLabel = new Label("Responde " + nombreJugador);
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         ArrayList<Opcion> opciones = pregunta.verBotones();
@@ -44,11 +36,11 @@ public class Vista {
         layoutJuego.getChildren().add(preguntaUsuario);
         for(Opcion i : opciones){
             Button botonOpcion = new Button(i.getStringOpcion());
-            control.agregarAccionBotonOpcion(botonOpcion, i.getStringOpcion());
+            botonOpcion.setOnAction(new AccionBotonOpcion(i, botonOpcion, panel));
             layoutJuego.getChildren().add(botonOpcion);
         }
         Button botonContestar = new Button("[Enviar respuesta]");
-        control.argregarABotonDetenerTimer(botonContestar);
+        botonContestar.setOnAction(new Contestar(timer, this));
         layoutJuego.getChildren().add(botonContestar);
         sceneJuego = new Scene(layoutJuego, 1280, 720); //640x480
         window.setScene(sceneJuego);
@@ -62,4 +54,3 @@ public class Vista {
         window.setScene(sceneJuego);
     }
 }
-
