@@ -15,7 +15,7 @@ public abstract class Pregunta {
     protected Modalidad modalidad;
 
     protected ExclusividadDePuntaje exclusividad;
-    protected int exclusividadesActivadas;
+    protected boolean exclusividadesActivada;
 
     /*
     public Pregunta(String pregunta, ArrayList<Opcion> todasLasOpciones){
@@ -28,14 +28,14 @@ public abstract class Pregunta {
         this.todasLasOpciones = todasLasOpciones;
         this.pregunta = pregunta;
         this.modalidad = modalidad;
-        this.exclusividadesActivadas = 0;
+        this.exclusividadesActivada = false;
         this.exclusividad = new ExclusividadDePuntaje();
     }
 
     public void responderPregunta(ArrayList<Respuesta> respuestas) {
         for (Respuesta respuesta : respuestas)
             comprobarRespuesta(respuesta);
-        exclusividad.aplicarExclusividad(respuestas, exclusividadesActivadas);
+        exclusividad.aplicarExclusividad(respuestas);
 
     }
 
@@ -47,12 +47,7 @@ public abstract class Pregunta {
     }
 
     public void comprobarRespuesta(Respuesta respuesta){
-        if((!tienePenalidad()) && (exclusividadesActivadas > 0)){
-            modalidad.calcularPuntaje(respuesta,true);
-        }
-        else{
-            modalidad.calcularPuntaje(respuesta,false);
-        }
+        modalidad.calcularPuntaje(respuesta,exclusividad.verEstado());
     }
 
     public String verPregunta(){
@@ -64,11 +59,6 @@ public abstract class Pregunta {
     }
 
     public void usarExclusividad(Jugador jugador){
-        if(jugador.activarExclusividad()){
-            exclusividadesActivadas += 1;
-            if(exclusividadesActivadas == 2){
-                exclusividad.amplificar();
-            }
-        }
+        exclusividad.activarExclusividad(jugador);
     }
 }

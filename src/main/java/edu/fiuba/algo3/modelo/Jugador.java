@@ -34,6 +34,14 @@ public class Jugador {
         }
     }
 
+    public boolean tieneMultiplicadorX2(Pregunta pregunta){
+        return !multiplicadorX2.seUtilizo();
+    }
+
+    public boolean tieneMultiplicadorX3(Pregunta pregunta){
+        return !multiplicadorX3.seUtilizo();
+    }
+
 /*
     public void usarExclusividadPuntaje(Pregunta pregunta){
         if(!(pregunta.tienePenalidad())){
