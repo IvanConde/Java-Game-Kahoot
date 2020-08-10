@@ -24,10 +24,11 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent event) {
         if(ventana.getContestateActual() == 2) {
-            ventana.pantallaFinal();
+            panel.responderPregunta();
+            CicloPreguntas nuevaPregunta = new CicloPreguntas(panel, ventana);
             return;
         }
-        ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), 2);
+        ventana.construirPantallas(pregunta, 2);
         i++;
     }
 }

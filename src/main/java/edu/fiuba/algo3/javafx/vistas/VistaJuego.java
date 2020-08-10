@@ -1,12 +1,10 @@
 package edu.fiuba.algo3.javafx.vistas;
 
 import edu.fiuba.algo3.javafx.Panel;
-import edu.fiuba.algo3.javafx.controladores.AccionBotonOpcion;
-import edu.fiuba.algo3.javafx.controladores.AccionBotonTerminarTurno;
-import edu.fiuba.algo3.javafx.controladores.CicloPreguntas;
-import edu.fiuba.algo3.javafx.controladores.Contestar;
+import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.scene.Scene;
@@ -50,12 +48,13 @@ public class VistaJuego {
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
-        for(Opcion i : opciones){
-            Button botonOpcion = new Button(i.getStringOpcion());
-            botonOpcion.setOnAction(new AccionBotonOpcion(i, botonOpcion, panel));
-            layoutJuego.getChildren().add(botonOpcion);
-        }
         Button botonContestar = new Button("[Enviar respuesta]");
+        if(pregunta instanceof VerdaderoFalso){
+
+        }else {
+            this.settiarBotonesMultiplesRespuestas(layoutJuego, opciones, cualJugador);
+        }
+
         botonContestar.setOnAction(new Contestar(timeline, this));
         layoutJuego.getChildren().add(botonContestar);
         sceneJuego = new Scene(layoutJuego, 1280, 720); //640x480
@@ -63,8 +62,42 @@ public class VistaJuego {
         timeline.setCycleCount(1);
         timeline.play();
     }
+    public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
+        Button verdadero = new Button("Verdadero");
+        Button falso = new Button("Falso");
+
+    }
+    public void settiarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, int cualJugador){
+        for(Opcion i : opciones){
+            Button botonOpcion = new Button(i.getStringOpcion());
+            botonOpcion.setOnAction(new AccionBotonOpcion(i, botonOpcion, panel, cualJugador));
+            layoutJuego.getChildren().add(botonOpcion);
+        }
+    }
     public void mostrarMultiplicadores(Pregunta pregunta, int cualJugador){
-        Label nombreJugadorLabel = new Label(panel.nombreJugador(cualJugador) + "elige un multiplicador para esta pregunta");
+        if(!panel.jugadorTieneMultiplicadorx2(cualJugador) && !panel.jugadorTieneMultiplicadorx3(cualJugador)){
+            this.mostrarPregunta(pregunta,  cualJugador);
+            return;
+        }
+        Label nombreJugadorLabel = new Label(panel.nombreJugador(cualJugador) + " elige un multiplicador para esta pregunta");
+        Button ninguno = new Button("ninguno");
+        ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, cualJugador, this));
+        Button multiplicadorX2 = new Button("multiplicar x2");
+        multiplicadorX2.setOnAction(new AccionMultiplicadorX2(pregunta, cualJugador, this, panel));
+        Button multiplicadorX3 = new Button("multiplicar x3");
+        multiplicadorX3.setOnAction(new AccionMultiplicadorX3(pregunta, cualJugador, this, panel));
+        if(!panel.jugadorTieneMultiplicadorx2(cualJugador)){
+            multiplicadorX2.setDisable(true);
+        }else if(!panel.jugadorTieneMultiplicadorx3(cualJugador)){
+            multiplicadorX3.setDisable(true);
+        }
+        VBox layoutMultiplicador = new VBox();
+        layoutMultiplicador.getChildren().add(nombreJugadorLabel);
+        layoutMultiplicador.getChildren().add(multiplicadorX2);
+        layoutMultiplicador.getChildren().add(multiplicadorX3);
+        layoutMultiplicador.getChildren().add(ninguno);
+        sceneJuego = new Scene(layoutMultiplicador, 1280, 720); //640x480
+        window.setScene(sceneJuego);
 
     }
 

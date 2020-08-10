@@ -11,15 +11,17 @@ public class AccionBotonOpcion implements EventHandler<ActionEvent> {
     private Opcion opcion;
     private Button boton;
     private Panel panel;
-    public AccionBotonOpcion(Opcion opcion, Button boton, Panel panel){
+    private int cualJugador;
+    public AccionBotonOpcion(Opcion opcion, Button boton, Panel panel, int cualJugador){
         this.opcion = opcion;
         this.boton = boton;
         this.panel = panel;
+        this.cualJugador = cualJugador;
     }
 
     @Override
     public void handle(ActionEvent e) {
-        System.out.println(opcion.getStringOpcion());
+        panel.agregarRespuestaJugador(opcion, cualJugador);
         boton.setDisable(true);
     }
 }
