@@ -16,20 +16,18 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
     private VistaJuego ventana;
     private Pregunta pregunta;
     private Panel panel;
-    public AccionBotonTerminarTurno(Timeline contadorPantallaActual, VistaJuego ventana, Pregunta pregunta, Panel panel){
-        this.contadorPantallaActual = contadorPantallaActual;
+    public AccionBotonTerminarTurno(VistaJuego ventana, Pregunta pregunta, Panel panel){
         this.ventana = ventana;
         this.pregunta = pregunta;
         this.panel = panel;
     }
     @Override
     public void handle(ActionEvent event) {
-        System.out.println(contadorPantallaActual.getCycleCount());
         if(ventana.getContestateActual() == 2) {
             ventana.pantallaFinal();
             return;
         }
-        ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), 2, contadorPantallaActual);
+        ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), 2);
         i++;
     }
 }

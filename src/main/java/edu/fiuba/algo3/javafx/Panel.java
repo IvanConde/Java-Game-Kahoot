@@ -54,4 +54,16 @@ public class Panel { // Panel es el modelo de un MVC
         }
         return jugador2.verNombre();
     }
+    public Boolean jugadorTieneMultiplicadorx2(int cualJugador){
+        if(cualJugador == 1){
+            return jugador1.tieneMultiplicadorx2();
+        }
+        return jugador2.tieneMultiplicadorx2();
+    }
+    public Boolean jugadorTieneMultiplicadorx3(int cualJugador){
+        if(cualJugador == 1){
+            return jugador1.tieneMultiplicadorx3();
+        }
+        return jugador2.tieneMultiplicadorx3();
+    }
 }
