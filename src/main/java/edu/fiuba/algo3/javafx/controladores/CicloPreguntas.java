@@ -5,8 +5,6 @@ import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 public class CicloPreguntas {

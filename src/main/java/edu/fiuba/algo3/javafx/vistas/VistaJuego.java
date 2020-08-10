@@ -33,6 +33,9 @@ public class VistaJuego {
     }
     public void mostrarPregunta(Pregunta pregunta, String nombreJugador, int cualJugador, Timeline timer){
         contestateActual = cualJugador;
+        if(pregunta.tienePenalidad()){
+            mostrarMultiplicadores(cualJugador, timer);
+        }
         Label nombreJugadorLabel = new Label("Responde " + nombreJugador);
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         ArrayList<Opcion> opciones = pregunta.verBotones();
@@ -49,6 +52,9 @@ public class VistaJuego {
         layoutJuego.getChildren().add(botonContestar);
         sceneJuego = new Scene(layoutJuego, 1280, 720); //640x480
         window.setScene(sceneJuego);
+    }
+    public void mostrarMultiplicadores(int cualJugador, Timeline timer){
+
     }
 
     public void pantallaFinal(){
