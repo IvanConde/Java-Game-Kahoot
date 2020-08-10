@@ -50,7 +50,7 @@ public class VistaJuego {
         layoutJuego.getChildren().add(preguntaUsuario);
         Button botonContestar = new Button("[Enviar respuesta]");
         if(pregunta instanceof VerdaderoFalso){
-
+            this.settiarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, cualJugador);
         }else {
             this.settiarBotonesMultiplesRespuestas(layoutJuego, opciones, cualJugador);
         }
@@ -65,7 +65,10 @@ public class VistaJuego {
     public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
         Button verdadero = new Button("Verdadero");
         Button falso = new Button("Falso");
-
+        verdadero.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), verdadero, panel, cualJugador, contestar));
+        falso.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), verdadero, panel, cualJugador, contestar));
+        layoutJuego.getChildren().add(verdadero);
+        layoutJuego.getChildren().add(falso);
     }
     public void settiarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, int cualJugador){
         for(Opcion i : opciones){
@@ -96,16 +99,27 @@ public class VistaJuego {
         layoutMultiplicador.getChildren().add(multiplicadorX2);
         layoutMultiplicador.getChildren().add(multiplicadorX3);
         layoutMultiplicador.getChildren().add(ninguno);
-        sceneJuego = new Scene(layoutMultiplicador, 1280, 720); //640x480
+        sceneJuego = new Scene(layoutMultiplicador, 640, 480); //640x480
         window.setScene(sceneJuego);
 
     }
 
     public void pantallaFinal(){
-        Label gracias = new Label("gracias");
+        Label gracias = new Label("gracias por jugar");
+        Label puntajeJugador1 = new Label("puntos de " + panel.nombreJugador(1)+ ": " + panel.puntajeJugador(1));
+        Label puntajeJugador2 = new Label("puntos de " + panel.nombreJugador(2)+ ": " + panel.puntajeJugador(2));
+        Label ganador;
+        if(panel.puntajeJugador(1)<panel.puntajeJugador(2)){
+            ganador = new Label("Felicitaciones " + panel.nombreJugador(2) + "! Ganaste!");
+        }else{
+            ganador = new Label("Felicitaciones " + panel.nombreJugador(1) + "! Ganaste!");
+        }
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(gracias);
-        sceneJuego = new Scene(layoutJuego, 1280, 720);
+        layoutJuego.getChildren().add(puntajeJugador1);
+        layoutJuego.getChildren().add(puntajeJugador2);
+        layoutJuego.getChildren().add(ganador);
+        sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
     }
 }

@@ -7,6 +7,7 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 
 import java.util.ArrayList;
 
@@ -64,10 +65,10 @@ public class Panel { // Panel es el modelo de un MVC
         Opcion falso1 = new OpcionBooleana("falso", false);
         Opcion falso2 = new OpcionBooleana("A veces", false);
         todas.add(verdadero1);
-        todas.add(verdadero2);
+        // todas.add(verdadero2);
         todas.add(falso1);
-        todas.add(falso2);
-        Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Penalidad());
+       // todas.add(falso2);
+        Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Penalidad());
         this.preguntaActual = vyf;
         return vyf;
     }
@@ -102,5 +103,11 @@ public class Panel { // Panel es el modelo de un MVC
         }else{
             jugador2.usarMultiplicadorX3(pregunta);
         }
+    }
+    public int puntajeJugador(int cualJugador){
+        if(cualJugador == 1){
+            return jugador1.puntaje().getPuntaje();
+        }
+        return jugador2.puntaje().getPuntaje();
     }
 }
