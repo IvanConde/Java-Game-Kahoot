@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class ExclusividadDePuntaje {
     private int magnitud = 2;
-    public boolean EstadoDeActivacion = false;
+    private boolean EstadoDeActivacion = false;
 
     public ExclusividadDePuntaje(){}
 
@@ -32,5 +32,9 @@ public class ExclusividadDePuntaje {
                 respuesta2.modificarPuntaje(respuesta2.puntajeTemporal() * this.magnitud);
             }
         }
+    }
+
+    public int verMagnitud(){
+        return this.magnitud;
     }
 }
