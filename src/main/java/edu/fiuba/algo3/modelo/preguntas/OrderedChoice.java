@@ -12,9 +12,9 @@ public class OrderedChoice extends Pregunta {
 
     public OrderedChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
-        ArrayList<Integer> posiciones = new ArrayList<Integer>;
+        /*ArrayList<Integer> posiciones = new ArrayList<Integer>;
         for(Opcion opcion : todasLasOpciones){
             if(posiciones.contains(()opcion.getPosicionOriginal()))
-        }
+        }*/
     }
 }
