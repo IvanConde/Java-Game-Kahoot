@@ -10,7 +10,7 @@ public class OrderedChoice extends Pregunta {
     private int modificadorPuntajeExito = 1;
     private int modificadorPuntajeFracaso = 0;
 
-    public OrderedChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
+    public OrderedChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
         super(pregunta, todasLasOpciones,new Clasico());
         //if(!(modalidad instanceof Clasico)){
         //    throw new OrderedChoiceModalidadInvalidaException("[Error]: la pregunta 'OrderedChoice' solo se puede crear con modalidad clasica");

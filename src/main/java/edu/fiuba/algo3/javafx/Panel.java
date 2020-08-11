@@ -1,18 +1,22 @@
 package edu.fiuba.algo3.javafx;
 
+import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.opciones.Opcion;
-import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
-import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
-import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 
 public class Panel { // Panel es el modelo de un MVC
     Jugador jugador1;
     Jugador jugador2;
     Pregunta preguntaActual;
+    LinkedList queue;
+    public Panel(){
+        CrearPreguntas pregunta = new CrearPreguntas();
+         this.queue = pregunta.parsear();
+    }
+
     public boolean juegoPuedeComenzar(){
         if(jugador2 != null){ return true;}
         return false;
@@ -34,7 +38,12 @@ public class Panel { // Panel es el modelo de un MVC
         //si tiene mostrar MultiplicadorX3
 
 
-    public Pregunta crearPregunta(){
+    public Pregunta obtenerPreguntaAleatoria(){
+        int tamaño = this.queue.size();
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(tamaño);
+        return (Pregunta) this.queue.get(randomInt);
+        /*
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion verdadero1 = new OpcionBooleana("verdadero", true);
         Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
@@ -47,6 +56,7 @@ public class Panel { // Panel es el modelo de un MVC
         Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Clasico());
         this.preguntaActual = vyf;
         return vyf;
+        */
     }
     public String nombreJugador(int cualJugador){
         if(cualJugador == 1){
