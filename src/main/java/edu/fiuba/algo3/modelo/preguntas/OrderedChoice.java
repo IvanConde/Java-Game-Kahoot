@@ -14,7 +14,12 @@ public class OrderedChoice extends Pregunta {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
         /*ArrayList<Integer> posiciones = new ArrayList<Integer>;
         for(Opcion opcion : todasLasOpciones){
-            if(posiciones.contains(()opcion.getPosicionOriginal()))
+            if(posiciones.contains((OpcionGroup)opcion.getPosicionOriginal())){
+                throw new VyFMasDeDosOpcionesException("no es posible más de una opcion correcta en VerdaderoYFalso");
+            }else{
+                posiciones.add((OpcionGroup)opcion.getPosicionOriginal());
+            }
+
         }*/
     }
 }
