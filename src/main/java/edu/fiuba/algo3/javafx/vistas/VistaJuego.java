@@ -3,6 +3,7 @@ package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import javafx.animation.KeyFrame;
@@ -51,7 +52,9 @@ public class VistaJuego {
         Button botonContestar = new Button("[Enviar respuesta]");
         if(pregunta instanceof VerdaderoFalso){
             this.settiarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, cualJugador);
-        }else {
+        }if(pregunta instanceof OrderedChoice){
+            settiarBotonesOrderedChoice(layoutJuego, opciones, cualJugador);
+        } else {
             this.settiarBotonesMultiplesRespuestas(layoutJuego, opciones, cualJugador);
         }
 
@@ -61,6 +64,9 @@ public class VistaJuego {
         window.setScene(sceneJuego);
         timeline.setCycleCount(1);
         timeline.play();
+    }
+    public void settiarBotonesOrderedChoice(VBox layoutJuego, ArrayList<Opcion> opciones, int cualJugador){
+
     }
     public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
         Button verdadero = new Button("Verdadero");
