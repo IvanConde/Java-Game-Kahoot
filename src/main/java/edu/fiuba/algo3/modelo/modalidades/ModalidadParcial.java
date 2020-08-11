@@ -8,11 +8,11 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 //cuando no haya seleccionado ninguna de las opciones
 //incorrectas.
 
-public class Parcial extends Modalidad {
+public class ModalidadParcial extends Modalidad {
 
     private int modificadorCorrecto;
 
-    public Parcial() {
+    public ModalidadParcial() {
         modificadorCorrecto = 1;
     }
 

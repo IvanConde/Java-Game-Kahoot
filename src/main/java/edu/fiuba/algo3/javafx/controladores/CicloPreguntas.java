@@ -13,6 +13,7 @@ public class CicloPreguntas {
    private VistaJuego ventana;
     private Panel panel;
     private Timeline contadorPantallaActual;
+
     public CicloPreguntas(Panel panel, VistaJuego ventana){
         this.panel = panel;
         this.ventana = ventana;
@@ -26,6 +27,6 @@ public class CicloPreguntas {
 
     }
     public Pregunta generarPregunta(){
-        return this.panel.crearPregunta();
+        return this.panel.obtenerPreguntaAleatoria();
     }
 }
