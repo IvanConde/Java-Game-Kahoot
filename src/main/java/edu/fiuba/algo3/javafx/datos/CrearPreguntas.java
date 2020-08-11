@@ -39,9 +39,7 @@ public class CrearPreguntas {
             jsonObject.keySet().forEach(clave ->
                     {
                         String clavePregunta = (String) clave;
-
                         JSONArray valor = (JSONArray) jsonObject.get(clave);
-                        System.out.println(valor);
                         for(int i=0; i<5;i++) {
                             ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
                             JSONObject pregunta = (JSONObject) valor.get(i);
