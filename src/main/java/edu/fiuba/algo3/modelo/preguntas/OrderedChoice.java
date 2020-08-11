@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo.preguntas;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
@@ -11,21 +11,6 @@ public class OrderedChoice extends Pregunta {
     private int modificadorPuntajeFracaso = 0;
 
     public OrderedChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
-        super(pregunta, todasLasOpciones,new Clasico());
-        //if(!(modalidad instanceof Clasico)){
-        //    throw new OrderedChoiceModalidadInvalidaException("[Error]: la pregunta 'OrderedChoice' solo se puede crear con modalidad clasica");
-        //}
+        super(pregunta, todasLasOpciones, new ModalidadClasico());
     }
-/*
-    @Override
-    protected void comprobarRespuesta(Respuesta respuesta) {
-        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (!opcionElegida.esCorrecto()) {
-                respuesta.modificarPuntaje(modificadorPuntajeFracaso);
-                return;
-            }
-        }
-        respuesta.modificarPuntaje(modificadorPuntajeExito);
-    }
- */
 }

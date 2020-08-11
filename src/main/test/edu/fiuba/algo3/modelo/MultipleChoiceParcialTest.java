@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.modalidades.Parcial;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadParcial;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -47,7 +46,7 @@ public class MultipleChoiceParcialTest {
         Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Parcial conPenalidadParcial = new Parcial();
+        ModalidadParcial conPenalidadParcial = new ModalidadParcial();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
@@ -82,7 +81,7 @@ public class MultipleChoiceParcialTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
 
-        Parcial conPenalidadParcial = new Parcial();
+        ModalidadParcial conPenalidadParcial = new ModalidadParcial();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
@@ -123,7 +122,7 @@ public class MultipleChoiceParcialTest {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        Parcial conPenalidadParcial = new Parcial();
+        ModalidadParcial conPenalidadParcial = new ModalidadParcial();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidadParcial);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
@@ -165,7 +164,7 @@ public class MultipleChoiceParcialTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Parcial parcial = new Parcial();
+        ModalidadParcial parcial = new ModalidadParcial();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, parcial);
         preguntaTest.usarExclusividad(jugador1);
         preguntaTest.usarExclusividad(jugador2);

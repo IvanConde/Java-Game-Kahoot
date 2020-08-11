@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.preguntas;
 import edu.fiuba.algo3.modelo.ExclusividadDePuntaje;
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -40,7 +40,7 @@ public abstract class Pregunta {
     }
 
     public boolean tienePenalidad(){
-        if(modalidad instanceof Penalidad){
+        if(modalidad instanceof ModalidadPenalidad){
             return true;
         }
         return false;

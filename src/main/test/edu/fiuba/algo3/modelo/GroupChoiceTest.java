@@ -1,15 +1,10 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.excepciones.GroupChoiceModalidadInvalidaException;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.modalidades.Parcial;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GroupChoiceTest {
 
@@ -140,25 +135,3 @@ public class GroupChoiceTest {
 
     }
 }
-/*
-    @Test
-    public void test06_4GroupChoiceConPenalidadLanzaExcepcion(){
-        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
-
-        assertThrows(GroupChoiceModalidadInvalidaException.class,() -> {
-            GroupChoice preguntaTest = new GroupChoice("Ordenar de menor a mayor", opciones, new Penalidad());
-        });
-    }
-
-
-    @Test
-    public void test06_5GroupChoiceConModalidadpParcialLanzaExcepcion(){
-        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
-
-        assertThrows(GroupChoiceModalidadInvalidaException.class,() -> {
-            GroupChoice preguntaTest = new GroupChoice("Ordenar de menor a mayor", opciones, new Parcial());
-        });
-    }
-
-}
- */

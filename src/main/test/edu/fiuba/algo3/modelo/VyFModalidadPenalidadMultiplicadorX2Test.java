@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
@@ -7,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 
-public class VyFPenalidadMultiplicadorX2Test {
+public class VyFModalidadPenalidadMultiplicadorX2Test {
 
     @Test
     public void test06_1ResponderVerdaderoYFalsoConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
@@ -25,7 +25,7 @@ public class VyFPenalidadMultiplicadorX2Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -49,7 +49,7 @@ public class VyFPenalidadMultiplicadorX2Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -80,7 +80,7 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador2 = new Respuesta(opcionJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -112,7 +112,7 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador2 = new Respuesta(opcionJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador2.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -144,7 +144,7 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador2 = new Respuesta(opcionJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         jugador2.usarMultiplicadorX2(preguntaTest);
@@ -170,7 +170,7 @@ public class VyFPenalidadMultiplicadorX2Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -196,7 +196,7 @@ public class VyFPenalidadMultiplicadorX2Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
@@ -229,7 +229,7 @@ public class VyFPenalidadMultiplicadorX2Test {
         Respuesta respuestaJugador2 = new Respuesta(opcionJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         jugador1.usarMultiplicadorX2(preguntaTest);
         jugador2.usarMultiplicadorX2(preguntaTest);

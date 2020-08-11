@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo.preguntas;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
@@ -11,7 +11,7 @@ public class GroupChoice extends Pregunta {
     private int modificadorPuntajeFracaso = 0;
 
     public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
-        super(pregunta, todasLasOpciones, new Clasico());
+        super(pregunta, todasLasOpciones, new ModalidadClasico());
         //if(!(modalidad instanceof Clasico)){
         //    throw new GroupChoiceModalidadInvalidaException("[Error]: la pregunta 'OrderedChoice' solo se puede crear con modalidad clasica");
         //}

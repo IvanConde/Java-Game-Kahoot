@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -8,7 +7,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 
-public class MultipleChoicePenalidadTest {
+public class MultipleChoiceModalidadPenalidadTest {
 
     @Test
     public void test05_1ResponderMultipleChoiceConPenalidadCorrectamenteUnJugadorTodoBienYOtroTodoMal(){
@@ -45,7 +44,7 @@ public class MultipleChoicePenalidadTest {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
@@ -79,7 +78,7 @@ public class MultipleChoicePenalidadTest {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
@@ -113,7 +112,7 @@ public class MultipleChoicePenalidadTest {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
@@ -158,7 +157,7 @@ public class MultipleChoicePenalidadTest {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
@@ -194,7 +193,7 @@ public class MultipleChoicePenalidadTest {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-1, jugador1.puntaje().getPuntaje());
@@ -236,7 +235,7 @@ public class MultipleChoicePenalidadTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad penalidad = new Penalidad();
+        ModalidadPenalidad penalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, penalidad);
         preguntaTest.usarExclusividad(jugador1);
         preguntaTest.usarExclusividad(jugador2);

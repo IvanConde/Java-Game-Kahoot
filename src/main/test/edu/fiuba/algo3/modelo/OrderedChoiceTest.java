@@ -1,8 +1,4 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.excepciones.OrderedChoiceModalidadInvalidaException;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.modalidades.Parcial;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;

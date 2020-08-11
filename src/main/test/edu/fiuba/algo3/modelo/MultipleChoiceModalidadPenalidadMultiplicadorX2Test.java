@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -7,10 +7,10 @@ import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class MultipleChoicePenalidadMultiplicadorX3Test {
+public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
 
     @Test
-    public void test09_1ResponderMultipleChoiceConPenalidadyMultiplicadorX3yAsignarPuntajesCorrectamente(){
+    public void test08_1ResponderMultipleChoiceConPenalidadyMultiplicadorX2yAsignarPuntajesCorrectamente(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -44,18 +44,18 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        jugador2.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        jugador2.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(6, jugador1.puntaje().getPuntaje());
-        assertEquals(-3, jugador2.puntaje().getPuntaje());
+        assertEquals(4, jugador1.puntaje().getPuntaje());
+        assertEquals(-2, jugador2.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test09_2ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaRespuestaCorrectaDeDos(){
+    public void test08_2ResponderMultipleChoiceConPenalidadyMultiplicadorX2UnaRespuestaCorrectaDeDos(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -80,16 +80,16 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(3, jugador1.puntaje().getPuntaje());
+        assertEquals(2, jugador1.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test09_3ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaCorrectaYUnaErroneaDeDos(){
+    public void test08_3ResponderMultipleChoiceConPenalidadyMultiplicadorX2UnaCorrectaYUnaErroneaDeDos(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -115,16 +115,16 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test09_4ResponderMultipleChoiceConPenalidadyMultiplicadorX3ConDosJugadores(){
+    public void test08_4ResponderMultipleChoiceConPenalidadyMultiplicadorX2ConDosJugadores(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -161,18 +161,18 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
 
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        jugador2.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        jugador2.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(3, jugador1.puntaje().getPuntaje());
-        assertEquals(-3, jugador2.puntaje().getPuntaje());
+        assertEquals(2, jugador1.puntaje().getPuntaje());
+        assertEquals(-2, jugador2.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test09_5ResponderMultipleChoiceConPenalidadyMultiplicadorX3UnaCorrectaYDosErroneasDeTres(){
+    public void test08_5ResponderMultipleChoiceConPenalidadyMultiplicadorX2UnaCorrectaYDosErroneasDeTres(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -199,54 +199,53 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        preguntaTest.responderPregunta(respuestas);
+        assertEquals(-2, jugador1.puntaje().getPuntaje());
+    }
+
+    @Test
+    public void test08_6ResponderMultipleChoiceConPenalidadJugadorUsaElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
+
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Iván");
+
+        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+
+        //Opciones elegidas por el Jugador 1.
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion4);
+        opcionesJugador1.add(opcion5);
+
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        respuestas.add(respuestaJugador1);
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
+        MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        preguntaTest.responderPregunta(respuestas);
+        jugador1.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test09_6ResponderMultipleChoiceConPenalidadJugadorUsaElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
-
-        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
-        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
-        OpcionBooleana opcion3 = new OpcionBooleana("quizas",true);
-        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
-        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
-
-        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        todasLasOpciones.add(opcion1);
-        todasLasOpciones.add(opcion2);
-        todasLasOpciones.add(opcion3);
-        todasLasOpciones.add(opcion4);
-        todasLasOpciones.add(opcion5);
-
-        Jugador jugador1 = new Jugador("Iván");
-
-        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
-
-        //Opciones elegidas por el Jugador 1.
-        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
-        opcionesJugador1.add(opcion1);
-        opcionesJugador1.add(opcion4);
-        opcionesJugador1.add(opcion5);
-
-        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
-        respuestas.add(respuestaJugador1);
-        Penalidad conPenalidad = new Penalidad();
-        MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        preguntaTest.responderPregunta(respuestas);
-        assertEquals(-4, jugador1.puntaje().getPuntaje());
-
-    }
-
-    @Test
-    public void test09_7ResponderMultipleChoiceConPenalidadJugadoresUsanElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
+    public void test08_7ResponderMultipleChoiceConPenalidadJugadoresUsanElMultiplicadorDosVecesYSoloCambiaElPrimerPuntaje(){
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -284,15 +283,15 @@ public class MultipleChoicePenalidadMultiplicadorX3Test {
 
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Penalidad conPenalidad = new Penalidad();
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        jugador2.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        jugador2.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicadorX3(preguntaTest);
-        jugador2.usarMultiplicadorX3(preguntaTest);
+        jugador1.usarMultiplicadorX2(preguntaTest);
+        jugador2.usarMultiplicadorX2(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(-4, jugador1.puntaje().getPuntaje());
-        assertEquals(4, jugador2.puntaje().getPuntaje());
+        assertEquals(-3, jugador1.puntaje().getPuntaje());
+        assertEquals(3, jugador2.puntaje().getPuntaje());
     }
 }

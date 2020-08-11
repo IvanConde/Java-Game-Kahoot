@@ -1,12 +1,11 @@
 package edu.fiuba.algo3.javafx.datos;
 
-import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.excepciones.ModalidadInvalidaException;
 import edu.fiuba.algo3.modelo.excepciones.PreguntaInvalidaException;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
-import edu.fiuba.algo3.modelo.modalidades.Parcial;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadParcial;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
@@ -20,8 +19,6 @@ import org.json.simple.parser.ParseException;
 import java.io.*;
 
 import java.util.ArrayList;
-import java.util.Dictionary;
-import java.util.Iterator;
 import java.util.LinkedList;
 
 //throws FileNotFoundException
@@ -130,11 +127,11 @@ public class CrearPreguntas {
     public Modalidad obtenerModalidad(String stringModalidad){
         Modalidad modalidad;
         if(stringModalidad.equalsIgnoreCase("penalidad")){
-            modalidad = new Penalidad();
+            modalidad = new ModalidadPenalidad();
         }else if(stringModalidad.equalsIgnoreCase("clasico")){
-            modalidad = new Clasico();
+            modalidad = new ModalidadClasico();
         }else if(stringModalidad.equalsIgnoreCase("parcial")){
-            modalidad = new Parcial();
+            modalidad = new ModalidadParcial();
         }else{
             throw new ModalidadInvalidaException("La modalidad leida no existe");
         }
