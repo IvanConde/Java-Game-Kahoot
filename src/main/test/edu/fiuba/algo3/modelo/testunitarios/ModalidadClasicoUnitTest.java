@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Respuesta;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import org.junit.jupiter.api.Test;
@@ -11,13 +11,13 @@ import java.util.ArrayList;
 public class ModalidadClasicoUnitTest {
     @Test
     public void test01_CrearModalidadClasico(){
-        Clasico ModalidadClasicoTest = new Clasico();
+        ModalidadClasico ModalidadClasicoTest = new ModalidadClasico();
         assertEquals(true, ModalidadClasicoTest != null);
     }
 
     @Test
     public void test02_calcularPuntajeSinExclusividadyConRespuestasCorrectas(){
-        Clasico ModalidadClasicoTest = new Clasico();
+        ModalidadClasico ModalidadClasicoTest = new ModalidadClasico();
         Opcion opcionTest = new OpcionBooleana("test", true);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
@@ -28,7 +28,7 @@ public class ModalidadClasicoUnitTest {
 
     @Test
     public void test03_calcularPuntajeSinExclusividadyConRespuestasIncorrectas(){
-        Clasico ModalidadClasicoTest = new Clasico();
+        ModalidadClasico ModalidadClasicoTest = new ModalidadClasico();
         Opcion opcionTest = new OpcionBooleana("test", false);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
@@ -39,7 +39,7 @@ public class ModalidadClasicoUnitTest {
 
     @Test
     public void test04_calcularPuntajeConExclusividadyConRespuestasCorrectas(){
-        Clasico ModalidadClasicoTest = new Clasico();
+        ModalidadClasico ModalidadClasicoTest = new ModalidadClasico();
         Opcion opcionTest = new OpcionBooleana("test", true);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
@@ -50,7 +50,7 @@ public class ModalidadClasicoUnitTest {
 
     @Test
     public void test05_calcularPuntajeConExclusividadyConRespuestasIncorrectas(){
-        Clasico ModalidadClasicoTest = new Clasico();
+        ModalidadClasico ModalidadClasicoTest = new ModalidadClasico();
         Opcion opcionTest = new OpcionBooleana("test", false);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
