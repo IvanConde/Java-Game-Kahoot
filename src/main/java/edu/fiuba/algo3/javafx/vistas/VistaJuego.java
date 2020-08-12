@@ -3,7 +3,8 @@ package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
-import edu.fiuba.algo3.modelo.opciones.OpcionEstructurada;
+
+import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
@@ -57,7 +58,7 @@ public class VistaJuego {
         if(pregunta instanceof VerdaderoFalso){
             this.settiarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, cualJugador);
         }else if(pregunta instanceof GroupChoice){
-            settiarBotonesOrderedChoice(layoutJuego, opciones);
+            settiarBotonesGroupChoice(layoutJuego, opciones, (GroupChoice)pregunta);
         } else {
             this.settiarBotonesMultiplesRespuestas(layoutJuego, opciones, cualJugador);
         }
@@ -69,13 +70,14 @@ public class VistaJuego {
         timeline.setCycleCount(1);
         timeline.play();
     }
-    public void settiarBotonesOrderedChoice(VBox layoutJuego, ArrayList<Opcion> opciones){
+    public void settiarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
         for(Opcion i : opciones){
-            if(!(i instanceof OpcionEstructurada)){
+            if(!(i instanceof OpcionGroup)){
                 //TODO: agregar excepcion
             }
             Label opcionTexto = new Label(i.getStringOpcion()+ ":");
-            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionEstructurada)i);
+            ArrayList<String> grupos = pregunta.devolverGrupos();
+            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) i, grupos.get(0), grupos.get(1));
             panel.agregarRespuestaJugadorGroup(botonOpcion);
             botonOpcion.setMaxWidth(300);
             layoutJuego.getChildren().add(opcionTexto);
@@ -85,8 +87,8 @@ public class VistaJuego {
     public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
         Button verdadero = new Button("Verdadero");
         Button falso = new Button("Falso");
-        verdadero.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), verdadero, panel, cualJugador, contestar));
-        falso.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), verdadero, panel, cualJugador, contestar));
+        verdadero.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), verdadero, panel, cualJugador, contestar));
+        falso.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), falso, panel, cualJugador, contestar));
         layoutJuego.getChildren().add(verdadero);
         layoutJuego.getChildren().add(falso);
     }
