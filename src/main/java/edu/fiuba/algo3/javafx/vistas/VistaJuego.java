@@ -127,13 +127,16 @@ public class VistaJuego {
     }
 
     public void pantallaFinal(){
-        Label gracias = new Label("gracias por jugar");
+        Label gracias = new Label("¡Gracias por jugar!");
         Label puntajeJugador1 = new Label("puntos de " + panel.nombreJugador(1)+ ": " + panel.puntajeJugador(1));
         Label puntajeJugador2 = new Label("puntos de " + panel.nombreJugador(2)+ ": " + panel.puntajeJugador(2));
         Label ganador;
-        if(panel.puntajeJugador(1)<panel.puntajeJugador(2)){
+        if(panel.puntajeJugador(1) < panel.puntajeJugador(2)){
             ganador = new Label("Felicitaciones " + panel.nombreJugador(2) + "! Ganaste!");
-        }else{
+        }else if(panel.puntajeJugador(1) == panel.puntajeJugador(2)){
+            ganador = new Label("¡Los dos jugadores empataron con " + panel.puntajeJugador(1) + " puntos!");
+        }
+        else{
             ganador = new Label("Felicitaciones " + panel.nombreJugador(1) + "! Ganaste!");
         }
         VBox layoutJuego = new VBox();

@@ -7,16 +7,21 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 public class CicloPreguntas {
     private VistaJuego ventana;
     private Panel panel;
+    private int cantidadDePreguntas;
     public CicloPreguntas(Panel panel, VistaJuego ventana){
         this.panel = panel;
         this.ventana = ventana;
+        this.cantidadDePreguntas = 1;
         correrPregunta();
-
-
     }
     public void correrPregunta(){
-        Pregunta pregunta = this.generarPregunta();
-        ventana.construirPantallas(pregunta, 1);
+        if(cantidadDePreguntas > 0) {
+            Pregunta pregunta = this.generarPregunta();
+            ventana.construirPantallas(pregunta, 1);
+            cantidadDePreguntas -= 1;
+        }else{
+            ventana.pantallaFinal();
+        }
     }
     public Pregunta generarPregunta(){
         return this.panel.obtenerPreguntaAleatoria();

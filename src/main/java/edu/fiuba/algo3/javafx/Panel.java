@@ -80,7 +80,7 @@ public class Panel { // Panel es el modelo de un MVC
         int tamaño = this.queue.size();
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(tamaño);
-        Pregunta pregunta = (Pregunta) this.queue.get(randomInt);
+        Pregunta pregunta = (Pregunta) this.queue.remove(randomInt);
         this.preguntaActual = pregunta;
         return pregunta;
     }
