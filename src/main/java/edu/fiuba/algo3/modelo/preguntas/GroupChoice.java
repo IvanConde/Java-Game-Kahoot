@@ -6,11 +6,13 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 import java.util.ArrayList;
 
 public class GroupChoice extends Pregunta {
-
-    private int modificadorPuntajeExito = 1;
-    private int modificadorPuntajeFracaso = 0;
-
-    public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones) {
+    private ArrayList<String> grupos;
+    public GroupChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, ArrayList<String> grupos) {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
+        this.grupos = grupos;
+    }
+
+    public ArrayList<String> devolverGrupos(){
+        return this.grupos;
     }
 }

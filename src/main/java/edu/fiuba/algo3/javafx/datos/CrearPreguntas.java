@@ -120,7 +120,8 @@ public class CrearPreguntas {
             OpcionGroup opcion = new OpcionGroup(textoOpcion, grupoOriginal);
             todasLasOpciones.add(opcion);
         });
-        GroupChoice pregunta = new GroupChoice(textoPregunta, todasLasOpciones);
+        ArrayList<String> grupos = (ArrayList<String>) jsonPregunta.get("grupos");
+        GroupChoice pregunta = new GroupChoice(textoPregunta, todasLasOpciones, grupos);
         this.queue.add(pregunta);
     }
 

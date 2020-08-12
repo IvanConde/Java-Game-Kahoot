@@ -10,7 +10,7 @@ import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 public class CicloPreguntas {
-   private VistaJuego ventana;
+    private VistaJuego ventana;
     private Panel panel;
     private Timeline contadorPantallaActual;
 

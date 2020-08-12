@@ -38,8 +38,10 @@ public class GroupChoiceTest {
         Respuesta respuesta = new Respuesta(opcionesJugador, jugador.puntaje());
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
-
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        ArrayList<String> grupos = new ArrayList<String>();
+        grupos.add("0");
+        grupos.add("1");
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, grupos);
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(1, jugador.puntaje().getPuntaje());
@@ -76,8 +78,10 @@ public class GroupChoiceTest {
         Respuesta respuesta = new Respuesta(opcionesJugador, jugador.puntaje());
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta);
-
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        ArrayList<String> grupos = new ArrayList<String>();
+        grupos.add("0");
+        grupos.add("1");
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones,grupos);
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0, jugador.puntaje().getPuntaje());
@@ -126,8 +130,10 @@ public class GroupChoiceTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuesta1);
         respuestas.add(respuesta2);
-
-        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones);
+        ArrayList<String> grupos = new ArrayList<String>();
+        grupos.add("0");
+        grupos.add("1");
+        GroupChoice preguntaTest = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, grupos);
         preguntaTest.responderPregunta(respuestas);
 
         assertEquals(0, jugador1.puntaje().getPuntaje());

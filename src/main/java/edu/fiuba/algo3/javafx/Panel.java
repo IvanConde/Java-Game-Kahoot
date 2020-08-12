@@ -43,20 +43,6 @@ public class Panel { // Panel es el modelo de un MVC
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(tamaño);
         return (Pregunta) this.queue.get(randomInt);
-        /*
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion verdadero1 = new OpcionBooleana("verdadero", true);
-        Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
-        Opcion falso1 = new OpcionBooleana("falso", false);
-        Opcion falso2 = new OpcionBooleana("A veces", false);
-        todas.add(verdadero1);
-        todas.add(verdadero2);
-        todas.add(falso1);
-        todas.add(falso2);
-        Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Clasico());
-        this.preguntaActual = vyf;
-        return vyf;
-        */
     }
     public String nombreJugador(int cualJugador){
         if(cualJugador == 1){

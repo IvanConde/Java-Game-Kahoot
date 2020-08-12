@@ -16,9 +16,9 @@ import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class VistaJuego {
-    Stage window;
-    Scene sceneJuego;
-    Panel panel;
+    private Stage window;
+    private Scene sceneJuego;
+    private Panel panel;
     int contestateActual;
     public VistaJuego(Stage stage, Panel panel){
         this.window = stage;

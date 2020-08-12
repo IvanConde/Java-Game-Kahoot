@@ -178,7 +178,8 @@
           "René Descartes": "Cientificos",
           "Keanu Reeves": "Actores",
           "Leonardo DiCaprio": "Actores"
-        }
+        },
+      "grupos": ["Cientificos","Actores"]
       },
     {
       "textoPregunta": "Coloque en el grupo 0 a las marcas de queso y en el grupo 1 a las marcas de fiambre:",
@@ -190,7 +191,8 @@
           "Bonnatur": "Fiambres",
           "Cremon": "Quesos",
           "Campo Austral": "Fiambres"
-        }
+        },
+      "grupos": ["Quesos","Fiambres"]
       },
     {
       "textoPregunta": "Coloque en el grupo 0 a los paises que pertenecen al Mercosur y en el grupo 1 a los que no:",
@@ -202,7 +204,8 @@
         "Brasil": "Mercosur",
         "Mexico": "Otros",
         "Venezuela": "Mercosur"
-      }
+      },
+      "grupos": ["Mercosur","Otros"]
     },
     {
       "textoPregunta": "Coloque en el grupo 0 a los juegos mas amados de la E3 2019 y en el grupo 1 a los mas odiados:",
@@ -214,7 +217,8 @@
         "The Elder Scrolls: Legends": "odiados",
         "Fallout 76": "odiados",
         "Dying Light 2": "amados"
-      }
+      },
+      "grupos": ["Amados","Odiados"]
     },
     {
       "textoPregunta": "Coloque en el grupo 0 a los animales y en el grupo 1 a los insectos :",
@@ -226,7 +230,8 @@
         "Gato": "animales",
         "Cucaracha": "insectos",
         "Mantis religiosa": "insectos"
-      }
+      },
+      "grupos": ["Animales","Insectos"]
     }
   ]
 }

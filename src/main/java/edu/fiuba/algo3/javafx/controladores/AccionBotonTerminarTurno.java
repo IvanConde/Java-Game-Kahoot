@@ -11,7 +11,7 @@ import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
-    private int i = 1;
+    //private int i = 1;
     private Timeline contadorPantallaActual;
     private VistaJuego ventana;
     private Pregunta pregunta;
@@ -30,6 +30,6 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
             return;
         }
         ventana.mostrarPregunta(pregunta, panel.nombreJugador(2), 2, contadorPantallaActual);
-        i++;
+        //i++;
     }
 }
