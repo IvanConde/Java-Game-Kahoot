@@ -21,4 +21,15 @@ public class GroupChoiceUnitTest {
         GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones);
         assertNotEquals(null, preguntaGroupChoiceTest);
     }
+
+    @Test
+    public void test02_TienePenalidadSiempreDevulveFalse(){
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        OpcionGroup opcion1 = new OpcionGroup("1", "1");
+        OpcionGroup opcion2 = new OpcionGroup("0", "0");
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones);
+        assertFalse(preguntaGroupChoiceTest.tienePenalidad());
+    }
 }

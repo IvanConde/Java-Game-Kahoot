@@ -16,8 +16,9 @@ public class OrderedChoice extends Pregunta {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
         ArrayList<Integer> posiciones = new ArrayList<Integer>();
         for(Opcion opcion : todasLasOpciones){
-            if(posiciones.contains(((OpcionOrdered)opcion).getPosicionOriginal())){
-                throw new OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException("no es posible más de una opcion correcta en VerdaderoYFalso");
+            Integer posicionOriginal =(Integer)(((OpcionOrdered)opcion).getPosicionOriginal());
+            if(posiciones.contains(posicionOriginal)){
+                throw new OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException("no es posible más de una opcion con las misam posicion original");
             }else{
                 posiciones.add(((OpcionOrdered)opcion).getPosicionOriginal());
             }

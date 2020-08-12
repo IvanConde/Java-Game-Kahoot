@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
@@ -49,5 +50,25 @@ public class VyFUnitTest {
         assertTrue(mensajeVerdadero.contains(mensajeEsperado));
     }
 
+    @Test
+    public void test04_TienePenalidadDevulveTrueCuandoLaModalidadDeLaPreguntaEsUnaInstanciaDeModalidadPenalidad(){
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadPenalidad());
+        assertTrue(preguntaTest.tienePenalidad());
+    }
 
+    @Test
+    public void test05_TienePenalidadDevulveFalseCuandoLaModalidadDeLaPreguntaNoEsUnaInstanciaDeModalidadPenalidad(){
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
+        assertFalse(preguntaTest.tienePenalidad());
+    }
 }
