@@ -1,13 +1,13 @@
 package edu.fiuba.algo3.javafx;
 
+import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.modalidades.Clasico;
 import edu.fiuba.algo3.modelo.modalidades.Penalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
-import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
-import edu.fiuba.algo3.modelo.preguntas.Pregunta;
-import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
+import edu.fiuba.algo3.modelo.opciones.OpcionEstructurada;
+import edu.fiuba.algo3.modelo.preguntas.*;
 
 import java.util.ArrayList;
 
@@ -17,6 +17,7 @@ public class Panel { // Panel es el modelo de un MVC
     Pregunta preguntaActual;
     ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
     ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+    ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     public boolean juegoPuedeComenzar(){
         if(jugador2 != null){ return true;}
         return false;
@@ -59,6 +60,19 @@ public class Panel { // Panel es el modelo de un MVC
 
 
     public Pregunta crearPregunta(){
+        OpcionEstructurada opcion1 = new OpcionEstructurada("2", 0);
+        OpcionEstructurada opcion2 = new OpcionEstructurada("8", 1);
+        OpcionEstructurada opcion3 = new OpcionEstructurada("13", 0);
+        OpcionEstructurada opcion4 = new OpcionEstructurada("12", 1);
+        OpcionEstructurada opcion5 = new OpcionEstructurada("17", 0);
+        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
+        opciones.add(opcion1);
+        opciones.add(opcion2);
+        opciones.add(opcion3);
+        opciones.add(opcion4);
+        opciones.add(opcion5);
+        GroupChoice vyf = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
+
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion verdadero1 = new OpcionBooleana("verdadero", true);
         Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
@@ -68,8 +82,10 @@ public class Panel { // Panel es el modelo de un MVC
         // todas.add(verdadero2);
         todas.add(falso1);
        // todas.add(falso2);
-        Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Penalidad());
+        //Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Penalidad());
         this.preguntaActual = vyf;
+
+
         return vyf;
     }
     public String nombreJugador(int cualJugador){
@@ -109,5 +125,18 @@ public class Panel { // Panel es el modelo de un MVC
             return jugador1.puntaje().getPuntaje();
         }
         return jugador2.puntaje().getPuntaje();
+    }
+    public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
+        respuestasJugadorGroup.add(interruptor);
+    }
+    public void recolectarRespuestasGroup(int cualJugador){
+        for(ToggleSwitch interruptor : respuestasJugadorGroup){
+            if(cualJugador == 1){
+                interruptor.respuestaJugador(opcionesJugador1);
+            }else {
+                interruptor.respuestaJugador(opcionesJugador2);
+            }
+        }
+        respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     }
 }

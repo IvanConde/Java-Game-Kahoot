@@ -3,6 +3,8 @@ package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionEstructurada;
+import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
@@ -14,6 +16,7 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 
 import java.util.ArrayList;
 
@@ -52,8 +55,8 @@ public class VistaJuego {
         Button botonContestar = new Button("[Enviar respuesta]");
         if(pregunta instanceof VerdaderoFalso){
             this.settiarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, cualJugador);
-        }if(pregunta instanceof OrderedChoice){
-            settiarBotonesOrderedChoice(layoutJuego, opciones, cualJugador);
+        }else if(pregunta instanceof GroupChoice){
+            settiarBotonesOrderedChoice(layoutJuego, opciones);
         } else {
             this.settiarBotonesMultiplesRespuestas(layoutJuego, opciones, cualJugador);
         }
@@ -65,8 +68,18 @@ public class VistaJuego {
         timeline.setCycleCount(1);
         timeline.play();
     }
-    public void settiarBotonesOrderedChoice(VBox layoutJuego, ArrayList<Opcion> opciones, int cualJugador){
-
+    public void settiarBotonesOrderedChoice(VBox layoutJuego, ArrayList<Opcion> opciones){
+        for(Opcion i : opciones){
+            if(!(i instanceof OpcionEstructurada)){
+                //TODO: agregar excepcion
+            }
+            Label opcionTexto = new Label(i.getStringOpcion()+ ":");
+            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionEstructurada)i);
+            panel.agregarRespuestaJugadorGroup(botonOpcion);
+            botonOpcion.setMaxWidth(300);
+            layoutJuego.getChildren().add(opcionTexto);
+            layoutJuego.getChildren().add(botonOpcion);
+        }
     }
     public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
         Button verdadero = new Button("Verdadero");
