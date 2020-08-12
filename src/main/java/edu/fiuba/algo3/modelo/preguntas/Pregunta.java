@@ -9,7 +9,6 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 import java.util.ArrayList;
 
 public abstract class Pregunta {
-
     protected String pregunta;
     protected ArrayList<Opcion> todasLasOpciones;
     protected Modalidad modalidad;
@@ -29,7 +28,6 @@ public abstract class Pregunta {
         for (Respuesta respuesta : respuestas)
             comprobarRespuesta(respuesta);
         exclusividad.aplicarExclusividad(respuestas);
-
     }
 
     public boolean tienePenalidad(){

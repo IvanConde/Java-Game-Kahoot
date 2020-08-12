@@ -11,7 +11,7 @@ public class CicloPreguntas {
     public CicloPreguntas(Panel panel, VistaJuego ventana){
         this.panel = panel;
         this.ventana = ventana;
-        this.cantidadDePreguntas = 1;
+        this.cantidadDePreguntas = 5;
         correrPregunta();
     }
     public void correrPregunta(){

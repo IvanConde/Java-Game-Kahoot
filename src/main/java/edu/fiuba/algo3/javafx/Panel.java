@@ -53,7 +53,7 @@ public class Panel { // Panel es el modelo de un MVC
         if(preguntaActual instanceof OrderedChoice){
             if(opcion instanceof OpcionOrdered){
                 OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
-                opcionEstructurada.elegirPosicion(opcionesJugador.size(), opcionesJugador);
+                opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
             }else{
                 //TODO: misma excepcion que con group
             }

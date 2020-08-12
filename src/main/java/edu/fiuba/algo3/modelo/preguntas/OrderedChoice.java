@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo.preguntas;
+import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.excepciones.OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -13,11 +14,17 @@ public class OrderedChoice extends Pregunta {
         for(Opcion opcion : todasLasOpciones){
             Integer posicionOriginal =(Integer)(((OpcionOrdered)opcion).getPosicionOriginal());
             if(posiciones.contains(posicionOriginal)){
-                throw new OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException("no es posible más de una opcion con las misam posicion original");
+                throw new OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException("no es posible más de una opcion con las misma posicion original");
             }else{
                 posiciones.add(((OpcionOrdered)opcion).getPosicionOriginal());
             }
+        }
+    }
 
+    @Override
+    public void comprobarRespuesta(Respuesta respuesta) {
+        if(respuesta.getOpciones().size() == todasLasOpciones.size()) {
+            modalidad.calcularPuntaje(respuesta, exclusividad.verEstado());
         }
     }
 }
