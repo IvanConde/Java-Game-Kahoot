@@ -35,17 +35,18 @@ public class Jugador {
     }
     public boolean tieneMultiplicadorx2(){
         return !multiplicadorX2.seUtilizo();
+
     }
     public boolean tieneMultiplicadorx3(){
         return !multiplicadorX3.seUtilizo();
     }
-/*
-    public void usarExclusividadPuntaje(Pregunta pregunta){
-        if(!(pregunta.tienePenalidad())){
-            puntaje.setExclusividad(exclusividad);
+    /*
+        public void usarExclusividadPuntaje(Pregunta pregunta){
+            if(!(pregunta.tienePenalidad())){
+                puntaje.setExclusividad(exclusividad);
+            }
         }
-    }
-*/
+    */
     public String verNombre(){
         return this.nombre;
     }
