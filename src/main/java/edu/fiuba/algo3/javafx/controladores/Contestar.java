@@ -15,6 +15,6 @@ public class Contestar implements EventHandler<ActionEvent> {
     }
     @Override
     public void handle(ActionEvent e) {
-        contadorPantallaActual.jumpTo(Duration.millis(5001));
+        contadorPantallaActual.jumpTo(Duration.millis(30001));
     }
 }

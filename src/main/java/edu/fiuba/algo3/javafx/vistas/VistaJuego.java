@@ -47,7 +47,7 @@ public class VistaJuego {
     }
     public void mostrarPregunta(Pregunta pregunta, int cualJugador){
         contestateActual = cualJugador;
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new AccionBotonTerminarTurno( this, pregunta, panel)));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno( this, pregunta, panel)));
         Label nombreJugadorLabel = new Label("Responde " + panel.nombreJugador(cualJugador) + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         ArrayList<Opcion> opciones = pregunta.verBotones();
@@ -65,7 +65,7 @@ public class VistaJuego {
 
         botonContestar.setOnAction(new Contestar(timeline, this));
         layoutJuego.getChildren().add(botonContestar);
-        sceneJuego = new Scene(layoutJuego, 1280, 720); //640x480
+        sceneJuego = new Scene(layoutJuego, 640, 480); //640x480
         window.setScene(sceneJuego);
         timeline.setCycleCount(1);
         timeline.play();
