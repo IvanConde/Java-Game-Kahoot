@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
@@ -19,7 +19,7 @@ public class VyFUnitTest {
         OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
         assertEquals(false, preguntaTest==null);
     }
 
@@ -30,7 +30,7 @@ public class VyFUnitTest {
         OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
         todasLasOpciones.add(opcionVerdadero);
         todasLasOpciones.add(opcionFalso);
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
         assertEquals(todasLasOpciones, preguntaTest.verBotones());
     }
 
@@ -43,7 +43,7 @@ public class VyFUnitTest {
         todasLasOpciones.add(opcionVerdadero1);
         todasLasOpciones.add(opcionVerdadero2);
         todasLasOpciones.add(opcionFalso);
-        Exception excepcionEsperada = assertThrows(VyFMasDeDosOpcionesException.class,()->{VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());});
+        Exception excepcionEsperada = assertThrows(VyFMasDeDosOpcionesException.class,()->{VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());});
         String mensajeEsperado = "no es posible más de una opcion correcta en VerdaderoYFalso";
         String mensajeVerdadero = excepcionEsperada.getMessage();
         assertTrue(mensajeVerdadero.contains(mensajeEsperado));
