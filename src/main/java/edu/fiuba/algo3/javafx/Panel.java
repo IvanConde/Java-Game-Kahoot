@@ -33,9 +33,21 @@ public class Panel { // Panel es el modelo de un MVC
     public void agregarRespuestaJugador(Opcion opcion, int cualJugador){
         System.out.println(opcion.getStringOpcion());
         if(cualJugador == 1){
-            opcionesJugador1.add(opcion);
+            agregarRespuesta(opcionesJugador1, opcion);
         }else{
-            opcionesJugador2.add(opcion);
+            agregarRespuesta(opcionesJugador2, opcion);
+        }
+    }
+    public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion){
+        if(preguntaActual instanceof OrderedChoice){
+            if(opcion instanceof OpcionEstructurada){
+                OpcionEstructurada opcionEstructurada = (OpcionEstructurada)opcion;
+                opcionEstructurada.elegir(opcionesJugador.size(), opcionesJugador);
+            }else{
+                //TODO: misma excepcion que con group
+            }
+        }else {
+            opcionesJugador.add(opcion);
         }
     }
     public void responderPregunta(){
@@ -51,27 +63,30 @@ public class Panel { // Panel es el modelo de un MVC
         System.out.println(jugador2.puntaje().getPuntaje());
     }
 
-    //public void tienePenalidad(){
-        //si tiene penalidad
-       // if(jugador.getTieneMultiplicadorx2){
-            //mostrarBoton
-        //}
-        //si tiene mostrar MultiplicadorX3
-
 
     public Pregunta crearPregunta(){
-        OpcionEstructurada opcion1 = new OpcionEstructurada("2", 0);
-        OpcionEstructurada opcion2 = new OpcionEstructurada("8", 1);
-        OpcionEstructurada opcion3 = new OpcionEstructurada("13", 0);
-        OpcionEstructurada opcion4 = new OpcionEstructurada("12", 1);
-        OpcionEstructurada opcion5 = new OpcionEstructurada("17", 0);
+        //OpcionEstructurada opcion1 = new OpcionEstructurada("2", 0);
+        //OpcionEstructurada opcion2 = new OpcionEstructurada("8", 1);
+        //OpcionEstructurada opcion3 = new OpcionEstructurada("13", 0);
+        //OpcionEstructurada opcion4 = new OpcionEstructurada("12", 1);
+        //OpcionEstructurada opcion5 = new OpcionEstructurada("17", 0);
+
+       // GroupChoice vyf = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
+
+        OpcionEstructurada opcion1 = new OpcionEstructurada("4",0);
+        OpcionEstructurada opcion2 = new OpcionEstructurada("7",1);
+        OpcionEstructurada opcion3 = new OpcionEstructurada("9",2);
+        OpcionEstructurada opcion4 = new OpcionEstructurada("10",3);
+        OpcionEstructurada opcion5 = new OpcionEstructurada("25",4);
+
         ArrayList<Opcion> opciones = new ArrayList<Opcion>();
         opciones.add(opcion1);
         opciones.add(opcion2);
         opciones.add(opcion3);
         opciones.add(opcion4);
         opciones.add(opcion5);
-        GroupChoice vyf = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
+
+        OrderedChoice vyf = new OrderedChoice("Ordenar de menor a mayor", opciones, new Clasico());
 
         ArrayList<Opcion> todas = new ArrayList<Opcion>();
         Opcion verdadero1 = new OpcionBooleana("verdadero", true);

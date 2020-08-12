@@ -25,6 +25,7 @@ public class VistaJuego {
     Scene sceneJuego;
     Panel panel;
     int contestateActual;
+    CicloPreguntas ciclo;
     public VistaJuego(Stage stage, Panel panel){
         this.window = stage;
         this.panel = panel;
@@ -34,7 +35,7 @@ public class VistaJuego {
         return contestateActual;
     }
     public void juego(){
-        CicloPreguntas preguntas = new CicloPreguntas(panel, this);
+        this.ciclo = new CicloPreguntas(panel, this);
     }
     public void construirPantallas(Pregunta pregunta, int cualJugador){
         if(pregunta.tienePenalidad()){
@@ -140,5 +141,8 @@ public class VistaJuego {
         layoutJuego.getChildren().add(ganador);
         sceneJuego = new Scene(layoutJuego, 640, 480);
         window.setScene(sceneJuego);
+    }
+    public void proximaPregunta(){
+        ciclo.correrPregunta();
     }
 }

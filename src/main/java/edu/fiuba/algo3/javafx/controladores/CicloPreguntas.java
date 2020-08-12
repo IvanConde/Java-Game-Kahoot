@@ -10,10 +10,13 @@ public class CicloPreguntas {
     public CicloPreguntas(Panel panel, VistaJuego ventana){
         this.panel = panel;
         this.ventana = ventana;
+        correrPregunta();
+
+
+    }
+    public void correrPregunta(){
         Pregunta pregunta = this.generarPregunta();
         ventana.construirPantallas(pregunta, 1);
-
-
     }
     public Pregunta generarPregunta(){
         return this.panel.crearPregunta();
