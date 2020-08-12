@@ -71,7 +71,6 @@ public class MultipleChoiceParcialTest {
         todasLasOpciones.add(opcion5);
 
         Jugador jugador1 = new Jugador("Federico");
-        Jugador jugador2 = new Jugador("Sofia");
 
         //Opciones elegidas por el Jugador 1.
         ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();

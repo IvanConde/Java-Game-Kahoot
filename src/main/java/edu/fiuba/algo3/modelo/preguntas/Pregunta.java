@@ -17,13 +17,6 @@ public abstract class Pregunta {
     protected ExclusividadDePuntaje exclusividad;
     protected boolean exclusividadesActivada;
 
-    /*
-    public Pregunta(String pregunta, ArrayList<Opcion> todasLasOpciones){
-        this.todasLasOpciones = todasLasOpciones;
-        this.pregunta = pregunta;
-    }
-     */
-
     protected Pregunta(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
         this.todasLasOpciones = todasLasOpciones;
         this.pregunta = pregunta;
