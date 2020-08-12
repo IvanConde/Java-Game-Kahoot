@@ -31,7 +31,7 @@ public class CrearPreguntas {
 
     public LinkedList parsear() {
         JSONParser parser = new JSONParser();
-        try(Reader reader = new FileReader("C:\\Users\\Lenovo\\Algo3TP2\\tp2\\preguntas.json")){
+        try(Reader reader = new FileReader("preguntas.json")){
             JSONObject jsonObject = (JSONObject) parser.parse(reader);
             jsonObject.keySet().forEach(clave ->
                     {
