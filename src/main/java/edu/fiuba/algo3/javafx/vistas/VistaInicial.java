@@ -11,9 +11,9 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VistaInicial {
-    Stage window;
-    Scene sceneIngresoNombres, sceneJuego;
-    Panel panel;
+    private Stage window;
+    private Scene sceneIngresoNombres, sceneJuego;
+    private Panel panel;
 
     public VistaInicial(Stage stage){
         this.window = stage;

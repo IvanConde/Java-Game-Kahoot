@@ -1,15 +1,20 @@
 package edu.fiuba.algo3.javafx;
 
+
 import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
-import edu.fiuba.algo3.modelo.modalidades.Penalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
-import edu.fiuba.algo3.modelo.opciones.OpcionEstructurada;
+import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
+import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.*;
+import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
+import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Random;
 
 public class Panel { // Panel es el modelo de un MVC
     Jugador jugador1;
@@ -18,6 +23,12 @@ public class Panel { // Panel es el modelo de un MVC
     ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
     ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
     ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
+    LinkedList queue;
+    public Panel(){
+        CrearPreguntas pregunta = new CrearPreguntas();
+         this.queue = pregunta.parsear();
+    }
+
     public boolean juegoPuedeComenzar(){
         if(jugador2 != null){ return true;}
         return false;
@@ -40,9 +51,9 @@ public class Panel { // Panel es el modelo de un MVC
     }
     public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion){
         if(preguntaActual instanceof OrderedChoice){
-            if(opcion instanceof OpcionEstructurada){
-                OpcionEstructurada opcionEstructurada = (OpcionEstructurada)opcion;
-                opcionEstructurada.elegir(opcionesJugador.size(), opcionesJugador);
+            if(opcion instanceof OpcionOrdered){
+                OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
+                opcionEstructurada.elegirPosicion(opcionesJugador.size(), opcionesJugador);
             }else{
                 //TODO: misma excepcion que con group
             }
@@ -64,44 +75,12 @@ public class Panel { // Panel es el modelo de un MVC
     }
 
 
-    public Pregunta crearPregunta(){
-        //OpcionEstructurada opcion1 = new OpcionEstructurada("2", 0);
-        //OpcionEstructurada opcion2 = new OpcionEstructurada("8", 1);
-        //OpcionEstructurada opcion3 = new OpcionEstructurada("13", 0);
-        //OpcionEstructurada opcion4 = new OpcionEstructurada("12", 1);
-        //OpcionEstructurada opcion5 = new OpcionEstructurada("17", 0);
 
-       // GroupChoice vyf = new GroupChoice("Colocar en el grupo 0 los numeros primos y en el grupo 1 los no-primos", opciones, new Clasico());
-
-        OpcionEstructurada opcion1 = new OpcionEstructurada("4",0);
-        OpcionEstructurada opcion2 = new OpcionEstructurada("7",1);
-        OpcionEstructurada opcion3 = new OpcionEstructurada("9",2);
-        OpcionEstructurada opcion4 = new OpcionEstructurada("10",3);
-        OpcionEstructurada opcion5 = new OpcionEstructurada("25",4);
-
-        ArrayList<Opcion> opciones = new ArrayList<Opcion>();
-        opciones.add(opcion1);
-        opciones.add(opcion2);
-        opciones.add(opcion3);
-        opciones.add(opcion4);
-        opciones.add(opcion5);
-
-        OrderedChoice vyf = new OrderedChoice("Ordenar de menor a mayor", opciones, new Clasico());
-
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion verdadero1 = new OpcionBooleana("verdadero", true);
-        Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
-        Opcion falso1 = new OpcionBooleana("falso", false);
-        Opcion falso2 = new OpcionBooleana("A veces", false);
-        todas.add(verdadero1);
-        // todas.add(verdadero2);
-        todas.add(falso1);
-       // todas.add(falso2);
-        //Pregunta vyf = new VerdaderoFalso("El mate es rico?", todas, new Penalidad());
-        this.preguntaActual = vyf;
-
-
-        return vyf;
+    public Pregunta obtenerPreguntaAleatoria(){
+        int tamaño = this.queue.size();
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(tamaño);
+        return (Pregunta) this.queue.get(randomInt);
     }
     public String nombreJugador(int cualJugador){
         if(cualJugador == 1){

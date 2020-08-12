@@ -1,30 +1,16 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 import java.util.ArrayList;
 
-public class VyFSinPenalidadTest {
+public class VyFModalidadPenalidadTest {
 
     @Test
-    public void test01_1CrearVyFSinPenalidad() {
-
-        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
-        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
-        todasLasOpciones.add(opcionVerdadero);
-        todasLasOpciones.add(opcionFalso);
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
-        assertEquals(todasLasOpciones, preguntaTest.verBotones());
-    }
-
-    @Test
-    public void test01_2ResponderVerdaderoYFalsoYAsignarPuntajesCorrectamente(){
+    public void test06_1ResponderVerdaderoYFlasoConPenalidadyMultiplicadorX3yAsignarPuntajesCorrectamente(){
 
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
@@ -39,15 +25,15 @@ public class VyFSinPenalidadTest {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test01_3ResponderVerdaderoYFalsoYAsignarPuntajesIncorrectamente(){
+    public void test02_3ResponderVerdaderoYFlasoConPenalidadyAsignarPuntajesIncorrectamente(){
 
         Jugador jugador1 = new Jugador("Federico");
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
@@ -62,15 +48,15 @@ public class VyFSinPenalidadTest {
 
         Respuesta respuestaJugador1 = new Respuesta(opcionJugador1, jugador1.puntaje());
         respuestas.add(respuestaJugador1);
-        Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
-        assertEquals(0, jugador1.puntaje().getPuntaje());
+        assertEquals(-1, jugador1.puntaje().getPuntaje());
 
     }
 
     @Test
-    public void test01_4ResponderVerdaderoYFalsoYAsignarPuntajesDosJugadoresCorrectamenteEIncorrectamente(){
+    public void test02_4ResponderVerdaderoYFlasoConPenalidadDosJugadoresCorrectamenteEIncorrectamente() {
 
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Jose");
@@ -92,25 +78,11 @@ public class VyFSinPenalidadTest {
         Respuesta respuestaJugador2 = new Respuesta(opcionJugador2, jugador2.puntaje());
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Clasico sinPenalidad = new Clasico();
-        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
+        VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, conPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1, jugador1.puntaje().getPuntaje());
-        assertEquals(0, jugador2.puntaje().getPuntaje());
-
-    }
-
-    @Test
-    public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
-
-        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
-        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
-        OpcionBooleana opcionFalso = new OpcionBooleana("falso", true);
-        todasLasOpciones.add(opcionVerdadero);
-        todasLasOpciones.add(opcionFalso);
-        assertThrows(VyFMasDeDosOpcionesException.class, () ->
-            {new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
-        });
+        assertEquals(-1, jugador2.puntaje().getPuntaje());
 
     }
 

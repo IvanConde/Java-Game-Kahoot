@@ -25,12 +25,3 @@ public class Puntaje {
         this.multiplicador = multiplicador;
     }
 }
-/*
-    public void setExclusividad(ExclusividadDePuntaje exclusividad) {
-        this.exclusividad = exclusividad;
-}
-
-}
-        else if((this.exclusividad != null) && (this.exclusividad.sePuedeUsar())){
-        puntaje += this.exclusividad.
- */

@@ -5,7 +5,7 @@ import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
 public class CicloPreguntas {
-   private VistaJuego ventana;
+    private VistaJuego ventana;
     private Panel panel;
     public CicloPreguntas(Panel panel, VistaJuego ventana){
         this.panel = panel;
@@ -19,6 +19,6 @@ public class CicloPreguntas {
         ventana.construirPantallas(pregunta, 1);
     }
     public Pregunta generarPregunta(){
-        return this.panel.crearPregunta();
+        return this.panel.obtenerPreguntaAleatoria();
     }
 }

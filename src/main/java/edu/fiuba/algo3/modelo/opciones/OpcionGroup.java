@@ -4,20 +4,20 @@ import java.util.ArrayList;
 
 public class OpcionGroup extends Opcion {
 
-    private int grupoOriginal;
-    private int grupoJugador;
+    private String grupoOriginal;
+    private String grupoJugador;
 
-    public OpcionGroup(String stringOpcion, int grupoOriginal){
+    public OpcionGroup(String stringOpcion, String grupoOriginal){
         this.stringOpcion = stringOpcion;
         this.grupoOriginal = grupoOriginal;
     }
 
-    public OpcionGroup(String stringOpcion, int grupoOriginal, int grupoJugador){
+    public OpcionGroup(String stringOpcion, String grupoOriginal, String grupoJugador){
         this(stringOpcion, grupoOriginal);
         this.grupoJugador = grupoJugador;
     }
 
-    public void elegirGrupo(int grupoJugador, ArrayList<Opcion> opcionesJugador) {
+    public void elegirGrupo(String grupoJugador, ArrayList<Opcion> opcionesJugador) {
         opcionesJugador.add(new OpcionGroup(this.stringOpcion, this.grupoOriginal, grupoJugador));
     }
 
@@ -26,7 +26,7 @@ public class OpcionGroup extends Opcion {
         return (grupoJugador == grupoOriginal);
     }
 
-    public int getGrupoOriginal() {
+    public String getGrupoOriginal() {
         return grupoOriginal;
     }
 

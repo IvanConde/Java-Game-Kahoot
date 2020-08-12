@@ -4,12 +4,12 @@ import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
-public class Penalidad extends Modalidad {
+public class ModalidadPenalidad extends Modalidad {
 
     private int modificadorCorrecto;
     private int modificadorIncorrecto;
 
-    public Penalidad(){
+    public ModalidadPenalidad(){
         modificadorCorrecto = 1;
         modificadorIncorrecto = -1;
     }

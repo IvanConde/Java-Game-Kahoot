@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 
+
 public class MultipleChoiceClasicoTest {
 
     @Test
-    public void test03_1CrearMultipleChoiceClasico() {
+    public void test03_1CrearMultipleChoiceModalidadClasico() {
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -35,7 +36,7 @@ public class MultipleChoiceClasicoTest {
         respuestas.add(respuesta);
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1,jugador.puntaje().getPuntaje());
 
@@ -76,7 +77,7 @@ public class MultipleChoiceClasicoTest {
 
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Clasico sinPenalidad = new Clasico(); //Modalidad de la pregunta
+        ModalidadClasico sinPenalidad = new ModalidadClasico(); //Modalidad de la pregunta
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
@@ -116,7 +117,7 @@ public class MultipleChoiceClasicoTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
 
-        Clasico sinPenalidad = new Clasico();
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
 
@@ -151,7 +152,7 @@ public class MultipleChoiceClasicoTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
 
-        Clasico sinPenalidad = new Clasico();
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
@@ -193,7 +194,7 @@ public class MultipleChoiceClasicoTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Clasico sinPenalidad = new Clasico();
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
         preguntaTest.usarExclusividad(jugador1);
         preguntaTest.usarExclusividad(jugador2);
