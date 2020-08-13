@@ -3,7 +3,7 @@ package edu.fiuba.algo3.modelo.puntaje;
 import edu.fiuba.algo3.modelo.Multiplicador;
 
 public class PuntajeSwitcher implements Puntaje{
-    PuntajeDecorator decorador;
+    private PuntajeDecorator decorador;
 
     public PuntajeSwitcher(){
         decorador = new PuntajeDecoratorStandard( new PuntajeConcreto());
