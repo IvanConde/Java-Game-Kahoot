@@ -4,7 +4,7 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
 public class Jugador {
 
-    private Puntaje puntaje;
+    private PuntajeSwitcher puntaje;
     private String nombre;
     private Multiplicador multiplicadorX2;
     private Multiplicador multiplicadorX3;
@@ -12,14 +12,14 @@ public class Jugador {
 
     public Jugador(String nombre){
         this.nombre = nombre;
-        this.puntaje = new Puntaje();
+        this.puntaje = new PuntajeSwitcher();
         this.multiplicadorX2 = new Multiplicador(2);
         this.multiplicadorX3 = new Multiplicador(3);
         this.cantExclusividad = 2;
     }
 
     public Puntaje puntaje(){
-        return puntaje;
+        return puntaje.puntaje();
     }
 
     public void usarMultiplicadorX2(Pregunta pregunta) {

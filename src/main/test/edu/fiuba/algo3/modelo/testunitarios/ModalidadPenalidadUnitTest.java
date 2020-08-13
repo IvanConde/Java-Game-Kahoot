@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 
-import edu.fiuba.algo3.modelo.Puntaje;
+import edu.fiuba.algo3.modelo.PuntajeConcreto;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -24,7 +24,7 @@ public class ModalidadPenalidadUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", true);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadPenalidadTest.calcularPuntaje(respuestaTest, false);
         assertEquals(1, respuestaTest.puntaje().getPuntaje());
     }
@@ -35,7 +35,7 @@ public class ModalidadPenalidadUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", false);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadPenalidadTest.calcularPuntaje(respuestaTest, false);
         assertEquals(-1, respuestaTest.puntaje().getPuntaje());
     }
@@ -48,7 +48,7 @@ public class ModalidadPenalidadUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadPenalidadTest.calcularPuntaje(respuestaTest, false);
         assertEquals(2, respuestaTest.puntaje().getPuntaje());
     }
@@ -61,7 +61,7 @@ public class ModalidadPenalidadUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadPenalidadTest.calcularPuntaje(respuestaTest, false);
         assertEquals(-2, respuestaTest.puntaje().getPuntaje());
     }
@@ -74,7 +74,7 @@ public class ModalidadPenalidadUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadPenalidadTest.calcularPuntaje(respuestaTest, false);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
     }

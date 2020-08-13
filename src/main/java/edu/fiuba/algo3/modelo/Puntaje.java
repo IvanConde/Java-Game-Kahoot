@@ -1,27 +1,9 @@
 package edu.fiuba.algo3.modelo;
 
-public class Puntaje {
+public interface Puntaje {
+    public void calcularPuntaje(int puntos);
 
-    private int puntaje;
-    private Multiplicador multiplicador;
+    public int getPuntaje();
 
-    public Puntaje() {
-        this.puntaje = 0;
-    }
 
-    public void calcularPuntaje(int puntos) {
-        if ((this.multiplicador != null) && !(this.multiplicador.seUtilizo())) {
-            puntaje += this.multiplicador.multiplicarPuntos(puntos);
-        } else {
-            puntaje += puntos;
-        }
-    }
-
-    public int getPuntaje() {
-        return puntaje;
-    }
-
-    public void setMultiplicador(Multiplicador multiplicador) {
-        this.multiplicador = multiplicador;
-    }
 }
