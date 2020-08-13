@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.puntaje;
+
+import edu.fiuba.algo3.modelo.Multiplicador;
 
 public class PuntajeSwitcher implements Puntaje{
     PuntajeDecorator decorador;
@@ -25,6 +27,8 @@ public class PuntajeSwitcher implements Puntaje{
     }
 
     public void setMultiplicador(Multiplicador multiplicador){
-        decorador = new PuntajeDecoratorMultiplicador(decorador.getComponente(), multiplicador);
+        if(!multiplicador.seUtilizo()){
+            decorador = new PuntajeDecoratorMultiplicador(decorador.getComponente(), multiplicador);
+        }
     }
 }

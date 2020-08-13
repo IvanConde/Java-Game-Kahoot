@@ -1,4 +1,6 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.puntaje;
+
+import edu.fiuba.algo3.modelo.Multiplicador;
 
 public class PuntajeConcreto implements Puntaje{
 

@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.puntaje;
 
 public interface Puntaje {
     public void calcularPuntaje(int puntos);

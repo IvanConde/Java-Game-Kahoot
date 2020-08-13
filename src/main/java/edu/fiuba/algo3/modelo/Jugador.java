@@ -19,7 +19,7 @@ public class Jugador {
     }
 
     public Puntaje puntaje(){
-        return puntaje.puntaje();
+        return puntaje;
     }
 
     public void usarMultiplicadorX2(Pregunta pregunta) {
