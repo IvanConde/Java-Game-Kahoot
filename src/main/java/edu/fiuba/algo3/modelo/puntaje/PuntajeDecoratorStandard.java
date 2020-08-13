@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo.puntaje;
 
-public class PuntajeDecoratorStandar extends PuntajeDecorator{
+public class PuntajeDecoratorStandard extends PuntajeDecorator{
 
-    public PuntajeDecoratorStandar(Puntaje componente) {
+    public PuntajeDecoratorStandard(Puntaje componente) {
         super(componente);
     }
 

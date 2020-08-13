@@ -6,14 +6,14 @@ public class PuntajeSwitcher implements Puntaje{
     PuntajeDecorator decorador;
 
     public PuntajeSwitcher(){
-        decorador = new PuntajeDecoratorStandar( new PuntajeConcreto());
+        decorador = new PuntajeDecoratorStandard( new PuntajeConcreto());
     }
 
     @Override
     public void calcularPuntaje(int puntos) {
         decorador.calcularPuntaje(puntos);
         if(decorador instanceof PuntajeDecoratorMultiplicador){
-            this.decorador = new PuntajeDecoratorStandar(decorador.getComponente());
+            this.decorador = new PuntajeDecoratorStandard(decorador.getComponente());
         }
     }
 
