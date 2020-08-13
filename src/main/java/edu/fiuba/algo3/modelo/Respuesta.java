@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.puntaje.Puntaje;
 
 import java.util.ArrayList;
 

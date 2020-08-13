@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 
-import edu.fiuba.algo3.modelo.PuntajeConcreto;
+import edu.fiuba.algo3.modelo.puntaje.PuntajeConcreto;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;

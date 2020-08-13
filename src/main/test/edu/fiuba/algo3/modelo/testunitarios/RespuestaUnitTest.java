@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo.testunitarios;
 
-import edu.fiuba.algo3.modelo.PuntajeConcreto;
+import edu.fiuba.algo3.modelo.puntaje.PuntajeConcreto;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import org.junit.jupiter.api.Test;

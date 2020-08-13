@@ -30,7 +30,7 @@ public class OrderedChoiceUnitTest {
         todasLasOpciones.add(opcion1);
         todasLasOpciones.add(opcion2);
         Exception excepcionEsperada = assertThrows(OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException.class,()->{ OrderedChoice preguntaOrderedChoiceTest = new OrderedChoice("test", todasLasOpciones);});
-        String mensajeEsperado = "no es posible más de una opcion con las misam posicion original";
+        String mensajeEsperado = "no es posible más de una opcion con las misma posicion original";
         String mensajeVerdadero = excepcionEsperada.getMessage();
         assertTrue(mensajeVerdadero.contains(mensajeEsperado));
     }
