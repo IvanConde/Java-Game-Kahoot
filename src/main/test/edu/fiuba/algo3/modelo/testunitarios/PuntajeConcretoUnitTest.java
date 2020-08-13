@@ -18,7 +18,7 @@ public class PuntajeConcretoUnitTest {
     @Test
     public void test02_CalcularPuntaje(){
         PuntajeConcreto puntajeConcretoTest = new PuntajeConcreto();
-        puntajeConcretoTest.calcularPuntaje(1);
+        puntajeConcretoTest.agregarPuntos(1);
         assertEquals(1, puntajeConcretoTest.getPuntaje());
     }
 
@@ -27,7 +27,7 @@ public class PuntajeConcretoUnitTest {
         PuntajeConcreto puntajeConcretoTest = new PuntajeConcreto();
         Multiplicador multiplicadorTest = new Multiplicador(2);
         PuntajeDecoratorMultiplicador decoratorTest = new PuntajeDecoratorMultiplicador(puntajeConcretoTest, multiplicadorTest);
-        decoratorTest.calcularPuntaje(1);
+        decoratorTest.agregarPuntos(1);
         assertEquals(2, puntajeConcretoTest.getPuntaje());
     }
 }

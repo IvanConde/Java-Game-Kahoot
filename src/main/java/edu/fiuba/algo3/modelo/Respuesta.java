@@ -15,7 +15,7 @@ public class Respuesta {
         this.puntajeTemporal = 0;
     }
     public void modificarPuntaje(int puntos){
-        puntaje.calcularPuntaje(puntos);
+        puntaje.agregarPuntos(puntos);
     }
     public ArrayList<Opcion> verRespuestaJugador(){
         return opciones;
