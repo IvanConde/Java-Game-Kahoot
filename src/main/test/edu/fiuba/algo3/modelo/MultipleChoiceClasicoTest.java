@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modalidades.Clasico;
+import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -7,10 +7,11 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import java.util.ArrayList;
 
+
 public class MultipleChoiceClasicoTest {
 
     @Test
-    public void test03_1CrearMultipleChoiceClasico() {
+    public void test03_1CrearMultipleChoiceModalidadClasico() {
 
         OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
         OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
@@ -35,7 +36,7 @@ public class MultipleChoiceClasicoTest {
         respuestas.add(respuesta);
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
-        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, new Clasico());
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
         preguntaTest.responderPregunta(respuestas);
         assertEquals(1,jugador.puntaje().getPuntaje());
 
@@ -76,7 +77,7 @@ public class MultipleChoiceClasicoTest {
 
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
-        Clasico sinPenalidad = new Clasico(); //Modalidad de la pregunta
+        ModalidadClasico sinPenalidad = new ModalidadClasico(); //Modalidad de la pregunta
 
         //Se crea la pregunta con la lista de opciones y la modalidad elegida.
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
@@ -116,7 +117,7 @@ public class MultipleChoiceClasicoTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
 
-        Clasico sinPenalidad = new Clasico();
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
 
@@ -151,11 +152,54 @@ public class MultipleChoiceClasicoTest {
         ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
         respuestas.add(respuestaJugador1);
 
-        Clasico sinPenalidad = new Clasico();
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
         MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
 
+    }
+
+    @Test
+    public void test03_5ResponderMultipleChoiceyAsignarPuntajesCorrectamenteConExclusividadPuntaje(){
+
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("no",false);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
+
+        Jugador jugador1 = new Jugador("Federico");
+        Jugador jugador2 = new Jugador("Milagros");
+
+
+        ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador1.add(opcion1);
+        opcionesJugador1.add(opcion2);
+
+
+        ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+        opcionesJugador2.add(opcion1);
+        opcionesJugador2.add(opcion2);
+
+        //Se instancian las respuestas con la lista de opciones elegidas y el puntaje del jugador.
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
+        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        respuestas.add(respuestaJugador1);
+        respuestas.add(respuestaJugador2);
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
+        MultipleChoice preguntaTest = new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        preguntaTest.usarExclusividad(jugador1);
+        preguntaTest.usarExclusividad(jugador2);
+        preguntaTest.responderPregunta(respuestas);
+        assertEquals(0, jugador1.puntaje().getPuntaje());
     }
 
 }
