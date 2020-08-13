@@ -11,7 +11,7 @@ public class PuntajeConcreto implements Puntaje{
         this.puntaje = 0;
     }
 
-    public void calcularPuntaje(int puntos) {
+    public void agregarPuntos(int puntos) {
             puntaje += puntos;
     }
 

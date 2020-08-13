@@ -10,8 +10,8 @@ public class PuntajeSwitcher implements Puntaje{
     }
 
     @Override
-    public void calcularPuntaje(int puntos) {
-        decorador.calcularPuntaje(puntos);
+    public void agregarPuntos(int puntos) {
+        decorador.agregarPuntos(puntos);
         if(decorador instanceof PuntajeDecoratorMultiplicador){
             this.decorador = new PuntajeDecoratorStandard(decorador.getComponente());
         }

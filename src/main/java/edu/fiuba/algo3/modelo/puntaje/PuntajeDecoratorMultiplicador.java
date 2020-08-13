@@ -11,7 +11,7 @@ public class PuntajeDecoratorMultiplicador extends PuntajeDecorator{
     }
 
     @Override
-    public void calcularPuntaje(int puntos) {
-        this.componente.calcularPuntaje(multiplicador.multiplicarPuntos(puntos));
+    public void agregarPuntos(int puntos) {
+        this.componente.agregarPuntos(multiplicador.multiplicarPuntos(puntos));
     }
 }

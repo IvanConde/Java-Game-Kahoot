@@ -7,7 +7,7 @@ public class PuntajeDecoratorStandard extends PuntajeDecorator{
     }
 
     @Override
-    public void calcularPuntaje(int puntos) {
-        componente.calcularPuntaje(puntos);
+    public void agregarPuntos(int puntos) {
+        componente.agregarPuntos(puntos);
     }
 }
