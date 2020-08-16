@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo.testunitarios;
-import edu.fiuba.algo3.modelo.Puntaje;
+import edu.fiuba.algo3.modelo.puntaje.PuntajeConcreto;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -21,7 +21,7 @@ public class ModalidadClasicoUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", true);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadClasicoTest.calcularPuntaje(respuestaTest, false);
         assertEquals(1, respuestaTest.puntaje().getPuntaje());
     }
@@ -32,7 +32,7 @@ public class ModalidadClasicoUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", false);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadClasicoTest.calcularPuntaje(respuestaTest, false);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
     }
@@ -43,7 +43,7 @@ public class ModalidadClasicoUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", true);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadClasicoTest.calcularPuntaje(respuestaTest, true);
         assertEquals(1, respuestaTest.puntajeTemporal());
     }
@@ -54,7 +54,7 @@ public class ModalidadClasicoUnitTest {
         Opcion opcionTest = new OpcionBooleana("test", false);
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
-        Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
+        Respuesta respuestaTest = new Respuesta(opcionList, new PuntajeConcreto());
         ModalidadClasicoTest.calcularPuntaje(respuestaTest, true);
         assertEquals(0, respuestaTest.puntajeTemporal());
     }

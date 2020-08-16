@@ -22,6 +22,7 @@ public class Panel { // Panel es el modelo de un MVC
     ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
     ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     LinkedList queue;
+
     public Panel(){
         CrearPreguntas pregunta = new CrearPreguntas();
          this.queue = pregunta.parsear();
