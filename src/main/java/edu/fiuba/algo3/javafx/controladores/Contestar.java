@@ -7,17 +7,14 @@ import javafx.event.EventHandler;
 import javafx.util.Duration;
 
 public class Contestar implements EventHandler<ActionEvent> {
-    Timeline contadorPantallaActual;
-    VistaJuego ventana;
+    private Timeline contadorPantallaActual;
+    private VistaJuego ventana;
     public Contestar(Timeline contadorPantallaActual, VistaJuego ventana){
         this.contadorPantallaActual = contadorPantallaActual;
         this.ventana = ventana;
     }
     @Override
     public void handle(ActionEvent e) {
-        if(contadorPantallaActual.getCycleCount() == 2) {
-            contadorPantallaActual.jumpTo(Duration.millis(30001));
-        }
-        ventana.pantallaFinal();
+        contadorPantallaActual.jumpTo(Duration.millis(30001));
     }
 }

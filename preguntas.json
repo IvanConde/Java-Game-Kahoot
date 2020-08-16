@@ -125,9 +125,9 @@
       "textoPregunta": "Ordene alfabeticamente los siguientes nombres:",
       "opciones":
         {
-          "Gonzalo": 2,
+          "Gonzalo": 1,
           "Maria": 3,
-          "Hernan": 1,
+          "Hernan": 2,
           "Miguel": 4,
           "Santiago": 5
         }
@@ -169,7 +169,7 @@
   ],
   "GroupChoice": [
     {
-      "textoPregunta": "Coloque en el grupo 0 a los cientificos y en el grupo 1 a los actores ",
+      "textoPregunta": "Coloque a las siguientes personas en los grupos 'Cientificos' y 'Actores'",
       "opciones":
         {
           "Albert Einstein": "Cientificos",
@@ -178,10 +178,11 @@
           "René Descartes": "Cientificos",
           "Keanu Reeves": "Actores",
           "Leonardo DiCaprio": "Actores"
-        }
+        },
+      "grupos": ["Cientificos","Actores"]
       },
     {
-      "textoPregunta": "Coloque en el grupo 0 a las marcas de queso y en el grupo 1 a las marcas de fiambre:",
+      "textoPregunta": "Coloque a las siguientes alimentos en los grupos 'Quesos' y 'Fiambres'",
       "opciones":
         {
           "Paladini": "Fiambres",
@@ -190,10 +191,11 @@
           "Bonnatur": "Fiambres",
           "Cremon": "Quesos",
           "Campo Austral": "Fiambres"
-        }
+        },
+      "grupos": ["Quesos","Fiambres"]
       },
     {
-      "textoPregunta": "Coloque en el grupo 0 a los paises que pertenecen al Mercosur y en el grupo 1 a los que no:",
+      "textoPregunta": "Coloque a los siguientes paises en los grupos 'Mercosur' y 'otros'",
       "opciones":
       {
         "Argentina": "Mercosur",
@@ -202,22 +204,24 @@
         "Brasil": "Mercosur",
         "Mexico": "Otros",
         "Venezuela": "Mercosur"
-      }
+      },
+      "grupos": ["Mercosur","Otros"]
     },
     {
-      "textoPregunta": "Coloque en el grupo 0 a los juegos mas amados de la E3 2019 y en el grupo 1 a los mas odiados:",
+      "textoPregunta": "Coloque los siguientes juegos en los grupos 'amados' y 'odiados' de la E3 2019",
       "opciones":
       {
         "Pokemon sword": "odiados",
-        "Cyberpun 2077": "amados",
+        "Cyberpunk 2077": "amados",
         "Battletoads": "odiados",
         "The Elder Scrolls: Legends": "odiados",
         "Fallout 76": "odiados",
         "Dying Light 2": "amados"
-      }
+      },
+      "grupos": ["Amados","Odiados"]
     },
     {
-      "textoPregunta": "Coloque en el grupo 0 a los animales y en el grupo 1 a los insectos :",
+      "textoPregunta": "Coloque a los siguientes seres vivos en los grupos 'animales' e 'insectos' :",
       "opciones":
       {
         "Oso polar": "animales",
@@ -226,7 +230,8 @@
         "Gato": "animales",
         "Cucaracha": "insectos",
         "Mantis religiosa": "insectos"
-      }
+      },
+      "grupos": ["Animales","Insectos"]
     }
   ]
 }

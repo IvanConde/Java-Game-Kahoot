@@ -10,8 +10,8 @@ public class ExclusividadDePuntaje {
 
     public void activarExclusividad(Jugador jugador){
         jugador.activarExclusividad();
-        if(EstadoDeActivacion == true){
-            magnitud *= 2;
+        if(EstadoDeActivacion){
+            this.magnitud = 4;
         }else{
             EstadoDeActivacion = true;
         }

@@ -18,7 +18,10 @@ public class GroupChoiceUnitTest {
         OpcionGroup opcion2 = new OpcionGroup("0", "0");
         todasLasOpciones.add(opcion1);
         todasLasOpciones.add(opcion2);
-        GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones);
+        ArrayList<String> grupos = new ArrayList<String>();
+        grupos.add("0");
+        grupos.add("1");
+        GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones,grupos);
         assertNotEquals(null, preguntaGroupChoiceTest);
     }
 
@@ -29,7 +32,10 @@ public class GroupChoiceUnitTest {
         OpcionGroup opcion2 = new OpcionGroup("0", "0");
         todasLasOpciones.add(opcion1);
         todasLasOpciones.add(opcion2);
-        GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones);
+        ArrayList<String> grupos = new ArrayList<String>();
+        grupos.add("0");
+        grupos.add("1");
+        GroupChoice preguntaGroupChoiceTest = new GroupChoice("test", todasLasOpciones,grupos);
         assertFalse(preguntaGroupChoiceTest.tienePenalidad());
     }
 }

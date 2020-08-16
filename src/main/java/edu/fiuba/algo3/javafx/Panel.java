@@ -1,9 +1,16 @@
 package edu.fiuba.algo3.javafx;
 
-import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
+
+import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.*;
+import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
+import edu.fiuba.algo3.modelo.preguntas.*;
+import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
+
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Random;
 
@@ -11,6 +18,9 @@ public class Panel { // Panel es el modelo de un MVC
     Jugador jugador1;
     Jugador jugador2;
     Pregunta preguntaActual;
+    ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+    ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+    ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     LinkedList queue;
     public Panel(){
         CrearPreguntas pregunta = new CrearPreguntas();
@@ -29,39 +39,87 @@ public class Panel { // Panel es el modelo de un MVC
         this.jugador2 = new Jugador(nombre);
     }
 
+    public void agregarRespuestaJugador(Opcion opcion, int cualJugador){
+        System.out.println(opcion.getStringOpcion());
+        if(cualJugador == 1){
+            agregarRespuesta(opcionesJugador1, opcion);
+        }else{
+            agregarRespuesta(opcionesJugador2, opcion);
+        }
+    }
+    public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion){
+        if(preguntaActual instanceof OrderedChoice){
+            if(opcion instanceof OpcionOrdered){
+                OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
+                opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
+            }else{
+                //TODO: misma excepcion que con group
+            }
+        }else {
+            opcionesJugador.add(opcion);
+        }
+    }
+    public void responderPregunta(){
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
+        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
+        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        respuestas.add(respuestaJugador1);
+        respuestas.add(respuestaJugador2);
+        preguntaActual.responderPregunta(respuestas);
+        opcionesJugador1 = new ArrayList<Opcion>();
+        opcionesJugador2 = new ArrayList<Opcion>();
+        System.out.println(jugador1.puntaje().getPuntaje());
+        System.out.println(jugador2.puntaje().getPuntaje());
+    }
 
-    //public void tienePenalidad(){
-        //si tiene penalidad
-       // if(jugador.getTieneMultiplicadorx2){
-            //mostrarBoton
-        //}
-        //si tiene mostrar MultiplicadorX3
 
 
     public Pregunta obtenerPreguntaAleatoria(){
         int tamaño = this.queue.size();
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(tamaño);
-        return (Pregunta) this.queue.get(randomInt);
-        /*
-        ArrayList<Opcion> todas = new ArrayList<Opcion>();
-        Opcion verdadero1 = new OpcionBooleana("verdadero", true);
-        Opcion verdadero2 = new OpcionBooleana("ya te dije verdadero", true);
-        Opcion falso1 = new OpcionBooleana("falso", false);
-        Opcion falso2 = new OpcionBooleana("A veces", false);
-        todas.add(verdadero1);
-        todas.add(verdadero2);
-        todas.add(falso1);
-        todas.add(falso2);
-        Pregunta vyf = new MultipleChoice("El mate es rico?", todas, new Clasico());
-        this.preguntaActual = vyf;
-        return vyf;
-        */
+        Pregunta pregunta = (Pregunta) this.queue.remove(randomInt);
+        this.preguntaActual = pregunta;
+        return pregunta;
     }
     public String nombreJugador(int cualJugador){
         if(cualJugador == 1){
             return jugador1.verNombre();
         }
         return jugador2.verNombre();
+    }
+    public Boolean jugadorTieneMultiplicador(int cualJugador, int multiplicador){
+        if(cualJugador == 1){
+            return jugador1.tieneMultiplicador(multiplicador);
+        }
+        return jugador2.tieneMultiplicador(multiplicador);
+    }
+
+    public void usarMultiplicadorJugador(Pregunta pregunta, int cualJugador, int multiplicador){
+        if(cualJugador == 1){
+            jugador1.usarMultiplicador(pregunta, multiplicador);
+        }else{
+            jugador2.usarMultiplicador(pregunta, multiplicador);
+        }
+    }
+
+    public int puntajeJugador(int cualJugador){
+        if(cualJugador == 1){
+            return jugador1.puntaje().getPuntaje();
+        }
+        return jugador2.puntaje().getPuntaje();
+    }
+    public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
+        respuestasJugadorGroup.add(interruptor);
+    }
+    public void recolectarRespuestasGroup(int cualJugador){
+        for(ToggleSwitch interruptor : respuestasJugadorGroup){
+            if(cualJugador == 1){
+                interruptor.respuestaJugador(opcionesJugador1);
+            }else {
+                interruptor.respuestaJugador(opcionesJugador2);
+            }
+        }
+        respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     }
 }
