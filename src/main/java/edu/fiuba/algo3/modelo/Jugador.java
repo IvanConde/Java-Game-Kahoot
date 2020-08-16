@@ -2,19 +2,23 @@ package edu.fiuba.algo3.modelo;
 
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
+import java.util.ArrayList;
+
 public class Jugador {
 
     private Puntaje puntaje;
     private String nombre;
-    private Multiplicador multiplicadorX2;
-    private Multiplicador multiplicadorX3;
+    private ArrayList<Multiplicador> multiplicadores;
+    public Respuesta respuesta;
     private int cantExclusividad;
 
     public Jugador(String nombre){
         this.nombre = nombre;
         this.puntaje = new Puntaje();
-        this.multiplicadorX2 = new Multiplicador(2);
-        this.multiplicadorX3 = new Multiplicador(3);
+        this.multiplicadores = new ArrayList<Multiplicador>();
+        this.multiplicadores.add(new Multiplicador(2));
+        this.multiplicadores.add(new Multiplicador(3));
+
         this.cantExclusividad = 2;
     }
 
@@ -22,22 +26,15 @@ public class Jugador {
         return puntaje;
     }
 
-    public void usarMultiplicadorX2(Pregunta pregunta) {
-        if (pregunta.tienePenalidad()) {
-            puntaje.setMultiplicador(multiplicadorX2);
+    public void usarMultiplicador(Pregunta pregunta, int multiplicador) {
+        if (pregunta.tienePenalidad() && !this.tieneMultiplicador(multiplicador)) {
+            this.respuesta = new RespuestaDecoratorMultiplicador(this.respuesta);
+            ((RespuestaDecoratorMultiplicador)this.respuesta).setMultiplicador(multiplicadores.get(multiplicador));
         }
     }
 
-    public void usarMultiplicadorX3(Pregunta pregunta){
-        if (pregunta.tienePenalidad()) {
-            puntaje.setMultiplicador(multiplicadorX3);
-        }
-    }
-    public boolean tieneMultiplicadorx2(){
-        return !multiplicadorX2.seUtilizo();
-    }
-    public boolean tieneMultiplicadorx3(){
-        return !multiplicadorX3.seUtilizo();
+    public boolean tieneMultiplicador(int multiplicador){
+        return !multiplicadores.get(multiplicador).seUtilizo();
     }
 
     public String verNombre(){
@@ -50,6 +47,11 @@ public class Jugador {
             return true;
         }
         return false;
+    }
+
+    public Respuesta responder(){
+
+        return
     }
 
 }

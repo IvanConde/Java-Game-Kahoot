@@ -3,31 +3,16 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 import java.util.ArrayList;
 
-public class Respuesta {
-    private ArrayList<Opcion> respuesta;
-    private Puntaje puntaje;
-    private int puntajeTemporal;
+public interface Respuesta {
+    void modificarPuntaje(int puntos);
 
-    public Respuesta(ArrayList<Opcion> respuesta, Puntaje puntaje){
-        this.respuesta = respuesta;
-        this.puntaje = puntaje;
-    }
-    public void modificarPuntaje(int puntos){
-        puntaje.calcularPuntaje(puntos);
-    }
-    public ArrayList<Opcion> verRespuestaJugador(){
-        return respuesta;
-    }
+    ArrayList<Opcion> verRespuestaJugador();
 
-    public void agregarPuntajeTemporal(int puntos){
-        this.puntajeTemporal = puntos;
-    }
+    void agregarPuntajeTemporal(int puntos);
 
-    public int puntajeTemporal(){
-        return this.puntajeTemporal;
-    }
+    int puntajeTemporal();
 
-    public Puntaje puntaje() {
-        return puntaje;
-    }
+    Puntaje puntaje();
+
+    void setRepuestas(ArrayList<Opcion> respuesta);
 }
