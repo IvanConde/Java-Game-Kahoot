@@ -13,7 +13,6 @@ import javafx.stage.Stage;
 public class VistaInicial {
     private Stage window;
     private Scene sceneIngresoNombres, sceneJuego;
-    private Panel panel;
 
     public VistaInicial(Stage stage){
         this.window = stage;
@@ -30,6 +29,7 @@ public class VistaInicial {
         sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
         this.window.setScene(sceneIngresoNombres);
         this.window.show();
+        System.out.println("Se construyo ventana inicial");
     }
 }
 

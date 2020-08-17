@@ -26,25 +26,29 @@ public class VistaPregunta {
     private Partida partida;
     private Stage window;
     private Scene sceneJuego;
+    private CicloPreguntas cicloPreguntas;
+    private VistaJuego vistaJuego;
 
-    public VistaPregunta(ArrayList<Jugador> jugadores, Stage stage, Partida partida) {
+    public VistaPregunta(ArrayList<Jugador> jugadores, Stage stage, Partida partida, VistaJuego vistaJuego) {
         this.jugadores = jugadores;
         this.window = stage;
         this.vistaMultiplicadores = new VistaMultiplicadores(window);
         this.partida = partida;
+        this.vistaJuego = vistaJuego;
     }
 
     public void construirPantallas(Pregunta pregunta) {
             Jugador jugadorActual = this.partida.obtenerJugadorActual();
             if (pregunta.tienePenalidad()) {
-                vistaMultiplicadores.desplegar(pregunta, jugadorActual);
+                vistaMultiplicadores.desplegar(pregunta, jugadorActual, this);
+            }else {
+                this.mostrarPregunta(pregunta, jugadorActual);
+                System.out.println("Se construyo una pregunta");
             }
-            this.mostrarPregunta(pregunta, jugadorActual);
-        //}
     }
 
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(this, pregunta, partida)));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         VBox layoutJuego = new VBox();
@@ -65,8 +69,11 @@ public class VistaPregunta {
          */
         botonContestar.setOnAction(new Contestar(timeline, this));
         layoutJuego.getChildren().add(botonContestar);
-        sceneJuego = new Scene(layoutJuego, 640, 480); //640x480
-        window.setScene(sceneJuego);
+        //sceneJuego = new Scene(layoutJuego, 640, 480); //640x480
+        //window.setScene(sceneJuego);
+        window.getScene().setRoot(layoutJuego);
+        window.sizeToScene();
+        window.show();
         timeline.setCycleCount(1);
         timeline.play();
     }
@@ -113,4 +120,8 @@ public class VistaPregunta {
         respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     }
      */
+
+    public void proximaPregunta(){
+        vistaJuego.mostrar();
+    }
 }

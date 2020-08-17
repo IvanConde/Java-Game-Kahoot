@@ -36,16 +36,20 @@ public class VistaJuego {
         this.window = stage;
         this.jugadores = jugadores;
         this.partida = new Partida(jugadores);
-        this.vistaPregunta = new VistaPregunta(jugadores, stage, partida);
-        this.cicloPreguntas = new CicloPreguntas(vistaPregunta);
+        this.cicloPreguntas = new CicloPreguntas();
+        this.vistaPregunta = new VistaPregunta(jugadores, stage, partida, this);
     }
 
     public void mostrar(){
-        cicloPreguntas.correrPregunta();
-        //this.mostrarPantallaFinal();
+        if(cicloPreguntas.getCantPreguntas() > 0) {
+            cicloPreguntas.correrPregunta(vistaPregunta);
+        }else{
+            this.mostrarPantallaFinal();
+        }
     }
 
     public void mostrarPantallaFinal(){
+        System.out.println("Se construyo ventana final");
         Jugador jugador1 = jugadores.get(0);
         Jugador jugador2 = jugadores.get(1);
         Label gracias = new Label("¡Gracias por jugar!");
@@ -65,8 +69,11 @@ public class VistaJuego {
         layoutJuego.getChildren().add(puntajeJugador1);
         layoutJuego.getChildren().add(puntajeJugador2);
         layoutJuego.getChildren().add(ganador);
-        sceneJuego = new Scene(layoutJuego, 640, 480);
-        window.setScene(sceneJuego);
+        //sceneJuego = new Scene(layoutJuego, 640, 480);
+        //window.setScene(sceneJuego);
+        window.getScene().setRoot(layoutJuego);
+        window.sizeToScene();
+        window.show();
     }
 
 
@@ -135,7 +142,6 @@ public class VistaJuego {
         window.setScene(sceneJuego);
 
     }
-
 
     public void proximaPregunta(){
         ciclo.correrPregunta();

@@ -10,24 +10,20 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class CicloPreguntas {
-    static final int CANTPREGUNTAS = 1;
-    private VistaPregunta ventana;
+    private int cantidadPreguntas = 5;
+    //private VistaPregunta ventana;
     private Panel panel;
-    private int cantidadDePreguntas;
     private LinkedList preguntas;
 
-    public CicloPreguntas(VistaPregunta ventana){
+    public CicloPreguntas(){
         CrearPreguntas crearPreguntas = new CrearPreguntas();
         this.preguntas = crearPreguntas.parsear();
-        this.ventana = ventana;
-        this.cantidadDePreguntas = CANTPREGUNTAS;
+        //this.ventana = ventana;
     }
 
-    public void correrPregunta(){
-        while(cantidadDePreguntas > 0) {
+    public void correrPregunta(VistaPregunta ventana){
             ventana.construirPantallas(this.obtenerPreguntaAleatoria());
-            cantidadDePreguntas -= 1;
-        }
+            cantidadPreguntas -= 1;
     }
 
     public Pregunta obtenerPreguntaAleatoria(){
@@ -36,5 +32,9 @@ public class CicloPreguntas {
         int randomInt = randomGenerator.nextInt(tamaño);
         Pregunta pregunta = (Pregunta) this.preguntas.remove(randomInt);
         return pregunta;
+    }
+
+    public int getCantPreguntas(){
+        return cantidadPreguntas;
     }
 }

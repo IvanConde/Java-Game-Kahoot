@@ -12,13 +12,11 @@ import javafx.event.EventHandler;
 
 public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
 
-    private int i = 1;
-    private VistaPregunta ventana;
+    private VistaPregunta vistaPregunta;
     private Pregunta pregunta;
-    private Panel panel;
     private Partida partida;
-    public AccionBotonTerminarTurno(VistaPregunta ventana, Pregunta pregunta, Partida partida){
-        this.ventana = ventana;
+    public AccionBotonTerminarTurno(Pregunta pregunta, Partida partida, VistaPregunta vistaPregunta){
+        this.vistaPregunta = vistaPregunta;
         this.pregunta = pregunta;
         this.partida = partida;
     }
@@ -29,13 +27,13 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
         if(pregunta instanceof GroupChoice){
             panel.recolectarRespuestasGroup(ventana.getContestateActual());
         }
-*/
+    */
         partida.contestar(pregunta);
         if (partida.seContestoPregunta()) {
             partida.responderPregunta();
-            //ventana.proximaPregunta();
+            vistaPregunta.proximaPregunta();
         } else {
-            ventana.construirPantallas(pregunta);
+            vistaPregunta.construirPantallas(pregunta);
         }
     }
 }
