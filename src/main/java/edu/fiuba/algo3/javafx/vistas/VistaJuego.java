@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.javafx.vistas;
 
 import edu.fiuba.algo3.javafx.Panel;
+import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -29,17 +30,19 @@ public class VistaJuego {
     private ArrayList<Jugador> jugadores;
     private CicloPreguntas cicloPreguntas;
     private VistaPregunta vistaPregunta;
+    private Partida partida;
 
     public VistaJuego(Stage stage, ArrayList<Jugador> jugadores){
         this.window = stage;
         this.jugadores = jugadores;
-        this.vistaPregunta = new VistaPregunta(jugadores, stage);
+        this.partida = new Partida(jugadores);
+        this.vistaPregunta = new VistaPregunta(jugadores, stage, partida);
         this.cicloPreguntas = new CicloPreguntas(vistaPregunta);
     }
 
     public void mostrar(){
         cicloPreguntas.correrPregunta();
-        this.mostrarPantallaFinal();
+        //this.mostrarPantallaFinal();
     }
 
     public void mostrarPantallaFinal(){

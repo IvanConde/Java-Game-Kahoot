@@ -19,13 +19,9 @@ public class CicloPreguntas {
     public CicloPreguntas(VistaPregunta ventana){
         CrearPreguntas crearPreguntas = new CrearPreguntas();
         this.preguntas = crearPreguntas.parsear();
-        this.panel = panel;
         this.ventana = ventana;
         this.cantidadDePreguntas = CANTPREGUNTAS;
     }
-     /*
-        correrPregunta();
-      */
 
     public void correrPregunta(){
         while(cantidadDePreguntas > 0) {

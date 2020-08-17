@@ -24,6 +24,7 @@ public class VistaMultiplicadores {
         if(!jugador.tieneMultiplicadorx2() && !jugador.tieneMultiplicadorx3()){
             return;
         }
+        System.out.println("hay penalidad");
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
         Button ninguno = new Button("Ninguno");
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador));
@@ -47,6 +48,5 @@ public class VistaMultiplicadores {
         layoutMultiplicador.getChildren().add(ninguno);
         sceneJuego = new Scene(layoutMultiplicador, 640, 480); //640x480
         window.setScene(sceneJuego);
-
     }
 }

@@ -23,11 +23,7 @@ public class Panel { // Panel es el modelo de un MVC
     private Jugador jugador1;
     private Jugador jugador2;
     private CrearPreguntas pregunta;
-    //private Pregunta preguntaActual;
 
-    //private ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
-    //private ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
-    //private ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
 
 
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
@@ -37,7 +33,6 @@ public class Panel { // Panel es el modelo de un MVC
     LinkedList queue;
 
     public Panel(Stage stage){
-        //this.pregunta = new CrearPreguntas();
         this.stage = stage;
         this.vistaInicial = new VistaInicial(stage);
     }
