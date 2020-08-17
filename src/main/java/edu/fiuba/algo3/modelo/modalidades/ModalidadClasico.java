@@ -28,4 +28,8 @@ public class ModalidadClasico extends Modalidad {
         }
     }
 
+    @Override
+    public boolean esPenalidad() {
+        return false;
+    }
 }

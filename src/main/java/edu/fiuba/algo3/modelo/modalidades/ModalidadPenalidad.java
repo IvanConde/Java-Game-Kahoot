@@ -27,4 +27,8 @@ public class ModalidadPenalidad extends Modalidad {
         respuesta.modificarPuntaje(puntos);
     }
 
+    @Override
+    public boolean esPenalidad() {
+        return true;
+    }
 }

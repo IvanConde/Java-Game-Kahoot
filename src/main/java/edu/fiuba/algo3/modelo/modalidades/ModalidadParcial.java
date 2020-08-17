@@ -32,4 +32,8 @@ public class ModalidadParcial extends Modalidad {
         }
     }
 
+    @Override
+    public boolean esPenalidad() {
+        return false;
+    }
 }

@@ -31,10 +31,7 @@ public abstract class Pregunta {
     }
 
     public boolean tienePenalidad(){
-        if(modalidad instanceof ModalidadPenalidad){
-            return true;
-        }
-        return false;
+        return modalidad.esPenalidad();
     }
 
     public void comprobarRespuesta(Respuesta respuesta){

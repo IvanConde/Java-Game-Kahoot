@@ -6,4 +6,6 @@ public abstract class Modalidad {
 
     public abstract void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad);
 
+    public abstract boolean esPenalidad();
+
 }
