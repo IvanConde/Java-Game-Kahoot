@@ -27,7 +27,7 @@ public class AccionEnterNombres implements EventHandler<KeyEvent> {
             panel.agregarJugador(barraTexto.getText());
             barraTexto.clear();
             if(panel.juegoPuedeComenzar()) {
-               VistaJuego juego = new VistaJuego(ventana, panel);
+                panel.comenzarJuego();
             }
         }
     }

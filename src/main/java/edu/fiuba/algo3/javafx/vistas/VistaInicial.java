@@ -17,11 +17,9 @@ public class VistaInicial {
 
     public VistaInicial(Stage stage){
         this.window = stage;
-        this.panel = new Panel();
-        stage.setTitle("Kahoot2.0");
-        this.inicialJuego();
     }
-    public void inicialJuego(){
+
+    public void mostrar(Panel panel) {
         Label textoInfo = new Label("Inserte nombre del primer jugador y presione ENTER");
         TextField textField = new TextField();
         EventHandler<KeyEvent> ingresarNombre = new AccionEnterNombres(textoInfo, textField, panel, window);
@@ -33,7 +31,5 @@ public class VistaInicial {
         this.window.setScene(sceneIngresoNombres);
         this.window.show();
     }
-
-
 }
 

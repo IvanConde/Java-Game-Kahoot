@@ -2,6 +2,8 @@ package edu.fiuba.algo3.javafx;
 
 
 import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
+import edu.fiuba.algo3.javafx.vistas.VistaInicial;
+import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.*;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
@@ -10,6 +12,7 @@ import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.*;
 import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import javafx.stage.Stage;
 
 
 import java.util.ArrayList;
@@ -17,31 +20,54 @@ import java.util.LinkedList;
 import java.util.Random;
 
 public class Panel { // Panel es el modelo de un MVC
-    Jugador jugador1;
-    Jugador jugador2;
-    Pregunta preguntaActual;
-    ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
-    ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
-    ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
+    private Jugador jugador1;
+    private Jugador jugador2;
+    private CrearPreguntas pregunta;
+    //private Pregunta preguntaActual;
+
+    //private ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
+    //private ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
+    //private ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
+
+
+    private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
+    private VistaInicial vistaInicial;
+    private VistaJuego vistaJuego;
+    private Stage stage;
     LinkedList queue;
 
-    public Panel(){
-        CrearPreguntas pregunta = new CrearPreguntas();
-         this.queue = pregunta.parsear();
+    public Panel(Stage stage){
+        //this.pregunta = new CrearPreguntas();
+        this.stage = stage;
+        this.vistaInicial = new VistaInicial(stage);
+    }
+
+    public void iniciarJuego(){
+        stage.setTitle("Kahoot2.0");
+        this.vistaInicial.mostrar(this);
     }
 
     public boolean juegoPuedeComenzar(){
-        if(jugador2 != null){ return true;}
-        return false;
+        if(jugador1 == null || jugador2 == null ){ return false;}
+        jugadores.add(jugador1);
+        jugadores.add(jugador2);
+        return true;
     }
+
     public void agregarJugador(String nombre){
         if (this.jugador1 == null){
             this.jugador1 = new Jugador(nombre);
-            return;
+        }else {
+            this.jugador2 = new Jugador(nombre);
         }
-        this.jugador2 = new Jugador(nombre);
     }
 
+    public void comenzarJuego(){
+        this.vistaJuego = new VistaJuego(stage, jugadores);
+        this.vistaJuego.mostrar();
+    }
+
+    /*
     public void agregarRespuestaJugador(Opcion opcion, int cualJugador){
         System.out.println(opcion.getStringOpcion());
         if(cualJugador == 1){
@@ -74,8 +100,6 @@ public class Panel { // Panel es el modelo de un MVC
         System.out.println(jugador1.puntaje().getPuntaje());
         System.out.println(jugador2.puntaje().getPuntaje());
     }
-
-
 
     public Pregunta obtenerPreguntaAleatoria(){
         int tamaño = this.queue.size();
@@ -136,4 +160,5 @@ public class Panel { // Panel es el modelo de un MVC
         }
         respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
     }
+     */
 }

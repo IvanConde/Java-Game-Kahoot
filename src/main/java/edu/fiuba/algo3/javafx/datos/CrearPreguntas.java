@@ -21,7 +21,6 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 
-//throws FileNotFoundException
 public class CrearPreguntas {
     private LinkedList queue;
 

@@ -1,29 +1,44 @@
 package edu.fiuba.algo3.javafx.controladores;
 
 import edu.fiuba.algo3.javafx.Panel;
+import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.javafx.vistas.VistaJuego;
+import edu.fiuba.algo3.javafx.vistas.VistaPregunta;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 
+import java.util.LinkedList;
+import java.util.Random;
+
 public class CicloPreguntas {
-    private VistaJuego ventana;
+    static final int CANTPREGUNTAS = 1;
+    private VistaPregunta ventana;
     private Panel panel;
     private int cantidadDePreguntas;
-    public CicloPreguntas(Panel panel, VistaJuego ventana){
+    private LinkedList preguntas;
+
+    public CicloPreguntas(VistaPregunta ventana){
+        CrearPreguntas crearPreguntas = new CrearPreguntas();
+        this.preguntas = crearPreguntas.parsear();
         this.panel = panel;
         this.ventana = ventana;
-        this.cantidadDePreguntas = 5;
-        correrPregunta();
+        this.cantidadDePreguntas = CANTPREGUNTAS;
     }
+     /*
+        correrPregunta();
+      */
+
     public void correrPregunta(){
-        if(cantidadDePreguntas > 0) {
-            Pregunta pregunta = this.generarPregunta();
-            ventana.construirPantallas(pregunta, 1);
+        while(cantidadDePreguntas > 0) {
+            ventana.construirPantallas(this.obtenerPreguntaAleatoria());
             cantidadDePreguntas -= 1;
-        }else{
-            ventana.pantallaFinal();
         }
     }
-    public Pregunta generarPregunta(){
-        return this.panel.obtenerPreguntaAleatoria();
+
+    public Pregunta obtenerPreguntaAleatoria(){
+        int tamaño = this.preguntas.size();
+        Random randomGenerator = new Random();
+        int randomInt = randomGenerator.nextInt(tamaño);
+        Pregunta pregunta = (Pregunta) this.preguntas.remove(randomInt);
+        return pregunta;
     }
 }

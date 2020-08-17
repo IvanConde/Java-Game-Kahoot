@@ -13,7 +13,18 @@ public class Jugador {
     private int cantExclusividad;
 
     public Jugador(String nombre){
+        this();
         this.nombre = nombre;
+        /*
+        this.puntaje = new PuntajeSwitcher();
+        this.multiplicadorX2 = new Multiplicador(2);
+        this.multiplicadorX3 = new Multiplicador(3);
+        this.cantExclusividad = 2;
+         */
+    }
+
+    public Jugador(){
+        //this.nombre = nombre;
         this.puntaje = new PuntajeSwitcher();
         this.multiplicadorX2 = new Multiplicador(2);
         this.multiplicadorX3 = new Multiplicador(3);
@@ -41,7 +52,6 @@ public class Jugador {
 
     }
 
-
     public boolean tieneMultiplicadorx3(){
         return !multiplicadorX3.seUtilizo();
     }
@@ -56,6 +66,10 @@ public class Jugador {
             return true;
         }
         return false;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
     }
 
 }

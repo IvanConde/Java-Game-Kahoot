@@ -21,7 +21,9 @@ public class AccionBotonOpcion implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent e) {
+        /*
         panel.agregarRespuestaJugador(opcion, cualJugador);
         boton.setDisable(true);
+         */
     }
 }
