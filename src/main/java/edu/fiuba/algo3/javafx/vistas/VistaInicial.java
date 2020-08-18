@@ -13,15 +13,12 @@ import javafx.stage.Stage;
 public class VistaInicial {
     private Stage window;
     private Scene sceneIngresoNombres, sceneJuego;
-    private Panel panel;
 
     public VistaInicial(Stage stage){
         this.window = stage;
-        this.panel = new Panel();
-        stage.setTitle("Kahoot2.0");
-        this.inicialJuego();
     }
-    public void inicialJuego(){
+
+    public void mostrar(Panel panel) {
         Label textoInfo = new Label("Inserte nombre del primer jugador y presione ENTER");
         TextField textField = new TextField();
         EventHandler<KeyEvent> ingresarNombre = new AccionEnterNombres(textoInfo, textField, panel, window);
@@ -32,8 +29,7 @@ public class VistaInicial {
         sceneIngresoNombres = new Scene(layoutInicial, 640, 480);
         this.window.setScene(sceneIngresoNombres);
         this.window.show();
+        System.out.println("Se construyo ventana inicial");
     }
-
-
 }
 

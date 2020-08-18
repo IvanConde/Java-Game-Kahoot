@@ -40,11 +40,19 @@ public class Jugador {
     }
 
     public boolean activarExclusividad(){
-        if(cantExclusividad > 0){
+        if(this.tieneExclusividad()){
             cantExclusividad -= 1;
             return true;
         }
         return false;
+    }
+
+    public void setNombre(String nombre){
+        this.nombre = nombre;
+    }
+
+    public boolean tieneExclusividad(){
+        return cantExclusividad > 0;
     }
 
 }

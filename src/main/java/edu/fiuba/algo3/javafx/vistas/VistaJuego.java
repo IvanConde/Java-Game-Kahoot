@@ -1,7 +1,9 @@
 package edu.fiuba.algo3.javafx.vistas;
 
 import edu.fiuba.algo3.javafx.Panel;
+import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
+import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
@@ -19,31 +21,60 @@ import javafx.util.Duration;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class VistaJuego {
     private Stage window;
     private Scene sceneJuego;
-    private Panel panel;
-    int contestateActual;
-    CicloPreguntas ciclo;
-    public VistaJuego(Stage stage, Panel panel){
+    private ArrayList<Jugador> jugadores;
+    private CicloPreguntas cicloPreguntas;
+    private VistaPregunta vistaPregunta;
+    private Partida partida;
+
+    public VistaJuego(Stage stage, ArrayList<Jugador> jugadores){
         this.window = stage;
-        this.panel = panel;
-        this.juego();
+        this.jugadores = jugadores;
+        this.partida = new Partida(jugadores);
+        this.cicloPreguntas = new CicloPreguntas();
+        this.vistaPregunta = new VistaPregunta(jugadores, stage, partida, this);
     }
-    public int getContestateActual(){
-        return contestateActual;
-    }
-    public void juego(){
-        this.ciclo = new CicloPreguntas(panel, this);
-    }
-    public void construirPantallas(Pregunta pregunta, int cualJugador){
-        if(pregunta.tienePenalidad()){
-            mostrarMultiplicadores(pregunta, cualJugador);
-        }else {
-            mostrarPregunta(pregunta, cualJugador);
+
+    public void mostrar(){
+        if(cicloPreguntas.getCantPreguntas() > 0) {
+            cicloPreguntas.correrPregunta(vistaPregunta);
+        }else{
+            this.mostrarPantallaFinal();
         }
     }
+
+    public void mostrarPantallaFinal(){
+        System.out.println("Se construyo ventana final");
+        Jugador jugador1 = jugadores.get(0);
+        Jugador jugador2 = jugadores.get(1);
+        Label gracias = new Label("¡Gracias por jugar!");
+        Label puntajeJugador1 = new Label("puntos de " + jugador1.verNombre() + ": " + jugador1.puntaje().getPuntaje());
+        Label puntajeJugador2 = new Label("puntos de " + jugador2.verNombre() + ": " + jugador2.puntaje().getPuntaje());
+        Label ganador;
+        if(jugador1.puntaje().getPuntaje() > jugador2.puntaje().getPuntaje()){
+            ganador = new Label("Felicitaciones " + jugador1.verNombre() + "! Ganaste!");
+        }else if(jugador1.puntaje().getPuntaje() == jugador2.puntaje().getPuntaje()){
+            ganador = new Label("¡Los dos jugadores empataron con " + jugador1.puntaje().getPuntaje() + " puntos!");
+        }else{
+            ganador = new Label("Felicitaciones " + jugador2.verNombre() + "! Ganaste!");
+        }
+
+        VBox layoutJuego = new VBox();
+        layoutJuego.getChildren().add(gracias);
+        layoutJuego.getChildren().add(puntajeJugador1);
+        layoutJuego.getChildren().add(puntajeJugador2);
+        layoutJuego.getChildren().add(ganador);
+        window.getScene().setRoot(layoutJuego);
+        window.sizeToScene();
+        window.show();
+    }
+
+
+    /*
     public void mostrarPregunta(Pregunta pregunta, int cualJugador){
         contestateActual = cualJugador;
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno( this, pregunta, panel)));
@@ -69,33 +100,17 @@ public class VistaJuego {
         timeline.setCycleCount(1);
         timeline.play();
     }
-    public void settiarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
-        for(Opcion i : opciones){
-            if(!(i instanceof OpcionGroup)){
-                //TODO: agregar excepcion
-            }
-            Label opcionTexto = new Label(i.getStringOpcion()+ ":");
-            ArrayList<String> grupos = pregunta.devolverGrupos();
-            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) i, grupos.get(0), grupos.get(1));
-            panel.agregarRespuestaJugadorGroup(botonOpcion);
-            botonOpcion.setMaxWidth(300);
-            layoutJuego.getChildren().add(opcionTexto);
-            layoutJuego.getChildren().add(botonOpcion);
-        }
+    public int getContestateActual(){
+        return contestateActual;
     }
-    public void settiarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, int cualJugador){
-        Button verdadero = new Button("Verdadero");
-        Button falso = new Button("Falso");
-        verdadero.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), verdadero, panel, cualJugador, contestar));
-        falso.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), falso, panel, cualJugador, contestar));
-        layoutJuego.getChildren().add(verdadero);
-        layoutJuego.getChildren().add(falso);
+    public void juego(){
+        this.ciclo = new CicloPreguntas(panel, this);
     }
-    public void settiarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, int cualJugador){
-        for(Opcion i : opciones){
-            Button botonOpcion = new Button(i.getStringOpcion());
-            botonOpcion.setOnAction(new AccionBotonOpcion(i, botonOpcion, panel, cualJugador));
-            layoutJuego.getChildren().add(botonOpcion);
+    public void construirPantallas(Pregunta pregunta, int cualJugador){
+        if(pregunta.tienePenalidad()){
+            mostrarMultiplicadores(pregunta, cualJugador);
+        }else {
+            mostrarPregunta(pregunta, cualJugador);
         }
     }
     public void mostrarMultiplicadores(Pregunta pregunta, int cualJugador){
@@ -125,28 +140,9 @@ public class VistaJuego {
 
     }
 
-    public void pantallaFinal(){
-        Label gracias = new Label("¡Gracias por jugar!");
-        Label puntajeJugador1 = new Label("puntos de " + panel.nombreJugador(1)+ ": " + panel.puntajeJugador(1));
-        Label puntajeJugador2 = new Label("puntos de " + panel.nombreJugador(2)+ ": " + panel.puntajeJugador(2));
-        Label ganador;
-        if(panel.puntajeJugador(1) < panel.puntajeJugador(2)){
-            ganador = new Label("Felicitaciones " + panel.nombreJugador(2) + "! Ganaste!");
-        }else if(panel.puntajeJugador(1) == panel.puntajeJugador(2)){
-            ganador = new Label("¡Los dos jugadores empataron con " + panel.puntajeJugador(1) + " puntos!");
-        }
-        else{
-            ganador = new Label("Felicitaciones " + panel.nombreJugador(1) + "! Ganaste!");
-        }
-        VBox layoutJuego = new VBox();
-        layoutJuego.getChildren().add(gracias);
-        layoutJuego.getChildren().add(puntajeJugador1);
-        layoutJuego.getChildren().add(puntajeJugador2);
-        layoutJuego.getChildren().add(ganador);
-        sceneJuego = new Scene(layoutJuego, 640, 480);
-        window.setScene(sceneJuego);
-    }
     public void proximaPregunta(){
         ciclo.correrPregunta();
     }
+
+     */
 }
