@@ -5,32 +5,21 @@ import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.javafx.vistas.VistaInicial;
 import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.*;
-import edu.fiuba.algo3.modelo.opciones.Opcion;
-import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
-import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
-import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
-import edu.fiuba.algo3.modelo.preguntas.*;
-import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
-import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.stage.Stage;
 
-
+import java.io.File;
 import java.util.ArrayList;
-import java.util.LinkedList;
-import java.util.Random;
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
+
 
 public class Panel { // Panel es el modelo de un MVC
     private Jugador jugador1;
     private Jugador jugador2;
-    private CrearPreguntas pregunta;
-
-
-
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
     private VistaInicial vistaInicial;
     private VistaJuego vistaJuego;
     private Stage stage;
-    LinkedList queue;
 
     public Panel(Stage stage){
         this.stage = stage;
@@ -39,6 +28,10 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
+        System.out.println("Working Directory = " + System.getProperty("user.dir"));
+
+        //MediaPlayer player = new MediaPlayer(media);
+        //player.play();
         this.vistaInicial.mostrar(this);
     }
 

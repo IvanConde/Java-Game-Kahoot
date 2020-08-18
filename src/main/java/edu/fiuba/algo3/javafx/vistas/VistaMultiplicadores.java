@@ -22,6 +22,7 @@ public class VistaMultiplicadores {
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta){
         if(!jugador.tieneMultiplicadorx2() && !jugador.tieneMultiplicadorx3()){
+            vistaPregunta.mostrarPregunta(pregunta, jugador);
             return;
         }
         System.out.println("hay penalidad");

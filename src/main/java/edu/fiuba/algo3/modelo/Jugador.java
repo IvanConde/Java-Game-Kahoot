@@ -13,18 +13,7 @@ public class Jugador {
     private int cantExclusividad;
 
     public Jugador(String nombre){
-        this();
         this.nombre = nombre;
-        /*
-        this.puntaje = new PuntajeSwitcher();
-        this.multiplicadorX2 = new Multiplicador(2);
-        this.multiplicadorX3 = new Multiplicador(3);
-        this.cantExclusividad = 2;
-         */
-    }
-
-    public Jugador(){
-        //this.nombre = nombre;
         this.puntaje = new PuntajeSwitcher();
         this.multiplicadorX2 = new Multiplicador(2);
         this.multiplicadorX3 = new Multiplicador(3);
@@ -61,7 +50,7 @@ public class Jugador {
     }
 
     public boolean activarExclusividad(){
-        if(cantExclusividad > 0){
+        if(this.tieneExclusividad()){
             cantExclusividad -= 1;
             return true;
         }
@@ -70,6 +59,10 @@ public class Jugador {
 
     public void setNombre(String nombre){
         this.nombre = nombre;
+    }
+
+    public boolean tieneExclusividad(){
+        return cantExclusividad > 0;
     }
 
 }

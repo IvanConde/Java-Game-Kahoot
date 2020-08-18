@@ -25,25 +25,25 @@ public class VistaPregunta {
     private VistaMultiplicadores vistaMultiplicadores;
     private Partida partida;
     private Stage window;
-    private Scene sceneJuego;
-    private CicloPreguntas cicloPreguntas;
     private VistaJuego vistaJuego;
+    private VistaExclusividad vistaExclusividad;
 
     public VistaPregunta(ArrayList<Jugador> jugadores, Stage stage, Partida partida, VistaJuego vistaJuego) {
         this.jugadores = jugadores;
         this.window = stage;
         this.vistaMultiplicadores = new VistaMultiplicadores(window);
+        this.vistaExclusividad = new VistaExclusividad(window);
         this.partida = partida;
         this.vistaJuego = vistaJuego;
     }
     public void construirPantallas(Pregunta pregunta) {
-            Jugador jugadorActual = this.partida.obtenerJugadorActual();
-            if (pregunta.tienePenalidad()) {
-                vistaMultiplicadores.desplegar(pregunta, jugadorActual, this);
-            }else {
-                this.mostrarPregunta(pregunta, jugadorActual);
-                System.out.println("Se construyo una pregunta");
-            }
+        Jugador jugadorActual = this.partida.obtenerJugadorActual();
+        if (pregunta.tienePenalidad()) {
+            vistaMultiplicadores.desplegar(pregunta, jugadorActual, this);
+        }else {
+            vistaExclusividad.desplegar(pregunta, jugadorActual, this);
+            System.out.println("Se construyo una pregunta");
+        }
     }
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(pregunta, partida, this)));

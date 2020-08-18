@@ -56,7 +56,7 @@ public class VistaJuego {
         Label puntajeJugador1 = new Label("puntos de " + jugador1.verNombre() + ": " + jugador1.puntaje().getPuntaje());
         Label puntajeJugador2 = new Label("puntos de " + jugador2.verNombre() + ": " + jugador2.puntaje().getPuntaje());
         Label ganador;
-        if(jugador1.puntaje().getPuntaje() < jugador2.puntaje().getPuntaje()){
+        if(jugador1.puntaje().getPuntaje() > jugador2.puntaje().getPuntaje()){
             ganador = new Label("Felicitaciones " + jugador1.verNombre() + "! Ganaste!");
         }else if(jugador1.puntaje().getPuntaje() == jugador2.puntaje().getPuntaje()){
             ganador = new Label("¡Los dos jugadores empataron con " + jugador1.puntaje().getPuntaje() + " puntos!");
@@ -69,8 +69,6 @@ public class VistaJuego {
         layoutJuego.getChildren().add(puntajeJugador1);
         layoutJuego.getChildren().add(puntajeJugador2);
         layoutJuego.getChildren().add(ganador);
-        //sceneJuego = new Scene(layoutJuego, 640, 480);
-        //window.setScene(sceneJuego);
         window.getScene().setRoot(layoutJuego);
         window.sizeToScene();
         window.show();
