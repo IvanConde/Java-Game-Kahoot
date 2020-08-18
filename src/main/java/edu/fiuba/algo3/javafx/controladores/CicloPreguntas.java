@@ -18,7 +18,6 @@ public class CicloPreguntas {
     public CicloPreguntas(){
         CrearPreguntas crearPreguntas = new CrearPreguntas();
         this.preguntas = crearPreguntas.parsear();
-        //this.ventana = ventana;
     }
 
     public void correrPregunta(VistaPregunta ventana){

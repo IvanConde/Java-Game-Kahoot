@@ -36,7 +36,6 @@ public class VistaPregunta {
         this.partida = partida;
         this.vistaJuego = vistaJuego;
     }
-
     public void construirPantallas(Pregunta pregunta) {
             Jugador jugadorActual = this.partida.obtenerJugadorActual();
             if (pregunta.tienePenalidad()) {
@@ -46,7 +45,6 @@ public class VistaPregunta {
                 System.out.println("Se construyo una pregunta");
             }
     }
-
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
@@ -55,7 +53,6 @@ public class VistaPregunta {
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
         Button botonContestar = new Button("[Enviar respuesta]");
-        /*
         ArrayList<Opcion> opciones = pregunta.verBotones();
 
         if (pregunta instanceof VerdaderoFalso) {
@@ -66,27 +63,25 @@ public class VistaPregunta {
             this.desplegarBotonesMultiplesRespuestas(layoutJuego, opciones, jugadorActual);
         }
 
-         */
+        partida.setPreguntaActual(pregunta);
         botonContestar.setOnAction(new Contestar(timeline, this));
         layoutJuego.getChildren().add(botonContestar);
-        //sceneJuego = new Scene(layoutJuego, 640, 480); //640x480
-        //window.setScene(sceneJuego);
+
         window.getScene().setRoot(layoutJuego);
         window.sizeToScene();
         window.show();
         timeline.setCycleCount(1);
         timeline.play();
     }
-
     public void desplegarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
-        for(Opcion i : opciones){
-            if(!(i instanceof OpcionGroup)){
+        for(Opcion opcion : opciones){
+            if(!(opcion instanceof OpcionGroup)){
                 //TODO: agregar excepcion
             }
-            Label opcionTexto = new Label(i.getStringOpcion()+ ":");
+            Label opcionTexto = new Label(opcion.getStringOpcion()+ ":");
             ArrayList<String> grupos = pregunta.devolverGrupos();
-            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) i, grupos.get(0), grupos.get(1));
-            //panel.agregarRespuestaJugadorGroup(botonOpcion);
+            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) opcion, grupos.get(0), grupos.get(1));
+            partida.agregarRespuestaJugadorGroup(botonOpcion);
             botonOpcion.setMaxWidth(300);
             layoutJuego.getChildren().add(opcionTexto);
             layoutJuego.getChildren().add(botonOpcion);
@@ -95,31 +90,18 @@ public class VistaPregunta {
     public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, Jugador jugadorActual){
         Button boton1 = new Button("Verdadero");
         Button boton2 = new Button("Falso");
-        //boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, jugadorActual, contestar, partida));
-        //boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, jugadorActual, contestar, partida));
+        boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, jugadorActual, contestar, partida));
+        boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, jugadorActual, contestar, partida));
         layoutJuego.getChildren().add(boton1);
         layoutJuego.getChildren().add(boton2);
     }
     public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, Jugador jugadorActual){
-        for(Opcion i : opciones){
-            Button botonOpcion = new Button(i.getStringOpcion());
-            //botonOpcion.setOnAction(new AccionBotonOpcion(i, botonOpcion, panel, jugadorActual));
+        for(Opcion opcion : opciones){
+            Button botonOpcion = new Button(opcion.getStringOpcion());
+            botonOpcion.setOnAction(new AccionBotonOpcion(opcion, botonOpcion, jugadorActual, this.partida));
             layoutJuego.getChildren().add(botonOpcion);
         }
     }
-    
-    /*
-    public void recolectarRespuestasGroup(Jugador jugadorActual){
-        for(ToggleSwitch interruptor : respuestasJugadorGroup){
-            if(jugadorActual == 1){
-                interruptor.respuestaJugador(opcionesJugador1);
-            }else {
-                interruptor.respuestaJugador(opcionesJugador2);
-            }
-        }
-        respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
-    }
-     */
 
     public void proximaPregunta(){
         vistaJuego.mostrar();

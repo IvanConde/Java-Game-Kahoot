@@ -23,12 +23,9 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent event) {
-        /*
         if(pregunta instanceof GroupChoice){
-            panel.recolectarRespuestasGroup(ventana.getContestateActual());
+            partida.recolectarRespuestasGroup(partida.obtenerJugadorActual());
         }
-    */
-        partida.contestar(pregunta);
         if (partida.seContestoPregunta()) {
             partida.responderPregunta();
             vistaPregunta.proximaPregunta();
