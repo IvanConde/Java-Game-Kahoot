@@ -9,8 +9,8 @@ import javafx.stage.Stage;
 
 import java.io.File;
 import java.util.ArrayList;
-/*import javafx.scene.media.Media;
-import javafx.scene.media.MediaPlayer;*/
+import javafx.scene.media.Media;
+import javafx.scene.media.MediaPlayer;
 
 
 public class Panel { // Panel es el modelo de un MVC
@@ -29,9 +29,10 @@ public class Panel { // Panel es el modelo de un MVC
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
-
-        //MediaPlayer player = new MediaPlayer(media);
-        //player.play();
+        String musicfile = "musica.mp3";
+        Media sound = new Media(new File(musicfile).toURI().toString());
+        MediaPlayer player = new MediaPlayer(sound);
+        player.play();
         this.vistaInicial.mostrar(this);
     }
 
