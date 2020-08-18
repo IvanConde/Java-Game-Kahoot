@@ -2,8 +2,6 @@ package edu.fiuba.algo3.javafx.vistas;
 
 import edu.fiuba.algo3.javafx.controladores.AccionExclusividadPuntaje;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorX2;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorX3;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.scene.control.Button;

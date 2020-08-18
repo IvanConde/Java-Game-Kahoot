@@ -1,7 +1,7 @@
 package edu.fiuba.algo3.javafx.vistas;
 
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorX2;
+import edu.fiuba.algo3.javafx.controladores.AccionMultiplicador;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorX3;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
@@ -21,7 +21,7 @@ public class VistaMultiplicadores {
     }
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta){
-        if(!jugador.tieneMultiplicadorx2() && !jugador.tieneMultiplicadorx3()){
+        if(!jugador.tieneMultiplicador(2) && !jugador.tieneMultiplicador(3)){
             vistaPregunta.mostrarPregunta(pregunta, jugador);
             return;
         }
@@ -31,14 +31,14 @@ public class VistaMultiplicadores {
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
         Button multiplicadorX2 = new Button("Activar multiplicador x2");
-        multiplicadorX2.setOnAction(new AccionMultiplicadorX2(pregunta, jugador, vistaPregunta));
+        multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 2));
 
         Button multiplicadorX3 = new Button("Activar multiplicador x3");
-        multiplicadorX3.setOnAction(new AccionMultiplicadorX3(pregunta, jugador, vistaPregunta));
+        multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 3));
 
-        if(!jugador.tieneMultiplicadorx2()){
+        if(!jugador.tieneMultiplicador(2)){
             multiplicadorX2.setDisable(true);
-        }else if(!jugador.tieneMultiplicadorx3()){
+        }else if(!jugador.tieneMultiplicador(3)){
             multiplicadorX3.setDisable(true);
         }
 

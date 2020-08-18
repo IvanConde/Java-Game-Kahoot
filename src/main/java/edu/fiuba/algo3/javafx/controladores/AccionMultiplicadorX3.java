@@ -22,7 +22,7 @@ public class AccionMultiplicadorX3 implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent e) {
         System.out.println("se multiplico 3");
-        jugador.usarMultiplicadorX3(pregunta);
+        jugador.usarMultiplicador(pregunta, 3);
         vistaPregunta.mostrarPregunta(pregunta, jugador);
     }
 }

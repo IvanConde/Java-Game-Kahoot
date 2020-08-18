@@ -8,21 +8,23 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class AccionMultiplicadorX2 implements EventHandler<ActionEvent> {
+public class AccionMultiplicador implements EventHandler<ActionEvent> {
     private Pregunta pregunta;
     private Jugador jugador;
     private VistaPregunta vistaPregunta;
+    private int magnitud;
 
-    public AccionMultiplicadorX2(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta) {
+    public AccionMultiplicador(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta, int magnitud) {
         this.pregunta = pregunta;
         this.jugador = jugador;
         this.vistaPregunta = vistaPregunta;
+        this.magnitud = magnitud;
     }
 
     @Override
     public void handle(ActionEvent e) {
-        System.out.println("se multiplico 2");
-        jugador.usarMultiplicadorX2(pregunta);
+        System.out.println("se multiplico " + String.valueOf(magnitud));
+        jugador.usarMultiplicador(pregunta, magnitud);
         vistaPregunta.mostrarPregunta(pregunta, jugador);
     }
 }
