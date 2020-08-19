@@ -8,6 +8,8 @@ import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.stage.Stage;
 
+import java.io.IOException;
+
 public class AccionMostrarReglas implements EventHandler<ActionEvent> {
 
     Panel panel;
@@ -23,6 +25,10 @@ public class AccionMostrarReglas implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent actionEvent) {
         VistaReglas reglas =  new VistaReglas(stage);
-        reglas.mostrar(menuPrincipal, panel);
+        try {
+            reglas.mostrar(menuPrincipal, panel);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 }

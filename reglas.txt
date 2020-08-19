@@ -1,0 +1,4 @@
+1.Solo hay 2 Jugadores, Cada Jugador Tiene 2 usos de exclusividad de puntaje
+ y un uso de Multiplicador X2 y Multplicador X3.
+2.Una vez elegida una opcion En Multiple Choice, Verdadero y Falso, Group Choice
+  no se puede Deseleccionar.

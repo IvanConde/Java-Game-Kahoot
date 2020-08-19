@@ -13,6 +13,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
 
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
 public class VistaReglas {
     private Stage window;
 
@@ -20,16 +25,22 @@ public class VistaReglas {
         this.window = stage;
     }
 
-    public void mostrar(VistaInicial menuPrincipal, Panel panel) {
+    public void mostrar(VistaInicial menuPrincipal, Panel panel) throws IOException {
         Label textoHeader = new Label("Reglas:");
-        Label textoRegla1 = new Label("1. Solo hay 2 Jugadores, Cada Jugador Tiene 2 usos de exclusividad de puntaje \n y un uso de Multiplicador X2 y Multplicador X3");
-        Label textoRegla2 = new Label("2.Una vez elegida una opcion En Multiple Choice, Verdadero y Falso, Group Choice \n no se puede Deseleccionar" );
         VBox layoutReglas = new VBox();
         Button botonVolver = new Button("Volver a menu Principal");
         botonVolver.setOnAction(new AccionVolverMenuPrincipal(menuPrincipal, panel));
+        BufferedReader reader = new BufferedReader(new FileReader("reglas.txt"));
         layoutReglas.getChildren().add(textoHeader);
-        layoutReglas.getChildren().add(textoRegla1);
-        layoutReglas.getChildren().add(textoRegla2);
+        try {
+            String linea = reader.readLine();
+            while (linea != null) {
+                layoutReglas.getChildren().add(new Label(linea));
+                linea = reader.readLine();
+            }
+        } finally {
+            reader.close();
+        }
         layoutReglas.getChildren().add(botonVolver);
         window.getScene().setRoot(layoutReglas);
         window.sizeToScene();
