@@ -4,6 +4,8 @@ import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.Jugador;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import java.util.ArrayList;
@@ -46,7 +48,6 @@ public class VistaJuego {
         }else{
             ganador = new Label("Felicitaciones " + jugador2.verNombre() + "! Ganaste!");
         }
-
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(gracias);
         layoutJuego.getChildren().add(puntajeJugador1);

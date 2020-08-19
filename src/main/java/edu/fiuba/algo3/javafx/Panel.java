@@ -63,6 +63,7 @@ public class Panel { // Panel es el modelo de un MVC
         canciones.add("musica//musica4.mp3");
         canciones.add("musica//musica5.mp3");
         canciones.add("musica//musica6.mp3");
+        canciones.add("musica//musica7.mp3");
 
         int tamaño = canciones.size();
         Random randomGenerator = new Random();

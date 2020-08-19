@@ -10,9 +10,12 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javafx.util.Duration;
@@ -20,7 +23,7 @@ import javafx.util.Duration;
 import java.util.ArrayList;
 
 public class VistaPregunta {
-
+    static final int TIEMPO = 30;
     private ArrayList<Jugador> jugadores;
     private VistaMultiplicadores vistaMultiplicadores;
     private Partida partida;
@@ -46,7 +49,7 @@ public class VistaPregunta {
         }
     }
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new AccionBotonTerminarTurno(pregunta, partida, this)));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(TIEMPO), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         VBox layoutJuego = new VBox();
@@ -55,6 +58,9 @@ public class VistaPregunta {
         Button botonContestar = new Button("[Enviar respuesta]");
         ArrayList<Opcion> opciones = pregunta.verBotones();
 
+        layoutJuego.setAlignment(Pos.CENTER);
+        layoutJuego.setSpacing(10);
+        //botonContestar.setMaxSize(500,200);
         if (pregunta instanceof VerdaderoFalso) {
             this.desplegarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, jugadorActual);
         } else if (pregunta instanceof GroupChoice) {
