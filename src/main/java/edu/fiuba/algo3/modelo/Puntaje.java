@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo;
-
 import edu.fiuba.algo3.modelo.modificadoresdepuntaje.Modificador;
-import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorMultiplicador;
 import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorStandard;
 
 public class Puntaje {
@@ -25,4 +23,5 @@ public class Puntaje {
     public void setModificador(Modificador modificador) {
         this.modificador = modificador;
     }
+
 }

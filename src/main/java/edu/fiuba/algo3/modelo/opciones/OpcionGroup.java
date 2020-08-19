@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.modelo.opciones;
-
 import java.util.ArrayList;
 
 public class OpcionGroup extends Opcion {
@@ -24,10 +23,6 @@ public class OpcionGroup extends Opcion {
     @Override
     public boolean esCorrecto(){
         return (grupoJugador == grupoOriginal);
-    }
-
-    public String getGrupoOriginal() {
-        return grupoOriginal;
     }
 
 }

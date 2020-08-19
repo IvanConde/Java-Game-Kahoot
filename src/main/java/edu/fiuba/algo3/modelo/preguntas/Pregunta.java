@@ -1,18 +1,16 @@
 package edu.fiuba.algo3.modelo.preguntas;
 import edu.fiuba.algo3.modelo.ExclusividadDePuntaje;
 import edu.fiuba.algo3.modelo.Jugador;
-import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
-
 import java.util.ArrayList;
 
 public abstract class Pregunta {
+
     protected String pregunta;
     protected ArrayList<Opcion> todasLasOpciones;
     protected Modalidad modalidad;
-
     protected ExclusividadDePuntaje exclusividad;
     protected boolean exclusividadesActivada;
 
@@ -49,4 +47,5 @@ public abstract class Pregunta {
     public void usarExclusividad(Jugador jugador){
         exclusividad.activarExclusividad(jugador);
     }
+
 }

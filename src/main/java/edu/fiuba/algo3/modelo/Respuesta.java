@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorStandard;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
-
 import java.util.ArrayList;
 
 public class Respuesta {
@@ -14,10 +13,12 @@ public class Respuesta {
         this.puntaje = puntaje;
         this.puntajeTemporal = 0;
     }
+
     public void modificarPuntaje(int puntos){
         puntaje.modificarPuntaje(puntos);
         puntaje.setModificador(new ModificadorStandard());
     }
+
     public ArrayList<Opcion> verRespuestaJugador(){
         return opciones;
     }
@@ -37,4 +38,5 @@ public class Respuesta {
     public ArrayList<Opcion> getOpciones(){
         return opciones;
     }
+
 }

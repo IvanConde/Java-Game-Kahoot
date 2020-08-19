@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.modalidades;
 import edu.fiuba.algo3.modelo.Respuesta;
-import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 //Asigna un punto a cada jugador por cada opción correcta que
@@ -36,4 +35,5 @@ public class ModalidadParcial extends Modalidad {
     public boolean esPenalidad() {
         return false;
     }
+
 }

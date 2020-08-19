@@ -1,8 +1,8 @@
 package edu.fiuba.algo3.modelo;
-
 import java.util.ArrayList;
 
 public class ExclusividadDePuntaje {
+
     private int magnitud = 2;
     private boolean EstadoDeActivacion = false;
 
@@ -37,4 +37,5 @@ public class ExclusividadDePuntaje {
     public int verMagnitud(){
         return this.magnitud;
     }
+
 }

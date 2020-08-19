@@ -1,7 +1,5 @@
 package edu.fiuba.algo3.modelo.modalidades;
-
 import edu.fiuba.algo3.modelo.Respuesta;
-import edu.fiuba.algo3.modelo.modalidades.Modalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 public class ModalidadPenalidad extends Modalidad {
@@ -31,4 +29,5 @@ public class ModalidadPenalidad extends Modalidad {
     public boolean esPenalidad() {
         return true;
     }
+
 }

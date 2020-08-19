@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.modelo.opciones;
-
 import java.util.ArrayList;
 
 public class OpcionOrdered extends Opcion {

@@ -17,4 +17,5 @@ public class ModificadorMultiplicador implements Modificador{
         this.seUtilizo = true;
         return (puntosNuevos * this.magnitud)+puntosActuales;
     }
+
 }
