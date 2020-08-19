@@ -1,13 +1,12 @@
 package edu.fiuba.algo3.javafx.controladores;
-
 import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.javafx.vistas.VistaPregunta;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
-
 import java.util.LinkedList;
 import java.util.Random;
 
 public class CicloPreguntas {
+
     private int cantidadPreguntas = 5;
     private LinkedList preguntas;
 
@@ -32,4 +31,5 @@ public class CicloPreguntas {
     public int getCantPreguntas(){
         return cantidadPreguntas;
     }
+
 }

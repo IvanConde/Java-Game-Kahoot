@@ -1,25 +1,17 @@
 package edu.fiuba.algo3.javafx.vistas;
-
 import edu.fiuba.algo3.javafx.Panel;
-import edu.fiuba.algo3.javafx.controladores.AccionEmpezarJuego;
-import edu.fiuba.algo3.javafx.controladores.AccionEnterNombres;
 import edu.fiuba.algo3.javafx.controladores.AccionVolverMenuPrincipal;
-import javafx.event.EventHandler;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
-import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
-import javafx.scene.text.TextAlignment;
 import javafx.stage.Stage;
-
 import java.io.BufferedReader;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
 public class VistaReglas {
+
     private Stage window;
 
     public VistaReglas(Stage stage){
@@ -47,6 +39,6 @@ public class VistaReglas {
         window.getScene().setRoot(layoutReglas);
         window.sizeToScene();
         window.show();
-        System.out.println("Se construyo ventana Reglas");
     }
+
 }

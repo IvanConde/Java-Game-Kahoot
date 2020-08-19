@@ -1,18 +1,16 @@
 package edu.fiuba.algo3.javafx.vistas;
-
 import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
 public class VistaJuego {
+
     private Stage window;
     private ArrayList<Jugador> jugadores;
     private CicloPreguntas cicloPreguntas;
@@ -36,12 +34,11 @@ public class VistaJuego {
     }
 
     public void mostrarPantallaFinal(){
-        System.out.println("Se construyo ventana final");
         Jugador jugador1 = jugadores.get(0);
         Jugador jugador2 = jugadores.get(1);
         Label gracias = new Label("¡Gracias por jugar!");
-        Label puntajeJugador1 = new Label("puntos de " + jugador1.verNombre() + ": " + jugador1.puntaje().getPuntaje());
-        Label puntajeJugador2 = new Label("puntos de " + jugador2.verNombre() + ": " + jugador2.puntaje().getPuntaje());
+        Label puntajeJugador1 = new Label("Puntos de " + jugador1.verNombre() + ": " + jugador1.puntaje().getPuntaje());
+        Label puntajeJugador2 = new Label("Puntos de " + jugador2.verNombre() + ": " + jugador2.puntaje().getPuntaje());
         gracias.setFont(new Font("Arial", 24));
         puntajeJugador1.setFont(new Font("Arial", 16));
         puntajeJugador2.setFont(new Font("Arial", 16));
@@ -65,4 +62,5 @@ public class VistaJuego {
         window.sizeToScene();
         window.show();
     }
+
 }

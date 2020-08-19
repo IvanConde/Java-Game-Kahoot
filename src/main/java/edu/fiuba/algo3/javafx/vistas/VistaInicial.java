@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.javafx.vistas;
-
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.controladores.AccionEmpezarJuego;
 import edu.fiuba.algo3.javafx.controladores.AccionMostrarReglas;
@@ -14,8 +13,9 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class VistaInicial {
+
     private Stage window;
-    private Scene sceneMenuPrincipal, sceneJuego;
+    private Scene sceneMenuPrincipal;
 
     public VistaInicial(Stage stage){
         this.window = stage;
@@ -30,8 +30,6 @@ public class VistaInicial {
         boton2.setOnAction(new AccionMostrarReglas(panel, this, this.window));
         VBox layoutInicial = new VBox();
         layoutInicial.setSpacing(10);
-
-
 
         DropShadow shadow = new DropShadow();
         boton1.setMaxSize(500,200);
@@ -53,7 +51,6 @@ public class VistaInicial {
         sceneMenuPrincipal = new Scene(layoutInicial, 640, 480);
         this.window.setScene(sceneMenuPrincipal);
         this.window.show();
-        System.out.println("Se construyo ventana inicial");
     }
-}
 
+}

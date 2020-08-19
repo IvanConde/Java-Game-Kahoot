@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.javafx.datos;
-
 import edu.fiuba.algo3.modelo.excepciones.ModalidadInvalidaException;
 import edu.fiuba.algo3.modelo.excepciones.PreguntaInvalidaException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
@@ -15,13 +14,12 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
-
 import java.io.*;
-
 import java.util.ArrayList;
 import java.util.LinkedList;
 
 public class CrearPreguntas {
+
     private LinkedList queue;
 
     public CrearPreguntas(){
@@ -58,7 +56,7 @@ public class CrearPreguntas {
         }else if(clavePregunta.equalsIgnoreCase("GroupChoice")){
             this.crearGroupChoice(jsonPregunta);
         }else{
-            throw new PreguntaInvalidaException("El tipo de pregunta leida no existe");
+            throw new PreguntaInvalidaException("El tipo de pregunta leída no existe");
         }
     }
 
@@ -133,8 +131,9 @@ public class CrearPreguntas {
         }else if(stringModalidad.equalsIgnoreCase("parcial")){
             modalidad = new ModalidadParcial();
         }else{
-            throw new ModalidadInvalidaException("La modalidad leida no existe");
+            throw new ModalidadInvalidaException("La modalidad leída no existe");
         }
         return modalidad;
     }
+
 }

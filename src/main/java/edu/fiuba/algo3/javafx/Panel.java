@@ -1,19 +1,16 @@
 package edu.fiuba.algo3.javafx;
-
-
 import edu.fiuba.algo3.javafx.vistas.VistaInicial;
 import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.*;
 import javafx.stage.Stage;
 import java.util.Random;
-
 import java.io.File;
 import java.util.ArrayList;
 import javafx.scene.media.Media;
 import javafx.scene.media.MediaPlayer;
 
-
 public class Panel { // Panel es el modelo de un MVC
+
     private Jugador jugador1;
     private Jugador jugador2;
     private ArrayList<Jugador> jugadores = new ArrayList<Jugador>();
@@ -28,14 +25,14 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
-        System.out.println("Working Directory = " + System.getProperty("user.dir"));
         this.reproducirMusica();
         this.vistaInicial.mostrar(this);
     }
 
-
     public boolean juegoPuedeComenzar(){
-        if(jugador1 == null || jugador2 == null ){ return false;}
+        if(jugador1 == null || jugador2 == null ){
+            return false;
+        }
         jugadores.add(jugador1);
         jugadores.add(jugador2);
         return true;
@@ -76,4 +73,3 @@ public class Panel { // Panel es el modelo de un MVC
     }
 
 }
-

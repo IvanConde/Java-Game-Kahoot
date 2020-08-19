@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.javafx.vistas;
-
 import edu.fiuba.algo3.javafx.controladores.AccionExclusividadPuntaje;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
 import edu.fiuba.algo3.modelo.Jugador;
@@ -11,6 +10,7 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 public class VistaExclusividad {
+
     private Stage window;
 
     public VistaExclusividad(Stage stage) {
@@ -23,8 +23,7 @@ public class VistaExclusividad {
             return;
         }
 
-        System.out.println("hay exclusividad");
-        Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige si queres activar exclusividad de puntaje para esta pregunta");
+        Label nombreJugadorLabel = new Label(jugador.verNombre() + " elegí si queres activar exclusividad de puntaje para esta pregunta");
         Button ninguno = new Button("Ninguno");
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
@@ -45,7 +44,6 @@ public class VistaExclusividad {
             window.getScene().setRoot(layoutExclusividad);
             window.sizeToScene();
             window.show();
-            System.out.println("Se construyo ventana multiplicador");
     }
-}
 
+}

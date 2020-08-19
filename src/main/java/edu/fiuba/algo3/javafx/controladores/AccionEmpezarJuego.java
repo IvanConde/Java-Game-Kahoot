@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.javafx.controladores;
-
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.vistas.VistaNombres;
 import javafx.event.ActionEvent;
@@ -21,4 +20,5 @@ public class AccionEmpezarJuego implements EventHandler<ActionEvent> {
         VistaNombres vistaNombres = new VistaNombres(stage);
         vistaNombres.mostrar(panel);
     }
+
 }

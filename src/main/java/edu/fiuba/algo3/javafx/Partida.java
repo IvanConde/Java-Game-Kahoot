@@ -1,17 +1,15 @@
 package edu.fiuba.algo3.javafx;
-
 import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
-import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
-
 import java.util.ArrayList;
 
 public class Partida {
+
     static final int JUGADOR1 = 0;
     static final int JUGADOR2 = 1;
     private Pregunta preguntaActual;
@@ -42,7 +40,6 @@ public class Partida {
     }
 
     public void agregarRespuestaJugador(Opcion opcion, Jugador jugador) {
-        System.out.println(opcion.getStringOpcion());
         if (jugadores.lastIndexOf(jugador) == JUGADOR1) {
             agregarRespuesta(opcionesJugador1, opcion);
         } else {
@@ -72,8 +69,6 @@ public class Partida {
         preguntaActual.responderPregunta(respuestas);
         opcionesJugador1 = new ArrayList<Opcion>();
         opcionesJugador2 = new ArrayList<Opcion>();
-        System.out.println(jugadores.get(JUGADOR1).puntaje().getPuntaje());
-        System.out.println(jugadores.get(JUGADOR2).puntaje().getPuntaje());
         indiceJugadorActual = 0;
     }
 

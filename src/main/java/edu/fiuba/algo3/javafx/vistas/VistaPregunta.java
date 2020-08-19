@@ -1,5 +1,4 @@
 package edu.fiuba.algo3.javafx.vistas;
-
 import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.Jugador;
@@ -17,10 +16,10 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
-
 import java.util.ArrayList;
 
 public class VistaPregunta {
+
     static final int TIEMPO = 30;
     private ArrayList<Jugador> jugadores;
     private VistaMultiplicadores vistaMultiplicadores;
@@ -37,15 +36,16 @@ public class VistaPregunta {
         this.partida = partida;
         this.vistaJuego = vistaJuego;
     }
+
     public void construirPantallas(Pregunta pregunta) {
         Jugador jugadorActual = this.partida.obtenerJugadorActual();
         if (pregunta.tienePenalidad()) {
             vistaMultiplicadores.desplegar(pregunta, jugadorActual, this);
         }else {
             vistaExclusividad.desplegar(pregunta, jugadorActual, this);
-            System.out.println("Se construyo una pregunta");
         }
     }
+
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(TIEMPO), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
@@ -77,6 +77,7 @@ public class VistaPregunta {
         timeline.setCycleCount(1);
         timeline.play();
     }
+
     public void desplegarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
         for(Opcion opcion : opciones){
             if(!(opcion instanceof OpcionGroup)){
@@ -93,6 +94,7 @@ public class VistaPregunta {
             layoutJuego.getChildren().add(botonOpcion);
         }
     }
+
     public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, Jugador jugadorActual){
         Button boton1 = new Button("Verdadero");
         Button boton2 = new Button("Falso");
@@ -101,6 +103,7 @@ public class VistaPregunta {
         layoutJuego.getChildren().add(boton1);
         layoutJuego.getChildren().add(boton2);
     }
+
     public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, Jugador jugadorActual){
         for(Opcion opcion : opciones){
             Button botonOpcion = new Button(opcion.getStringOpcion());
@@ -112,4 +115,5 @@ public class VistaPregunta {
     public void proximaPregunta(){
         vistaJuego.mostrar();
     }
+
 }

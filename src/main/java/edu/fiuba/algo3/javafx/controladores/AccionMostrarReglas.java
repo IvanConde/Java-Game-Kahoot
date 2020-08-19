@@ -1,13 +1,10 @@
 package edu.fiuba.algo3.javafx.controladores;
-
 import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.vistas.VistaInicial;
 import edu.fiuba.algo3.javafx.vistas.VistaReglas;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.control.Label;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 
 public class AccionMostrarReglas implements EventHandler<ActionEvent> {
@@ -31,4 +28,5 @@ public class AccionMostrarReglas implements EventHandler<ActionEvent> {
             e.printStackTrace();
         }
     }
+
 }

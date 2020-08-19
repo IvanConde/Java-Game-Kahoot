@@ -6,17 +6,17 @@ import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.HBox;
-
 import java.util.ArrayList;
-// derechos de autor https://gist.github.com/TheItachiUchiha/12e40a6f3af6e1eb6f75
 
 public class ToggleSwitch extends HBox {
+
     private final Label label = new Label();
     private final Button button = new Button();
     private OpcionGroup opcion;
     private String grupo1;
     private String grupo2;
     private SimpleBooleanProperty switchedOn = new SimpleBooleanProperty(false);
+
     public void respuestaJugador(ArrayList<Opcion> opcionesJugador) {
         if(switchedOn.get()) {
             opcion.elegirGrupo(grupo1, opcionesJugador);
@@ -26,9 +26,7 @@ public class ToggleSwitch extends HBox {
     }
 
     private void init() {
-
         label.setText(grupo1);
-
         getChildren().addAll(label, button);
         button.setOnAction((e) -> {
             switchedOn.set(!switchedOn.get());
@@ -73,4 +71,5 @@ public class ToggleSwitch extends HBox {
             }
         });
     }
+
 }
