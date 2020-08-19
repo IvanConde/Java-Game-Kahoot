@@ -203,7 +203,9 @@ public class VyFModalidadPenalidadMultiplicadorX3Test {
         jugador1.usarMultiplicador(preguntaTest, 3);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-4, jugador1.puntaje().getPuntaje());
+
     }
+
     @Test
     public void test07_8ResponderVerdaderoYFalsoConPenalidadDosJugadoresCorrectamenteEIncorrectamenteConMultiplicadorX3AmbosRespondenDosVecesSoloMultiplicaElPrimero(){
 

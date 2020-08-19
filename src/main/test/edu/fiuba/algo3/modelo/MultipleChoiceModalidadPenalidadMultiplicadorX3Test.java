@@ -294,5 +294,7 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-4, jugador1.puntaje().getPuntaje());
         assertEquals(4, jugador2.puntaje().getPuntaje());
+
     }
+
 }

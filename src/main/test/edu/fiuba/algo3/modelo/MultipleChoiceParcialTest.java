@@ -126,6 +126,7 @@ public class MultipleChoiceParcialTest {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
         assertEquals(2, jugador2.puntaje().getPuntaje());
+
     }
 
     @Test
@@ -147,11 +148,9 @@ public class MultipleChoiceParcialTest {
         Jugador jugador1 = new Jugador("Federico");
         Jugador jugador2 = new Jugador("Milagros");
 
-
         ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
         opcionesJugador1.add(opcion1);
         opcionesJugador1.add(opcion2);
-
 
         ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
         opcionesJugador2.add(opcion1);
@@ -169,5 +168,7 @@ public class MultipleChoiceParcialTest {
         preguntaTest.usarExclusividad(jugador2);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
+
     }
+
 }

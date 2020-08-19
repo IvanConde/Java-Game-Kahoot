@@ -139,4 +139,5 @@ public class GroupChoiceTest {
         assertEquals(1, jugador2.puntaje().getPuntaje());
 
     }
+
 }
