@@ -47,8 +47,6 @@ public class VistaMultiplicadores {
         layoutMultiplicador.getChildren().add(multiplicadorX2);
         layoutMultiplicador.getChildren().add(multiplicadorX3);
         layoutMultiplicador.getChildren().add(ninguno);
-        //sceneJuego = new Scene(layoutMultiplicador, 640, 480); //640x480
-        //window.setScene(sceneJuego);
         window.getScene().setRoot(layoutMultiplicador);
         window.sizeToScene();
         window.show();

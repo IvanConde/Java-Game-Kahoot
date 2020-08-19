@@ -46,7 +46,7 @@ public class VistaPregunta {
         }
     }
     public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
-        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(30), new AccionBotonTerminarTurno(pregunta, partida, this)));
+        Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(5), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         VBox layoutJuego = new VBox();

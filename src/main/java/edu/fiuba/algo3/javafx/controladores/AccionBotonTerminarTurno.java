@@ -1,8 +1,6 @@
 package edu.fiuba.algo3.javafx.controladores;
 
-import edu.fiuba.algo3.javafx.Panel;
 import edu.fiuba.algo3.javafx.Partida;
-import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.javafx.vistas.VistaPregunta;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;

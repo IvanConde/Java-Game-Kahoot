@@ -1,11 +1,11 @@
 package edu.fiuba.algo3.javafx;
 
 
-import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.javafx.vistas.VistaInicial;
 import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import edu.fiuba.algo3.modelo.*;
 import javafx.stage.Stage;
+import java.util.Random;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -29,10 +29,7 @@ public class Panel { // Panel es el modelo de un MVC
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
         System.out.println("Working Directory = " + System.getProperty("user.dir"));
-        String musicfile = "musica.mp3";
-        Media sound = new Media(new File(musicfile).toURI().toString());
-        MediaPlayer player = new MediaPlayer(sound);
-        player.play();
+        this.reproducirMusica();
         this.vistaInicial.mostrar(this);
     }
 
@@ -56,98 +53,25 @@ public class Panel { // Panel es el modelo de un MVC
         this.vistaJuego.mostrar();
     }
 
-    /*
-    public void agregarRespuestaJugador(Opcion opcion, int cualJugador){
-        System.out.println(opcion.getStringOpcion());
-        if(cualJugador == 1){
-            agregarRespuesta(opcionesJugador1, opcion);
-        }else{
-            agregarRespuesta(opcionesJugador2, opcion);
-        }
-    }
-    public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion){
-        if(preguntaActual instanceof OrderedChoice){
-            if(opcion instanceof OpcionOrdered){
-                OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
-                opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
-            }else{
-                //TODO: misma excepcion que con group
-            }
-        }else {
-            opcionesJugador.add(opcion);
-        }
-    }
-    public void responderPregunta(){
-        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugador1.puntaje());
-        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugador2.puntaje());
-        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
-        respuestas.add(respuestaJugador1);
-        respuestas.add(respuestaJugador2);
-        preguntaActual.responderPregunta(respuestas);
-        opcionesJugador1 = new ArrayList<Opcion>();
-        opcionesJugador2 = new ArrayList<Opcion>();
-        System.out.println(jugador1.puntaje().getPuntaje());
-        System.out.println(jugador2.puntaje().getPuntaje());
-    }
+    public void reproducirMusica(){
+        ArrayList<String> canciones = new ArrayList<String>();
+        canciones.add("musica\\musica.mp3");
+        canciones.add("musica\\musica1.mp3");
+        canciones.add("musica\\musica2.mp3");
+        canciones.add("musica\\musica3.mp3");
+        canciones.add("musica\\musica4.mp3");
+        canciones.add("musica\\musica5.mp3");
+        canciones.add("musica\\musica6.mp3");
 
-    public Pregunta obtenerPreguntaAleatoria(){
-        int tamaño = this.queue.size();
+        int tamaño = canciones.size();
         Random randomGenerator = new Random();
         int randomInt = randomGenerator.nextInt(tamaño);
-        Pregunta pregunta = (Pregunta) this.queue.remove(randomInt);
-        this.preguntaActual = pregunta;
-        return pregunta;
+        String cancionElegida = canciones.get(randomInt);
+
+        Media sound = new Media(new File(cancionElegida).toURI().toString());
+        MediaPlayer player = new MediaPlayer(sound);
+        player.play();
     }
-    public String nombreJugador(int cualJugador){
-        if(cualJugador == 1){
-            return jugador1.verNombre();
-        }
-        return jugador2.verNombre();
-    }
-    public Boolean jugadorTieneMultiplicadorx2(int cualJugador){
-        if(cualJugador == 1){
-            return jugador1.tieneMultiplicadorx2();
-        }
-        return jugador2.tieneMultiplicadorx2();
-    }
-    public Boolean jugadorTieneMultiplicadorx3(int cualJugador){
-        if(cualJugador == 1){
-            return jugador1.tieneMultiplicadorx3();
-        }
-        return jugador2.tieneMultiplicadorx3();
-    }
-    public void usarMultiplicadorJugadorX2(Pregunta pregunta, int cualJugador){
-        if(cualJugador == 1){
-            jugador1.usarMultiplicadorX2(pregunta);
-        }else{
-            jugador2.usarMultiplicadorX2(pregunta);
-        }
-    }
-    public void usarMultiplicadorJugadorX3(Pregunta pregunta, int cualJugador){
-        if(cualJugador == 1){
-            jugador1.usarMultiplicadorX3(pregunta);
-        }else{
-            jugador2.usarMultiplicadorX3(pregunta);
-        }
-    }
-    public int puntajeJugador(int cualJugador){
-        if(cualJugador == 1){
-            return jugador1.puntaje().getPuntaje();
-        }
-        return jugador2.puntaje().getPuntaje();
-    }
-    public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
-        respuestasJugadorGroup.add(interruptor);
-    }
-    public void recolectarRespuestasGroup(int cualJugador){
-        for(ToggleSwitch interruptor : respuestasJugadorGroup){
-            if(cualJugador == 1){
-                interruptor.respuestaJugador(opcionesJugador1);
-            }else {
-                interruptor.respuestaJugador(opcionesJugador2);
-            }
-        }
-        respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
-    }
-     */
+
 }
+

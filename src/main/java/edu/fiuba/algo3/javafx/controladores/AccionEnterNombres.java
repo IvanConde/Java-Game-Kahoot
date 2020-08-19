@@ -1,7 +1,6 @@
 package edu.fiuba.algo3.javafx.controladores;
 
 import edu.fiuba.algo3.javafx.Panel;
-import edu.fiuba.algo3.javafx.vistas.VistaJuego;
 import javafx.event.EventHandler;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
