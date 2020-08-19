@@ -30,6 +30,9 @@ public class VistaInicial {
         boton2.setOnAction(new AccionMostrarReglas(panel, this, this.window));
         VBox layoutInicial = new VBox();
         layoutInicial.setSpacing(10);
+
+
+
         DropShadow shadow = new DropShadow();
         boton1.setMaxSize(500,200);
         boton2.setMaxSize(500,200);
