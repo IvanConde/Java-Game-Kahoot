@@ -9,6 +9,11 @@ import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.scene.layout.BackgroundFill;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class VistaMultiplicadores {
 
@@ -23,8 +28,8 @@ public class VistaMultiplicadores {
             vistaPregunta.mostrarPregunta(pregunta, jugador);
             return;
         }
-        Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
 
+        Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
         Button ninguno = new Button("Ninguno");
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
@@ -42,6 +47,7 @@ public class VistaMultiplicadores {
         }
 
         VBox layoutMultiplicador = new VBox();
+        layoutMultiplicador.setBackground(new Background(new BackgroundFill(Color.INDIANRED, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutMultiplicador.getChildren().add(nombreJugadorLabel);
         layoutMultiplicador.getChildren().add(multiplicadorX2);
         layoutMultiplicador.getChildren().add(multiplicadorX3);

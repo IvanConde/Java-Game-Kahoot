@@ -8,6 +8,11 @@ import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
+import javafx.scene.layout.BackgroundFill;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class VistaJuego {
 
@@ -52,6 +57,7 @@ public class VistaJuego {
         }
         ganador.setFont(new Font("Arial", 16));
         VBox layoutJuego = new VBox();
+        layoutJuego.setBackground(new Background(new BackgroundFill(Color.YELLOW, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutJuego.setAlignment(Pos.CENTER);
         layoutJuego.setSpacing(10);
         layoutJuego.getChildren().add(gracias);
