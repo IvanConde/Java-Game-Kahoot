@@ -33,6 +33,7 @@ public class Panel { // Panel es el modelo de un MVC
         this.vistaInicial.mostrar(this);
     }
 
+
     public boolean juegoPuedeComenzar(){
         if(jugador1 == null || jugador2 == null ){ return false;}
         jugadores.add(jugador1);
@@ -55,13 +56,13 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void reproducirMusica(){
         ArrayList<String> canciones = new ArrayList<String>();
-        canciones.add("musica\\musica.mp3");
-        canciones.add("musica\\musica1.mp3");
-        canciones.add("musica\\musica2.mp3");
-        canciones.add("musica\\musica3.mp3");
-        canciones.add("musica\\musica4.mp3");
-        canciones.add("musica\\musica5.mp3");
-        canciones.add("musica\\musica6.mp3");
+        canciones.add("musica//musica.mp3");
+        canciones.add("musica//musica1.mp3");
+        canciones.add("musica//musica2.mp3");
+        canciones.add("musica//musica3.mp3");
+        canciones.add("musica//musica4.mp3");
+        canciones.add("musica//musica5.mp3");
+        canciones.add("musica//musica6.mp3");
 
         int tamaño = canciones.size();
         Random randomGenerator = new Random();
