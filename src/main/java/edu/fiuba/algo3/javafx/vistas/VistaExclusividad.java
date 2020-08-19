@@ -4,6 +4,7 @@ import edu.fiuba.algo3.javafx.controladores.AccionExclusividadPuntaje;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import javafx.geometry.Pos;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
@@ -33,11 +34,15 @@ public class VistaExclusividad {
         if (!jugador.tieneExclusividad()) {
             exclusividadPuntaje.setDisable(true);
         }
-            VBox layoutMultiplicador = new VBox();
-            layoutMultiplicador.getChildren().add(nombreJugadorLabel);
-            layoutMultiplicador.getChildren().add(exclusividadPuntaje);
-            layoutMultiplicador.getChildren().add(ninguno);
-            window.getScene().setRoot(layoutMultiplicador);
+            VBox layoutExclusividad = new VBox();
+            layoutExclusividad.getChildren().add(nombreJugadorLabel);
+            layoutExclusividad.getChildren().add(exclusividadPuntaje);
+            layoutExclusividad.getChildren().add(ninguno);
+
+            layoutExclusividad.setAlignment(Pos.CENTER);
+            layoutExclusividad.setSpacing(10);
+
+            window.getScene().setRoot(layoutExclusividad);
             window.sizeToScene();
             window.show();
             System.out.println("Se construyo ventana multiplicador");

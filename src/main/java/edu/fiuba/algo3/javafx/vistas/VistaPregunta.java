@@ -11,12 +11,10 @@ import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import javafx.animation.KeyFrame;
 import javafx.animation.Timeline;
 import javafx.geometry.Pos;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.effect.DropShadow;
-import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
@@ -52,6 +50,7 @@ public class VistaPregunta {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(TIEMPO), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
+        preguntaUsuario.setFont(new Font("Arial", 16));
         VBox layoutJuego = new VBox();
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
@@ -60,7 +59,6 @@ public class VistaPregunta {
 
         layoutJuego.setAlignment(Pos.CENTER);
         layoutJuego.setSpacing(10);
-        //botonContestar.setMaxSize(500,200);
         if (pregunta instanceof VerdaderoFalso) {
             this.desplegarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, jugadorActual);
         } else if (pregunta instanceof GroupChoice) {
@@ -85,6 +83,8 @@ public class VistaPregunta {
                 //TODO: agregar excepcion
             }
             Label opcionTexto = new Label(opcion.getStringOpcion()+ ":");
+            opcionTexto.setFont(new Font("Arial", 16));
+
             ArrayList<String> grupos = pregunta.devolverGrupos();
             ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) opcion, grupos.get(0), grupos.get(1));
             partida.agregarRespuestaJugadorGroup(botonOpcion);

@@ -3,10 +3,12 @@ package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.Partida;
 import edu.fiuba.algo3.javafx.controladores.*;
 import edu.fiuba.algo3.modelo.Jugador;
+import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
 
@@ -40,6 +42,9 @@ public class VistaJuego {
         Label gracias = new Label("¡Gracias por jugar!");
         Label puntajeJugador1 = new Label("puntos de " + jugador1.verNombre() + ": " + jugador1.puntaje().getPuntaje());
         Label puntajeJugador2 = new Label("puntos de " + jugador2.verNombre() + ": " + jugador2.puntaje().getPuntaje());
+        gracias.setFont(new Font("Arial", 24));
+        puntajeJugador1.setFont(new Font("Arial", 16));
+        puntajeJugador2.setFont(new Font("Arial", 16));
         Label ganador;
         if(jugador1.puntaje().getPuntaje() > jugador2.puntaje().getPuntaje()){
             ganador = new Label("Felicitaciones " + jugador1.verNombre() + "! Ganaste!");
@@ -48,7 +53,10 @@ public class VistaJuego {
         }else{
             ganador = new Label("Felicitaciones " + jugador2.verNombre() + "! Ganaste!");
         }
+        ganador.setFont(new Font("Arial", 16));
         VBox layoutJuego = new VBox();
+        layoutJuego.setAlignment(Pos.CENTER);
+        layoutJuego.setSpacing(10);
         layoutJuego.getChildren().add(gracias);
         layoutJuego.getChildren().add(puntajeJugador1);
         layoutJuego.getChildren().add(puntajeJugador2);

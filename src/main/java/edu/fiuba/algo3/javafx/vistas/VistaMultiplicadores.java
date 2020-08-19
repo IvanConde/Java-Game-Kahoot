@@ -5,10 +5,12 @@ import edu.fiuba.algo3.javafx.controladores.AccionMultiplicador;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorX3;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Font;
 import javafx.stage.Stage;
 
 public class VistaMultiplicadores {
@@ -25,8 +27,9 @@ public class VistaMultiplicadores {
             vistaPregunta.mostrarPregunta(pregunta, jugador);
             return;
         }
-        System.out.println("hay penalidad");
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
+
+        nombreJugadorLabel.setFont(new Font("Arial", 16));
         Button ninguno = new Button("Ninguno");
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
@@ -47,6 +50,11 @@ public class VistaMultiplicadores {
         layoutMultiplicador.getChildren().add(multiplicadorX2);
         layoutMultiplicador.getChildren().add(multiplicadorX3);
         layoutMultiplicador.getChildren().add(ninguno);
+
+        layoutMultiplicador.setAlignment(Pos.CENTER);
+        layoutMultiplicador.setSpacing(10);
+
+
         window.getScene().setRoot(layoutMultiplicador);
         window.sizeToScene();
         window.show();
