@@ -5,7 +5,6 @@ import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class OrderedChoiceTest {
 
@@ -129,25 +128,5 @@ public class OrderedChoiceTest {
         assertEquals(1, jugador2.puntaje().getPuntaje());
 
     }
-/*
-    @Test
-    public void test06_4OrderedChoiceConPenalidadLanzaExcepcion(){
-        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
-
-        assertThrows(OrderedChoiceModalidadInvalidaException.class,() -> {
-            OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Penalidad());
-        });
-    }
-
-
-    @Test
-    public void test06_5OrderedChoiceConModalidadpParcialLanzaExcepcion(){
-        ArrayList <Opcion> opciones = new ArrayList<Opcion>();
-
-        assertThrows(OrderedChoiceModalidadInvalidaException.class,() -> {
-            OrderedChoice preguntaTest = new OrderedChoice("Ordenar de menor a mayor", opciones, new Parcial());
-        });
-    }
- */
 
 }

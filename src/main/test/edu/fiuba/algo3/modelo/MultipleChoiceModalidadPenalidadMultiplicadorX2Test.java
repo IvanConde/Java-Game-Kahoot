@@ -293,5 +293,6 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
         assertEquals(3, jugador2.puntaje().getPuntaje());
+
     }
 }

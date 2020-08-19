@@ -21,6 +21,7 @@ public class VyFSinModalidadPenalidadTest {
         todasLasOpciones.add(opcionFalso);
         VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
         assertEquals(todasLasOpciones, preguntaTest.verBotones());
+
     }
 
     @Test

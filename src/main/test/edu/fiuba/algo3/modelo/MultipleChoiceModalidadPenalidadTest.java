@@ -242,4 +242,5 @@ public class MultipleChoiceModalidadPenalidadTest {
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
     }
+
 }
