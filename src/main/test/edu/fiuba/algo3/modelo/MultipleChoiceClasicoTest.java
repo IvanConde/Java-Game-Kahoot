@@ -1,10 +1,15 @@
 package edu.fiuba.algo3.modelo;
+import edu.fiuba.algo3.modelo.excepciones.MultipleChoiceCantidadDeOpcionesEsIncorrectaException;
+import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
+import edu.fiuba.algo3.modelo.preguntas.VerdaderoFalso;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
+
 import java.util.ArrayList;
 
 
@@ -201,5 +206,45 @@ public class MultipleChoiceClasicoTest {
         assertEquals(0, jugador1.puntaje().getPuntaje());
 
     }
+    @Test
+    public void test03_6MultipleChoiceConMasDeCincoOpcionesLanzaExcepcion(){
+
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+        OpcionBooleana opcion2 = new OpcionBooleana("Totalmente",true);
+        OpcionBooleana opcion3 = new OpcionBooleana("no",false);
+        OpcionBooleana opcion4 = new OpcionBooleana("para nada",false);
+        OpcionBooleana opcion5 = new OpcionBooleana("nunca",false);
+        OpcionBooleana opcion6 = new OpcionBooleana("jamas",false);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
+        todasLasOpciones.add(opcion6);
+
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
+        assertThrows(MultipleChoiceCantidadDeOpcionesEsIncorrectaException.class, () ->
+        {new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        });
+
+
+
+    }
+    @Test
+    public void test03_7MultipleChoiceConMenosDeDosOpcionesLanzaExcepcion(){
+
+        OpcionBooleana opcion1 = new OpcionBooleana("Si",true);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+
+        ModalidadClasico sinPenalidad = new ModalidadClasico();
+        assertThrows(MultipleChoiceCantidadDeOpcionesEsIncorrectaException.class, () ->
+        {new MultipleChoice("Es Tomas su primer nombre?", todasLasOpciones, sinPenalidad);
+        });
+    }
+
 
 }

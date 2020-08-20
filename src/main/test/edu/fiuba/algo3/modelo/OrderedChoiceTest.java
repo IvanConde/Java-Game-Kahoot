@@ -1,4 +1,6 @@
 package edu.fiuba.algo3.modelo;
+import edu.fiuba.algo3.modelo.excepciones.MultipleChoiceCantidadDeOpcionesEsIncorrectaException;
+import edu.fiuba.algo3.modelo.excepciones.OrderedChoiceCantidadDeOpcionesEsIncorrectaException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
@@ -8,6 +10,7 @@ import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import org.junit.jupiter.api.Test;
 import java.util.ArrayList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class OrderedChoiceTest {
 
@@ -233,6 +236,43 @@ public class OrderedChoiceTest {
         assertEquals(0,jugador1.puntaje().getPuntaje());
         assertEquals(4, jugador2.puntaje().getPuntaje());
 
+    }
+    @Test
+    public void test06_6OrderedChoiceConMasDeCincoOpcionesLanzaExcepcion(){
+
+        OpcionOrdered opcion1 = new OpcionOrdered("4",0);
+        OpcionOrdered opcion2 = new OpcionOrdered("7",1);
+        OpcionOrdered opcion3 = new OpcionOrdered("9",2);
+        OpcionOrdered opcion4 = new OpcionOrdered("10",3);
+        OpcionOrdered opcion5 = new OpcionOrdered("25",4);
+        OpcionOrdered opcion6 = new OpcionOrdered("26",5);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+        todasLasOpciones.add(opcion2);
+        todasLasOpciones.add(opcion3);
+        todasLasOpciones.add(opcion4);
+        todasLasOpciones.add(opcion5);
+        todasLasOpciones.add(opcion6);
+
+        assertThrows(OrderedChoiceCantidadDeOpcionesEsIncorrectaException.class, () ->
+        {new OrderedChoice("Es Tomas su primer nombre?", todasLasOpciones);
+        });
+
+
+
+    }
+    @Test
+    public void test06_7OrderedChoiceConMenosDeDosOpcionesLanzaExcepcion(){
+
+        OpcionOrdered opcion1 = new OpcionOrdered("4",0);
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        todasLasOpciones.add(opcion1);
+
+        assertThrows(OrderedChoiceCantidadDeOpcionesEsIncorrectaException.class, () ->
+        {new OrderedChoice("Es Tomas su primer nombre?", todasLasOpciones);
+        });
     }
 
 
