@@ -29,8 +29,6 @@ public class VistaReglas {
         VBox layoutReglas = new VBox();
         layoutReglas.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         Button botonVolver = new Button("Volver a menu Principal");
-        Efectos efectoBoton = new Efectos();
-        efectoBoton.agregarEfecto(botonVolver);
         botonVolver.setOnAction(new AccionVolverMenuPrincipal(menuPrincipal, panel));
         BufferedReader reader = new BufferedReader(new FileReader("reglas.txt"));
         layoutReglas.getChildren().add(textoHeader);

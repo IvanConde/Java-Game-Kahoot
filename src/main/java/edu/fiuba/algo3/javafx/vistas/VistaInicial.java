@@ -40,10 +40,8 @@ public class VistaInicial {
         Label textoInfo = new Label("Bienvenido a Kahoot 2.0");
         textoInfo.setEffect(ds);
         textoInfo.setTextFill(Color.RED);
-        //textoInfo.setFont(Font.font(null, FontWeight.BOLD, 24));
         textoInfo.setFont(Font.font(null, FontWeight.BOLD, 32));
 
-        //textoInfo.setFont(new Font("Arial", 24));
         Button boton1 = new Button("Comenzar Juego");
         Button boton2 = new Button("Reglas");
         boton1.setOnAction(new AccionEmpezarJuego(panel, this.window));
@@ -52,9 +50,6 @@ public class VistaInicial {
         layoutInicial.setSpacing(10);
         layoutInicial.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        Efectos efectoBoton = new Efectos();
-        efectoBoton.agregarEfecto(boton2);
-        efectoBoton.agregarEfecto(boton1);
 
         layoutInicial.setAlignment(Pos.CENTER);
         layoutInicial.getChildren().add(textoInfo);

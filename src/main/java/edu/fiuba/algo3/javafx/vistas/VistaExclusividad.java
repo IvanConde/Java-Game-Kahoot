@@ -32,12 +32,9 @@ public class VistaExclusividad {
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elegí si queres activar exclusividad de puntaje para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
         Button ninguno = new Button("Ninguno");
-        Efectos efectoBoton = new Efectos();
-        efectoBoton.agregarEfecto(ninguno);
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
         Button exclusividadPuntaje = new Button("Activar exclusividad de puntaje");
-        efectoBoton.agregarEfecto(exclusividadPuntaje);
         exclusividadPuntaje.setOnAction(new AccionExclusividadPuntaje(pregunta, jugador, vistaPregunta));
 
         if (!jugador.tieneExclusividad()) {

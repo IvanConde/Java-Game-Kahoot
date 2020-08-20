@@ -13,6 +13,7 @@ public class Efectos {
 
     public void agregarEfecto(Button boton) {
         boton.setBackground(new Background(new BackgroundFill(Color.color(Math.random(), Math.random(), Math.random()), CornerRadii.EMPTY, Insets.EMPTY)));
+
         DropShadow shadow = new DropShadow();
         boton.setMaxSize(500,200);
         boton.addEventHandler(MouseEvent.MOUSE_ENTERED,
