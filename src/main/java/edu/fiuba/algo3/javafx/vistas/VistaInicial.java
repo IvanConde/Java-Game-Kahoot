@@ -7,9 +7,11 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.effect.InnerShadow;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
+import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import javafx.scene.layout.BackgroundFill;
 import javafx.geometry.Insets;
@@ -27,8 +29,21 @@ public class VistaInicial {
     }
 
     public void mostrar(Panel panel) {
+        DropShadow ds = new DropShadow();
+        ds.setOffsetY(3.0f);
+        ds.setColor(Color.color(0.4f, 0.4f, 0.4f));
+
+        InnerShadow is = new InnerShadow();
+        is.setOffsetX(4.0f);
+        is.setOffsetY(4.0f);
+
         Label textoInfo = new Label("Bienvenido a Kahoot 2.0");
-        textoInfo.setFont(new Font("Arial", 24));
+        textoInfo.setEffect(ds);
+        textoInfo.setTextFill(Color.RED);
+        //textoInfo.setFont(Font.font(null, FontWeight.BOLD, 24));
+        textoInfo.setFont(Font.font(null, FontWeight.BOLD, 32));
+
+        //textoInfo.setFont(new Font("Arial", 24));
         Button boton1 = new Button("Comenzar Juego");
         Button boton2 = new Button("Reglas");
         boton1.setOnAction(new AccionEmpezarJuego(panel, this.window));
@@ -37,18 +52,9 @@ public class VistaInicial {
         layoutInicial.setSpacing(10);
         layoutInicial.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
-        DropShadow shadow = new DropShadow();
-        boton1.setMaxSize(500,200);
-        boton2.setMaxSize(500,200);
-        boton1.addEventHandler(MouseEvent.MOUSE_ENTERED,
-                e -> boton1.setEffect(shadow));
-        boton2.addEventHandler(MouseEvent.MOUSE_ENTERED,
-                e -> boton2.setEffect(shadow));
-
-        boton1.addEventHandler(MouseEvent.MOUSE_EXITED,
-                e -> boton1.setEffect(null));
-        boton2.addEventHandler(MouseEvent.MOUSE_EXITED,
-                e -> boton2.setEffect(null));
+        Efectos efectoBoton = new Efectos();
+        efectoBoton.agregarEfecto(boton2);
+        efectoBoton.agregarEfecto(boton1);
 
         layoutInicial.setAlignment(Pos.CENTER);
         layoutInicial.getChildren().add(textoInfo);

@@ -61,6 +61,8 @@ public class VistaPregunta {
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
         Button botonContestar = new Button("[Enviar respuesta]");
+        Efectos efectoBoton = new Efectos();
+        efectoBoton.agregarEfecto(botonContestar);
         ArrayList<Opcion> opciones = pregunta.verBotones();
 
         layoutJuego.setAlignment(Pos.CENTER);
@@ -102,8 +104,11 @@ public class VistaPregunta {
     }
 
     public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, Jugador jugadorActual){
+        Efectos efectoBoton = new Efectos();
         Button boton1 = new Button("Verdadero");
+        efectoBoton.agregarEfecto(boton1);
         Button boton2 = new Button("Falso");
+        efectoBoton.agregarEfecto(boton2);
         boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, jugadorActual, contestar, partida));
         boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, jugadorActual, contestar, partida));
         layoutJuego.getChildren().add(boton1);
@@ -113,6 +118,8 @@ public class VistaPregunta {
     public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, Jugador jugadorActual){
         for(Opcion opcion : opciones){
             Button botonOpcion = new Button(opcion.getStringOpcion());
+            Efectos efectoBoton = new Efectos();
+            efectoBoton.agregarEfecto(botonOpcion);
             botonOpcion.setOnAction(new AccionBotonOpcion(opcion, botonOpcion, jugadorActual, this.partida));
             layoutJuego.getChildren().add(botonOpcion);
         }

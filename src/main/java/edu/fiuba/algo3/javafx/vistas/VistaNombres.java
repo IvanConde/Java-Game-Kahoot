@@ -23,12 +23,14 @@ public class VistaNombres {
     }
 
     public void mostrar(Panel panel) {
-        Label textoInfo = new Label("Inserte el nombre del primer jugador y presione ENTER:");
+        Label textoInfo = new Label("      Inserte el nombre del primer jugador y presione ENTER:");
         textoInfo.setFont(new Font("Arial", 16));
         TextField textField = new TextField();
+        textField.setFont(Font.font(18));
         EventHandler<KeyEvent> ingresarNombre = new AccionEnterNombres(textoInfo, textField, panel, window);
         textField.setOnKeyPressed(ingresarNombre);
-        VBox layoutNombres = new VBox();
+        VBox layoutNombres = new VBox(10);
+        layoutNombres.setPadding(new Insets(90,90,90,90));
         layoutNombres.setBackground(new Background(new BackgroundFill(Color.VIOLET, CornerRadii.EMPTY, Insets.EMPTY)));
 
         layoutNombres.getChildren().add(textoInfo);

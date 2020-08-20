@@ -22,7 +22,7 @@ public class AccionEnterNombres implements EventHandler<KeyEvent> {
     @Override
     public void handle(KeyEvent key) {
         if (key.getCode().equals(KeyCode.ENTER)) {
-            textoInfo.setText("Inserte el nombre del segundo jugador y presione ENTER");
+            textoInfo.setText("      Inserte el nombre del segundo jugador y presione ENTER");
             panel.agregarJugador(barraTexto.getText());
             barraTexto.clear();
             if(panel.juegoPuedeComenzar()) {
