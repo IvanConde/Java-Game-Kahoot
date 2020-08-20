@@ -9,7 +9,7 @@ public class MultipleChoice extends Pregunta {
     public MultipleChoice(String pregunta, ArrayList<Opcion> todasLasOpciones, Modalidad modalidad) {
         super(pregunta, todasLasOpciones, modalidad);
         if(todasLasOpciones.size() < 2 || todasLasOpciones.size() > 5){
-            throw new MultipleChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + ", la cantidad de opciones tiene que estar entre 2 y 5");
+            throw new MultipleChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + "opciones, la cantidad de opciones tiene que estar entre 2 y 5");
         }
     }
 

@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo;
+import edu.fiuba.algo3.modelo.excepciones.VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException;
 import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
@@ -100,9 +101,24 @@ public class VyFSinModalidadPenalidadTest {
         assertEquals(0, jugador2.puntaje().getPuntaje());
 
     }
+    @Test
+    public void test01_5CrearVyFLanzaErrorPorOpcionesMasDeDos() {
+
+        ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
+        OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);
+        OpcionBooleana opcionFalso = new OpcionBooleana("falso", false);
+        OpcionBooleana opcionAlgo = new OpcionBooleana("algo", false);
+        todasLasOpciones.add(opcionVerdadero);
+        todasLasOpciones.add(opcionFalso);
+        todasLasOpciones.add(opcionAlgo);
+        assertThrows(VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException.class, () ->
+        {new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());
+        });
+
+    }
 
     @Test
-    public void test01_5CrearVyFLanzaErrorPorCorrectasMultiples() {
+    public void test01_6CrearVyFLanzaErrorPorCorrectasMultiples() {
 
         ArrayList<Opcion> todasLasOpciones = new ArrayList<Opcion>();
         OpcionBooleana opcionVerdadero = new OpcionBooleana("verdadero", true);

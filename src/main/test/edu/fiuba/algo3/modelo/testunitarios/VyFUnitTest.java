@@ -1,4 +1,5 @@
 package edu.fiuba.algo3.modelo.testunitarios;
+import edu.fiuba.algo3.modelo.excepciones.VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException;
 import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
@@ -47,8 +48,8 @@ public class VyFUnitTest {
         todasLasOpciones.add(opcionVerdadero1);
         todasLasOpciones.add(opcionVerdadero2);
         todasLasOpciones.add(opcionFalso);
-        Exception excepcionEsperada = assertThrows(VyFMasDeDosOpcionesException.class,()->{VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());});
-        String mensajeEsperado = "no es posible más de una opcion correcta en VerdaderoYFalso";
+        Exception excepcionEsperada = assertThrows(VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException.class,()->{VerdaderoFalso preguntaTest = new VerdaderoFalso("Es Tomas su primer nombre?", todasLasOpciones, new ModalidadClasico());});
+        String mensajeEsperado = "El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + "opciones, la cantidad de opciones tiene que ser 2";
         String mensajeVerdadero = excepcionEsperada.getMessage();
         assertTrue(mensajeVerdadero.contains(mensajeEsperado));
 

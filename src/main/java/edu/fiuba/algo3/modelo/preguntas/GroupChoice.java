@@ -13,7 +13,7 @@ public class GroupChoice extends Pregunta {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
         this.grupos = grupos;
         if(todasLasOpciones.size() < 2 || todasLasOpciones.size() > 6){
-            throw new GroupChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + ", la cantidad de opciones tiene que estar entre 2 y 6");
+            throw new GroupChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + "opciones, la cantidad de opciones tiene que estar entre 2 y 6");
         }
     }
 

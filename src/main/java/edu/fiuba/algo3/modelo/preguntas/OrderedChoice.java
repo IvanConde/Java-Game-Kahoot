@@ -14,7 +14,7 @@ public class OrderedChoice extends Pregunta {
         super(pregunta, todasLasOpciones, new ModalidadClasico());
         ArrayList<Integer> posiciones = new ArrayList<Integer>();
         if(todasLasOpciones.size() < 2 || todasLasOpciones.size() > 5){
-            throw new OrderedChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + ", la cantidad de opciones tiene que estar entre 2 y 5");
+            throw new OrderedChoiceCantidadDeOpcionesEsIncorrectaException("El numero de Opciones es incorrecto. Se creó la pregunta con " + String.valueOf(todasLasOpciones.size()) + "opciones, la cantidad de opciones tiene que estar entre 2 y 5");
         }
         for(Opcion opcion : todasLasOpciones){
             Integer posicionOriginal =(Integer)(((OpcionOrdered)opcion).getPosicionOriginal());
