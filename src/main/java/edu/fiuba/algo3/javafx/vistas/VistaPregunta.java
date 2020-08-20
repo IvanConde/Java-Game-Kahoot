@@ -26,7 +26,6 @@ import javafx.scene.paint.Color;
 public class VistaPregunta {
 
     static final int TIEMPO = 30;
-    private ArrayList<Jugador> jugadores;
     private VistaMultiplicadores vistaMultiplicadores;
     private Partida partida;
     private Stage window;
@@ -34,7 +33,6 @@ public class VistaPregunta {
     private VistaExclusividad vistaExclusividad;
 
     public VistaPregunta(ArrayList<Jugador> jugadores, Stage stage, Partida partida, VistaJuego vistaJuego) {
-        this.jugadores = jugadores;
         this.window = stage;
         this.vistaMultiplicadores = new VistaMultiplicadores(window);
         this.vistaExclusividad = new VistaExclusividad(window);
