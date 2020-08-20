@@ -17,6 +17,11 @@ import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import java.util.ArrayList;
+import javafx.scene.layout.BackgroundFill;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class VistaPregunta {
 
@@ -52,6 +57,7 @@ public class VistaPregunta {
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         preguntaUsuario.setFont(new Font("Arial", 16));
         VBox layoutJuego = new VBox();
+        layoutJuego.setBackground(new Background(new BackgroundFill(Color.PINK, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
         Button botonContestar = new Button("[Enviar respuesta]");

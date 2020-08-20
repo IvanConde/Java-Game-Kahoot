@@ -11,6 +11,11 @@ import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
+import javafx.scene.layout.BackgroundFill;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class VistaInicial {
 
@@ -30,6 +35,7 @@ public class VistaInicial {
         boton2.setOnAction(new AccionMostrarReglas(panel, this, this.window));
         VBox layoutInicial = new VBox();
         layoutInicial.setSpacing(10);
+        layoutInicial.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
         DropShadow shadow = new DropShadow();
         boton1.setMaxSize(500,200);

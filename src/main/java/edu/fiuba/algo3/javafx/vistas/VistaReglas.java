@@ -9,6 +9,11 @@ import javafx.stage.Stage;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import javafx.scene.layout.BackgroundFill;
+import javafx.geometry.Insets;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.CornerRadii;
+import javafx.scene.paint.Color;
 
 public class VistaReglas {
 
@@ -20,8 +25,9 @@ public class VistaReglas {
 
     public void mostrar(VistaInicial menuPrincipal, Panel panel) throws IOException {
         Label textoHeader = new Label("Reglas:");
-        textoHeader.setFont(new Font("Arial", 16));
+        textoHeader.setFont(new Font("Arial", 24));
         VBox layoutReglas = new VBox();
+        layoutReglas.setBackground(new Background(new BackgroundFill(Color.LIMEGREEN, CornerRadii.EMPTY, Insets.EMPTY)));
         Button botonVolver = new Button("Volver a menu Principal");
         botonVolver.setOnAction(new AccionVolverMenuPrincipal(menuPrincipal, panel));
         BufferedReader reader = new BufferedReader(new FileReader("reglas.txt"));
