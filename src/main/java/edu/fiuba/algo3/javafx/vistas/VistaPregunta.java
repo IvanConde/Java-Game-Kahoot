@@ -86,9 +86,6 @@ public class VistaPregunta {
 
     public void desplegarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
         for(Opcion opcion : opciones){
-            if(!(opcion instanceof OpcionGroup)){
-                //TODO: agregar excepcion
-            }
             Label opcionTexto = new Label(opcion.getStringOpcion()+ ":");
             opcionTexto.setFont(new Font("Arial", 16));
 

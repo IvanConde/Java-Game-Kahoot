@@ -49,12 +49,8 @@ public class Partida {
 
     public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion) {
         if(preguntaActual instanceof GroupChoice) {
-            if (opcion instanceof OpcionOrdered) {
                 OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
                 opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
-            }else{
-                //TODO:OTRA EXCEPCION (?)
-            }
         }else{
             opcionesJugador.add(opcion);
         }
