@@ -5,6 +5,7 @@ import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
+import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import java.util.ArrayList;
 
@@ -48,7 +49,7 @@ public class Partida {
     }
 
     public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion) {
-        if(preguntaActual instanceof GroupChoice) {
+        if(preguntaActual instanceof OrderedChoice) {
                 OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
                 opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
         }else{

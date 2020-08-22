@@ -31,6 +31,7 @@ public class VistaExclusividad {
 
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elegí si queres activar exclusividad de puntaje para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
+        Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
         Button ninguno = new Button("Ninguno");
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
@@ -43,6 +44,7 @@ public class VistaExclusividad {
             VBox layoutExclusividad = new VBox();
             layoutExclusividad.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
             layoutExclusividad.getChildren().add(nombreJugadorLabel);
+            layoutExclusividad.getChildren().add(puntosActuales);
             layoutExclusividad.getChildren().add(exclusividadPuntaje);
             layoutExclusividad.getChildren().add(ninguno);
 

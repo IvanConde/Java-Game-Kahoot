@@ -40,6 +40,9 @@ public class VistaMultiplicadores {
         Button multiplicadorX3 = new Button("Activar multiplicador x3");
         multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 3));
 
+        Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
+
+
         if(!jugador.tieneMultiplicador(2)){
             multiplicadorX2.setDisable(true);
         }else if(!jugador.tieneMultiplicador(3)){
@@ -49,6 +52,7 @@ public class VistaMultiplicadores {
         VBox layoutMultiplicador = new VBox();
         layoutMultiplicador.setBackground(new Background(new BackgroundFill(Color.INDIANRED, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutMultiplicador.getChildren().add(nombreJugadorLabel);
+        layoutMultiplicador.getChildren().add(puntosActuales);
         layoutMultiplicador.getChildren().add(multiplicadorX2);
         layoutMultiplicador.getChildren().add(multiplicadorX3);
         layoutMultiplicador.getChildren().add(ninguno);

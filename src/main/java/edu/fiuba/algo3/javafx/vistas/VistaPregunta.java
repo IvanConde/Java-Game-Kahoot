@@ -54,10 +54,12 @@ public class VistaPregunta {
         Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         preguntaUsuario.setFont(new Font("Arial", 16));
+        Label puntosActuales = new Label("Puntaje actual:"+ jugadorActual.puntaje().getPuntaje());
         VBox layoutJuego = new VBox();
         layoutJuego.setBackground(new Background(new BackgroundFill(Color.PINK, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
+        layoutJuego.getChildren().add(puntosActuales);
         Button botonContestar = new Button("[Enviar respuesta]");
         ArrayList<Opcion> opciones = pregunta.verBotones();
 
