@@ -12,7 +12,7 @@ import javafx.scene.paint.Color;
 public class Efectos {
 
     public void agregarEfecto(Button boton) {
-        boton.setBackground(new Background(new BackgroundFill(Color.color(Math.random(), Math.random(), Math.random()), CornerRadii.EMPTY, Insets.EMPTY)));
+        //boton.setBackground(new Background(new BackgroundFill(Color.color(Math.random(), Math.random(), Math.random()), CornerRadii.EMPTY, Insets.EMPTY)));
 
         DropShadow shadow = new DropShadow();
         boton.setMaxSize(500,200);

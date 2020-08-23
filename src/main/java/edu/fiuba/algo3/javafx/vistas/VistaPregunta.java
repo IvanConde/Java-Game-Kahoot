@@ -53,15 +53,18 @@ public class VistaPregunta {
     public void mostrarPregunta(Pregunta pregunta) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(TIEMPO), new AccionBotonTerminarTurno(pregunta, partida, this)));
         Label nombreJugadorLabel = new Label("Responde " + this.jugadorActual.verNombre() + ":");
+        nombreJugadorLabel.setFont(new Font("Arial", 14));
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         preguntaUsuario.setFont(new Font("Arial", 16));
-        Label puntosActuales = new Label("Puntaje actual:"+ this.jugadorActual.puntaje().getPuntaje());
+        Label puntosActuales = new Label("Puntos " + jugadorActual.verNombre() + ":"+ this.jugadorActual.puntaje().getPuntaje());
+        puntosActuales.setFont(new Font("Arial", 14));
         VBox layoutJuego = new VBox();
         layoutJuego.setBackground(new Background(new BackgroundFill(Color.PINK, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutJuego.getChildren().add(nombreJugadorLabel);
         layoutJuego.getChildren().add(preguntaUsuario);
-        layoutJuego.getChildren().add(puntosActuales);
         Button botonContestar = new Button("[Enviar respuesta]");
+        Efectos efectoBoton = new Efectos();
+        efectoBoton.agregarEfecto(botonContestar);
         ArrayList<Opcion> opciones = pregunta.verBotones();
 
         layoutJuego.setAlignment(Pos.CENTER);
@@ -77,6 +80,7 @@ public class VistaPregunta {
         partida.setPreguntaActual(pregunta);
         botonContestar.setOnAction(new Contestar(timeline, this));
         layoutJuego.getChildren().add(botonContestar);
+        layoutJuego.getChildren().add(puntosActuales);
 
         window.getScene().setRoot(layoutJuego);
         window.sizeToScene();
@@ -100,8 +104,11 @@ public class VistaPregunta {
     }
 
     public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar){
+        Efectos efectoBoton = new Efectos();
         Button boton1 = new Button("Verdadero");
         Button boton2 = new Button("Falso");
+        efectoBoton.agregarEfecto(boton1);
+        efectoBoton.agregarEfecto(boton2);
         boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, this.jugadorActual, contestar, partida));
         boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, this.jugadorActual, contestar, partida));
         layoutJuego.getChildren().add(boton1);
@@ -111,6 +118,8 @@ public class VistaPregunta {
     public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones){
         for(Opcion opcion : opciones){
             Button botonOpcion = new Button(opcion.getStringOpcion());
+            Efectos efectoBoton = new Efectos();
+            efectoBoton.agregarEfecto(botonOpcion);
             botonOpcion.setOnAction(new AccionBotonOpcion(opcion, botonOpcion, this.jugadorActual, this.partida));
             layoutJuego.getChildren().add(botonOpcion);
         }

@@ -50,12 +50,15 @@ public class VistaInicial {
         layoutInicial.setSpacing(10);
         layoutInicial.setBackground(new Background(new BackgroundFill(Color.ORANGE, CornerRadii.EMPTY, Insets.EMPTY)));
 
+        Efectos efectoBoton = new Efectos();
+        efectoBoton.agregarEfecto(boton2);
+        efectoBoton.agregarEfecto(boton1);
 
         layoutInicial.setAlignment(Pos.CENTER);
         layoutInicial.getChildren().add(textoInfo);
         layoutInicial.getChildren().add(boton1);
         layoutInicial.getChildren().add(boton2);
-        sceneMenuPrincipal = new Scene(layoutInicial, 640, 480);
+        sceneMenuPrincipal = new Scene(layoutInicial, 800, 600);
         this.window.setScene(sceneMenuPrincipal);
         this.window.show();
     }

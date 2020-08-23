@@ -31,13 +31,17 @@ public class VistaMultiplicadores {
 
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
+        Efectos efectoBoton = new Efectos();
         Button ninguno = new Button("Ninguno");
+        efectoBoton.agregarEfecto(ninguno);
         ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
 
         Button multiplicadorX2 = new Button("Activar multiplicador x2");
+        efectoBoton.agregarEfecto(multiplicadorX2);
         multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 2));
 
         Button multiplicadorX3 = new Button("Activar multiplicador x3");
+        efectoBoton.agregarEfecto(multiplicadorX3);
         multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 3));
 
         Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
