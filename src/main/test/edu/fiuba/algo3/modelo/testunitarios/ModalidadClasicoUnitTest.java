@@ -25,8 +25,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest, false);
-        assertEquals(1, respuestaTest.puntaje().getPuntaje());
+        assertEquals(1, ModalidadClasicoTest.calcularPuntaje(respuestaTest));
 
     }
 
@@ -38,7 +37,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest, false);
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -51,8 +50,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest, true);
-        assertEquals(1, respuestaTest.puntajeTemporal());
+        assertEquals(1, ModalidadClasicoTest.calcularPuntaje(respuestaTest));
 
     }
 
@@ -64,7 +62,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest, true);
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntajeTemporal());
 
     }

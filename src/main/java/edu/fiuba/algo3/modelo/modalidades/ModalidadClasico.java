@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.modalidades;
 import edu.fiuba.algo3.modelo.Respuesta;
-import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 //Asigna un punto a cada jugador que acierte TODAS las opciones
 //correctas.
@@ -11,12 +10,12 @@ public class ModalidadClasico extends Modalidad {
     public ModalidadClasico(){}
 
     @Override
-    public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
-        respuesta.contarOpciones();
-        if(respuesta.opcionesIncorrectas() > 0){
-            return;
+    public int calcularPuntaje(Respuesta respuesta){
+        int[] opciones = respuesta.contarOpciones();
+        if(opciones[OPCIONESINCORRECTAS] > 0){
+            return 0;
         }
-        this.intentarAplicarExclusividad(respuesta, tieneExclusividad, PUNTO);
+        return PUNTO;
     }
 
     @Override

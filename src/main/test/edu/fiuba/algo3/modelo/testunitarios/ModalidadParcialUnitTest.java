@@ -26,8 +26,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, false);
-        assertEquals(1, respuestaTest.puntaje().getPuntaje());
+        assertEquals(1, ModalidadParcialTest.calcularPuntaje(respuestaTest));
 
     }
 
@@ -39,7 +38,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, false);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -52,8 +51,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, true);
-        assertEquals(1, respuestaTest.puntajeTemporal());
+        assertEquals(1, ModalidadParcialTest.calcularPuntaje(respuestaTest));
 
     }
 
@@ -65,7 +63,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, true);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntajeTemporal());
 
     }
@@ -80,7 +78,7 @@ public class ModalidadParcialUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, false);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -95,7 +93,7 @@ public class ModalidadParcialUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest, true);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest);
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }

@@ -7,8 +7,6 @@ public class Respuesta {
     private ArrayList<Opcion> opciones;
     private Puntaje puntaje;
     private int puntajeTemporal;
-    private int opcionesCorrectas;
-    private int opcionesIncorrectas;
 
     public Respuesta(ArrayList<Opcion> opciones, Puntaje puntaje) {
         this.opciones = opciones;
@@ -29,21 +27,20 @@ public class Respuesta {
 
 
 
-    public void contarOpciones(){
-        this.opcionesIncorrectas = 0;
-        this.opcionesIncorrectas = 0;
+    public int[] contarOpciones(){
+        //ArrayList<int> opcione = new ArrayList<int>();
+        int opcionesCorrectas = 0;
+        int opcionesIncorrectas = 0;
         for (Opcion opcionElegida : opciones) {
             if (!(opcionElegida.esCorrecto())) {
-                this.opcionesIncorrectas += 1;
+                opcionesIncorrectas += 1;
             }
             else{
-                this.opcionesCorrectas += 1;
+                opcionesCorrectas += 1;
             }
         }
+        return new int[]{opcionesCorrectas, opcionesIncorrectas};
     }
-
-    public int opcionesCorrectas(){return this.opcionesCorrectas;}
-    public int opcionesIncorrectas(){return this.opcionesIncorrectas;}
 
     public void agregarPuntajeTemporal(int puntos){
         this.puntajeTemporal = puntos;

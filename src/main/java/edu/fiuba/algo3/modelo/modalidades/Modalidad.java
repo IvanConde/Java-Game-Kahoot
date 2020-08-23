@@ -2,8 +2,9 @@ package edu.fiuba.algo3.modelo.modalidades;
 import edu.fiuba.algo3.modelo.Respuesta;
 
 public abstract class Modalidad {
-
-    public abstract void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad);
+    static final int OPCIONESCORRECTAS = 0;
+    static final int OPCIONESINCORRECTAS = 1;
+    public abstract int calcularPuntaje(Respuesta respuesta);
 
     public abstract boolean esPenalidad();
 
