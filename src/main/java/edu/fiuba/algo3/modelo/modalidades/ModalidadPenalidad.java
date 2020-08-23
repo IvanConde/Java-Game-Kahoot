@@ -3,30 +3,13 @@ import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 
 public class ModalidadPenalidad extends Modalidad {
-
-    private int modificadorCorrecto;
-    private int modificadorIncorrecto;
-
-    public ModalidadPenalidad(){
-        modificadorCorrecto = 1;
-        modificadorIncorrecto = -1;
-    }
+    public ModalidadPenalidad(){}
 
     @Override
     public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
-        int puntos = 0;
-        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (opcionElegida.esCorrecto()) {
-                puntos += modificadorCorrecto;
-            } else {
-                puntos += modificadorIncorrecto;
-            }
-        }
-        //respuesta.modificarPuntaje(puntos);
-        if(tieneExclusividad){
-            System.out.println("QUEEEEEEEEEEEEEE");
-        }
-        this.aplicarExclusividad(respuesta, tieneExclusividad, puntos);
+        respuesta.contarOpciones();
+        int puntos = respuesta.opcionesCorrectas() + respuesta.opcionesIncorrectas();
+        this.intentarAplicarExclusividad(respuesta, tieneExclusividad, puntos);
     }
 
     @Override

@@ -8,30 +8,16 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 //incorrectas.
 
 public class ModalidadParcial extends Modalidad {
-
-    private int modificadorCorrecto;
-
-    public ModalidadParcial() {
-        modificadorCorrecto = 1;
-    }
+    public ModalidadParcial() {}
 
     @Override
     public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
-        int puntos = 0;
-        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (!opcionElegida.esCorrecto()){
-                return; //cuando se encuentra una respuesta incorrecta no se agregan puntos.
-            }
-            puntos += modificadorCorrecto;
+        respuesta.contarOpciones();
+        if(respuesta.opcionesIncorrectas() > 0){
+            return;
         }
-        this.aplicarExclusividad(respuesta, tieneExclusividad, puntos);
-        /*
-        if(tieneExclusividad){
-            respuesta.agregarPuntajeTemporal(puntos);
-        }else{
-            respuesta.modificarPuntaje(puntos);
-        }
-         */
+        int puntos = respuesta.opcionesCorrectas();
+        this.intentarAplicarExclusividad(respuesta, tieneExclusividad, puntos);
     }
 
     @Override

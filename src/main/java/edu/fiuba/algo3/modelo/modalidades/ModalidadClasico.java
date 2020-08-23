@@ -6,34 +6,21 @@ import edu.fiuba.algo3.modelo.opciones.Opcion;
 //correctas.
 
 public class ModalidadClasico extends Modalidad {
+    static final int PUNTO = 1;
 
-    private int modificadorCorrecto;
-
-    public ModalidadClasico(){
-        modificadorCorrecto = 1;
-    }
+    public ModalidadClasico(){}
 
     @Override
     public void calcularPuntaje(Respuesta respuesta, boolean tieneExclusividad){
-        for (Opcion opcionElegida : respuesta.verRespuestaJugador()) {
-            if (!(opcionElegida.esCorrecto())) {
-                return; //si hay una respuesta incorrecta no se asignan puntos.
-            }
+        respuesta.contarOpciones();
+        if(respuesta.opcionesIncorrectas() > 0){
+            return;
         }
-        this.aplicarExclusividad(respuesta, tieneExclusividad, modificadorCorrecto);
-        /*
-        if(tieneExclusividad){
-            respuesta.agregarPuntajeTemporal(modificadorCorrecto);
-        }else{
-            respuesta.modificarPuntaje(modificadorCorrecto); //se asigna 1 punto en el modo clasico cuando todas las respuestas son correctas.
-        }
-
-         */
+        this.intentarAplicarExclusividad(respuesta, tieneExclusividad, PUNTO);
     }
 
     @Override
     public boolean esPenalidad() {
         return false;
     }
-
 }
