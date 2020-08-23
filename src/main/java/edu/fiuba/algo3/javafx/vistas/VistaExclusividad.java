@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.controladores.AccionExclusividadPuntaje;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
+import edu.fiuba.algo3.javafx.controladores.AccionNinguno;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.geometry.Insets;
@@ -35,7 +35,7 @@ public class VistaExclusividad {
         Button ninguno = new Button("Ninguno");
         Efectos efectoBoton = new Efectos();
         efectoBoton.agregarEfecto(ninguno);
-        ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
+        ninguno.setOnAction(new AccionNinguno(pregunta, vistaPregunta));
 
         Button exclusividadPuntaje = new Button("Activar exclusividad de puntaje");
         efectoBoton.agregarEfecto(exclusividadPuntaje);

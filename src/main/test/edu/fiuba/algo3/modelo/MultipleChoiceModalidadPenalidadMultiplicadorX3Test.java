@@ -46,8 +46,8 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
 
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
-        jugador2.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador2.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(6, jugador1.puntaje().getPuntaje());
         assertEquals(-3, jugador2.puntaje().getPuntaje());
@@ -82,7 +82,7 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
 
@@ -117,7 +117,7 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
 
@@ -163,8 +163,8 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
 
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
-        jugador2.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador2.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(3, jugador1.puntaje().getPuntaje());
         assertEquals(-3, jugador2.puntaje().getPuntaje());
@@ -201,7 +201,7 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
 
@@ -237,9 +237,9 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-4, jugador1.puntaje().getPuntaje());
 
@@ -286,11 +286,11 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX3Test {
         respuestas.add(respuestaJugador2);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicador(preguntaTest, 3);
-        jugador2.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador2.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicador(preguntaTest, 3);
-        jugador2.usarMultiplicador(preguntaTest, 3);
+        jugador1.usarMultiplicadorX3(preguntaTest);
+        jugador2.usarMultiplicadorX3(preguntaTest);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-4, jugador1.puntaje().getPuntaje());
         assertEquals(4, jugador2.puntaje().getPuntaje());

@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.javafx.vistas;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
+import edu.fiuba.algo3.javafx.controladores.AccionNinguno;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicador;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
@@ -16,7 +16,8 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
 public class VistaMultiplicadores {
-
+    static final int MULTIPLICADORX2 = 2;
+    static final int MULTIPLICADORX3 = 3;
     private Stage window;
 
     public VistaMultiplicadores(Stage stage){
@@ -24,7 +25,7 @@ public class VistaMultiplicadores {
     }
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta){
-        if(!jugador.tieneMultiplicador(2) && !jugador.tieneMultiplicador(3)){
+        if(!jugador.tieneMultiplicadorX2() && !jugador.tieneMultiplicadorX3()){
             vistaPregunta.mostrarPregunta(pregunta);
             return;
         }
@@ -34,22 +35,22 @@ public class VistaMultiplicadores {
         Efectos efectoBoton = new Efectos();
         Button ninguno = new Button("Ninguno");
         efectoBoton.agregarEfecto(ninguno);
-        ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
+        ninguno.setOnAction(new AccionNinguno(pregunta, vistaPregunta));
 
         Button multiplicadorX2 = new Button("Activar multiplicador x2");
         efectoBoton.agregarEfecto(multiplicadorX2);
-        multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 2));
+        multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX2));
 
         Button multiplicadorX3 = new Button("Activar multiplicador x3");
         efectoBoton.agregarEfecto(multiplicadorX3);
-        multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, 3));
+        multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX3));
 
         Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
 
 
-        if(!jugador.tieneMultiplicador(2)){
+        if(!jugador.tieneMultiplicadorX2()){
             multiplicadorX2.setDisable(true);
-        }else if(!jugador.tieneMultiplicador(3)){
+        }else if(!jugador.tieneMultiplicadorX3()){
             multiplicadorX3.setDisable(true);
         }
 
