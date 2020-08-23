@@ -20,11 +20,15 @@ public class ModalidadClasico extends Modalidad {
                 return; //si hay una respuesta incorrecta no se asignan puntos.
             }
         }
+        this.aplicarExclusividad(respuesta, tieneExclusividad, modificadorCorrecto);
+        /*
         if(tieneExclusividad){
             respuesta.agregarPuntajeTemporal(modificadorCorrecto);
         }else{
             respuesta.modificarPuntaje(modificadorCorrecto); //se asigna 1 punto en el modo clasico cuando todas las respuestas son correctas.
         }
+
+         */
     }
 
     @Override

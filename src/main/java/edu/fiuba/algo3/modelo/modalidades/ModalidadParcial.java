@@ -24,11 +24,14 @@ public class ModalidadParcial extends Modalidad {
             }
             puntos += modificadorCorrecto;
         }
+        this.aplicarExclusividad(respuesta, tieneExclusividad, puntos);
+        /*
         if(tieneExclusividad){
             respuesta.agregarPuntajeTemporal(puntos);
         }else{
             respuesta.modificarPuntaje(puntos);
         }
+         */
     }
 
     @Override

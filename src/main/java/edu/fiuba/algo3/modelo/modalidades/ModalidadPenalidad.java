@@ -22,7 +22,11 @@ public class ModalidadPenalidad extends Modalidad {
                 puntos += modificadorIncorrecto;
             }
         }
-        respuesta.modificarPuntaje(puntos);
+        //respuesta.modificarPuntaje(puntos);
+        if(tieneExclusividad){
+            System.out.println("QUEEEEEEEEEEEEEE");
+        }
+        this.aplicarExclusividad(respuesta, tieneExclusividad, puntos);
     }
 
     @Override

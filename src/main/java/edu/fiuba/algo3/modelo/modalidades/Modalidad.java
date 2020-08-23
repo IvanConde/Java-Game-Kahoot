@@ -7,4 +7,11 @@ public abstract class Modalidad {
 
     public abstract boolean esPenalidad();
 
+    public void aplicarExclusividad(Respuesta respuesta, Boolean tieneExclusividad, int puntos) {
+        if (tieneExclusividad) {
+            respuesta.agregarPuntajeTemporal(puntos);
+        } else {
+            respuesta.modificarPuntaje(puntos);
+        }
+    }
 }

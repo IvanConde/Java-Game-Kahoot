@@ -25,7 +25,7 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
-        this.reproducirMusica();
+        //this.reproducirMusica();
         this.vistaInicial.mostrar(this);
     }
 
@@ -51,6 +51,7 @@ public class Panel { // Panel es el modelo de un MVC
         this.vistaJuego.mostrar();
     }
 
+    /*
     public void reproducirMusica(){
         ArrayList<String> canciones = new ArrayList<String>();
         canciones.add("musica//musica.mp3");
@@ -71,5 +72,7 @@ public class Panel { // Panel es el modelo de un MVC
         MediaPlayer player = new MediaPlayer(sound);
         player.play();
     }
+
+     */
 
 }
