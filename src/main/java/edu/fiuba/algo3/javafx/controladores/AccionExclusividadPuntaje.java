@@ -20,7 +20,7 @@ public class AccionExclusividadPuntaje implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent e) {
         pregunta.usarExclusividad(jugador);
-        vistaPregunta.mostrarPregunta(pregunta, jugador);
+        vistaPregunta.mostrarPregunta(pregunta);
     }
 
 }

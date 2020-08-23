@@ -2,6 +2,7 @@ package edu.fiuba.algo3.javafx;
 import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.Turno;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
 import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
@@ -13,17 +14,21 @@ public class Partida {
 
     static final int JUGADOR1 = 0;
     static final int JUGADOR2 = 1;
+    private Turno turnoActual;
     private Pregunta preguntaActual;
     private ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
     private ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
     private ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
-    private ArrayList<Jugador> jugadores;
-    private int indiceJugadorActual = 0;
+
+    //private ArrayList<Jugador> jugadores;
+    //private int indiceJugadorActual = 0;
 
     public Partida(ArrayList<Jugador> jugadores) {
-        this.jugadores = jugadores;
+        this.turnoActual = new Turno(jugadores);
     }
 
+
+    /*
     public boolean seContestoPregunta() {
         if (indiceJugadorActual == JUGADOR2) {
             return true;
@@ -32,8 +37,20 @@ public class Partida {
         return false;
     }
 
+     */
+
+    public boolean seContestoPregunta() {
+        return turnoActual.finPregunta();
+    }
+
+    /*
     public Jugador obtenerJugadorActual() {
         return jugadores.get(indiceJugadorActual);
+    }
+     */
+
+    public Jugador obtenerJugadorActual(){
+        return turnoActual.getJugadorActual();
     }
 
     public void setPreguntaActual(Pregunta preguntaActual){
@@ -41,9 +58,9 @@ public class Partida {
     }
 
     public void agregarRespuestaJugador(Opcion opcion, Jugador jugador) {
-        if (jugadores.lastIndexOf(jugador) == JUGADOR1) {
+        if (turnoActual.esJugador1(jugador)){
             agregarRespuesta(opcionesJugador1, opcion);
-        } else {
+        }else{
             agregarRespuesta(opcionesJugador2, opcion);
         }
     }
@@ -66,7 +83,7 @@ public class Partida {
         preguntaActual.responderPregunta(respuestas);
         opcionesJugador1 = new ArrayList<Opcion>();
         opcionesJugador2 = new ArrayList<Opcion>();
-        indiceJugadorActual = 0;
+        //indiceJugadorActual = 0;
     }
 
     public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
@@ -75,7 +92,7 @@ public class Partida {
 
     public void recolectarRespuestasGroup(Jugador jugadorActual){
         for(ToggleSwitch interruptor : respuestasJugadorGroup){
-            if(jugadores.lastIndexOf(jugadorActual) == JUGADOR1){
+            if(turnoActual.esJugador1(jugadorActual)){
                 interruptor.respuestaJugador(opcionesJugador1);
             }else {
                 interruptor.respuestaJugador(opcionesJugador2);

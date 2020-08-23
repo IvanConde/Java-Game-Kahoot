@@ -31,8 +31,9 @@ public class VistaPregunta {
     private Stage window;
     private VistaJuego vistaJuego;
     private VistaExclusividad vistaExclusividad;
+    private Jugador jugadorActual;
 
-    public VistaPregunta(ArrayList<Jugador> jugadores, Stage stage, Partida partida, VistaJuego vistaJuego) {
+    public VistaPregunta(Stage stage, Partida partida, VistaJuego vistaJuego) {
         this.window = stage;
         this.vistaMultiplicadores = new VistaMultiplicadores(window);
         this.vistaExclusividad = new VistaExclusividad(window);
@@ -41,20 +42,20 @@ public class VistaPregunta {
     }
 
     public void construirPantallas(Pregunta pregunta) {
-        Jugador jugadorActual = this.partida.obtenerJugadorActual();
+        this.jugadorActual = this.partida.obtenerJugadorActual();
         if (pregunta.tienePenalidad()) {
-            vistaMultiplicadores.desplegar(pregunta, jugadorActual, this);
+            vistaMultiplicadores.desplegar(pregunta, this.jugadorActual, this);
         }else {
-            vistaExclusividad.desplegar(pregunta, jugadorActual, this);
+            vistaExclusividad.desplegar(pregunta, this.jugadorActual, this);
         }
     }
 
-    public void mostrarPregunta(Pregunta pregunta, Jugador jugadorActual) {
+    public void mostrarPregunta(Pregunta pregunta) {
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(TIEMPO), new AccionBotonTerminarTurno(pregunta, partida, this)));
-        Label nombreJugadorLabel = new Label("Responde " + jugadorActual.verNombre() + ":");
+        Label nombreJugadorLabel = new Label("Responde " + this.jugadorActual.verNombre() + ":");
         Label preguntaUsuario = new Label(pregunta.verPregunta());
         preguntaUsuario.setFont(new Font("Arial", 16));
-        Label puntosActuales = new Label("Puntaje actual:"+ jugadorActual.puntaje().getPuntaje());
+        Label puntosActuales = new Label("Puntaje actual:"+ this.jugadorActual.puntaje().getPuntaje());
         VBox layoutJuego = new VBox();
         layoutJuego.setBackground(new Background(new BackgroundFill(Color.PINK, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutJuego.getChildren().add(nombreJugadorLabel);
@@ -66,11 +67,11 @@ public class VistaPregunta {
         layoutJuego.setAlignment(Pos.CENTER);
         layoutJuego.setSpacing(10);
         if (pregunta instanceof VerdaderoFalso) {
-            this.desplegarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar, jugadorActual);
+            this.desplegarBotonesVerdaderoyFalso(layoutJuego, opciones, botonContestar);
         } else if (pregunta instanceof GroupChoice) {
             desplegarBotonesGroupChoice(layoutJuego, opciones, (GroupChoice) pregunta);
         } else {
-            this.desplegarBotonesMultiplesRespuestas(layoutJuego, opciones, jugadorActual);
+            this.desplegarBotonesMultiplesRespuestas(layoutJuego, opciones);
         }
 
         partida.setPreguntaActual(pregunta);
@@ -98,19 +99,19 @@ public class VistaPregunta {
         }
     }
 
-    public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar, Jugador jugadorActual){
+    public void desplegarBotonesVerdaderoyFalso(VBox layoutJuego, ArrayList<Opcion> opciones, Button contestar){
         Button boton1 = new Button("Verdadero");
         Button boton2 = new Button("Falso");
-        boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, jugadorActual, contestar, partida));
-        boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, jugadorActual, contestar, partida));
+        boton1.setOnAction(new AccionBotonOpcionVyF(opciones.get(1), boton1, this.jugadorActual, contestar, partida));
+        boton2.setOnAction(new AccionBotonOpcionVyF(opciones.get(0), boton2, this.jugadorActual, contestar, partida));
         layoutJuego.getChildren().add(boton1);
         layoutJuego.getChildren().add(boton2);
     }
 
-    public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones, Jugador jugadorActual){
+    public void desplegarBotonesMultiplesRespuestas(VBox layoutJuego, ArrayList<Opcion> opciones){
         for(Opcion opcion : opciones){
             Button botonOpcion = new Button(opcion.getStringOpcion());
-            botonOpcion.setOnAction(new AccionBotonOpcion(opcion, botonOpcion, jugadorActual, this.partida));
+            botonOpcion.setOnAction(new AccionBotonOpcion(opcion, botonOpcion, this.jugadorActual, this.partida));
             layoutJuego.getChildren().add(botonOpcion);
         }
     }
