@@ -22,7 +22,7 @@ public class AccionMultiplicador implements EventHandler<ActionEvent> {
     @Override
     public void handle(ActionEvent e) {
         jugador.usarMultiplicador(pregunta, magnitud);
-        vistaPregunta.mostrarPregunta(pregunta, jugador);
+        vistaPregunta.mostrarPregunta(pregunta);
     }
 
 }

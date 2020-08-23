@@ -25,7 +25,7 @@ public class VistaMultiplicadores {
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta){
         if(!jugador.tieneMultiplicador(2) && !jugador.tieneMultiplicador(3)){
-            vistaPregunta.mostrarPregunta(pregunta, jugador);
+            vistaPregunta.mostrarPregunta(pregunta);
             return;
         }
 

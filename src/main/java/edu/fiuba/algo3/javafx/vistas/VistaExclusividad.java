@@ -25,7 +25,7 @@ public class VistaExclusividad {
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta) {
         if (!jugador.tieneExclusividad()) {
-            vistaPregunta.mostrarPregunta(pregunta, jugador);
+            vistaPregunta.mostrarPregunta(pregunta);
             return;
         }
 

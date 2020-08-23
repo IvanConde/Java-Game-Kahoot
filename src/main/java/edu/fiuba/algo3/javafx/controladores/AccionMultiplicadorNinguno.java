@@ -19,7 +19,7 @@ public class AccionMultiplicadorNinguno implements EventHandler<ActionEvent> {
 
     @Override
     public void handle(ActionEvent e) {
-        vistaPregunta.mostrarPregunta(pregunta, jugador);
+        vistaPregunta.mostrarPregunta(pregunta);
     }
 
 }

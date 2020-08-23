@@ -13,7 +13,7 @@ public class Jugador {
     public Jugador(String nombre){
         this.nombre = nombre;
         this.puntaje = new Puntaje();
-        this.multiplicadores = new ArrayList<ModificadorMultiplicador>();
+        this.multiplicadores = new ArrayList<>();
         multiplicadores.add(new ModificadorMultiplicador(2));
         multiplicadores.add(new ModificadorMultiplicador(3));
         this.cantExclusividad = 2;

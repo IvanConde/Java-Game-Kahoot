@@ -16,38 +16,17 @@ public class Partida {
     static final int JUGADOR2 = 1;
     private Turno turnoActual;
     private Pregunta preguntaActual;
-    private ArrayList<Opcion> opcionesJugador1 = new ArrayList<Opcion>();
-    private ArrayList<Opcion> opcionesJugador2 = new ArrayList<Opcion>();
-    private ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
-
-    //private ArrayList<Jugador> jugadores;
-    //private int indiceJugadorActual = 0;
+    private ArrayList<Opcion> opcionesJugador1 = new ArrayList<>();
+    private ArrayList<Opcion> opcionesJugador2 = new ArrayList<>();
+    private ArrayList<ToggleSwitch> respuestasJugadorGroup = new ArrayList<>();
 
     public Partida(ArrayList<Jugador> jugadores) {
         this.turnoActual = new Turno(jugadores);
     }
 
-
-    /*
-    public boolean seContestoPregunta() {
-        if (indiceJugadorActual == JUGADOR2) {
-            return true;
-        }
-        indiceJugadorActual += 1;
-        return false;
-    }
-
-     */
-
     public boolean seContestoPregunta() {
         return turnoActual.finPregunta();
     }
-
-    /*
-    public Jugador obtenerJugadorActual() {
-        return jugadores.get(indiceJugadorActual);
-    }
-     */
 
     public Jugador obtenerJugadorActual(){
         return turnoActual.getJugadorActual();
@@ -75,15 +54,14 @@ public class Partida {
 }
 
     public void responderPregunta(){
-        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, jugadores.get(JUGADOR1).puntaje());
-        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, jugadores.get(JUGADOR2).puntaje());
-        ArrayList<Respuesta> respuestas = new ArrayList<Respuesta>();
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, turnoActual.getJugador(JUGADOR1).puntaje());
+        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, turnoActual.getJugador(JUGADOR2).puntaje());
+        ArrayList<Respuesta> respuestas = new ArrayList<>();
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);
         preguntaActual.responderPregunta(respuestas);
-        opcionesJugador1 = new ArrayList<Opcion>();
-        opcionesJugador2 = new ArrayList<Opcion>();
-        //indiceJugadorActual = 0;
+        opcionesJugador1 = new ArrayList<>();
+        opcionesJugador2 = new ArrayList<>();
     }
 
     public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
@@ -98,7 +76,7 @@ public class Partida {
                 interruptor.respuestaJugador(opcionesJugador2);
             }
         }
-        respuestasJugadorGroup = new ArrayList<ToggleSwitch>();
+        respuestasJugadorGroup = new ArrayList<>();
     }
 
 }

@@ -14,21 +14,14 @@ public class Turno {
         this.cambiarPregunta = false;
     }
 
-    public void siguienteTurno(){
-       if(indiceJugadorActual == JUGADOR2){
-           this.cambiarPregunta = true;
-       }else{
-           indiceJugadorActual++;
-       }
-    }
-
     public boolean finPregunta() {
         if (cambiarPregunta) {
             this.cambiarPregunta = false;
             this.indiceJugadorActual = JUGADOR1;
             return true;
         }
-        this.siguienteTurno();
+        this.cambiarPregunta = true;
+        indiceJugadorActual++;
         return false;
     }
 
@@ -41,5 +34,9 @@ public class Turno {
             return true;
         }
         return false;
+    }
+
+    public Jugador getJugador(int indiceJugador) {
+        return jugadores.get(indiceJugador);
     }
 }
