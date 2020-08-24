@@ -17,7 +17,6 @@ public class ModalidadParcial extends Modalidad {
         }
         int puntos = opciones[OPCIONESCORRECTAS];
         return puntos;
-        //this.intentarAplicarExclusividad(respuesta, tieneExclusividad, puntos);
     }
 
     @Override
