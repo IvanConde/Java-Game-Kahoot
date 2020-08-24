@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorMultiplicador;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.ModificadorMultiplicador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import java.util.ArrayList;
 
@@ -29,8 +29,13 @@ public class Jugador {
             puntaje.setModificador(multiplicadores.get(multiplicador-2));
         }
     }
-
  */
+
+    public void usarMultiplicador(Pregunta pregunta, ModificadorMultiplicador multiplicador){
+        if(!multiplicador.seUtilizo() && pregunta.tienePenalidad()){
+            puntaje.setModificador(multiplicador);
+        }
+    }
 
     public void usarMultiplicadorX2(Pregunta pregunta) {
         if (pregunta.tienePenalidad() && tieneMultiplicadorX2()) {
@@ -72,4 +77,7 @@ public class Jugador {
         return cantExclusividad > 0;
     }
 
+    public ArrayList<ModificadorMultiplicador> getMultiplicadores() {
+        return multiplicadores;
+    }
 }

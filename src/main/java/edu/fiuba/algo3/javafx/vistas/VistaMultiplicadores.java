@@ -2,6 +2,7 @@ package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.controladores.AccionNinguno;
 import edu.fiuba.algo3.javafx.controladores.AccionMultiplicador;
 import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.ModificadorMultiplicador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.geometry.Pos;
 import javafx.scene.control.Button;
@@ -15,9 +16,12 @@ import javafx.scene.layout.Background;
 import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
 public class VistaMultiplicadores {
-    static final int MULTIPLICADORX2 = 2;
-    static final int MULTIPLICADORX3 = 3;
+    //static final int MULTIPLICADORX2 = 2;
+    //static final int MULTIPLICADORX3 = 3;
     private Stage window;
 
     public VistaMultiplicadores(Stage stage){
@@ -25,11 +29,15 @@ public class VistaMultiplicadores {
     }
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta){
+
+        /*
         if(!jugador.tieneMultiplicadorX2() && !jugador.tieneMultiplicadorX3()){
             vistaPregunta.mostrarPregunta(pregunta);
             return;
         }
+         */
 
+        ArrayList<Button> botonesMultiplicador = new ArrayList<>();
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elige un multiplicador para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
         Efectos efectoBoton = new Efectos();
@@ -37,29 +45,58 @@ public class VistaMultiplicadores {
         efectoBoton.agregarEfecto(ninguno);
         ninguno.setOnAction(new AccionNinguno(pregunta, vistaPregunta));
 
+        /*
         Button multiplicadorX2 = new Button("Activar multiplicador x2");
         efectoBoton.agregarEfecto(multiplicadorX2);
-        multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX2));
+        //multiplicadorX2.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX2));
 
         Button multiplicadorX3 = new Button("Activar multiplicador x3");
         efectoBoton.agregarEfecto(multiplicadorX3);
-        multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX3));
 
+        botonesMultiplicador.add(multiplicadorX2);
+        botonesMultiplicador.add(multiplicadorX3);
+        //multiplicadorX3.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, MULTIPLICADORX3));
+
+         */
+
+        int indiceMultiplicador = 2;
+        ArrayList<ModificadorMultiplicador> multiplicadores = jugador.getMultiplicadores();
+        for(ModificadorMultiplicador multiplicador: multiplicadores){
+            Button botonMultiplicador = new Button("Activar multiplicador x" + indiceMultiplicador);
+            efectoBoton.agregarEfecto(botonMultiplicador);
+            botonMultiplicador.setOnAction(new AccionMultiplicador(pregunta, jugador, vistaPregunta, multiplicador));
+            botonesMultiplicador.add(botonMultiplicador);
+            indiceMultiplicador++;
+            if(multiplicador.seUtilizo()){
+                botonMultiplicador.setDisable(true);
+            }
+        }
         Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
 
-
+/*
         if(!jugador.tieneMultiplicadorX2()){
             multiplicadorX2.setDisable(true);
-        }else if(!jugador.tieneMultiplicadorX3()){
+        }
+        if(!jugador.tieneMultiplicadorX3()){
             multiplicadorX3.setDisable(true);
+        }
+
+ */
+        for(ModificadorMultiplicador multiplicador:jugador.getMultiplicadores()){
+            if(multiplicador.seUtilizo()){
+
+            }
         }
 
         VBox layoutMultiplicador = new VBox();
         layoutMultiplicador.setBackground(new Background(new BackgroundFill(Color.INDIANRED, CornerRadii.EMPTY, Insets.EMPTY)));
         layoutMultiplicador.getChildren().add(nombreJugadorLabel);
         layoutMultiplicador.getChildren().add(puntosActuales);
-        layoutMultiplicador.getChildren().add(multiplicadorX2);
-        layoutMultiplicador.getChildren().add(multiplicadorX3);
+        for(Button boton: botonesMultiplicador){
+            layoutMultiplicador.getChildren().add(boton);
+        }
+        //layoutMultiplicador.getChildren().add(multiplicadorX2);
+        //layoutMultiplicador.getChildren().add(multiplicadorX3);
         layoutMultiplicador.getChildren().add(ninguno);
 
         layoutMultiplicador.setAlignment(Pos.CENTER);

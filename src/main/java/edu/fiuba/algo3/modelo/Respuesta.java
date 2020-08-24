@@ -1,5 +1,5 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorStandard;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.ModificadorStandard;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import java.util.ArrayList;
 
