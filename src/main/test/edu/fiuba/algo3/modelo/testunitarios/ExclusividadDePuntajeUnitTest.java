@@ -1,37 +1,27 @@
 package edu.fiuba.algo3.modelo.testunitarios;
-import edu.fiuba.algo3.modelo.ExclusividadDePuntaje;
-import edu.fiuba.algo3.modelo.Jugador;
+
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadNulo;
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadPuntaje;
 import org.junit.jupiter.api.Test;
-import static org.junit.jupiter.api.Assertions.*;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotEquals;
 
 public class ExclusividadDePuntajeUnitTest {
 
     @Test
     public void test01_CrearExclusividadDePuntaje(){
 
-        ExclusividadDePuntaje exclusividadDePuntajeTest = new ExclusividadDePuntaje();
+        ExclusividadPuntaje exclusividadDePuntajeTest = new ExclusividadPuntaje(new ExclusividadNulo());
         assertNotEquals(null, exclusividadDePuntajeTest);
 
     }
 
-    @Test
-    public void test02_ActivarExlusividadUnaVezDeberiaCambiarSuEstadoDeACtivaciontrue(){
-
-        ExclusividadDePuntaje exclusividadDePuntajeTest = new ExclusividadDePuntaje();
-        assertEquals(false,exclusividadDePuntajeTest.verEstado());
-        Jugador jugadorTest = new Jugador("test");
-        exclusividadDePuntajeTest.activarExclusividad(jugadorTest);
-        assertEquals(true, exclusividadDePuntajeTest.verEstado());
-
-    }
 
     @Test
     public void test03_ActivarExclusividadMasDeUnaVezDeberiaDuplicarSuMagnitud(){
 
-        ExclusividadDePuntaje exclusividadDePuntajeTest = new ExclusividadDePuntaje();
-        Jugador jugadorTest = new Jugador("test");
-        exclusividadDePuntajeTest.activarExclusividad(jugadorTest);
-        exclusividadDePuntajeTest.activarExclusividad(jugadorTest);
+        ExclusividadPuntaje exclusividadDePuntajeTest = new ExclusividadPuntaje(new ExclusividadPuntaje(new ExclusividadNulo()));
         assertEquals(4, exclusividadDePuntajeTest.verMagnitud());
 
     }

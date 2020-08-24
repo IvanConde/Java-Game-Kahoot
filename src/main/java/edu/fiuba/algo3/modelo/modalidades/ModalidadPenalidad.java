@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.modalidades;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.exclusividad.Exclusividad;
 
 public class ModalidadPenalidad extends Modalidad {
     public ModalidadPenalidad(){}
@@ -18,7 +19,7 @@ public class ModalidadPenalidad extends Modalidad {
     }
 
     @Override
-    public void intentarAplicarExclusividad(Respuesta respuesta, Boolean tieneExclusividad, int puntos) {
+    public void intentarAplicarExclusividad(Respuesta respuesta, Exclusividad exclusividad, int puntos) {
             respuesta.modificarPuntaje(puntos);
     }
 
