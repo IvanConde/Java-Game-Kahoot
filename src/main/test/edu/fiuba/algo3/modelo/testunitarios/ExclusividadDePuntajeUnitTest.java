@@ -17,7 +17,6 @@ public class ExclusividadDePuntajeUnitTest {
 
     }
 
-
     @Test
     public void test03_ActivarExclusividadMasDeUnaVezDeberiaDuplicarSuMagnitud(){
 

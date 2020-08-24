@@ -23,20 +23,13 @@ public class Jugador {
     public Puntaje puntaje(){
         return puntaje;
     }
-/*
-    public void usarMultiplicador(Pregunta pregunta, int multiplicador) {
-        if (pregunta.tienePenalidad() && !multiplicadores.get(multiplicador-2).seUtilizo()) {
-            puntaje.setModificador(multiplicadores.get(multiplicador-2));
-        }
-    }
- */
 
     public void usarMultiplicador(Pregunta pregunta, ModificadorMultiplicador multiplicador){
         if(!multiplicador.seUtilizo() && pregunta.tienePenalidad()){
             puntaje.setModificador(multiplicador);
         }
     }
-
+/*
     public void usarMultiplicadorX2(Pregunta pregunta) {
         if (pregunta.tienePenalidad() && tieneMultiplicadorX2()) {
             puntaje.setModificador(multiplicadores.get(MULTIPLICADORX2));
@@ -48,7 +41,7 @@ public class Jugador {
             puntaje.setModificador(multiplicadores.get(MULTIPLICADORX3));
         }
     }
-
+ */
     public boolean tieneMultiplicadorX2(){
         return !multiplicadores.get(MULTIPLICADORX2).seUtilizo();
     }

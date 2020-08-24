@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.ModificadorMultiplicador;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
 import edu.fiuba.algo3.modelo.preguntas.MultipleChoice;
@@ -46,8 +47,9 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
 
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
-        jugador2.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
+        jugador2.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(4, jugador1.puntaje().getPuntaje());
         assertEquals(-2, jugador2.puntaje().getPuntaje());
@@ -82,7 +84,8 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
 
@@ -117,7 +120,8 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(0, jugador1.puntaje().getPuntaje());
 
@@ -163,8 +167,9 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
 
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
-        jugador2.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
+        jugador2.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(2, jugador1.puntaje().getPuntaje());
         assertEquals(-2, jugador2.puntaje().getPuntaje());
@@ -201,7 +206,8 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-2, jugador1.puntaje().getPuntaje());
     }
@@ -236,9 +242,10 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador1);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicadorX2(preguntaTest);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
 
@@ -285,11 +292,12 @@ public class MultipleChoiceModalidadPenalidadMultiplicadorX2Test {
         respuestas.add(respuestaJugador2);
         ModalidadPenalidad conPenalidad = new ModalidadPenalidad();
         MultipleChoice preguntaTest = new MultipleChoice("¿La tierra es plana?", todasLasOpciones, conPenalidad);
-        jugador1.usarMultiplicadorX2(preguntaTest);
-        jugador2.usarMultiplicadorX2(preguntaTest);
+        ModificadorMultiplicador multiplicador = new ModificadorMultiplicador(2);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
+        jugador2.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
-        jugador1.usarMultiplicadorX2(preguntaTest);
-        jugador2.usarMultiplicadorX2(preguntaTest);
+        jugador1.usarMultiplicador(preguntaTest, multiplicador);
+        jugador2.usarMultiplicador(preguntaTest, multiplicador);
         preguntaTest.responderPregunta(respuestas);
         assertEquals(-3, jugador1.puntaje().getPuntaje());
         assertEquals(3, jugador2.puntaje().getPuntaje());
