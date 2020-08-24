@@ -1,14 +1,15 @@
-package edu.fiuba.algo3.modelo;
+package edu.fiuba.algo3.modelo.exclusividad;
+
+import edu.fiuba.algo3.modelo.Respuesta;
 
 import java.util.ArrayList;
 
-public class ExclusividadDePuntajeDecorator implements ExclusividadDePuntaje {
+public class ExclusividadPuntaje implements Exclusividad {
 
     private int magnitud = 2;
-    private boolean EstadoDeActivacion = false;
-    private ExclusividadDePuntaje concreto;
+    private Exclusividad concreto;
 
-    public ExclusividadDePuntajeDecorator(ExclusividadDePuntaje concreto){
+    public ExclusividadPuntaje(Exclusividad concreto){
         this.concreto= concreto;
     }
 
