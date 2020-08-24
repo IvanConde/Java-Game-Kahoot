@@ -5,7 +5,6 @@ import java.util.ArrayList;
 
 public interface Exclusividad {
 
-    public boolean verEstado();
 
     public void aplicarExclusividad(ArrayList<Respuesta> respuestas);
 

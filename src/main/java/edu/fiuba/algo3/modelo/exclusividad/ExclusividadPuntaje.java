@@ -14,10 +14,6 @@ public class ExclusividadPuntaje implements Exclusividad {
     }
 
 
-    @Override
-    public boolean verEstado() {
-        return true;
-    }
 
     @Override
     public void aplicarExclusividad(ArrayList<Respuesta> respuestas) {

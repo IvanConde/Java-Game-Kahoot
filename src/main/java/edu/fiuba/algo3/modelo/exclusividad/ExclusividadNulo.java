@@ -8,16 +8,11 @@ public class ExclusividadNulo implements Exclusividad {
 
 
     @Override
-    public boolean verEstado() {
-        return false;
-    }
-
-    @Override
     public void aplicarExclusividad(ArrayList<Respuesta> respuestas){}
 
     @Override
     public int verMagnitud() {
-        return 0;
+        return 1;
     }
 
     @Override
