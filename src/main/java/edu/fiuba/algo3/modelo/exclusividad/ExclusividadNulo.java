@@ -19,4 +19,9 @@ public class ExclusividadNulo implements Exclusividad {
     public int verMagnitud() {
         return 0;
     }
+
+    @Override
+    public void aplicarPuntos(Respuesta respuesta, int puntos) {
+        respuesta.modificarPuntaje(puntos);
+    }
 }

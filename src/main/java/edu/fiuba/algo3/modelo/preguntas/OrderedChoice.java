@@ -29,7 +29,7 @@ public class OrderedChoice extends Pregunta {
     public void comprobarRespuesta(Respuesta respuesta) {
         if(respuesta.getOpciones().size() == todasLasOpciones.size()) {
             int puntos = modalidad.calcularPuntaje(respuesta);
-            modalidad.intentarAplicarExclusividad(respuesta, exclusividad.verEstado(), puntos);
+            modalidad.intentarAplicarExclusividad(respuesta, exclusividad, puntos);
         }
     }
 

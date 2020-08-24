@@ -36,4 +36,9 @@ public class ExclusividadPuntaje implements Exclusividad {
     public int verMagnitud() {
         return concreto.verMagnitud() * magnitud;
     }
+
+    @Override
+    public void aplicarPuntos(Respuesta respuesta, int puntos) {
+        respuesta.agregarPuntajeTemporal(puntos);
+    }
 }

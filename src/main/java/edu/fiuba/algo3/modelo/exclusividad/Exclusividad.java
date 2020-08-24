@@ -11,4 +11,5 @@ public interface Exclusividad {
 
     public int verMagnitud();
 
+    public void aplicarPuntos(Respuesta respuesta, int puntos);
 }
