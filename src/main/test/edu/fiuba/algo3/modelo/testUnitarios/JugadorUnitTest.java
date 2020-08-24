@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.testunitarios;
+package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.Jugador;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

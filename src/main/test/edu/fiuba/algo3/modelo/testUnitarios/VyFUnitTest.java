@@ -1,6 +1,5 @@
-package edu.fiuba.algo3.modelo.testunitarios;
+package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.excepciones.VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException;
-import edu.fiuba.algo3.modelo.excepciones.VyFMasDeDosOpcionesException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;

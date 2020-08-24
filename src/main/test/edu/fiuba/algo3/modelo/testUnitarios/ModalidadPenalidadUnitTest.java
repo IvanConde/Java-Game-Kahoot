@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.modelo.testunitarios;
+package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
