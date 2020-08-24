@@ -6,7 +6,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 public class ExclusividadDePuntajeUnitTest {
 
-    @Test
+    /*@Test
     public void test01_CrearExclusividadDePuntaje(){
 
         ExclusividadDePuntaje exclusividadDePuntajeTest = new ExclusividadDePuntaje();
@@ -34,6 +34,6 @@ public class ExclusividadDePuntajeUnitTest {
         exclusividadDePuntajeTest.activarExclusividad(jugadorTest);
         assertEquals(4, exclusividadDePuntajeTest.verMagnitud());
 
-    }
+    }*/
 
 }
