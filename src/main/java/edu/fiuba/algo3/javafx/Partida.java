@@ -5,7 +5,6 @@ import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.Turno;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
-import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import java.util.ArrayList;
@@ -25,7 +24,7 @@ public class Partida {
     }
 
     public boolean seContestoPregunta() {
-        return turnoActual.finPregunta();
+        return !turnoActual.seCambiaJugador();
     }
 
     public Jugador obtenerJugadorActual(){
@@ -54,8 +53,8 @@ public class Partida {
 }
 
     public void responderPregunta(){
-        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, turnoActual.getJugador(JUGADOR1).puntaje());
-        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, turnoActual.getJugador(JUGADOR2).puntaje());
+        Respuesta respuestaJugador1 = new Respuesta(opcionesJugador1, turnoActual.getJugadorConIndice(JUGADOR1).puntaje());
+        Respuesta respuestaJugador2 = new Respuesta(opcionesJugador2, turnoActual.getJugadorConIndice(JUGADOR2).puntaje());
         ArrayList<Respuesta> respuestas = new ArrayList<>();
         respuestas.add(respuestaJugador1);
         respuestas.add(respuestaJugador2);

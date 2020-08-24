@@ -37,7 +37,7 @@ public class TurnoUnitTest {
     public void test03_turnoDevuelveElSegundoJugador() {
         guardarJugadores();
         Turno turno = new Turno(jugadores);
-        turno.finPregunta(); //Chequea si los dos jugadores ya contestaron la pregunta
+        turno.seCambiaJugador(); //Chequea si los dos jugadores ya contestaron la pregunta
         assertEquals(jugador2, turno.getJugadorActual());
     }
 
@@ -46,7 +46,7 @@ public class TurnoUnitTest {
         guardarJugadores();
         Turno turno = new Turno(jugadores);
         for(int i = 0; i<CANTJUGADORES; i++) {
-            turno.finPregunta(); //Chequea si los dos jugadores ya contestaron la pregunta
+            turno.seCambiaJugador(); //Chequea si los dos jugadores ya contestaron la pregunta
         }
         assertEquals(jugador1, turno.getJugadorActual());
     }

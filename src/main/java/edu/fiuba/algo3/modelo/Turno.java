@@ -7,22 +7,22 @@ public class Turno {
     static final int JUGADOR2 = 1;
     private ArrayList<Jugador> jugadores;
     private int indiceJugadorActual;
-    private boolean cambiarPregunta;
+    private boolean contestaronTodos;
 
     public Turno(ArrayList<Jugador> jugadores){
         this.jugadores = jugadores;
-        this.cambiarPregunta = false;
+        this.contestaronTodos = false;
     }
 
-    public boolean finPregunta() {
-        if (cambiarPregunta) {
-            this.cambiarPregunta = false;
+    public boolean seCambiaJugador() {
+        if (contestaronTodos) {
+            this.contestaronTodos = false;
             this.indiceJugadorActual = JUGADOR1;
-            return true;
+            return false;
         }
-        this.cambiarPregunta = true;
+        this.contestaronTodos = true;
         indiceJugadorActual++;
-        return false;
+        return true;
     }
 
     public Jugador getJugadorActual(){
@@ -36,7 +36,7 @@ public class Turno {
         return false;
     }
 
-    public Jugador getJugador(int indiceJugador) {
+    public Jugador getJugadorConIndice(int indiceJugador) {
         return jugadores.get(indiceJugador);
     }
 }
