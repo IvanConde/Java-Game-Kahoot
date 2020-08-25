@@ -19,16 +19,7 @@ public class Respuesta {
         puntaje.setModificador(new ModificadorStandard());
     }
 
-    /*
-    public ArrayList<Opcion> verRespuestaJugador(){
-        return opciones;
-    }
-     */
-
-
-
     public int[] contarOpciones(){
-        //ArrayList<int> opcione = new ArrayList<int>();
         int opcionesCorrectas = 0;
         int opcionesIncorrectas = 0;
         for (Opcion opcionElegida : opciones) {
