@@ -4,8 +4,6 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import java.util.ArrayList;
 
 public class Jugador {
-    static final int MULTIPLICADORX2 = 0;
-    static final int MULTIPLICADORX3 = 1;
     private Puntaje puntaje;
     private String nombre;
     private ArrayList<ModificadorMultiplicador> multiplicadores;
@@ -28,26 +26,6 @@ public class Jugador {
         if(!multiplicador.seUtilizo() && pregunta.tienePenalidad()){
             puntaje.setModificador(multiplicador);
         }
-    }
-/*
-    public void usarMultiplicadorX2(Pregunta pregunta) {
-        if (pregunta.tienePenalidad() && tieneMultiplicadorX2()) {
-            puntaje.setModificador(multiplicadores.get(MULTIPLICADORX2));
-        }
-    }
-
-    public void usarMultiplicadorX3(Pregunta pregunta) {
-        if (pregunta.tienePenalidad() && tieneMultiplicadorX3()) {
-            puntaje.setModificador(multiplicadores.get(MULTIPLICADORX3));
-        }
-    }
- */
-    public boolean tieneMultiplicadorX2(){
-        return !multiplicadores.get(MULTIPLICADORX2).seUtilizo();
-    }
-
-    public boolean tieneMultiplicadorX3(){
-        return !multiplicadores.get(MULTIPLICADORX3).seUtilizo();
     }
 
     public String verNombre(){
