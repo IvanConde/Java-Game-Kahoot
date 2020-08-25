@@ -7,7 +7,9 @@ public abstract class Modalidad {
     static final int OPCIONESINCORRECTAS = 1;
     public abstract int calcularPuntaje(Respuesta respuesta);
 
-    public abstract boolean esPenalidad();
+    public boolean esPenalidad(){
+        return false;
+    }
 
     public void intentarAplicarExclusividad(Respuesta respuesta, Exclusividad exclusividad, int puntos) {
         exclusividad.aplicarPuntos(respuesta, puntos);

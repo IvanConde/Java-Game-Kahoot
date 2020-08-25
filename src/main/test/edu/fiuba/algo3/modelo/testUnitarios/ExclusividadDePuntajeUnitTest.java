@@ -18,7 +18,7 @@ public class ExclusividadDePuntajeUnitTest {
     }
 
     @Test
-    public void test03_ActivarExclusividadMasDeUnaVezDeberiaDuplicarSuMagnitud(){
+    public void test02_ActivarExclusividadMasDeUnaVezDeberiaDuplicarSuMagnitud(){
 
         ExclusividadPuntaje exclusividadDePuntajeTest = new ExclusividadPuntaje(new ExclusividadPuntaje(new ExclusividadNulo()));
         assertEquals(4, exclusividadDePuntajeTest.verMagnitud());

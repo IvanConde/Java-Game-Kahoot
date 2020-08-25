@@ -7,13 +7,11 @@ import java.util.ArrayList;
 public class ExclusividadPuntaje implements Exclusividad {
 
     private int magnitud = 2;
-    private Exclusividad concreto;
+    private Exclusividad exclusividad;
 
-    public ExclusividadPuntaje(Exclusividad concreto){
-        this.concreto= concreto;
+    public ExclusividadPuntaje(Exclusividad exclusividad){
+        this.exclusividad = exclusividad;
     }
-
-
 
     @Override
     public void aplicarExclusividad(ArrayList<Respuesta> respuestas) {
@@ -25,12 +23,12 @@ public class ExclusividadPuntaje implements Exclusividad {
         else if(respuesta1.puntajeTemporal() < respuesta2.puntajeTemporal()){
             respuesta2.modificarPuntaje(respuesta2.puntajeTemporal() * this.magnitud);
         }
-        concreto.aplicarExclusividad(respuestas);
+        exclusividad.aplicarExclusividad(respuestas);
     }
 
     @Override
     public int verMagnitud() {
-        return concreto.verMagnitud() * magnitud;
+        return exclusividad.verMagnitud() * magnitud;
     }
 
     @Override

@@ -11,18 +11,23 @@ public class ModalidadParcial extends Modalidad {
 
     @Override
     public int calcularPuntaje(Respuesta respuesta){
-        int[]opciones = respuesta.contarOpciones();
-        if(opciones[OPCIONESINCORRECTAS] > 0){
-            return 0;
-        }
-        int puntos = opciones[OPCIONESCORRECTAS];
-        return puntos;
-        //this.intentarAplicarExclusividad(respuesta, tieneExclusividad, puntos);
-    }
+        int[] opciones = respuesta.contarOpciones();
+        int puntos;
 
+        if(opciones[OPCIONESINCORRECTAS] > 0){
+            puntos = 0;
+        } else {
+            puntos = opciones[OPCIONESCORRECTAS];
+        }
+
+        return puntos;
+    }
+/*
     @Override
     public boolean esPenalidad() {
         return false;
     }
 
+
+ */
 }

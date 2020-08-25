@@ -12,14 +12,13 @@ public class ModalidadClasico extends Modalidad {
     @Override
     public int calcularPuntaje(Respuesta respuesta){
         int[] opciones = respuesta.contarOpciones();
-        if(opciones[OPCIONESINCORRECTAS] > 0){
-            return 0;
-        }
-        return PUNTO;
-    }
+        int puntos;
 
-    @Override
-    public boolean esPenalidad() {
-        return false;
+        if(opciones[OPCIONESINCORRECTAS] > 0){
+            puntos = 0;
+        } else {
+            puntos = PUNTO;
+        }
+        return puntos;
     }
 }
