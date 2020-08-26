@@ -22,12 +22,4 @@ public class ModalidadParcial extends Modalidad {
 
         return puntos;
     }
-/*
-    @Override
-    public boolean esPenalidad() {
-        return false;
-    }
-
-
- */
 }
