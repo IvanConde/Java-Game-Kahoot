@@ -22,10 +22,4 @@ public class VerdaderoFalso extends Pregunta {
             throw new VyFMasDeDosOpcionesException("no es posible más de una opcion correcta en VerdaderoYFalso");
         }
     }
-
-    @Override
-    public ArrayList<Opcion> verBotones(){
-        return todasLasOpciones;
-    }
-
 }

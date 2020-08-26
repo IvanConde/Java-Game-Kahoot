@@ -1,10 +1,10 @@
-package edu.fiuba.algo3.modelo.modificadoresdepuntaje;
+package edu.fiuba.algo3.modelo.modificadoresDePuntaje;
 
 public class ModificadorStandard implements Modificador{
 
     @Override
-    public int modificarPuntos(int puntosnuevos, int puntosactuales) {
-        return puntosnuevos+puntosactuales;
+    public int modificarPuntos(int puntosNuevos, int puntosActuales) {
+        return puntosNuevos + puntosActuales;
     }
 
 }

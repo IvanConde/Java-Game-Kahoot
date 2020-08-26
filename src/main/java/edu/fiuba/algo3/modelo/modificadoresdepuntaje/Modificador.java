@@ -1,7 +1,7 @@
-package edu.fiuba.algo3.modelo.modificadoresdepuntaje;
+package edu.fiuba.algo3.modelo.modificadoresDePuntaje;
 
 public interface Modificador {
 
-    public int modificarPuntos(int puntosNuevos, int puntosActuales);
+    int modificarPuntos(int puntosNuevos, int puntosActuales);
 
 }

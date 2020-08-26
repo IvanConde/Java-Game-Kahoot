@@ -25,7 +25,7 @@ public class Panel { // Panel es el modelo de un MVC
 
     public void iniciarJuego(){
         stage.setTitle("Kahoot2.0");
-        this.reproducirMusica();
+        //this.reproducirMusica();
         this.vistaInicial.mostrar(this);
     }
 

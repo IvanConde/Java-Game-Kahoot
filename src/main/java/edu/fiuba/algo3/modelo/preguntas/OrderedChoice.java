@@ -1,6 +1,5 @@
 package edu.fiuba.algo3.modelo.preguntas;
 import edu.fiuba.algo3.modelo.Respuesta;
-import edu.fiuba.algo3.modelo.excepciones.MultipleChoiceCantidadDeOpcionesEsIncorrectaException;
 import edu.fiuba.algo3.modelo.excepciones.OrderedChoiceCantidadDeOpcionesEsIncorrectaException;
 import edu.fiuba.algo3.modelo.excepciones.OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
@@ -29,7 +28,8 @@ public class OrderedChoice extends Pregunta {
     @Override
     public void comprobarRespuesta(Respuesta respuesta) {
         if(respuesta.getOpciones().size() == todasLasOpciones.size()) {
-            modalidad.calcularPuntaje(respuesta, exclusividad.verEstado());
+            int puntos = modalidad.calcularPuntaje(respuesta);
+            modalidad.intentarAplicarExclusividad(respuesta, exclusividad, puntos);
         }
     }
 

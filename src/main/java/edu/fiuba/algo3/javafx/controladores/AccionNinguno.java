@@ -5,21 +5,19 @@ import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 
-public class AccionMultiplicadorNinguno implements EventHandler<ActionEvent> {
+public class AccionNinguno implements EventHandler<ActionEvent> {
 
     private Pregunta pregunta;
-    private Jugador jugador;
     private VistaPregunta vistaPregunta;
 
-    public AccionMultiplicadorNinguno(Pregunta pregunta, Jugador jugadorActual, VistaPregunta vistaPregunta){
+    public AccionNinguno(Pregunta pregunta, VistaPregunta vistaPregunta){
         this.pregunta = pregunta;
-        this.jugador = jugadorActual;
         this.vistaPregunta = vistaPregunta;
     }
 
     @Override
     public void handle(ActionEvent e) {
-        vistaPregunta.mostrarPregunta(pregunta, jugador);
+        vistaPregunta.mostrarPregunta(pregunta);
     }
 
 }

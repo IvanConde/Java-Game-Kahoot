@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.javafx.vistas;
 import edu.fiuba.algo3.javafx.controladores.AccionExclusividadPuntaje;
-import edu.fiuba.algo3.javafx.controladores.AccionMultiplicadorNinguno;
+import edu.fiuba.algo3.javafx.controladores.AccionNinguno;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.geometry.Insets;
@@ -25,16 +25,20 @@ public class VistaExclusividad {
 
     public void desplegar(Pregunta pregunta, Jugador jugador, VistaPregunta vistaPregunta) {
         if (!jugador.tieneExclusividad()) {
-            vistaPregunta.mostrarPregunta(pregunta, jugador);
+            vistaPregunta.mostrarPregunta(pregunta);
             return;
         }
 
         Label nombreJugadorLabel = new Label(jugador.verNombre() + " elegí si queres activar exclusividad de puntaje para esta pregunta");
         nombreJugadorLabel.setFont(new Font("Arial", 16));
+        Label puntosActuales = new Label("Puntaje actual:"+ jugador.puntaje().getPuntaje());
         Button ninguno = new Button("Ninguno");
-        ninguno.setOnAction(new AccionMultiplicadorNinguno(pregunta, jugador, vistaPregunta));
+        Efectos efectoBoton = new Efectos();
+        efectoBoton.agregarEfecto(ninguno);
+        ninguno.setOnAction(new AccionNinguno(pregunta, vistaPregunta));
 
         Button exclusividadPuntaje = new Button("Activar exclusividad de puntaje");
+        efectoBoton.agregarEfecto(exclusividadPuntaje);
         exclusividadPuntaje.setOnAction(new AccionExclusividadPuntaje(pregunta, jugador, vistaPregunta));
 
         if (!jugador.tieneExclusividad()) {
@@ -43,6 +47,7 @@ public class VistaExclusividad {
             VBox layoutExclusividad = new VBox();
             layoutExclusividad.setBackground(new Background(new BackgroundFill(Color.SKYBLUE, CornerRadii.EMPTY, Insets.EMPTY)));
             layoutExclusividad.getChildren().add(nombreJugadorLabel);
+            layoutExclusividad.getChildren().add(puntosActuales);
             layoutExclusividad.getChildren().add(exclusividadPuntaje);
             layoutExclusividad.getChildren().add(ninguno);
 

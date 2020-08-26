@@ -7,7 +7,7 @@ import java.util.Random;
 
 public class CicloPreguntas {
 
-    private int cantidadPreguntas = 5;
+    private int cantidadPreguntas = 10;
     private LinkedList preguntas;
 
     public CicloPreguntas(){

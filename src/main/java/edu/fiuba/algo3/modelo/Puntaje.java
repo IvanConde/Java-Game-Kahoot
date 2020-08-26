@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.modelo;
-import edu.fiuba.algo3.modelo.modificadoresdepuntaje.Modificador;
-import edu.fiuba.algo3.modelo.modificadoresdepuntaje.ModificadorStandard;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.Modificador;
+import edu.fiuba.algo3.modelo.modificadoresDePuntaje.ModificadorStandard;
 
 public class Puntaje {
 

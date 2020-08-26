@@ -27,7 +27,7 @@ public class VistaJuego {
         this.jugadores = jugadores;
         this.partida = new Partida(jugadores);
         this.cicloPreguntas = new CicloPreguntas();
-        this.vistaPregunta = new VistaPregunta(jugadores, stage, partida, this);
+        this.vistaPregunta = new VistaPregunta(stage, partida, this);
     }
 
     public void mostrar(){
