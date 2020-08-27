@@ -38,6 +38,18 @@ public class VistaJuego {
         }
     }
 
+    /*
+        public void mostrar(){
+        CrearPreguntas crearPreguntas = new CrearPreguntas();
+        LinkedList preguntas = crearPreguntas.parsear();
+        if(cicloPreguntas.getCantPreguntas() > 0) {
+            cicloPreguntas.correrPregunta(vistaPregunta, preguntas);
+        }else{
+            this.mostrarPantallaFinal();
+        }
+    }
+    */
+
     public void mostrarPantallaFinal(){
         Jugador jugador1 = jugadores.get(0);
         Jugador jugador2 = jugadores.get(1);

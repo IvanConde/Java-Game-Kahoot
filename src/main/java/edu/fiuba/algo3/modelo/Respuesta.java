@@ -7,8 +7,7 @@ public class Respuesta {
     private ArrayList<Opcion> opciones;
     private Puntaje puntaje;
     private int puntajeTemporal;
-    private int opcionesCorrectas = 0;
-    private int opcionesIncorrectas = 0;
+
 
     public Respuesta(ArrayList<Opcion> opciones, Puntaje puntaje) {
         this.opciones = opciones;
@@ -21,25 +20,24 @@ public class Respuesta {
         puntaje.setModificador(new ModificadorStandard());
     }
 
-    public void contarOpciones(){
-        opcionesCorrectas = 0;
-        opcionesIncorrectas = 0;
+    public int opcionesCorrectas(){
+        int opcionesCorrectas = 0;
+        for (Opcion opcionElegida : opciones) {
+            if (opcionElegida.esCorrecto()) {
+                opcionesCorrectas += 1;
+            }
+        }
+        return opcionesCorrectas;
+    }
+
+    public int opcionesIncorrectas(){
+        int opcionesIncorrectas = 0;
         for (Opcion opcionElegida : opciones) {
             if (!(opcionElegida.esCorrecto())) {
                 opcionesIncorrectas += 1;
             }
-            else{
-                opcionesCorrectas += 1;
-            }
         }
-    }
-
-    public int opcionesCorrectas(){
-        return this.opcionesCorrectas;
-    }
-
-    public int opcionesIncorrectas(){
-        return this.opcionesIncorrectas;
+        return opcionesIncorrectas;
     }
 
     public void agregarPuntajeTemporal(int puntos){

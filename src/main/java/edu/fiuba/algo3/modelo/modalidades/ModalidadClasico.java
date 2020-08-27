@@ -12,7 +12,6 @@ public class ModalidadClasico extends Modalidad {
 
     @Override
     public void calcularPuntaje(Respuesta respuesta, Exclusividad exclusividad){
-        respuesta.contarOpciones();
         int puntos;
 
         if(respuesta.opcionesIncorrectas() > 0){
