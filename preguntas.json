@@ -1,0 +1,237 @@
+{
+  "VerdaderoFalso": [
+    {
+      "textoPregunta": "Una araña es un insecto",
+      "opciones": {
+          "Verdadero": false,
+          "Falso": true
+        },
+      "modalidad": "parcial",
+      "comentario": "Aunque tanto las arañas como los insectos son artrópodos, una araña no es un insecto, es un artrópodo. Una diferencia importante es que los insectos tienen seis patas, mientras que las arañas tienen ocho.\n\n"
+    },
+    {
+      "textoPregunta": "'CO2' es dioxido de carbono",
+      "opciones":
+        {
+          "Verdadero": true,
+          "Falso": false
+        },
+      "modalidad": "penalidad",
+      "comentario": "El dióxido de carbono es un gas inodoro, incoloro, ligeramente ácido y no inflamable. Es soluble en agua cuando la presión se mantiene constante, y está formado por una molécula lineal de un átomo de carbono ligado a dos átomos de oxígeno, de la forma O = C = O."
+    },
+    {
+      "textoPregunta": "En Argentina se invento el bolígrafo",
+      "opciones":{
+          "Verdadero": true,
+          "Falso": false
+        },
+      "modalidad": "parcial",
+      "comentario": "Ladislao José Biro, de origen húngaro, pero nacionalizado en Argentina, inventó en 1938 el “biro” o “birome”, también conocido actualmente como el famoso bolígrafo."
+    },
+    {
+      "textoPregunta": "El deporte nacional de Argentina es el futbol",
+      "opciones":
+        {
+          "Verdadero": false,
+          "Falso": true
+        },
+      "modalidad": "clasico",
+      "comentario": "Aunque el deporte más popular en Argentina es el fútbol, el deporta nacional es el pato (se llama así porque originalmente se usaba un pato real para jugar)."
+    },
+    {
+      "textoPregunta": "La profesión mas común en Argentina es medicina ",
+      "opciones":
+        {
+          "Verdadero": false,
+          "Falso": true
+        },
+      "modalidad": "penalidad",
+      "comentario": "La profesión mas común es la psicología"
+    }
+  ],
+  "MultipleChoice": [
+     {
+      "textoPregunta": "¿Quién pintó 'Las meninas'?",
+        "opciones": {
+          "Francisco de Goya": false,
+          "Diego Velázquez": true,
+          "Salvador Dalí": false,
+          "Edgar Degas": false,
+          "Claude Monet": false
+        },
+      "modalidad": "clasico"
+    },
+    {
+      "textoPregunta": "Seleccione los colores que conforman la bandera Argentina",
+      "opciones":{
+        "Azul": true,
+        "Amarillo": true,
+        "Violeta": false,
+        "Rojo": false,
+        "Blanco": true
+      },
+      "modalidad": "parcial"
+    },
+    {
+      "textoPregunta": "Seleccione los numeros pares",
+      "opciones": {
+          "2": true,
+          "3": false,
+          "4": true,
+          "6": true,
+          "5": false
+      },
+      "modalidad": "penalidad"
+    },
+    {
+      "textoPregunta": "Seleccione las opciones que NO sean una de las 7 maravillas del mundo",
+      "opcion1Texto": "Gran muralla china",
+      "opciones":
+        {
+          "Gran muralla china": false,
+          "Macchu Picchu": true,
+          "Coliseo de Roma": false,
+          "Glaciar perito moreno": true,
+          "Mar muerto": true
+        },
+      "modalidad": "clasico"
+    },
+    {
+      "textoPregunta": "¿Qué presidentes son argentinos?",
+      "opciones":
+        {
+          "Bernandino Rivadavia": true,
+          "Alejandro Toledo Manrique": false,
+          "Sebastián Piñera": false,
+          "Jaime Mañalich": false,
+          "Jose Evaristo Uriburu": true
+        },
+      "modalidad": "penalidad"
+    }
+  ],
+  "OrderedChoice":[
+    {
+      "textoPregunta": "Ordene de mayor a menor",
+      "opciones":
+      {
+        "2": 5,
+        "10": 2,
+        "5": 3,
+        "3": 4,
+        "31": 1
+      }
+    },
+    {
+      "textoPregunta": "Ordene alfabeticamente los siguientes nombres:",
+      "opciones":
+        {
+          "Gonzalo": 1,
+          "Maria": 3,
+          "Hernan": 2,
+          "Miguel": 4,
+          "Santiago": 5
+        }
+    },
+    {
+      "textoPregunta": "Ordene estos eventos de menor a mayor",
+      "opciones":
+        {
+          "Decada infame(1943)": 3,
+          "Menemismo(1989)": 5,
+          "Revolucion de mayo(1810)": 1,
+          "Campaña del desierto (1878)": 2,
+          "Guerra Fria(1945)": 4
+        },
+      "respuesta": "",
+      "comentario": ""
+    },
+    {
+      "textoPregunta": "Ordene de menor a mayor segun la fecha de nacimiento de los siguientes artistas:",
+      "opciones":{
+          "Jimi Hendrix(1942)": 2,
+          "Damon Albarn(1968)": 5,
+          "Gary Moore(1952)": 3,
+          "Stevie Ray Vaughan(1954)": 4,
+          "B.B.King(1925)": 1
+        }
+    },
+    {
+      "textoPregunta": "Ordene los pasos a seguir para construir un rompecabezas: ",
+      "opciones":
+        {
+          "Encontrar y acomodar las puntas": 3,
+          "Estudiar la imagen de la caja": 2,
+          "Comprar un rompecabezas": 1,
+          "Encontrar y armar los bordes": 4,
+          "Encontrar y colocar las piezas del medio": 5
+        }
+    }
+  ],
+  "GroupChoice": [
+    {
+      "textoPregunta": "Coloque a las siguientes personas en los grupos 'Cientificos' y 'Actores'",
+      "opciones":
+        {
+          "Albert Einstein": "Cientificos",
+          "Isaac Newton": "Cientificos",
+          "Bradd Pitt": "Actores",
+          "René Descartes": "Cientificos",
+          "Keanu Reeves": "Actores",
+          "Leonardo DiCaprio": "Actores"
+        },
+      "grupos": ["Cientificos","Actores"]
+      },
+    {
+      "textoPregunta": "Coloque a las siguientes alimentos en los grupos 'Quesos' y 'Fiambres'",
+      "opciones":
+        {
+          "Paladini": "Fiambres",
+          "Gouda": "Quesos",
+          "Cremac": "Quesos",
+          "Bonnatur": "Fiambres",
+          "Cremon": "Quesos",
+          "Campo Austral": "Fiambres"
+        },
+      "grupos": ["Quesos","Fiambres"]
+      },
+    {
+      "textoPregunta": "Coloque a los siguientes paises en los grupos 'Mercosur' y 'otros'",
+      "opciones":
+      {
+        "Argentina": "Mercosur",
+        "Estados Unidos": "Otros",
+        "Uruguay": "Mercosur",
+        "Brasil": "Mercosur",
+        "Mexico": "Otros",
+        "Venezuela": "Mercosur"
+      },
+      "grupos": ["Mercosur","Otros"]
+    },
+    {
+      "textoPregunta": "Coloque los siguientes juegos en los grupos 'amados' y 'odiados' de la E3 2019",
+      "opciones":
+      {
+        "Pokemon sword": "odiados",
+        "Cyberpunk 2077": "amados",
+        "Battletoads": "odiados",
+        "The Elder Scrolls: Legends": "odiados",
+        "Fallout 76": "odiados",
+        "Dying Light 2": "amados"
+      },
+      "grupos": ["Amados","Odiados"]
+    },
+    {
+      "textoPregunta": "Coloque a los siguientes seres vivos en los grupos 'animales' e 'insectos' :",
+      "opciones":
+      {
+        "Oso polar": "animales",
+        "Hormiga": "insectos",
+        "Perro": "animales",
+        "Gato": "animales",
+        "Cucaracha": "insectos",
+        "Mantis religiosa": "insectos"
+      },
+      "grupos": ["Animales","Insectos"]
+    }
+  ]
+}
