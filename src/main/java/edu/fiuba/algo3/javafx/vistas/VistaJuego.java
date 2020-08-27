@@ -1,13 +1,17 @@
 package edu.fiuba.algo3.javafx.vistas;
+import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.modelo.Partida;
-import edu.fiuba.algo3.modelo.CicloPreguntas;
 import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.stage.Stage;
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.Collections;
+
 import javafx.scene.layout.BackgroundFill;
 import javafx.geometry.Insets;
 import javafx.scene.layout.Background;
@@ -15,10 +19,10 @@ import javafx.scene.layout.CornerRadii;
 import javafx.scene.paint.Color;
 
 public class VistaJuego {
-
+    static final int CANTIDADPREGUNTAS = 10;
+    private int cantidadPreguntas = 10;
     private Stage window;
     private ArrayList<Jugador> jugadores;
-    private CicloPreguntas cicloPreguntas;
     private VistaPregunta vistaPregunta;
     private Partida partida;
 
@@ -26,29 +30,20 @@ public class VistaJuego {
         this.window = stage;
         this.jugadores = jugadores;
         this.partida = new Partida(jugadores);
-        this.cicloPreguntas = new CicloPreguntas();
         this.vistaPregunta = new VistaPregunta(stage, partida, this);
     }
 
     public void mostrar(){
-        if(cicloPreguntas.getCantPreguntas() > 0) {
-            cicloPreguntas.correrPregunta(vistaPregunta);
-        }else{
-            this.mostrarPantallaFinal();
-        }
-    }
-
-    /*
-        public void mostrar(){
         CrearPreguntas crearPreguntas = new CrearPreguntas();
         LinkedList preguntas = crearPreguntas.parsear();
-        if(cicloPreguntas.getCantPreguntas() > 0) {
-            cicloPreguntas.correrPregunta(vistaPregunta, preguntas);
-        }else{
-            this.mostrarPantallaFinal();
+        Collections.shuffle(preguntas);
+            if(cantidadPreguntas > 0) {
+                vistaPregunta.construirPantallas((Pregunta) preguntas.remove(0));
+                cantidadPreguntas--;
+            }else{
+                this.mostrarPantallaFinal();
         }
     }
-    */
 
     public void mostrarPantallaFinal(){
         Jugador jugador1 = jugadores.get(0);

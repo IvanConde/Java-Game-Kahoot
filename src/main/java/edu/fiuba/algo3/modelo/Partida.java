@@ -4,7 +4,9 @@ import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Respuesta;
 import edu.fiuba.algo3.modelo.Turno;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
+import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
 import edu.fiuba.algo3.modelo.opciones.OpcionOrdered;
+import edu.fiuba.algo3.modelo.preguntas.GroupChoice;
 import edu.fiuba.algo3.modelo.preguntas.OrderedChoice;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;
 import java.util.ArrayList;
@@ -45,8 +47,8 @@ public class Partida {
 
     public void agregarRespuesta(ArrayList<Opcion> opcionesJugador, Opcion opcion) {
         if(preguntaActual instanceof OrderedChoice) {
-                OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
-                opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
+            OpcionOrdered opcionEstructurada = (OpcionOrdered) opcion;
+            opcionEstructurada.elegirPosicion(opcionesJugador.size() + 1, opcionesJugador);
         }else{
             opcionesJugador.add(opcion);
         }
@@ -62,11 +64,13 @@ public class Partida {
         opcionesJugador1 = new ArrayList<>();
         opcionesJugador2 = new ArrayList<>();
     }
-
+/*
     public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
         respuestasJugadorGroup.add(interruptor);
     }
+ */
 
+    /*
     public void recolectarRespuestasGroup(Jugador jugadorActual){
         for(ToggleSwitch interruptor : respuestasJugadorGroup){
             if(turnoActual.esJugador1(jugadorActual)){
@@ -78,4 +82,13 @@ public class Partida {
         respuestasJugadorGroup = new ArrayList<>();
     }
 
+     */
+
+    public void agregarRespuestaGroup(OpcionGroup opcion, Jugador jugador, String grupo){
+        if (turnoActual.esJugador1(jugador)){
+            opcion.elegirGrupo(grupo, opcionesJugador1);
+        }else{
+            opcion.elegirGrupo(grupo, opcionesJugador2);
+        }
+    }
 }

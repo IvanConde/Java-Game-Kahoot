@@ -1,4 +1,6 @@
 package edu.fiuba.algo3.javafx.controladores;
+import edu.fiuba.algo3.modelo.Jugador;
+import edu.fiuba.algo3.modelo.Partida;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionGroup;
 import javafx.beans.property.SimpleBooleanProperty;
@@ -15,14 +17,20 @@ public class ToggleSwitch extends HBox {
     private OpcionGroup opcion;
     private String grupo1;
     private String grupo2;
+    private Partida partida;
     private SimpleBooleanProperty switchedOn = new SimpleBooleanProperty(false);
+    private Jugador jugadorActual;
+    private AccionHandlerGroup handler;
 
-    public void respuestaJugador(ArrayList<Opcion> opcionesJugador) {
+    public void respuestaJugador() {
+        Button boton = new Button("");
+
         if(switchedOn.get()) {
-            opcion.elegirGrupo(grupo1, opcionesJugador);
+            boton.setOnAction(new AccionHandlerGroup(opcion, jugadorActual, partida, grupo1));;
         }else{
-            opcion.elegirGrupo(grupo2, opcionesJugador);
+            boton.setOnAction(new AccionHandlerGroup(opcion, jugadorActual, partida, grupo2));
         }
+        boton.fire();
     }
 
     private void init() {
@@ -53,10 +61,12 @@ public class ToggleSwitch extends HBox {
         button.prefHeightProperty().bind(heightProperty());
     }
 
-    public ToggleSwitch(OpcionGroup opcion, String grupo1, String grupo2) {
+    public ToggleSwitch(OpcionGroup opcion, String grupo1, String grupo2, Partida partida) {
+        this.partida = partida;
         this.opcion = opcion;
         this.grupo1 = grupo1;
         this.grupo2 = grupo2;
+        this.jugadorActual = partida.obtenerJugadorActual();
         init();
         switchedOn.addListener((a,b,c) -> {
             if (c) {
@@ -66,7 +76,7 @@ public class ToggleSwitch extends HBox {
             }
             else {
                 label.setText(grupo1);
-                setStyle("-fx-background-color: grey;");
+                setStyle("-fx-background-color: red;");
                 button.toFront();
             }
         });

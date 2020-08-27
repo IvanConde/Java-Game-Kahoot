@@ -32,6 +32,7 @@ public class VistaPregunta {
     private VistaJuego vistaJuego;
     private VistaExclusividad vistaExclusividad;
     private Jugador jugadorActual;
+    private ArrayList<ToggleSwitch> toggles;
 
     public VistaPregunta(Stage stage, Partida partida, VistaJuego vistaJuego) {
         this.window = stage;
@@ -90,16 +91,17 @@ public class VistaPregunta {
     }
 
     public void desplegarBotonesGroupChoice(VBox layoutJuego, ArrayList<Opcion> opciones, GroupChoice pregunta){
+        this.toggles = new ArrayList<>();
         for(Opcion opcion : opciones){
             Label opcionTexto = new Label(opcion.getStringOpcion()+ ":");
             opcionTexto.setFont(new Font("Arial", 16));
 
             ArrayList<String> grupos = pregunta.devolverGrupos();
-            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) opcion, grupos.get(0), grupos.get(1));
-            partida.agregarRespuestaJugadorGroup(botonOpcion);
+            ToggleSwitch botonOpcion = new ToggleSwitch((OpcionGroup) opcion, grupos.get(0), grupos.get(1), partida);
             botonOpcion.setMaxWidth(300);
             layoutJuego.getChildren().add(opcionTexto);
             layoutJuego.getChildren().add(botonOpcion);
+            toggles.add(botonOpcion);
         }
     }
 
@@ -129,4 +131,9 @@ public class VistaPregunta {
         vistaJuego.mostrar();
     }
 
+    public void recolectarRespuestasGroup(){
+        for(ToggleSwitch interruptor : toggles){
+            interruptor.respuestaJugador();
+        }
+    }
 }
