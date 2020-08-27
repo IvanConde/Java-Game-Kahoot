@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadNulo;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadPenalidad;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
@@ -26,7 +27,8 @@ public class ModalidadPenalidadUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(1, ModalidadPenalidadTest.calcularPuntaje(respuestaTest));
+        ModalidadPenalidadTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(1, respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -38,7 +40,8 @@ public class ModalidadPenalidadUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(-1, ModalidadPenalidadTest.calcularPuntaje(respuestaTest));
+        ModalidadPenalidadTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(-1, respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -52,8 +55,8 @@ public class ModalidadPenalidadUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-
-        assertEquals(2, ModalidadPenalidadTest.calcularPuntaje(respuestaTest));
+        ModalidadPenalidadTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(2, respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -67,13 +70,13 @@ public class ModalidadPenalidadUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(-2, ModalidadPenalidadTest.calcularPuntaje(respuestaTest));
+        ModalidadPenalidadTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(-2, respuestaTest.puntaje().getPuntaje());
 
     }
 
     @Test
     public void test06_calcularPuntajeCon1RespuestaIncorrectasy1RespuestaCorrecta(){
-
         ModalidadPenalidad ModalidadPenalidadTest = new ModalidadPenalidad();
         Opcion opcionTest1 = new OpcionBooleana("test", true);
         Opcion opcionTest2 = new OpcionBooleana("test", false);
@@ -81,7 +84,7 @@ public class ModalidadPenalidadUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadPenalidadTest.calcularPuntaje(respuestaTest);
+        ModalidadPenalidadTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }

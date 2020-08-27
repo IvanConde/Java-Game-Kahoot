@@ -32,8 +32,7 @@ public abstract class Pregunta {
     }
 
     public void comprobarRespuesta(Respuesta respuesta){
-        int puntos = modalidad.calcularPuntaje(respuesta);
-        modalidad.intentarAplicarExclusividad(respuesta, exclusividad, puntos);
+        modalidad.calcularPuntaje(respuesta, exclusividad);
     }
 
     public String verPregunta(){

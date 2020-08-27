@@ -1,5 +1,6 @@
 package edu.fiuba.algo3.modelo.modalidades;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.exclusividad.Exclusividad;
 
 //Asigna un punto a cada jugador por cada opción correcta que
 //seleccione (aunque no seleccione todas las correctas), siempre y
@@ -10,16 +11,15 @@ public class ModalidadParcial extends Modalidad {
     public ModalidadParcial() {}
 
     @Override
-    public int calcularPuntaje(Respuesta respuesta){
-        int[] opciones = respuesta.contarOpciones();
+    public void calcularPuntaje(Respuesta respuesta, Exclusividad exclusividad){
+        respuesta.contarOpciones();
         int puntos;
 
-        if(opciones[OPCIONESINCORRECTAS] > 0){
+        if(respuesta.opcionesIncorrectas() > 0){
             puntos = 0;
         } else {
-            puntos = opciones[OPCIONESCORRECTAS];
+            puntos = respuesta.opcionesCorrectas();
         }
-
-        return puntos;
+        exclusividad.aplicarPuntos(respuesta, puntos);
     }
 }

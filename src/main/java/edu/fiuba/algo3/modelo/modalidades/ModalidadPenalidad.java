@@ -7,10 +7,9 @@ public class ModalidadPenalidad extends Modalidad {
 
 
     @Override
-    public int calcularPuntaje(Respuesta respuesta){
-         int[] opciones = respuesta.contarOpciones();
-        int puntos = opciones[OPCIONESCORRECTAS] - opciones[OPCIONESINCORRECTAS];
-        return puntos;
+    public void calcularPuntaje(Respuesta respuesta, Exclusividad exclusividad){
+        respuesta.contarOpciones();
+        respuesta.modificarPuntaje(respuesta.opcionesCorrectas() -respuesta.opcionesIncorrectas());
     }
 
     @Override
@@ -18,9 +17,5 @@ public class ModalidadPenalidad extends Modalidad {
         return true;
     }
 
-    @Override
-    public void intentarAplicarExclusividad(Respuesta respuesta, Exclusividad exclusividad, int puntos) {
-            respuesta.modificarPuntaje(puntos);
-    }
 
 }

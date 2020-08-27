@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.javafx.controladores;
+package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.javafx.datos.CrearPreguntas;
 import edu.fiuba.algo3.javafx.vistas.VistaPregunta;
 import edu.fiuba.algo3.modelo.preguntas.Pregunta;

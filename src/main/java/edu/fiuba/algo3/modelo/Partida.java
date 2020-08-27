@@ -1,4 +1,4 @@
-package edu.fiuba.algo3.javafx;
+package edu.fiuba.algo3.modelo;
 import edu.fiuba.algo3.javafx.controladores.ToggleSwitch;
 import edu.fiuba.algo3.modelo.Jugador;
 import edu.fiuba.algo3.modelo.Respuesta;

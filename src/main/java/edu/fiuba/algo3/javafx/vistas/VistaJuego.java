@@ -1,6 +1,6 @@
 package edu.fiuba.algo3.javafx.vistas;
-import edu.fiuba.algo3.javafx.Partida;
-import edu.fiuba.algo3.javafx.controladores.*;
+import edu.fiuba.algo3.modelo.Partida;
+import edu.fiuba.algo3.modelo.CicloPreguntas;
 import edu.fiuba.algo3.modelo.Jugador;
 import javafx.geometry.Pos;
 import javafx.scene.control.Label;

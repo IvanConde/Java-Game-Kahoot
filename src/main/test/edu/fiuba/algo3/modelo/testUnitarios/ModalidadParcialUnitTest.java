@@ -1,6 +1,7 @@
 package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadNulo;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadParcial;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
@@ -26,7 +27,8 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(1, ModalidadParcialTest.calcularPuntaje(respuestaTest));
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(1, respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -38,7 +40,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -51,7 +53,8 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(1, ModalidadParcialTest.calcularPuntaje(respuestaTest));
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(1, respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -63,7 +66,7 @@ public class ModalidadParcialUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntajeTemporal());
 
     }
@@ -78,7 +81,7 @@ public class ModalidadParcialUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -93,7 +96,7 @@ public class ModalidadParcialUnitTest {
         opcionList.add(opcionTest1);
         opcionList.add(opcionTest2);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadParcialTest.calcularPuntaje(respuestaTest);
+        ModalidadParcialTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }

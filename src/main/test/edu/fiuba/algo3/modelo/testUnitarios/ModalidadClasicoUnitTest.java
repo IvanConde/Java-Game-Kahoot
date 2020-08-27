@@ -1,6 +1,8 @@
 package edu.fiuba.algo3.modelo.testUnitarios;
 import edu.fiuba.algo3.modelo.Puntaje;
 import edu.fiuba.algo3.modelo.Respuesta;
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadNulo;
+import edu.fiuba.algo3.modelo.exclusividad.ExclusividadPuntaje;
 import edu.fiuba.algo3.modelo.modalidades.ModalidadClasico;
 import edu.fiuba.algo3.modelo.opciones.Opcion;
 import edu.fiuba.algo3.modelo.opciones.OpcionBooleana;
@@ -25,7 +27,8 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(1, ModalidadClasicoTest.calcularPuntaje(respuestaTest));
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
+        assertEquals(1,respuestaTest.puntaje().getPuntaje());
 
     }
 
@@ -37,7 +40,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest);
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest, new ExclusividadNulo());
         assertEquals(0, respuestaTest.puntaje().getPuntaje());
 
     }
@@ -50,7 +53,8 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        assertEquals(1, ModalidadClasicoTest.calcularPuntaje(respuestaTest));
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest, new ExclusividadPuntaje(new ExclusividadNulo()));
+        assertEquals(1, respuestaTest.puntajeTemporal());
 
     }
 
@@ -62,7 +66,7 @@ public class ModalidadClasicoUnitTest {
         ArrayList<Opcion> opcionList= new ArrayList<Opcion>();
         opcionList.add(opcionTest);
         Respuesta respuestaTest = new Respuesta(opcionList, new Puntaje());
-        ModalidadClasicoTest.calcularPuntaje(respuestaTest);
+        ModalidadClasicoTest.calcularPuntaje(respuestaTest, new ExclusividadPuntaje(new ExclusividadNulo()));
         assertEquals(0, respuestaTest.puntajeTemporal());
 
     }
