@@ -26,9 +26,9 @@ public class ToggleSwitch extends HBox {
         Button boton = new Button("");
 
         if(switchedOn.get()) {
-            boton.setOnAction(new AccionHandlerGroup(opcion, jugadorActual, partida, grupo1));;
-        }else{
             boton.setOnAction(new AccionHandlerGroup(opcion, jugadorActual, partida, grupo2));
+        }else{
+            boton.setOnAction(new AccionHandlerGroup(opcion, jugadorActual, partida, grupo1));;
         }
         boton.fire();
     }

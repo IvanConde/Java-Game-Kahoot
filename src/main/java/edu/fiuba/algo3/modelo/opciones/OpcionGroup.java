@@ -22,7 +22,10 @@ public class OpcionGroup extends Opcion {
 
     @Override
     public boolean esCorrecto(){
-        return (grupoJugador == grupoOriginal);
+        if(grupoJugador.equalsIgnoreCase(grupoOriginal)){
+            return true;
+        }return false;
+//        return (grupoJugador == grupoOriginal);
     }
 
 }

@@ -211,12 +211,12 @@
       "textoPregunta": "Coloque los siguientes juegos en los grupos 'amados' y 'odiados' de la E3 2019",
       "opciones":
       {
-        "Pokemon sword": "odiados",
-        "Cyberpunk 2077": "amados",
-        "Battletoads": "odiados",
-        "The Elder Scrolls: Legends": "odiados",
-        "Fallout 76": "odiados",
-        "Dying Light 2": "amados"
+        "Pokemon sword": "Odiados",
+        "Cyberpunk 2077": "Amados",
+        "Battletoads": "Odiados",
+        "The Elder Scrolls: Legends": "Odiados",
+        "Fallout 76": "Odiados",
+        "Dying Light 2": "Amados"
       },
       "grupos": ["Amados","Odiados"]
     },
@@ -224,12 +224,12 @@
       "textoPregunta": "Coloque a los siguientes seres vivos en los grupos 'animales' e 'insectos' :",
       "opciones":
       {
-        "Oso polar": "animales",
-        "Hormiga": "insectos",
-        "Perro": "animales",
-        "Gato": "animales",
-        "Cucaracha": "insectos",
-        "Mantis religiosa": "insectos"
+        "Oso polar": "Animales",
+        "Hormiga": "Insectos",
+        "Perro": "Animales",
+        "Gato": "Animales",
+        "Cucaracha": "Insectos",
+        "Mantis religiosa": "Insectos"
       },
       "grupos": ["Animales","Insectos"]
     }
