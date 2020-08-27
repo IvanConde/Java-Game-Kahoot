@@ -32,4 +32,7 @@ public class CicloPreguntas {
         return cantidadPreguntas;
     }
 
+    public void setCantPreguntas(int cantidad){
+        cantidadPreguntas = cantidad;
+    }
 }
