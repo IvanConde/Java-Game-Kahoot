@@ -15,6 +15,4 @@ public class ModalidadPenalidad extends Modalidad {
     public boolean esPenalidad() {
         return true;
     }
-
-
 }

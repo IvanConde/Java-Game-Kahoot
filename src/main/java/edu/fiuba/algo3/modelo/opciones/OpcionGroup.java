@@ -27,5 +27,4 @@ public class OpcionGroup extends Opcion {
         }return false;
 //        return (grupoJugador == grupoOriginal);
     }
-
 }

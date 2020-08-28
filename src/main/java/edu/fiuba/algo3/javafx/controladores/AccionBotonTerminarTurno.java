@@ -32,5 +32,4 @@ public class AccionBotonTerminarTurno implements EventHandler<ActionEvent> {
             vistaPregunta.construirPantallas(pregunta);
         }
     }
-
 }

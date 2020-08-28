@@ -64,25 +64,6 @@ public class Partida {
         opcionesJugador1 = new ArrayList<>();
         opcionesJugador2 = new ArrayList<>();
     }
-/*
-    public void agregarRespuestaJugadorGroup(ToggleSwitch interruptor){
-        respuestasJugadorGroup.add(interruptor);
-    }
- */
-
-    /*
-    public void recolectarRespuestasGroup(Jugador jugadorActual){
-        for(ToggleSwitch interruptor : respuestasJugadorGroup){
-            if(turnoActual.esJugador1(jugadorActual)){
-                interruptor.respuestaJugador(opcionesJugador1);
-            }else {
-                interruptor.respuestaJugador(opcionesJugador2);
-            }
-        }
-        respuestasJugadorGroup = new ArrayList<>();
-    }
-
-     */
 
     public void agregarRespuestaGroup(OpcionGroup opcion, Jugador jugador, String grupo){
         if (turnoActual.esJugador1(jugador)){
@@ -92,3 +73,4 @@ public class Partida {
         }
     }
 }
+

@@ -75,5 +75,4 @@ public class VistaJuego {
         window.sizeToScene();
         window.show();
     }
-
 }

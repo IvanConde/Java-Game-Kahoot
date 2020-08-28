@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="9239a844-d86e-4d37-90bb-5562c8e1a71d" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LICENSE.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/Panel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/Panel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonOpcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonOpcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonOpcionVyF.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonOpcionVyF.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonTerminarTurno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionBotonTerminarTurno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionEmpezarJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionEmpezarJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionEnterNombres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionEnterNombres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionExclusividadPuntaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionExclusividadPuntaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionMostrarReglas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionMostrarReglas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionMultiplicador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionMultiplicador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionNinguno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionNinguno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionVolverMenuPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/AccionVolverMenuPrincipal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/Contestar.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/Contestar.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/ToggleSwitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/controladores/ToggleSwitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/datos/CrearPreguntas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/datos/CrearPreguntas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/Efectos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/Efectos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaExclusividad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaExclusividad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaInicial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaInicial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaJuego.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaMultiplicadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaMultiplicadores.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaNombres.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaNombres.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaPregunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaPregunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaReglas.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/javafx/vistas/VistaReglas.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Jugador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Partida.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Partida.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Puntaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Puntaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Respuesta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Respuesta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Turno.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/Turno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/GroupChoiceCantidadDeOpcionesEsIncorrectaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/GroupChoiceCantidadDeOpcionesEsIncorrectaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/GroupChoiceModalidadInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/GroupChoiceModalidadInvalidaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/ModalidadInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/ModalidadInvalidaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/MultipleChoiceCantidadDeOpcionesEsIncorrectaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/MultipleChoiceCantidadDeOpcionesEsIncorrectaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceCantidadDeOpcionesEsIncorrectaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceCantidadDeOpcionesEsIncorrectaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceMasDeUnaOpcionConLaPosicionOriginalException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceModalidadInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/OrderedChoiceModalidadInvalidaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/PreguntaInvalidaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/PreguntaInvalidaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/VerdaderoYFalsoCantidadDeOpcionesEsIncorrectaException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/VyFMasDeDosOpcionesException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/excepciones/VyFMasDeDosOpcionesException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/Exclusividad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/Exclusividad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/ExclusividadNulo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/ExclusividadNulo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/ExclusividadPuntaje.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/exclusividad/ExclusividadPuntaje.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/Modalidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/Modalidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadClasico.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadClasico.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadParcial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadParcial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadPenalidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modalidades/ModalidadPenalidad.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/Modificador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/Modificador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/ModificadorMultiplicador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/ModificadorMultiplicador.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/ModificadorStandard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/modificadoresDePuntaje/ModificadorStandard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/Opcion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/Opcion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionBooleana.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionBooleana.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionGroup.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionGroup.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionOrdered.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/opciones/OpcionOrdered.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/GroupChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/GroupChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/MultipleChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/MultipleChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/OrderedChoice.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/OrderedChoice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/Pregunta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/Pregunta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/VerdaderoFalso.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/edu/fiuba/algo3/modelo/preguntas/VerdaderoFalso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/GroupChoiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/GroupChoiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceClasicoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceClasicoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadMultiplicadorX2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadMultiplicadorX2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadMultiplicadorX3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadMultiplicadorX3Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceModalidadPenalidadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceParcialTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/MultipleChoiceParcialTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/OrderedChoiceTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/OrderedChoiceTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/PartidaTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/PartidaTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/PreguntasConTurnoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/PreguntasConTurnoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadMultiplicadorX2Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadMultiplicadorX2Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadMultiplicadorX3Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadMultiplicadorX3Test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFModalidadPenalidadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFSinModalidadPenalidadTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/VyFSinModalidadPenalidadTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ExclusividadDePuntajeUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ExclusividadDePuntajeUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/GroupChoiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/GroupChoiceUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/JugadorUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/JugadorUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadClasicoUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadClasicoUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadParcialUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadParcialUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadPenalidadUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModalidadPenalidadUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModificadorMultiplicadorUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/ModificadorMultiplicadorUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/MultipleChoiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/MultipleChoiceUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionBooleanUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionBooleanUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionGroupUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionGroupUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionOrderedUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OpcionOrderedUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OrderedChoiceUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/OrderedChoiceUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/PartidaUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/PartidaUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/PuntajeUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/PuntajeUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/RespuestaUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/RespuestaUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/TurnoUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/TurnoUnitTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/VyFUnitTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/test/edu/fiuba/algo3/modelo/testUnitarios/VyFUnitTest.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHome" value="C:\Program Files\JetBrains\IntelliJ IDEA Community Edition 2019.2.4\plugins\maven\lib\maven3" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="1ggqr93jioiu7lsZyZwTIbvb370" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="RunManager" selected="Application.App">
+    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="edu.fiuba.algo3.App" />
+      <module name="tp2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fiuba.algo3.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartidaTest.test06_1SeCreaGroupChoiceConOpcionesEnGruposCorrectos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fiuba.algo3.modelo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.fiuba.algo3.modelo" />
+      <option name="MAIN_CLASS_NAME" value="edu.fiuba.algo3.modelo.PartidaTest" />
+      <option name="METHOD_NAME" value="test06_1SeCreaGroupChoiceConOpcionesEnGruposCorrectos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PartidaUnitTest.test07_SeGuardaLaOpcionEnOpciones" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fiuba.algo3.modelo.testUnitarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.fiuba.algo3.modelo.testUnitarios" />
+      <option name="MAIN_CLASS_NAME" value="edu.fiuba.algo3.modelo.testUnitarios.PartidaUnitTest" />
+      <option name="METHOD_NAME" value="test07_SeGuardaLaOpcionEnOpciones" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="edu.fiuba.algo3.modelo in tp2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fiuba.algo3.modelo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.fiuba.algo3.modelo" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="edu.fiuba.algo3.modelo.testUnitarios in tp2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="tp2" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="edu.fiuba.algo3.modelo.testUnitarios.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="edu.fiuba.algo3.modelo.testUnitarios" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.App" />
+        <item itemvalue="JUnit.edu.fiuba.algo3.modelo in tp2" />
+        <item itemvalue="JUnit.edu.fiuba.algo3.modelo.testUnitarios in tp2" />
+        <item itemvalue="JUnit.PartidaUnitTest.test07_SeGuardaLaOpcionEnOpciones" />
+        <item itemvalue="JUnit.PartidaTest.test06_1SeCreaGroupChoiceConOpcionesEnGruposCorrectos" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="9239a844-d86e-4d37-90bb-5562c8e1a71d" name="Default Changelist" comment="" />
+      <created>1598546779588</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598546779588</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog" timestamp="1598556346645">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="92" y="92" width="1736" height="856" key="#com.intellij.execution.junit2.states.ComparisonFailureState$DiffDialog/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598556346645" />
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598587004938">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="690" y="267" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598587004938" />
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1598571658683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571658683" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1598571658683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571658683" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1598571658683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571658683" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1598571658683">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571658683" />
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom" timestamp="1598571646301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.bottom/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571646301" />
+    <state width="1877" height="348" key="GridCell.Tab.1.center" timestamp="1598571646301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.center/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571646301" />
+    <state width="1877" height="348" key="GridCell.Tab.1.left" timestamp="1598571646301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.left/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571646301" />
+    <state width="1877" height="348" key="GridCell.Tab.1.right" timestamp="1598571646301">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state width="1877" height="348" key="GridCell.Tab.1.right/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571646301" />
+    <state x="-1408" y="174" width="1424" height="651" key="dock-window-1" timestamp="1598571533366">
+      <screen x="-1600" y="174" width="1600" height="900" />
+    </state>
+    <state x="-1408" y="174" width="1424" height="651" key="dock-window-1/0.0.1920.1040/-1600.174.1600.900@0.0.1920.1040" timestamp="1598571533366" />
+  </component>
+</project>

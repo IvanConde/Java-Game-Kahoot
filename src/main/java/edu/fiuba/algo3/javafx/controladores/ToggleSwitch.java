@@ -81,5 +81,4 @@ public class ToggleSwitch extends HBox {
             }
         });
     }
-
 }
