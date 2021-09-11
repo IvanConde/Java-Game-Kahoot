@@ -11,10 +11,10 @@ Trabajo Práctico número 2 de la materia Algoritmos y Programación III de FIUB
 ## Grupo 03
 
 * **Integrante 1** - [Nicolas Menese](https://github.com/nicolasmns)
-* **Integrante 2** - [Enrique Alvaro](https://github.com/Alvaro0626)
+* **Integrante 2** - [Enrique Alvaro](https://github.com/Enrique-Alvaro)
 * **Integrante 3** - [Armando Civini](https://github.com/ArmandoCivini)
 * **Integrante 4** - [Bruno Morseletto](https://github.com/Bmorseletto)
-* **Integrante 5** - [Iván Conde](https://github.com/SilverWerewolf)
+* **Integrante 5** - [Iván Conde](https://github.com/IvanConde)
 
 Corrector: **Martín Picco**
 
